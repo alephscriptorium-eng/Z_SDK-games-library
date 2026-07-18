@@ -66,16 +66,18 @@ Todo el contenido nuevo vive en
 
 ## Validar story-boards reales
 
-El schema acepta los dos dialectos históricos (SOLVE = widgets en `acts[]`;
-ALEPH = widgets en `blocks[].uichain`):
+El schema [`schema/story-board.schema.json`](./schema/story-board.schema.json)
+es el **contrato** (AJV draft 2020-12): no es decoración. El script
+`validate-story-board.mjs` lo carga y aplica; un board inválido falla con
+ruta + mensaje explicable. Acepta los dos dialectos históricos (SOLVE =
+widgets en `acts[]`; ALEPH = widgets en `blocks[].uichain`). Semántica
+extra (p.ej. `blocks[].act` → act id conocido) se comprueba tras el schema.
 
 ```bash
 npm run test:carpeta-dramaturgo
 # o
 node kits/carpeta-dramaturgo/scripts/validate-story-board.mjs --fixtures
 ```
-
-Schema: [`schema/story-board.schema.json`](./schema/story-board.schema.json).
 
 ## Regla de los dos juegos
 
