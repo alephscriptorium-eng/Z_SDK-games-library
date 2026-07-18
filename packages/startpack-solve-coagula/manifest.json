@@ -1,0 +1,27 @@
+{
+  "schema": "zeus.startpack/v0",
+  "game": "solve-coagula",
+  "id": "startpack-solve-coagula",
+  "version": "0.1.0",
+  "round": {
+    "gamemapId": "solve-coagula-demo",
+    "lineId": "solve-coagula",
+    "seed": 1,
+    "feeds": "synthetic"
+  },
+  "startPack": [],
+  "objetivo": {
+    "cases": 3
+  },
+  "seeds": {
+    "presets": null,
+    "gamemap": "seeds/gamemap.json",
+    "storyBoard": "seeds/story-board.json",
+    "casos": "seeds/casos.md"
+  },
+  "volumes": {
+    "root": "volumes",
+    "slots": ["DISK_02"]
+  },
+  "acta": "acta/ACTA.md"
+}

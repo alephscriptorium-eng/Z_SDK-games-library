@@ -25,5 +25,9 @@ export const paths = {
   pozoAuthority: join(libraryRoot, 'packages/pozo/src/authority.mjs'),
   pozoMcp: join(libraryRoot, 'packages/pozo/src/player-mcp/start.mjs'),
   pozoRoot: join(libraryRoot, 'packages/pozo'),
-  pozoCasos: join(libraryRoot, 'packages/pozo/spec/CASOS.md')
+  pozoCasos: join(libraryRoot, 'packages/pozo/spec/CASOS.md'),
+  solveAuthority: join(libraryRoot, 'packages/solve-coagula/src/authority.mjs'),
+  solveMcp: join(libraryRoot, 'packages/solve-coagula/src/player-mcp/start.mjs'),
+  solveRoot: join(libraryRoot, 'packages/solve-coagula'),
+  solveCasos: join(libraryRoot, 'packages/solve-coagula/spec/CASOS.md')
 };

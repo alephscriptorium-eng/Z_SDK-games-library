@@ -1,0 +1,14 @@
+{
+  "id": "solve-coagula-demo",
+  "sceneId": "solve-coagula-v0",
+  "lineId": "solve-coagula",
+  "labelset": ["ritmo", "estrategia", "interaccion", "corpus"],
+  "startPack": [],
+  "objetivo": {
+    "cases": 3
+  },
+  "seeds": {
+    "feedSeed": 1
+  },
+  "cues": []
+}
