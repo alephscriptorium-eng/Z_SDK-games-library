@@ -18,7 +18,7 @@
     "test": "npm run test:delta && npm run test:pozo && npm run test:startpack",
     "test:delta": "npm test -w @zeus/arg-domain && npm test -w @zeus/arg-feeds && npm test -w @zeus/arg-console && npm test -w @zeus/arg-player-mcp",
     "test:pozo": "npm test -w @zeus/pozo",
-    "test:startpack": "npm test -w @zeus/startpack-delta && npm test -w @zeus/startpack-pozo",
+    "test:startpack": "npm test -w @zeus/startpack-delta && npm test -w @zeus/startpack-pozo && npm test -w @zeus/startpack-sketch",
     "test:arg-domain": "npm test -w @zeus/arg-domain",
     "demo:arg": "npm run demo -w @zeus/arg-demos",
     "demo:pozo": "npm run demo -w @zeus/pozo",

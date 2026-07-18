@@ -23,6 +23,12 @@ export const STARTPACK_GAMES = {
     packageName: '@zeus/startpack-pozo',
     dir: 'packages/startpack-pozo',
     npmPackName: 'zeus-startpack-pozo'
+  },
+  sketch: {
+    game: 'sketch',
+    packageName: '@zeus/startpack-sketch',
+    dir: 'packages/startpack-sketch',
+    npmPackName: 'zeus-startpack-sketch'
   }
 };
 

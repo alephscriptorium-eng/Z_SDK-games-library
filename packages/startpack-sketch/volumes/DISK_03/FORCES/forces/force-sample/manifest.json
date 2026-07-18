@@ -1,0 +1,22 @@
+{
+  "id": "force-sample",
+  "kind": "boot",
+  "description": "fixture",
+  "anchor_scene": "sesion-01/01-sample",
+  "scene_count": 1,
+  "scenes": [
+    {
+      "id": "s01-01",
+      "session": "sesion-01",
+      "slug": "01-sample",
+      "title": "Sample scene",
+      "rol": [],
+      "tags": ["fixture"],
+      "files": {
+        "prompt": "escenas/sesion-01/01-sample/prompt.md",
+        "think": "escenas/sesion-01/01-sample/think.md",
+        "output": "escenas/sesion-01/01-sample/output.md"
+      }
+    }
+  ]
+}

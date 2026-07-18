@@ -1,0 +1,40 @@
+{
+  "registry": "forces",
+  "version": "0.1.0",
+  "description": "Fixture force registry (synthetic ids)",
+  "activation": {
+    "session_budget": {
+      "max_active_forces": 2,
+      "boot_always_on": true
+    },
+    "exclusions": [],
+    "cotas": {
+      "lower": "sima",
+      "upper": "cima"
+    }
+  },
+  "boot": "force-sample",
+  "forces": [
+    {
+      "id": "force-sample",
+      "kind": "boot",
+      "type": "fixture",
+      "viewpoint": "sample viewpoint",
+      "anchor_scene": "sesion-01/01-sample",
+      "triggers": ["sample"],
+      "pairs_with": ["cota:sima"],
+      "scene_count": 1,
+      "path": "forces/force-sample/"
+    }
+  ],
+  "cotas": [
+    {
+      "id": "sima",
+      "kind": "cota",
+      "bound": "lower",
+      "pole": "colapso",
+      "scene_count": 1,
+      "path": "cotas/sima/"
+    }
+  ]
+}

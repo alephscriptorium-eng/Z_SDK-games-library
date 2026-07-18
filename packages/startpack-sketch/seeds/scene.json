@@ -1,0 +1,99 @@
+{
+  "id": "vaiven-dos-nodos",
+  "version": "0.1.0",
+  "displayName": "Vaivén · dos nodos",
+  "nodos": {
+    "nodo-a": {
+      "id": "nodo-a",
+      "displayName": "Celda Alpha",
+      "entrada": {
+        "x": 8,
+        "y": 0,
+        "z": 0,
+        "facing": 90
+      },
+      "anclas": [
+        "ancla-a"
+      ],
+      "enlaces": [
+        "enlace-ab"
+      ]
+    },
+    "nodo-b": {
+      "id": "nodo-b",
+      "displayName": "Celda Beta",
+      "entrada": {
+        "x": 20,
+        "y": 0,
+        "z": 0,
+        "facing": -90
+      },
+      "anclas": [
+        "ancla-b"
+      ],
+      "enlaces": [
+        "enlace-ab"
+      ]
+    }
+  },
+  "enlaces": {
+    "enlace-ab": {
+      "id": "enlace-ab",
+      "displayName": "Tubo de enlace A↔B",
+      "from": "nodo-a",
+      "to": "nodo-b",
+      "bidirectional": true,
+      "walkSpeed": 1.4,
+      "waypoints": [
+        {
+          "x": 8,
+          "y": 0,
+          "z": 0
+        },
+        {
+          "x": 12,
+          "y": 0,
+          "z": 0
+        },
+        {
+          "x": 16,
+          "y": 0,
+          "z": 0
+        },
+        {
+          "x": 20,
+          "y": 0,
+          "z": 0
+        }
+      ]
+    }
+  },
+  "anclas": {
+    "ancla-a": {
+      "id": "ancla-a",
+      "parent": "nodo-a",
+      "position": {
+        "x": 4,
+        "y": 0,
+        "z": 0
+      },
+      "facing": 90,
+      "slot": "sit"
+    },
+    "ancla-b": {
+      "id": "ancla-b",
+      "parent": "nodo-b",
+      "position": {
+        "x": 24,
+        "y": 0,
+        "z": 0
+      },
+      "facing": -90,
+      "slot": "sit"
+    }
+  },
+  "defaultAnchorByNode": {
+    "nodo-a": "ancla-a",
+    "nodo-b": "ancla-b"
+  }
+}

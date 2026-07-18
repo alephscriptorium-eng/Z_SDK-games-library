@@ -1,0 +1,22 @@
+{
+  "id": "sima",
+  "kind": "cota",
+  "description": "cota fixture",
+  "anchor_scene": "sesion-01/01-bound",
+  "scene_count": 1,
+  "scenes": [
+    {
+      "id": "s01-01",
+      "session": "sesion-01",
+      "slug": "01-bound",
+      "title": "Bound scene",
+      "rol": ["discrepancia"],
+      "tags": ["fixture"],
+      "files": {
+        "prompt": "escenas/sesion-01/01-bound/prompt.md",
+        "think": null,
+        "output": "escenas/sesion-01/01-bound/output.md"
+      }
+    }
+  ]
+}

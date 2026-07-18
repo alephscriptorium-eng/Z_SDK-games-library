@@ -1,0 +1,12 @@
+{
+  "id": "sima",
+  "kind": "cota",
+  "bound": "lower",
+  "pole": "colapso",
+  "viewpoint": "lower bound fixture",
+  "lore": null,
+  "anchor_scene": "sesion-01/01-bound",
+  "triggers": ["bound"],
+  "pairs_with": ["boot:force-sample"],
+  "scene_count": 1
+}
