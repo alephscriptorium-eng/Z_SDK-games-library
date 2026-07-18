@@ -1,7 +1,7 @@
 /**
  * CLI: MCP de jugador pozo.
  * Actor: ZEUS_POZO_PLAYER_ACTOR (default uno) u --actor=.
- * Puerto: ZEUS_MCP_POZO (default 4131).
+ * Puerto: ZEUS_MCP_POZO (slot presets-sdk `pozoPlayer.uno`).
  */
 
 import { isMainModule, runMcpMain } from '@zeus/presets-sdk/mcp';

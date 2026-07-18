@@ -1,15 +1,10 @@
 /**
  * pozo — resolución de host/puertos (Node-only).
- * Scriptorium vía resolveZeusUiPorts; MCP/vista vía readEnvPort
- * (slots aún no en DEFAULT_ZEUS_* — hallazgo SDK).
+ * Scriptorium + MCP/vista vía resolveZeus*Ports (slots pozoPlayer / pozoView).
  */
 
-import { readEnvPort, resolveZeusHost, resolveZeusUiPorts } from '@zeus/presets-sdk/env';
-import {
-  DEFAULT_POZO_MCP_PORT,
-  DEFAULT_POZO_ROOM,
-  DEFAULT_POZO_VIEW_PORT
-} from './contract.mjs';
+import { resolveZeusHost, resolveZeusMcpPorts, resolveZeusUiPorts } from '@zeus/presets-sdk/env';
+import { DEFAULT_POZO_ROOM } from './contract.mjs';
 
 /**
  * @param {NodeJS.ProcessEnv} [env]
@@ -17,9 +12,10 @@ import {
 export function resolvePozoEndpoints(env = process.env) {
   const host = resolveZeusHost();
   const ui = resolveZeusUiPorts();
+  const mcp = resolveZeusMcpPorts();
   const scriptoriumPort = ui.scriptorium.port;
-  const mcpPort = readEnvPort('ZEUS_MCP_POZO', DEFAULT_POZO_MCP_PORT);
-  const viewPort = readEnvPort('ZEUS_PORT_POZO_VIEW', DEFAULT_POZO_VIEW_PORT);
+  const mcpPort = mcp.pozoPlayer.uno;
+  const viewPort = ui.pozoView.port;
   const room = env.ZEUS_POZO_ROOM || DEFAULT_POZO_ROOM;
   const scriptoriumBase =
     env.ZEUS_SCRIPTORIUM_URL || `http://${host}:${scriptoriumPort}`;

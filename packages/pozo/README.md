@@ -23,8 +23,9 @@ Segundo juego mínimo del monorepo (D-8 / regla de los dos juegos). Nace en
 npm run demo:pozo
 ```
 
-Levanta socket-server + autoridad + vista (`:3025` por defecto) + MCP (`:4131`).
-No abre navegador salvo `ZEUS_OPEN_BROWSER=1`.
+Levanta socket-server + autoridad + vista (`resolveZeusUiPorts().pozoView`,
+default `:3025`) + MCP (`resolveZeusMcpPorts().pozoPlayer.uno`, default
+`:4131`). No abre navegador salvo `ZEUS_OPEN_BROWSER=1`.
 
 Overrides: `ZEUS_POZO_ROOM`, `ZEUS_MCP_POZO`, `ZEUS_PORT_POZO_VIEW`,
 `ZEUS_PORT_SCRIPTORIUM`, `ZEUS_SCRIPTORIUM_URL`.
@@ -38,6 +39,5 @@ npm run e2e:pozo-mcp
 
 ## Nota de puertos
 
-Los defaults `4131` / `3025` viven en el juego (`readEnvPort`) porque
-`presets-sdk/env` aún no declara slots `pozoPlayer` / `pozoView`. Eso es un
-hallazgo de mejora del SDK (no se parchea engine desde este WP).
+Defaults `4131` / `3025` viven en `@zeus/presets-sdk/env` (slots
+`pozoPlayer` / `pozoView`, WP-U109). El juego solo lee el resolver.

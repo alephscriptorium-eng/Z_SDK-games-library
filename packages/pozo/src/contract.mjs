@@ -20,12 +20,9 @@ export const DEFAULT_POZO_ROOM = 'POZO_DEMO';
 export const AUTHORITY_USER = 'pozo-authority';
 
 /**
- * Puertos propios del juego hasta que presets-sdk/env declare slots
- * `pozoPlayer` / `pozoView` (hallazgo → WP aparte; no se toca engine aquí).
- * Overrides: ZEUS_MCP_POZO · ZEUS_PORT_POZO_VIEW.
+ * Puertos MCP/vista: catálogo canónico en `@zeus/presets-sdk/env`
+ * (`pozoPlayer` / `pozoView`). Overrides: ZEUS_MCP_POZO · ZEUS_PORT_POZO_VIEW.
  */
-export const DEFAULT_POZO_MCP_PORT = 4131;
-export const DEFAULT_POZO_VIEW_PORT = 3025;
 
 export const EVENTS = Object.freeze({
   STATE: PROTOCOL_EVENTS.STATE,
