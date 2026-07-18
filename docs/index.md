@@ -46,5 +46,7 @@ npm install
 npm test
 ```
 
-Hasta publish real de `@zeus/*`, `npm install` usa el **modo provisional**
-`file:` → `.deps/zeus-sdk` (ver [delta · modo provisional](/games/delta#modo-provisional-file-deps)).
+`npm install` resuelve `@zeus/*` desde el registry propio (D-7). Para demos/e2e
+que spawnean mesh no publicado, enlazá el monorepo hermano
+(`npm run setup:zeus-sdk` / `ZEUS_SDK_ROOT` / sibling `../zeus-sdk`) — ver
+[delta · mesh local](/games/delta#mesh-local-fallback-dev).

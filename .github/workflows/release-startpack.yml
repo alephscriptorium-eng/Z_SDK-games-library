@@ -43,13 +43,14 @@ jobs:
           cache: npm
           registry-url: https://npm.scriptorium.escrivivir.co
           scope: '@zeus'
-      - name: Link / clone Z_SDK (.deps file:)
+      - name: Install (@zeus desde registry)
+        run: npm install
+      - name: Link Z_SDK (fallback DEV si el notario lo necesita)
         env:
           CI: 'true'
           ZEUS_SDK_REF: main
         run: npm run setup:zeus-sdk
-      - name: Install
-        run: npm install
+        continue-on-error: true
       - name: Resolve game
         id: game
         run: |

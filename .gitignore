@@ -12,3 +12,6 @@ coverage/
 .deps/
 zeus-file-overrides.json
 .release-startpack/
+
+# PresetStore runtime (arg-console tests)
+/data/

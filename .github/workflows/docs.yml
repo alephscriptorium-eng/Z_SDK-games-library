@@ -30,12 +30,7 @@ jobs:
         with:
           node-version: '22'
           cache: npm
-      - name: Link / clone Z_SDK (.deps file:)
-        env:
-          CI: 'true'
-          ZEUS_SDK_REF: main
-        run: npm run setup:zeus-sdk
-      - name: Install
+      - name: Install (@zeus desde registry)
         run: npm install
       - name: Build VitePress catalog
         # base `/` (custom domain games.z-sdk.escrivivir.co; WP-U107)

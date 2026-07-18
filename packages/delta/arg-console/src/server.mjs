@@ -40,7 +40,7 @@ import { srcDir as gameEngineSrcDir } from '@zeus/game-engine/node';
 import { srcDir as argDomainSrcDir } from '@zeus/arg-domain/node';
 import { srcDir as protocolSrcDir } from '@zeus/protocol/node';
 
-import { getConfig, packageDir } from './config.mjs';
+import { getConfig, packageDir, resolveDataDir } from './config.mjs';
 import { resolveViewerConfig } from './viewer-config.mjs';
 import { viewRegistry, renderView } from './views/registry.mjs';
 import { portalView } from './views/portal.mjs';
@@ -163,7 +163,7 @@ export async function createArgConsoleServer(options = {}) {
   const config = getConfig();
   const port = options.port ?? config.server.port;
   const host = options.host ?? config.server.host;
-  const dataDir = options.dataDir ?? defaultDataDir;
+  const dataDir = options.dataDir ?? resolveDataDir();
 
   const registry = new ServerRegistry();
   const store = new PresetStore({ dataDir });
@@ -262,7 +262,7 @@ const isMain = process.argv[1] && import.meta.url === pathToFileURL(process.argv
 if (isMain) {
   const handle = await createArgConsoleServer();
   console.log(`arg-console corriendo en http://${handle.host}:${handle.port}`);
-  console.log(`  presets: ${handle.store.count()} en ${defaultDataDir}`);
+  console.log(`  presets: ${handle.store.count()} en ${resolveDataDir()}`);
   console.log(`  tablero → http://${handle.host}:${handle.port}/views/tablero`);
   console.log(`  jugador → http://${handle.host}:${handle.port}/views/jugador?actor=uno`);
 
