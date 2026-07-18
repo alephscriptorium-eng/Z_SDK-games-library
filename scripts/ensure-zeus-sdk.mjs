@@ -1,14 +1,17 @@
 #!/usr/bin/env node
 /**
- * Enlaza o clona Z_SDK en .deps/zeus-sdk para overrides file: (WP-U61).
+ * Enlaza o clona Z_SDK en .deps/zeus-sdk para deps file: (WP-U61).
  * Retirar tras publish real de @zeus/* (U55 / ops).
  */
 
-import { existsSync, mkdirSync, rmSync, symlinkSync } from 'node:fs';
+import { existsSync, mkdirSync, readdirSync, rmSync, symlinkSync } from 'node:fs';
 import { spawnSync } from 'node:child_process';
-import { dirname, join, relative, resolve } from 'node:path';
-import { fileURLToPath } from 'node:url';
-import { libraryRoot, resolveZeusSdkRoot } from './zeus-sdk-root.mjs';
+import { join, relative, resolve } from 'node:path';
+import {
+  libraryRoot,
+  looksLikeZeusSdk,
+  toRealPath
+} from './zeus-sdk-root.mjs';
 
 const depsDir = join(libraryRoot, '.deps');
 const linkPath = join(depsDir, 'zeus-sdk');
@@ -25,14 +28,16 @@ function linkTo(target) {
   console.log(`[setup:zeus-sdk] ${relative(libraryRoot, linkPath)} → ${abs}`);
 }
 
-const existing = resolveZeusSdkRoot({ required: false });
-if (existing && resolve(existing) === resolve(linkPath)) {
-  console.log('[setup:zeus-sdk] .deps/zeus-sdk ya apunta a un Z_SDK válido');
+if (process.env.ZEUS_SDK_ROOT && existsSync(process.env.ZEUS_SDK_ROOT)) {
+  linkTo(process.env.ZEUS_SDK_ROOT);
   process.exit(0);
 }
 
-if (process.env.ZEUS_SDK_ROOT && existsSync(process.env.ZEUS_SDK_ROOT)) {
-  linkTo(process.env.ZEUS_SDK_ROOT);
+// Junction/symlink ya válido: no re-enlazar (realpath ≠ linkPath a propósito).
+if (existsSync(linkPath) && looksLikeZeusSdk(linkPath)) {
+  console.log(
+    `[setup:zeus-sdk] .deps/zeus-sdk ya apunta a un Z_SDK válido → ${toRealPath(linkPath)}`
+  );
   process.exit(0);
 }
 
@@ -42,9 +47,16 @@ if (existsSync(join(sibling, 'packages/engine/protocol/package.json'))) {
   process.exit(0);
 }
 
-if (existing) {
-  linkTo(existing);
-  process.exit(0);
+const worktrees = join(libraryRoot, '../zeus-sdk/.worktrees');
+if (existsSync(worktrees)) {
+  // Prefer worktree u61 if present; else first valid
+  for (const name of readdirSync(worktrees)) {
+    const cand = join(worktrees, name);
+    if (looksLikeZeusSdk(cand)) {
+      linkTo(cand);
+      process.exit(0);
+    }
+  }
 }
 
 if (process.env.CI === 'true' || process.env.GITHUB_ACTIONS === 'true') {

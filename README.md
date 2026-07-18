@@ -24,7 +24,9 @@ sigue **gated** (ops / `NPM_TOKEN`). Mientras tanto este repo usa
 | ----- | ------- |
 | Ruta | `.deps/zeus-sdk` (symlink/junction o clone) |
 | Setup | `npm run setup:zeus-sdk` (también `preinstall`) |
-| Env | `ZEUS_SDK_ROOT` opcional si el monorepo no es `../zeus-sdk` |
+| Path | `resolveZeusSdkRoot()` siempre aplica `realpath` — spawns mesh
+  usan el path real (Windows: junction no rompe `isMain`) |
+| Env | `ZEUS_SDK_ROOT` opcional; el default `.deps` basta sin exportarlo |
 | Retiro | tras publish real de `engine/*` (U55): quitar deps `file:` y
   resolver `@zeus/*` solo desde el registry |
 

@@ -2,9 +2,13 @@
  * Resuelve la raíz del monorepo Z_SDK (engine + mesh) para deps file: y demos.
  * CJS a propósito: lo cargan launches/e2e vía createRequire.
  * Orden: ZEUS_SDK_ROOT → .deps/zeus-sdk → ../zeus-sdk → worktrees
+ *
+ * Siempre devuelve realpath (WP-U61 corrección): en Windows un junction
+ * `.deps/zeus-sdk` hace fallar `isMain` de entrypoints mesh si se spawnea
+ * con el path del enlace en vez del path real.
  */
 
-const { existsSync, readdirSync } = require('node:fs');
+const { existsSync, readdirSync, realpathSync } = require('node:fs');
 const { dirname, join, resolve } = require('node:path');
 
 const libraryRoot = resolve(__dirname, '..');
@@ -14,6 +18,20 @@ function looksLikeZeusSdk(root) {
     existsSync(join(root, 'packages/mesh/socket-server/package.json')) &&
     existsSync(join(root, 'packages/engine/protocol/package.json'))
   );
+}
+
+/**
+ * @param {string} root
+ * @returns {string}
+ */
+function toRealPath(root) {
+  try {
+    return typeof realpathSync.native === 'function'
+      ? realpathSync.native(root)
+      : realpathSync(root);
+  } catch {
+    return resolve(root);
+  }
 }
 
 /**
@@ -38,7 +56,7 @@ function resolveZeusSdkRoot(opts = {}) {
   }
 
   for (const root of candidates) {
-    if (looksLikeZeusSdk(root)) return root;
+    if (looksLikeZeusSdk(root)) return toRealPath(root);
   }
 
   if (required) {
@@ -55,4 +73,4 @@ function resolveZeusSdkRoot(opts = {}) {
   return null;
 }
 
-module.exports = { libraryRoot, resolveZeusSdkRoot };
+module.exports = { libraryRoot, resolveZeusSdkRoot, toRealPath, looksLikeZeusSdk };
