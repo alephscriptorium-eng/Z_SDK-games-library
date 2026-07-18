@@ -1,8 +1,8 @@
-# Start packs — consumo y release (WP-U62 / U110)
+# Start packs — consumo y release
 
 Cada release de datos es un paquete `@zeus/startpack-<game>` + acta +
-tarball. Canal primario: registry npm propio (D-7). Espejo: GitHub Release
-en este repo.
+tarball. Canal primario: registry npm `@zeus`. Espejo: GitHub Release en este
+repo (verdad viva de versiones → [Releases](/releases)).
 
 La carga (`loadStartPack`) vive en **`@zeus/startpack-kit`**; cada
 `@zeus/startpack-*` es un thin wrapper (game + enrich). Sin copias del
@@ -35,22 +35,21 @@ Kit compartido: `packages/startpack-kit` (`@zeus/startpack-kit`).
 
 ## Instalar
 
-### Registry (cuando ops tenga `NPM_TOKEN` startpacks)
+### Registry
 
 ```bash
 npm install @zeus/startpack-delta
 ```
 
-### Tarball / GitHub Release (equivalente documentado)
+### Tarball / GitHub Release
 
 ```bash
-# tras Notario local o descarga del Release:
-npm install ./zeus-startpack-delta-0.1.0.tgz
-# o
-npm install https://github.com/alephscriptorium-eng/Z_SDK-games-library/releases/download/startpack-delta-v0.1.0/zeus-startpack-delta-0.1.0.tgz
+# tras Notario local o descarga del Release (versión = la del tag vivo):
+npm install ./zeus-startpack-delta-<version>.tgz
+# o URL del asset en GitHub Releases
 ```
 
-Publish real al registry puede estar ⏳ — el tarball + Release cubren el CA.
+Qué hay publicado ahora: [Releases](/releases) → GitHub Releases.
 
 ## Arrancar una ronda desde el pack
 
@@ -67,13 +66,17 @@ Helpers:
 - `scripts/notario-release.mjs` — valida, escribe acta, `npm pack`, opcional
   `--publish-github` / `--publish-npm`
 
-## GitHub Release
+## Pipeline Notario (GitHub Release)
 
 ```bash
 npm run release:startpack -- --game delta --publish-github
 ```
 
 Crea tag `startpack-delta-v<version>` con assets: tarball + acta.
+
+El espejo GitHub Release cubre el consumo público. El publish al registry
+npm es un paso aparte del pipeline (credencial ops); no forma parte de la
+doctrina de este documento. Estado del publish: [Futuros](/games/futuros).
 
 ## Tests
 

@@ -1,8 +1,8 @@
 # pozo
 
-Segundo juego mínimo de la library (D-8 / regla de los dos juegos). Se
-construye solo importando engine (`protocol`, `authority-kit`,
-`player-mcp-kit`, `playbook-kit`, `view-kit`) más mesh vía presets/rooms.
+Segundo juego mínimo de la library (regla de los dos juegos). Se construye
+solo importando engine (`protocol`, `authority-kit`, `player-mcp-kit`,
+`playbook-kit`, `view-kit`) más mesh vía presets/rooms.
 
 | Pieza | Ruta en el repo |
 | ----- | --------------- |

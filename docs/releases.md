@@ -1,70 +1,67 @@
 # Releases — start packs
 
-Estado **real** de GitHub Releases en
-[`alephscriptorium-eng/Z_SDK-games-library`](https://github.com/alephscriptorium-eng/Z_SDK-games-library/releases)
-(consultado 2026-07-18). Publish npm al registry propio puede estar ⏳
-(`NPM_TOKEN`); el espejo GitHub Release + tarball cubre el consumo.
+Cada release de datos es un paquete `@zeus/startpack-<game>` + acta Notario +
+tarball. Canal: tag `startpack-<game>-v<version>` con assets (acta + `.tgz`).
 
-Canal: `@zeus/startpack-<game>` · acta Notario · tag
-`startpack-<game>-v<version>`.
+**Verdad viva** de qué hay publicado (versiones, tags, assets):
+
+[GitHub Releases · Z_SDK-games-library](https://github.com/alephscriptorium-eng/Z_SDK-games-library/releases)
+
+Esta página describe el mecanismo. No duplica tablas de versión ni fechas a
+mano: si falta un tag o un asset, aún no está publicado.
 
 ---
 
-## delta
+## Instalar un start pack
 
-| Campo | Valor |
-| ----- | ----- |
-| Paquete | `@zeus/startpack-delta@0.1.0` |
-| Tag / Release | [`startpack-delta-v0.1.0`](https://github.com/alephscriptorium-eng/Z_SDK-games-library/releases/tag/startpack-delta-v0.1.0) |
-| Acta | [`ACTA-delta-v0.1.0.md`](https://github.com/alephscriptorium-eng/Z_SDK-games-library/releases/download/startpack-delta-v0.1.0/ACTA-delta-v0.1.0.md) |
-| Tarball | [`zeus-startpack-delta-0.1.0.tgz`](https://github.com/alephscriptorium-eng/Z_SDK-games-library/releases/download/startpack-delta-v0.1.0/zeus-startpack-delta-0.1.0.tgz) |
+### Registry npm (`@zeus`)
 
 ```bash
 npm install @zeus/startpack-delta
-# o, sin registry:
-npm install https://github.com/alephscriptorium-eng/Z_SDK-games-library/releases/download/startpack-delta-v0.1.0/zeus-startpack-delta-0.1.0.tgz
-```
-
----
-
-## pozo
-
-| Campo | Valor |
-| ----- | ----- |
-| Paquete | `@zeus/startpack-pozo@0.1.0` |
-| Tag / Release | [`startpack-pozo-v0.1.0`](https://github.com/alephscriptorium-eng/Z_SDK-games-library/releases/tag/startpack-pozo-v0.1.0) |
-| Acta | [`ACTA-pozo-v0.1.0.md`](https://github.com/alephscriptorium-eng/Z_SDK-games-library/releases/download/startpack-pozo-v0.1.0/ACTA-pozo-v0.1.0.md) |
-| Tarball | [`zeus-startpack-pozo-0.1.0.tgz`](https://github.com/alephscriptorium-eng/Z_SDK-games-library/releases/download/startpack-pozo-v0.1.0/zeus-startpack-pozo-0.1.0.tgz) |
-
-```bash
 npm install @zeus/startpack-pozo
-# o, sin registry:
-npm install https://github.com/alephscriptorium-eng/Z_SDK-games-library/releases/download/startpack-pozo-v0.1.0/zeus-startpack-pozo-0.1.0.tgz
 ```
 
----
+Sustituí el sufijo por el juego (`sketch`, `solve-coagula`, `plaza`, …) cuando
+exista el paquete en el registry.
 
-## sketch
+### Tarball desde GitHub Release
 
-⏳ **sin releases** en GitHub (2026-07-18).
-
-El paquete `@zeus/startpack-sketch@0.1.0` existe en el árbol
-(`packages/startpack-sketch/`, WP-U70) y se puede empaquetar localmente con
-Notario, pero **no hay** tag `startpack-sketch-v*` ni assets publicados.
+En la página de Releases del juego, tomá la URL del asset `.tgz` (o descargalo
+y instalalo por path):
 
 ```bash
-# cuando exista Release:
-# npm install @zeus/startpack-sketch
-npm run release:startpack -- --game sketch   # local / prep
+npm install https://github.com/alephscriptorium-eng/Z_SDK-games-library/releases/download/startpack-<game>-v<version>/zeus-startpack-<game>-<version>.tgz
+# o, tras descargar:
+npm install ./zeus-startpack-<game>-<version>.tgz
 ```
 
 ---
 
-## Futuros (SOLVE, …)
+## Juegos con canal de release
 
-⏳ **sin releases** — no hay start packs publicados para títulos futuros.
+| game | paquete | ancla |
+| ---- | ------- | ----- |
+| `delta` | `@zeus/startpack-delta` | [#delta](#delta) |
+| `pozo` | `@zeus/startpack-pozo` | [#pozo](#pozo) |
+| `sketch` | `@zeus/startpack-sketch` | [#sketch](#sketch) |
 
-Ver [Futuros](/games/futuros).
+### delta {#delta}
+
+Buscá en Releases el tag `startpack-delta-v*` y sus assets (acta + tarball).
+
+### pozo {#pozo}
+
+Buscá en Releases el tag `startpack-pozo-v*` y sus assets.
+
+### sketch {#sketch}
+
+El paquete vive en `packages/startpack-sketch/`. Aparece en Releases solo
+cuando Notario publica tag `startpack-sketch-v*` + assets.
+
+### Futuros (SOLVE, …)
+
+Sin start packs publicados hasta que exista tag/Release. Ver
+[Futuros](/games/futuros) (página de estado).
 
 ---
 

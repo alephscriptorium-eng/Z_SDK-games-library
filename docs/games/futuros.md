@@ -1,13 +1,15 @@
 # Futuros
 
-Títulos previstos o en curso que consumirán la misma library. **No se
-inventan start packs ni releases** aquí: si no hay tag/Release, se marca
-⏳.
+> **Página de estado** (no doctrina). Aquí se declara qué títulos están en
+> curso o sin Release publicado. Las páginas doctrinales apuntan a
+> [GitHub Releases](https://github.com/alephscriptorium-eng/Z_SDK-games-library/releases)
+> como verdad viva; no inventan start packs ni versiones a mano.
 
 | Título | Estado | Notas |
 | ------ | ------ | ----- |
-| SOLVE ET COAGULA | en curso (WP-U87) | Tercer juego; kit [CARPETA DRAMATURGO](https://github.com/alephscriptorium-eng/Z_SDK-games-library/tree/main/kits/carpeta-dramaturgo) |
-| sketch (startpack) | paquete en repo | `@zeus/startpack-sketch` existe (WP-U70); **sin GitHub Release** → ver [Releases](/releases#sketch) |
+| SOLVE ET COAGULA | en curso | Tercer juego; kit [CARPETA DRAMATURGO](https://github.com/alephscriptorium-eng/Z_SDK-games-library/tree/main/kits/carpeta-dramaturgo) |
+| sketch (startpack) | paquete en repo | `@zeus/startpack-sketch` en árbol; aparece en Releases solo con tag `startpack-sketch-v*` → [Releases · sketch](/releases#sketch) |
+| Publish registry npm | gated (ops) | Canal primario documentado en [Start packs](/startpacks); espejo GitHub Release cubre consumo mientras tanto |
 
 ## CARPETA DRAMATURGO
 
