@@ -1,0 +1,62 @@
+# Docs catalog → GitHub Pages (WP-U107 / D-23).
+# Fuente de deploy: Settings → Pages → GitHub Actions (ops custodio; no CA código).
+# Build en main + wp/**; deploy solo en main tras build verde.
+# Custom domain objetivo: games.z-sdk.escrivivir.co (DNS = tick usuario).
+name: Docs
+
+on:
+  push:
+    branches:
+      - main
+      - 'wp/**'
+    paths:
+      - 'docs/**'
+  pull_request:
+    paths:
+      - 'docs/**'
+  workflow_dispatch:
+
+concurrency:
+  group: docs-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: docs:build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Link / clone Z_SDK (.deps file:)
+        env:
+          CI: 'true'
+          ZEUS_SDK_REF: main
+        run: npm run setup:zeus-sdk
+      - name: Install
+        run: npm install
+      - name: Build VitePress catalog
+        # base `/` (custom domain games.z-sdk.escrivivir.co; WP-U107)
+        run: npm run docs:build
+      - name: Upload Pages artifact
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs/.vitepress/dist
+
+  deploy:
+    name: deploy Pages
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

@@ -6,6 +6,15 @@ Repo hermano de [`Z_SDK`](https://github.com/alephscriptorium-eng/Z_SDK)
 `@zeus` + GitHub Releases — WP-U62) y la **CARPETA DRAMATURGO** (kit de
 experiencia narrativo — WP-U86).
 
+**Catálogo público** (WP-U107 / D-23): VitePress + GitHub Pages + piel zine.
+Dominio objetivo: `https://games.z-sdk.escrivivir.co/` (DNS/Custom domain =
+ops usuario). Fuentes: [`docs/`](./docs/).
+
+```bash
+npm run docs:dev    # local
+npm run docs:build  # artefacto Pages
+```
+
 Migración desde el monorepo: **WP-U61** ✅. Pipeline de datos: **WP-U62**.
 Kit dramaturgo: **WP-U86** → [`kits/carpeta-dramaturgo/`](./kits/carpeta-dramaturgo/).
 
@@ -74,6 +83,7 @@ packages/pozo/             # segundo juego (regla de los dos juegos)
 packages/startpack-delta/  # @zeus/startpack-delta
 packages/startpack-pozo/   # @zeus/startpack-pozo
 e2e/                       # matriz e2e de juegos + startpack-round
+docs/                      # catálogo VitePress (portada + releases + specs)
 docs/startpacks.md         # consumo y release
 ```
 

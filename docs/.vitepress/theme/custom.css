@@ -1,0 +1,297 @@
+/**
+ * Piel zine (A-12 / WP-U103; reutilizada WP-U107) — aditiva sobre el theme
+ * default de VitePress. Tokens: mono Courier/sistema · b/n puro · rayas
+ * diagonales · hover negativo · print.
+ */
+
+:root {
+  --zine-ink: #000000;
+  --zine-paper: #ffffff;
+  --zine-gray: #6b6b6b;
+  --zine-gray-soft: #e8e8e8;
+  --zine-stripe: repeating-linear-gradient(
+    -45deg,
+    var(--zine-ink),
+    var(--zine-ink) 1px,
+    transparent 1px,
+    transparent 6px
+  );
+
+  --vp-font-family-base: 'Courier New', Courier, ui-monospace, monospace;
+  --vp-font-family-mono: 'Courier New', Courier, ui-monospace, monospace;
+
+  --vp-c-bg: var(--zine-paper);
+  --vp-c-bg-alt: var(--zine-paper);
+  --vp-c-bg-elv: var(--zine-paper);
+  --vp-c-bg-soft: var(--zine-gray-soft);
+
+  --vp-c-border: var(--zine-ink);
+  --vp-c-divider: var(--zine-ink);
+  --vp-c-gutter: var(--zine-paper);
+
+  --vp-c-text-1: var(--zine-ink);
+  --vp-c-text-2: var(--zine-ink);
+  --vp-c-text-3: var(--zine-gray);
+
+  --vp-c-brand-1: var(--zine-ink);
+  --vp-c-brand-2: var(--zine-ink);
+  --vp-c-brand-3: var(--zine-ink);
+  --vp-c-brand-soft: var(--zine-gray-soft);
+
+  --vp-c-tip-1: var(--zine-ink);
+  --vp-c-tip-soft: var(--zine-gray-soft);
+  --vp-c-warning-1: var(--zine-ink);
+  --vp-c-warning-soft: var(--zine-gray-soft);
+  --vp-c-danger-1: var(--zine-ink);
+  --vp-c-danger-soft: var(--zine-gray-soft);
+
+  --vp-button-brand-border: var(--zine-ink);
+  --vp-button-brand-text: var(--zine-paper);
+  --vp-button-brand-bg: var(--zine-ink);
+  --vp-button-brand-hover-border: var(--zine-ink);
+  --vp-button-brand-hover-text: var(--zine-ink);
+  --vp-button-brand-hover-bg: var(--zine-paper);
+  --vp-button-brand-active-border: var(--zine-ink);
+  --vp-button-brand-active-text: var(--zine-ink);
+  --vp-button-brand-active-bg: var(--zine-paper);
+
+  --vp-button-alt-border: var(--zine-ink);
+  --vp-button-alt-text: var(--zine-ink);
+  --vp-button-alt-bg: var(--zine-paper);
+  --vp-button-alt-hover-border: var(--zine-ink);
+  --vp-button-alt-hover-text: var(--zine-paper);
+  --vp-button-alt-hover-bg: var(--zine-ink);
+  --vp-button-alt-active-border: var(--zine-ink);
+  --vp-button-alt-active-text: var(--zine-paper);
+  --vp-button-alt-active-bg: var(--zine-ink);
+
+  --vp-c-bg-search: var(--zine-paper);
+  --vp-local-search-bg: var(--zine-paper);
+  --vp-local-search-result-bg: var(--zine-paper);
+  --vp-local-search-result-border: var(--zine-ink);
+  --vp-local-search-highlight-bg: var(--zine-gray-soft);
+  --vp-local-search-highlight-text: var(--zine-ink);
+
+  color-scheme: light;
+}
+
+.dark {
+  --zine-ink: #ffffff;
+  --zine-paper: #000000;
+  --zine-gray: #a0a0a0;
+  --zine-gray-soft: #1a1a1a;
+  --zine-stripe: repeating-linear-gradient(
+    -45deg,
+    var(--zine-ink),
+    var(--zine-ink) 1px,
+    transparent 1px,
+    transparent 6px
+  );
+
+  --vp-c-bg: var(--zine-paper);
+  --vp-c-bg-alt: var(--zine-paper);
+  --vp-c-bg-elv: var(--zine-paper);
+  --vp-c-bg-soft: var(--zine-gray-soft);
+  --vp-c-border: var(--zine-ink);
+  --vp-c-divider: var(--zine-ink);
+  --vp-c-text-1: var(--zine-ink);
+  --vp-c-text-2: var(--zine-ink);
+  --vp-c-text-3: var(--zine-gray);
+  --vp-c-brand-1: var(--zine-ink);
+  --vp-c-brand-2: var(--zine-ink);
+  --vp-c-brand-3: var(--zine-ink);
+  --vp-button-brand-text: var(--zine-paper);
+  --vp-button-brand-bg: var(--zine-ink);
+  --vp-button-brand-hover-text: var(--zine-ink);
+  --vp-button-brand-hover-bg: var(--zine-paper);
+  --vp-button-alt-text: var(--zine-ink);
+  --vp-button-alt-bg: var(--zine-paper);
+  --vp-button-alt-hover-text: var(--zine-paper);
+  --vp-button-alt-hover-bg: var(--zine-ink);
+  color-scheme: dark;
+}
+
+html,
+body {
+  font-family: var(--vp-font-family-base);
+  background: var(--zine-paper);
+  color: var(--zine-ink);
+}
+
+/* Acento zine: franja diagonal bajo el header / sobre la portada */
+.VPNavBar {
+  border-bottom: 2px solid var(--zine-ink) !important;
+}
+
+.VPNavBar .wrapper::after {
+  content: '';
+  display: block;
+  height: 6px;
+  background: var(--zine-stripe);
+  opacity: 0.35;
+}
+
+.VPSidebar {
+  border-right: 1px solid var(--zine-ink);
+}
+
+.VPLocalSearchBox .result,
+.VPLocalSearchBox .search-bar {
+  border-color: var(--zine-ink) !important;
+  border-radius: 0 !important;
+}
+
+/* Portada home */
+.VPHero .name,
+.VPHero .text {
+  font-family: var(--vp-font-family-base);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--zine-ink) !important;
+}
+
+.VPHero .name {
+  font-size: clamp(2.4rem, 8vw, 4.5rem) !important;
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
+.VPHero .tagline {
+  font-size: 1rem !important;
+  line-height: 1.55;
+  max-width: 42rem;
+  color: var(--zine-ink) !important;
+  white-space: pre-line;
+}
+
+.VPHero .actions .VPButton {
+  border-radius: 0;
+  border-width: 2px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.VPFeatures .box {
+  border: 2px solid var(--zine-ink);
+  border-radius: 0;
+  background: var(--zine-paper);
+  box-shadow: none;
+}
+
+.VPFeatures .box:hover {
+  background: var(--zine-ink);
+  color: var(--zine-paper);
+}
+
+.VPFeatures .box:hover .title,
+.VPFeatures .box:hover .details,
+.VPFeatures .box:hover .link {
+  color: var(--zine-paper) !important;
+}
+
+.VPFeatures .box::before {
+  content: '';
+  display: block;
+  height: 8px;
+  margin: -8px -8px 12px;
+  background: var(--zine-stripe);
+  opacity: 0.45;
+}
+
+/* Hover negativo genérico (nav, sidebar, contenido) */
+.VPNavBarMenuLink:hover,
+.VPNavBarMenuGroup:hover > button,
+.VPSidebarItem.level-0 > .item .link:hover .text,
+.VPSidebarItem.level-1 > .item .link:hover .text,
+.VPDoc a:hover,
+.pager-link:hover {
+  background: var(--zine-ink);
+  color: var(--zine-paper) !important;
+}
+
+.VPDoc a {
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.VPButton:hover {
+  filter: none;
+}
+
+/* Bloques de código: borde duro, sin glow */
+.vp-code-group .tabs,
+div[class*='language-'] {
+  border: 1px solid var(--zine-ink);
+  border-radius: 0;
+}
+
+/* Footer zine */
+.VPFooter {
+  border-top: 2px solid var(--zine-ink);
+  background: var(--zine-paper);
+}
+
+.VPFooter::before {
+  content: '';
+  display: block;
+  height: 8px;
+  background: var(--zine-stripe);
+  opacity: 0.35;
+  margin: -32px -64px 24px;
+}
+
+/* Imprimible como fanzine */
+@media print {
+  :root,
+  .dark {
+    --zine-ink: #000000;
+    --zine-paper: #ffffff;
+    --zine-gray: #444444;
+    --vp-c-bg: #ffffff;
+    --vp-c-text-1: #000000;
+    color-scheme: light;
+  }
+
+  .VPNav,
+  .VPNavBar,
+  .VPSidebar,
+  .VPLocalNav,
+  .VPBackToTop,
+  .VPDocAside,
+  .edit-link,
+  .VPFooter,
+  .VPHero .actions {
+    display: none !important;
+  }
+
+  .VPContent,
+  .VPDoc,
+  .VPHero {
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+  }
+
+  body {
+    background: #fff !important;
+    color: #000 !important;
+    font-size: 11pt;
+  }
+
+  a {
+    color: #000 !important;
+    text-decoration: underline;
+  }
+
+  .VPFeatures .box {
+    break-inside: avoid;
+    border: 1px solid #000;
+  }
+
+  .VPFeatures .box::before,
+  .VPNavBar .wrapper::after {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+}
