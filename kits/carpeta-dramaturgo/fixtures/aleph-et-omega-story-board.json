@@ -1,0 +1,126 @@
+{
+  "schema_version": "0.2",
+  "game": "aleph-et-omega",
+  "generated_at": "2026-07-07T00:00:00Z",
+  "source_root": "scriptorium-network-games/ALEPH_ET_OMEGA",
+  "tablero_url": "http://localhost:3013",
+  "acts": [
+    {
+      "id": "act-0",
+      "label": "Semilla P24",
+      "blocks": [0]
+    },
+    {
+      "id": "act-1",
+      "label": "Medición",
+      "blocks": [1, 2, 3]
+    },
+    {
+      "id": "act-2",
+      "label": "Viaje caché",
+      "blocks": [4]
+    },
+    {
+      "id": "act-3",
+      "label": "Mapa MCP",
+      "blocks": [5]
+    }
+  ],
+  "blocks": [
+    {
+      "n": 0,
+      "act": "act-0",
+      "title": "Semilla P24",
+      "blockchain": {
+        "present": true,
+        "path": "scriptorium-network-games/ALEPH_ET_OMEGA/blockchain/block-0.md",
+        "ultra_resumen": "¿Representación rota post-15M o presidencialismo en P24?"
+      },
+      "tablero": {
+        "widget": "tablero-aleph",
+        "url": "http://localhost:3013",
+        "hash": ""
+      },
+      "uichain": {
+        "present": true,
+        "paths": [
+          "scriptorium-network-games/ALEPH_ET_OMEGA/uichain/tablero-aleph.prompt.md",
+          "scriptorium-network-games/ALEPH_ET_OMEGA/uichain/panel-tronco-px.prompt.md"
+        ],
+        "widgets": ["tablero-aleph", "panel-tronco-px"]
+      },
+      "chips": ["P24", "semilla", "Villacañas"]
+    },
+    {
+      "n": 1,
+      "act": "act-1",
+      "title": "Medición delta",
+      "blockchain": {
+        "present": true,
+        "path": "scriptorium-network-games/ALEPH_ET_OMEGA/blockchain/block-1.md",
+        "ultra_resumen": "Re-medición block-0 M0→M8"
+      },
+      "tablero": {
+        "widget": "tablero-aleph",
+        "url": "http://localhost:3013",
+        "hash": ""
+      },
+      "uichain": {
+        "present": true,
+        "paths": [
+          "scriptorium-network-games/ALEPH_ET_OMEGA/uichain/tablero-aleph.prompt.md",
+          "scriptorium-network-games/ALEPH_ET_OMEGA/uichain/panel-medicion-delta.prompt.md",
+          "scriptorium-network-games/ALEPH_ET_OMEGA/uichain/panel-reic-radiografia.prompt.md"
+        ],
+        "widgets": ["tablero-aleph", "panel-medicion-delta", "panel-reic"]
+      },
+      "chips": ["M1", "P24", "REIC"]
+    },
+    {
+      "n": 4,
+      "act": "act-2",
+      "title": "Viaje caché wave A",
+      "blockchain": {
+        "present": true,
+        "path": "scriptorium-network-games/ALEPH_ET_OMEGA/blockchain/block-4.md",
+        "ultra_resumen": "Viaje piloto wave A — anclas P01–P24"
+      },
+      "tablero": {
+        "widget": "tablero-viaje-cache",
+        "url": "http://localhost:3013",
+        "hash": "viaje"
+      },
+      "uichain": {
+        "present": true,
+        "paths": [
+          "scriptorium-network-games/ALEPH_ET_OMEGA/uichain/panel-viaje-cache.prompt.md"
+        ],
+        "widgets": ["tablero-viaje-cache"]
+      },
+      "chips": ["wave-A", "caché", "MCP"]
+    },
+    {
+      "n": 5,
+      "act": "act-3",
+      "title": "Mapa MCP Zeus",
+      "blockchain": {
+        "present": true,
+        "path": "scriptorium-network-games/ALEPH_ET_OMEGA/blockchain/block-5.md",
+        "ultra_resumen": "Inventario satélites linea-espana + linea-wp-historia"
+      },
+      "tablero": {
+        "widget": "tablero-mcp-topology",
+        "url": "http://localhost:3013",
+        "hash": "mcp"
+      },
+      "uichain": {
+        "present": true,
+        "paths": [
+          "scriptorium-network-games/ALEPH_ET_OMEGA/uichain/panel-mcp-topology.prompt.md"
+        ],
+        "widgets": ["tablero-mcp-topology"]
+      },
+      "chips": ["MCP", "Zeus", "4111", "4112"]
+    }
+  ]
+}

@@ -2,7 +2,7 @@
   "name": "z-sdk-games-library",
   "version": "0.0.0",
   "private": true,
-  "description": "Z_SDK-games-library — juegos Zeus (delta, pozo) y start packs (ola 6 / WP-U62)",
+  "description": "Z_SDK-games-library — juegos Zeus (delta, pozo), start packs y CARPETA DRAMATURGO (WP-U86)",
   "type": "module",
   "workspaces": [
     "packages/delta/*",
@@ -15,10 +15,12 @@
   "scripts": {
     "setup:zeus-sdk": "node scripts/ensure-zeus-sdk.mjs",
     "preinstall": "node scripts/ensure-zeus-sdk.mjs",
-    "test": "npm run test:delta && npm run test:pozo && npm run test:startpack",
+    "test": "npm run test:delta && npm run test:pozo && npm run test:startpack && npm run test:carpeta-dramaturgo",
     "test:delta": "npm test -w @zeus/arg-domain && npm test -w @zeus/arg-feeds && npm test -w @zeus/arg-console && npm test -w @zeus/arg-player-mcp",
     "test:pozo": "npm test -w @zeus/pozo",
     "test:startpack": "npm test -w @zeus/startpack-delta && npm test -w @zeus/startpack-pozo && npm test -w @zeus/startpack-sketch",
+    "test:carpeta-dramaturgo": "node kits/carpeta-dramaturgo/test/run.mjs",
+    "instantiate:carpeta-dramaturgo": "node kits/carpeta-dramaturgo/scripts/instantiate.mjs",
     "test:arg-domain": "npm test -w @zeus/arg-domain",
     "demo:arg": "npm run demo -w @zeus/arg-demos",
     "demo:pozo": "npm run demo -w @zeus/pozo",

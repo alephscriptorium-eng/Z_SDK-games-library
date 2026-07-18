@@ -1,0 +1,107 @@
+{
+  "version": 1,
+  "generated_at": "2026-06-22",
+  "title": "Solve et Coagula — story-board",
+  "acts": [
+    {
+      "id": "act-0",
+      "blockchain": 0,
+      "title": "Constructor",
+      "widgets": ["panel-elenco"],
+      "agentchain": "agentchain/composer-2.5/block-0.md",
+      "status": "ready"
+    },
+    {
+      "id": "act-1",
+      "blockchain": 1,
+      "title": "Mapa",
+      "widgets": ["panel-heatmap"],
+      "agentchain": "agentchain/composer-2.5/block-1.md",
+      "status": "ready"
+    },
+    {
+      "id": "act-2",
+      "blockchain": 2,
+      "title": "Vestuario",
+      "widgets": ["panel-timeline-dual"],
+      "agentchain": "agentchain/composer-2.5/block-2.md",
+      "status": "ready"
+    },
+    {
+      "id": "act-3",
+      "blockchain": 3,
+      "title": "Matrix",
+      "widgets": ["panel-modulo"],
+      "agentchain": "agentchain/composer-2.5/block-3.md",
+      "status": "ready"
+    },
+    {
+      "id": "act-4",
+      "blockchain": 4,
+      "title": "Delta",
+      "widgets": ["panel-estado-cache"],
+      "agentchain": "agentchain/composer-2.5/block-4.md",
+      "status": "ready"
+    },
+    {
+      "id": "act-5",
+      "blockchain": 5,
+      "title": "Referencias",
+      "widgets": ["panel-viaje"],
+      "agentchain": "agentchain/composer-2.5/block-5.md",
+      "status": "ready"
+    },
+    {
+      "id": "act-6",
+      "blockchain": 6,
+      "title": "Arquetipos",
+      "widgets": ["panel-drama"],
+      "agentchain": "agentchain/composer-2.5/block-6.md",
+      "optional": true,
+      "status": "ready"
+    },
+    {
+      "id": "act-7",
+      "blockchain": 7,
+      "title": "Lector",
+      "widgets": ["panel-elenco", "panel-timeline-dual"],
+      "agentchain": "agentchain/composer-2.5/block-7.md",
+      "optional": true,
+      "status": "ready"
+    }
+  ],
+  "dual_rails": [
+    {
+      "id": "nov-pseudo",
+      "label": "Noviembre / Pseudociencia",
+      "article_milestones": [12719652, 12720368, 12909144, 12910974],
+      "talk_vistas": [
+        "usuario-discusion-analiza",
+        "usuario-discusion-solvecoagula"
+      ],
+      "talk_stats": { "revs_cached": 48, "sala_revs_2007": 0 }
+    },
+    {
+      "id": "oct-dem",
+      "label": "Octubre / Demarcación",
+      "article_milestones": [11663303, 11951034, 11951164, 11957942, 12763920],
+      "talk_vistas": [
+        "usuario-discusion-solvecoagula",
+        "usuario-discusion-ctrl-z",
+        "usuario-discusion-pabloallo"
+      ],
+      "talk_stats": { "revs_cached": 136, "sala_revs_oct_2007": 3 }
+    }
+  ],
+  "cache_panels": {
+    "audit_talk": "network-engine/linea-aleph/cache/audit-talk.json",
+    "participant_register": "network-engine/linea-aleph/cache/talk/participant-register.json",
+    "refs_index": "network-engine/linea-aleph/cache/viajes/refs-12763920-index.json",
+    "refs_clusters": "network-engine/linea-aleph/cache/viajes/refs-12763920-clusters.json",
+    "delta_sc_actual": "network-engine/linea-aleph/snapshots/delta-sc-actual.md",
+    "delta_extremo": "network-engine/linea-aleph/snapshots/delta-extremo.md",
+    "indice_referencias": "network-engine/linea-aleph/INDICE-REFERENCIAS.md"
+  },
+  "uichain_specs": "uichain/*.prompt.md",
+  "ayuda": "readerapp/AYUDA.md"
+}
