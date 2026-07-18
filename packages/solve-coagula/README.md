@@ -26,6 +26,10 @@ npm run e2e:solve-coagula-mcp
 
 Navegador solo con `ZEUS_OPEN_BROWSER=1`.
 
+Puertos MCP/vista: `@zeus/presets-sdk/env` slots `solvePlayer` /
+`solveView` (defaults 4132 / 3026; overrides `ZEUS_MCP_SOLVE` /
+`ZEUS_PORT_SOLVE_VIEW`).
+
 ## Intents
 
 | intent | efecto |

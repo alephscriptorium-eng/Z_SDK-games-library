@@ -19,11 +19,9 @@ export const DEFAULT_SOLVE_ROOM = 'SOLVE_COAGULA_DEMO';
 export const AUTHORITY_USER = 'solve-authority';
 
 /**
- * Puertos del juego hasta que presets-sdk declare slots (hallazgo → WP).
- * Overrides: ZEUS_MCP_SOLVE · ZEUS_PORT_SOLVE_VIEW.
+ * Puertos MCP/vista: catálogo canónico en `@zeus/presets-sdk/env`
+ * (`solvePlayer` / `solveView`). Overrides: ZEUS_MCP_SOLVE · ZEUS_PORT_SOLVE_VIEW.
  */
-export const DEFAULT_SOLVE_MCP_PORT = 4132;
-export const DEFAULT_SOLVE_VIEW_PORT = 3026;
 
 export const EVENTS = Object.freeze({
   STATE: PROTOCOL_EVENTS.STATE,
