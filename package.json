@@ -82,6 +82,7 @@
     "@zeus/view-kit": "file:.deps/zeus-sdk/packages/engine/view-kit",
     "@zeus/volumes-ops": "file:.deps/zeus-sdk/packages/engine/volumes-ops",
     "@zeus/webrtc-signaling": "file:.deps/zeus-sdk/packages/engine/webrtc-signaling",
-    "@zeus/webrtc-viewer": "file:.deps/zeus-sdk/packages/mesh/webrtc-viewer"
+    "@zeus/webrtc-viewer": "file:.deps/zeus-sdk/packages/mesh/webrtc-viewer",
+    "ajv": "^8.20.0"
   }
 }

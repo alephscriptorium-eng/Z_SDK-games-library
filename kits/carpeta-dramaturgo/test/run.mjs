@@ -1,17 +1,19 @@
 #!/usr/bin/env node
 /**
- * CA WP-U86 + U112: valida story-boards reales + plantilla + instantiate --from.
+ * CA WP-U86 + U112 + U115: schema AJV + fixtures + plantilla + instantiate --from.
  */
 import { spawnSync } from 'node:child_process';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { existsSync, readFileSync, rmSync } from 'node:fs';
+import { validateStoryBoard } from '../scripts/validate-story-board.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const KIT = resolve(__dirname, '..');
 const LIBRARY = resolve(KIT, '../..');
 const validate = join(KIT, 'scripts', 'validate-story-board.mjs');
 const instantiate = join(KIT, 'scripts', 'instantiate.mjs');
+const SCHEMA = join(KIT, 'schema', 'story-board.schema.json');
 
 const plantillaBoard = join(KIT, 'plantilla', 'readerapp', 'story-board.json');
 const toyBoard = join(KIT, 'instances', 'toy-plaza', 'readerapp', 'story-board.json');
@@ -43,6 +45,27 @@ function run(label, args, opts = {}) {
   }
   return r;
 }
+
+if (!existsSync(SCHEMA)) {
+  console.error(`CA FAIL: schema missing: ${SCHEMA}`);
+  process.exit(1);
+}
+
+console.log('--- schema AJV (board sintético inválido) ---');
+const invalid = validateStoryBoard({
+  acts: [{ id: 'act-0', widgets: ['BAD_Widget'] }],
+});
+if (invalid.ok) {
+  console.error('CA FAIL: invalid board should be rejected by schema');
+  process.exit(1);
+}
+const invalidMsg = (invalid.errors || []).join('\n');
+if (!/widgets|pattern|BAD/i.test(invalidMsg)) {
+  console.error('CA FAIL: invalid board errors not explicable:\n', invalidMsg);
+  process.exit(1);
+}
+console.log('✅ synthetic invalid board rejected');
+for (const e of invalid.errors) console.log(`   - ${e}`);
 
 const fixtures = spawnSync(process.execPath, [validate, '--fixtures'], {
   encoding: 'utf8',
