@@ -1,0 +1,17 @@
+{
+  "name": "z-sdk-games-library",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Z_SDK-games-library — juegos Zeus (@zeus) y releases de datos (ola 6)",
+  "type": "module",
+  "workspaces": [
+    "packages/*"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "test": "npm test -w @zeus/games-library-scaffold",
+    "test:scaffold": "npm test -w @zeus/games-library-scaffold"
+  }
+}
