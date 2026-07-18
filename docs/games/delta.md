@@ -15,8 +15,7 @@ puro + autoridad + vistas + MCP por actor.
 
 ## Cómo jugarlo / levantarlo
 
-Desde la raíz de `Z_SDK-games-library` (con el monorepo hermano resuelto vía
-`.deps/zeus-sdk` o `ZEUS_SDK_ROOT`):
+Desde la raíz de `Z_SDK-games-library`:
 
 ```bash
 npm install
@@ -25,6 +24,13 @@ npm run demo:arg
 
 Con `ZEUS_OPEN_BROWSER=1` abre visores; por defecto headless. Puertos y room
 salen de `presets-sdk/env` / env del juego (`ZEUS_ARG_ROOM`, etc.).
+
+### Modo provisional (`file:` / `.deps`)
+
+Hasta publish real de `@zeus/*` al registry, este repo resuelve el monorepo
+hermano vía dependencias `file:.deps/zeus-sdk/...` (setup:
+`npm run setup:zeus-sdk` / `preinstall`, o `ZEUS_SDK_ROOT`). Es el camino de
+desarrollo local documentado; no es el contrato de consumo público.
 
 Desde start pack (tras instalar — ver [Releases](/releases)):
 
