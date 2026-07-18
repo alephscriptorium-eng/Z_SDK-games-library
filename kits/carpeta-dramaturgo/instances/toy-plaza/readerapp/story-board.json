@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "generated_at": "2026-07-18",
+  "title": "Plaza de juguete — story-board",
+  "slug": "toy-plaza",
+  "acts": [
+    {
+      "id": "act-0",
+      "blockchain": 0,
+      "title": "Semilla",
+      "widgets": ["panel-seed", "panel-reic"],
+      "agentchain": "agentchain/<modelo-slug>/block-0.md",
+      "status": "ready"
+    }
+  ],
+  "uichain_specs": "uichain/*.prompt.md",
+  "ayuda": "readerapp/AYUDA.md"
+}

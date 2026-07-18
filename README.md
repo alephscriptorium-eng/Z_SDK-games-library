@@ -2,10 +2,12 @@
 
 Repo hermano de [`Z_SDK`](https://github.com/alephscriptorium-eng/Z_SDK)
 (D-10 / D-11 / ARQUITECTURA §6): hogar de los **juegos** Zeus (`delta`,
-`pozo`) y de sus **start packs** (`@zeus/startpack-<game>` vía registry
-`@zeus` + GitHub Releases — WP-U62).
+`pozo`), sus **start packs** (`@zeus/startpack-<game>` vía registry
+`@zeus` + GitHub Releases — WP-U62) y la **CARPETA DRAMATURGO** (kit de
+experiencia narrativo — WP-U86).
 
 Migración desde el monorepo: **WP-U61** ✅. Pipeline de datos: **WP-U62**.
+Kit dramaturgo: **WP-U86** → [`kits/carpeta-dramaturgo/`](./kits/carpeta-dramaturgo/).
 
 ## Relación con Z_SDK
 
@@ -49,12 +51,18 @@ npm run e2e:startpack                                  # ronda desde tarball
 ```bash
 # monorepo hermano en ../zeus-sdk (o ZEUS_SDK_ROOT=…)
 npm install
-npm test                 # unit delta + pozo + startpack
+npm test                 # unit delta + pozo + startpack + carpeta-dramaturgo
 npm run demo:arg         # contra mesh del monorepo (socket-server…)
 npm run demo:pozo
 npm run e2e:arg          # e2e delta
 npm run e2e:pozo-mcp     # e2e pozo
+npm run instantiate:carpeta-dramaturgo -- --slug mi-juego --title "…"
 ```
+
+### CARPETA DRAMATURGO
+
+Ver [`kits/carpeta-dramaturgo/README.md`](./kits/carpeta-dramaturgo/README.md).
+Instancia juguete de CA: `kits/carpeta-dramaturgo/instances/toy-plaza/`.
 
 Navegador: solo si `ZEUS_OPEN_BROWSER=1`.
 
