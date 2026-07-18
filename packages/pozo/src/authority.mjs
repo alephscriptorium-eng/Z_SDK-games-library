@@ -11,8 +11,17 @@ import { resolveRuntimeFeeds } from '@zeus/feed-kit';
 import { emptyVolume } from '@zeus/volumes-ops';
 import { join } from 'node:path';
 import { tmpdir } from 'node:os';
+import { tryLoadPozoStartPack, applyStartPackEnv } from './startpack.mjs';
 
 loadZeusEnv();
+
+const startPackLoaded = await tryLoadPozoStartPack();
+if (startPackLoaded) {
+  applyStartPackEnv(startPackLoaded);
+  console.log(
+    `[pozo-authority] start pack ${startPackLoaded.packageName}@${startPackLoaded.version} · volumes=${startPackLoaded.volumesRoot}`
+  );
+}
 
 const endpoints = resolvePozoEndpoints();
 const USER = process.env.ZEUS_SCRIPTORIUM_USER || AUTHORITY_USER;

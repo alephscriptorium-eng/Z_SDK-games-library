@@ -1,0 +1,15 @@
+{
+  "id": "force-sample",
+  "kind": "boot",
+  "type": "fixture",
+  "viewpoint": "sample viewpoint",
+  "lore": "fixture lore",
+  "anchor_scene": "sesion-01/01-sample",
+  "triggers": ["sample"],
+  "pairs_with": ["cota:sima", "linea:linea-pending-fixture"],
+  "scene_count": 1,
+  "provenance": {
+    "imported_at": "2026-07-17",
+    "coverage": { "total_lines": 1, "covered_lines": 1, "ok": true }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "id": "pozo-demo",
+  "sceneId": "pozo-v0",
+  "startPack": [],
+  "objetivo": {
+    "emptied": 1
+  },
+  "seeds": {
+    "feedSeed": 1
+  },
+  "cues": []
+}

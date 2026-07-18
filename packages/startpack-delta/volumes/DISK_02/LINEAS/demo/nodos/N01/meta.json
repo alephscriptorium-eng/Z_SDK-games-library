@@ -1,0 +1,9 @@
+{
+  "id": "N01",
+  "parte": "I",
+  "año_ini": 1900,
+  "año_fin": 2000,
+  "etiqueta": "Demo nodo",
+  "tesis": "Fixture thesis",
+  "articulos_wp": ["Demo_Article"]
+}

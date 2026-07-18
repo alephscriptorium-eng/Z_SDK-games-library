@@ -18,6 +18,15 @@ import {
 import { resolveRuntimeFeeds } from '@zeus/arg-feeds';
 import { resolveZeusMcpPorts } from '@zeus/presets-sdk';
 import { seatEmptyPlayableOps } from './empty-ops.mjs';
+import { tryLoadDeltaStartPack, applyStartPackEnv } from '../../lib/startpack.mjs';
+
+const startPackLoaded = await tryLoadDeltaStartPack();
+if (startPackLoaded) {
+  applyStartPackEnv(startPackLoaded);
+  console.log(
+    `[delta-authority] start pack ${startPackLoaded.packageName}@${startPackLoaded.version} · volumes=${startPackLoaded.volumesRoot}`
+  );
+}
 
 const USER = process.env.ZEUS_SCRIPTORIUM_USER || AUTHORITY_USER;
 const ROOM = process.env.ZEUS_ARG_ROOM || DEFAULT_ARG_ROOM;
@@ -26,7 +35,7 @@ const HEARTBEAT_MS = Number(process.env.ARG_STATE_HEARTBEAT_MS || ARG_HEARTBEAT_
 const FEED_MODE = process.env.ZEUS_ARG_FEEDS || 'auto';
 const SEED = Number(process.env.ZEUS_ARG_SEED || 1);
 
-const gamemap = {
+const gamemap = startPackLoaded?.gamemap ?? {
   id: process.env.ZEUS_ARG_GAMEMAP || 'gamemap-demo',
   objetivo: {
     labeled: Number(process.env.ZEUS_ARG_GOAL_LABELED || 10),

@@ -1,0 +1,27 @@
+{
+  "meta": {
+    "corpus": "LINEAS/demo",
+    "version": "0.1.0",
+    "generated_at": "2026-07-17T00:00:00Z",
+    "source": "nodos.yaml",
+    "autor_tronco": "fixture",
+    "referencia_wp_cima": "Demo_Article",
+    "nodo_count": 1,
+    "partes": [
+      {
+        "id": "I",
+        "titulo": "Demo parte",
+        "año_ini": 1900,
+        "año_fin": 2000,
+        "nodos": ["N01"]
+      }
+    ],
+    "satelite_wp": "wp/historia/"
+  },
+  "nodos": [
+    {
+      "id": "N01",
+      "paths": { "meta": "nodos/N01/meta.json" }
+    }
+  ]
+}

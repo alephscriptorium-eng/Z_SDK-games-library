@@ -11,3 +11,4 @@ coverage/
 
 .deps/
 zeus-file-overrides.json
+.release-startpack/

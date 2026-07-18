@@ -1,0 +1,11 @@
+{
+  "version": "0.1.0",
+  "linea_id": "demo",
+  "description": "Fixture nodo→sections map",
+  "nodos": {
+    "N01": {
+      "sections": ["Intro"],
+      "notes": "demo"
+    }
+  }
+}

@@ -54,8 +54,24 @@ const monorepoRoot = resolveZeusSdkRoot();
 /** Browser-safe sources of @zeus/webrtc-viewer (game-actions for contact buttons). */
 const webrtcViewerSrcDir = path.join(monorepoRoot, 'packages/mesh/webrtc-viewer/src');
 
-const defaultDataDir = path.join(monorepoRoot, 'data');
-const alephSeedsPath = path.join(defaultDataDir, 'seeds', 'aleph-presets.json');
+function resolveAlephSeedsPath() {
+  // Prefer start pack presets (WP-U62); fallback monorepo data/seeds.
+  const envPack = process.env.ZEUS_STARTPACK_ROOT;
+  if (envPack) {
+    const candidate = path.join(envPack, 'seeds', 'presets.json');
+    if (fs.existsSync(candidate)) return candidate;
+  }
+  try {
+    const startpackPkg = require.resolve('@zeus/startpack-delta/package.json');
+    const candidate = path.join(path.dirname(startpackPkg), 'seeds', 'presets.json');
+    if (fs.existsSync(candidate)) return candidate;
+  } catch {
+    /* not installed */
+  }
+  return path.join(monorepoRoot, 'data', 'seeds', 'aleph-presets.json');
+}
+
+const alephSeedsPath = resolveAlephSeedsPath();
 
 function seedAlephPresets(store) {
   if (!fs.existsSync(alephSeedsPath)) {

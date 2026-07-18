@@ -1,0 +1,17 @@
+{
+  "root": ".",
+  "volumes": {
+    "lineas": {
+      "disk": "DISK_02",
+      "path": "DISK_02/LINEAS",
+      "readonly": true,
+      "label": "Lineas (startpack synthetic fixture)"
+    },
+    "forces": {
+      "disk": "DISK_03",
+      "path": "DISK_03/FORCES",
+      "readonly": true,
+      "label": "Forces (startpack synthetic fixture)"
+    }
+  }
+}

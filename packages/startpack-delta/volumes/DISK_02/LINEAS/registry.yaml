@@ -1,0 +1,7 @@
+- id: demo
+  path: demo
+  etiqueta: "Demo line (fixture)"
+  autor_tronco: fixture
+  nodo_prefix: N
+  nodo_count: 1
+  referencia_wp_cima: Demo_Article

@@ -1,0 +1,43 @@
+{
+  "meta": {
+    "corpus": "linea-demo-historia",
+    "title": "Demo Article",
+    "source": "raw/linea.md",
+    "generated_at": "2026-07-17T00:00:00Z",
+    "registro_count": 2,
+    "ordering": "newest_first",
+    "snapshots": {
+      "inicial": { "role": "inicial", "oldid": 1, "timestamp": "1 ene 1900" },
+      "final": { "role": "final", "oldid": 2, "timestamp": "1 ene 2000" }
+    },
+    "milestones": ["r0001"]
+  },
+  "registros": [
+    {
+      "id": "r0001",
+      "oldid": 2,
+      "parent_oldid": 1,
+      "timestamp": "12:00 1 ene 2000",
+      "user": "fixture",
+      "byte_delta": 10,
+      "section": "Intro",
+      "summary": "edit",
+      "milestone": true,
+      "delta_status": "pending",
+      "urls": { "revision": "https://example.test/w/index.php?oldid=2" }
+    },
+    {
+      "id": "r0002",
+      "oldid": 1,
+      "parent_oldid": 0,
+      "timestamp": "12:00 1 ene 1900",
+      "user": "fixture",
+      "byte_delta": 100,
+      "section": "Intro",
+      "summary": "birth",
+      "milestone": false,
+      "delta_status": "curated",
+      "urls": { "revision": "https://example.test/w/index.php?oldid=1" }
+    }
+  ]
+}

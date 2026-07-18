@@ -1,0 +1,32 @@
+{
+  "name": "@zeus/startpack-delta",
+  "version": "0.1.0",
+  "description": "Start pack de ronda para el juego delta — semillas, volumes sintéticos y acta (WP-U62).",
+  "type": "module",
+  "main": "index.mjs",
+  "exports": {
+    ".": "./index.mjs",
+    "./manifest.json": "./manifest.json",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.mjs",
+    "manifest.json",
+    "seeds/",
+    "volumes/",
+    "acta/",
+    "README.md"
+  ],
+  "scripts": {
+    "test": "node --test test/*.test.mjs"
+  },
+  "zeus": {
+    "role": "startpack",
+    "game": "delta"
+  },
+  "license": "AIPLv1",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://npm.scriptorium.escrivivir.co"
+  }
+}

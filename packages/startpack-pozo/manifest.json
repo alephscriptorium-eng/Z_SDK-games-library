@@ -1,0 +1,25 @@
+{
+  "schema": "zeus.startpack/v0",
+  "game": "pozo",
+  "id": "startpack-pozo",
+  "version": "0.1.0",
+  "round": {
+    "gamemapId": "pozo-demo",
+    "seed": 1,
+    "feeds": "synthetic"
+  },
+  "startPack": [],
+  "objetivo": {
+    "emptied": 1
+  },
+  "seeds": {
+    "presets": null,
+    "gamemap": "seeds/gamemap.json",
+    "feedSeed": 1
+  },
+  "volumes": {
+    "root": "volumes",
+    "slots": ["DISK_03"]
+  },
+  "acta": "acta/ACTA.md"
+}

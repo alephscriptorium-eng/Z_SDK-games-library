@@ -1,0 +1,14 @@
+{
+  "id": "gamemap-demo",
+  "sceneId": "delta-v0",
+  "startPack": ["aleph-tronco-puro", "aleph-firehose-browse"],
+  "objetivo": {
+    "labeled": 10,
+    "excavated": 2
+  },
+  "seeds": {
+    "mazePack": null,
+    "firehoseCursor": 0
+  },
+  "cues": []
+}

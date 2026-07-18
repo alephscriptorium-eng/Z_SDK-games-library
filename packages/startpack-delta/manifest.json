@@ -1,0 +1,27 @@
+{
+  "schema": "zeus.startpack/v0",
+  "game": "delta",
+  "id": "startpack-delta",
+  "version": "0.1.0",
+  "round": {
+    "gamemapId": "gamemap-demo",
+    "seed": 1,
+    "feeds": "synthetic"
+  },
+  "startPack": ["aleph-tronco-puro", "aleph-firehose-browse"],
+  "objetivo": {
+    "labeled": 10,
+    "excavated": 2
+  },
+  "seeds": {
+    "presets": "seeds/presets.json",
+    "gamemap": "seeds/gamemap.json",
+    "mazePack": null,
+    "firehoseCursor": 0
+  },
+  "volumes": {
+    "root": "volumes",
+    "slots": ["DISK_02", "DISK_03"]
+  },
+  "acta": "acta/ACTA.md"
+}

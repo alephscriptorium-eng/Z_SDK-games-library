@@ -1,0 +1,78 @@
+# Release start packs (WP-U62)
+
+Notario → tarball + acta → GitHub Release espejo.
+Publish npm opcional si existe secret `NPM_TOKEN` (registry D-7).
+
+name: Release startpack
+
+on:
+  workflow_dispatch:
+    inputs:
+      game:
+        description: 'Game id (delta|pozo)'
+        required: true
+        default: 'delta'
+        type: choice
+        options:
+          - delta
+          - pozo
+      publish_npm:
+        description: 'Also npm publish (needs NPM_TOKEN)'
+        required: false
+        default: false
+        type: boolean
+  push:
+    tags:
+      - 'startpack-*-v*'
+
+concurrency:
+  group: release-startpack-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  release:
+    name: notario + GitHub Release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          registry-url: https://npm.scriptorium.escrivivir.co
+          scope: '@zeus'
+      - name: Link / clone Z_SDK (.deps file:)
+        env:
+          CI: 'true'
+          ZEUS_SDK_REF: main
+        run: npm run setup:zeus-sdk
+      - name: Install
+        run: npm install
+      - name: Resolve game
+        id: game
+        run: |
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
+            echo "game=${{ inputs.game }}" >> "$GITHUB_OUTPUT"
+          else
+            # tag startpack-delta-v0.1.0 → delta
+            g=$(echo "${{ github.ref_name }}" | sed -E 's/^startpack-([a-z0-9]+)-v.*/\1/')
+            echo "game=$g" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Notario pack + GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          EXTRA=()
+          EXTRA+=(--publish-github)
+          if [[ "${{ inputs.publish_npm }}" == "true" ]] || [[ -n "${NPM_TOKEN:-}" && "${{ github.event_name }}" == "push" ]]; then
+            EXTRA+=(--publish-npm)
+          fi
+          node scripts/notario-release.mjs --game "${{ steps.game.outputs.game }}" "${EXTRA[@]}"
+      - name: Upload local artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: startpack-${{ steps.game.outputs.game }}
+          path: .release-startpack/
