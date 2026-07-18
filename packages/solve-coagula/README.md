@@ -10,10 +10,20 @@ Recreado con:
    `scriptorium-network-games/SOLVE_ET_COAGULA`, sin modificar el original).
 2. **Start pack / Notario** (U62) → `@zeus/startpack-solve-coagula` con
    fixture **linea-aleph** (historial Wikipedia SolveCoagula).
-3. **Mesh** — authority-kit + player-mcp-kit + vista lectora.
+3. **Mesh** — authority-kit + player-mcp-kit + vista lectora con
+   **widgets** `@zeus/view-kit` (WP-U113: `panel-elenco` runtime).
 
 El editor U70 **no** materializa aún juegos narrativos (solo `sketch`); ver
-informe WP-U87 §hallazgos.
+informe WP-U87 §hallazgos. Dialectos story-board en editor → U114.
+
+## Widgets (view-kit)
+
+La vista monta `/view-kit` y renderiza widgets del story-board vía
+`createDefaultWidgetRegistry` / `mountStoryWidgets`. Primer runtime:
+`panel-elenco` (payload en `dramaturgia/readerapp/widgets/panel-elenco.json`).
+Otros ids (`panel-heatmap`, …) quedan como placeholder «sin runtime»
+hasta WPs siguientes. Specs uichain `*.prompt.md` siguen siendo moldes
+generativos; el runtime vive en el kit.
 
 ## Arranque
 

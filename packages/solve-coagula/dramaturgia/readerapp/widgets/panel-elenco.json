@@ -1,0 +1,28 @@
+{
+  "title": "Elenco (fixture)",
+  "rows": [
+    {
+      "participant": "SolveCoagula",
+      "role": "constructor",
+      "axis": "R",
+      "oldid": "12719652",
+      "href": "https://es.wikipedia.org/wiki/?oldid=12719652",
+      "cached": true
+    },
+    {
+      "participant": "Ignacio",
+      "role": "UT 2007",
+      "axis": "E",
+      "oldid": "",
+      "cached": false
+    },
+    {
+      "participant": "Aliado-demo",
+      "role": "aliado",
+      "axis": "I",
+      "oldid": "12720368",
+      "href": "https://es.wikipedia.org/wiki/?oldid=12720368",
+      "cached": true
+    }
+  ]
+}

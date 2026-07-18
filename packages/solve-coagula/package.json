@@ -27,6 +27,7 @@
     "@zeus/presets-sdk": "*",
     "@zeus/protocol": "*",
     "@zeus/rooms": "*",
+    "@zeus/view-kit": "*",
     "cors": "^2.8.6",
     "express": "^5.2.1",
     "zod": "^4.4.3"

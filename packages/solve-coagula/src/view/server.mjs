@@ -1,12 +1,13 @@
 #!/usr/bin/env node
 /**
- * Servidor de vista solve-coagula: express + dramaturgia/story-board.
+ * Servidor de vista solve-coagula: express + dramaturgia + view-kit widgets.
  */
 
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import express from 'express';
 import cors from 'cors';
+import { srcDir as viewKitSrcDir } from '@zeus/view-kit/node';
 import { loadZeusEnv } from '@zeus/presets-sdk/env';
 import { GAME_ID, SOLVE_SCENE } from '../contract.mjs';
 import { resolveSolveEndpoints } from '../endpoints.mjs';
@@ -38,6 +39,7 @@ export async function createSolveViewServer(options = {}) {
   app.use(cors({ origin: true, credentials: true }));
   app.use('/assets', express.static(path.join(packageDir, 'assets')));
   app.use('/dramaturgia', express.static(path.join(packageDir, 'dramaturgia')));
+  app.use('/view-kit', express.static(viewKitSrcDir));
 
   app.get('/health', (_req, res) => {
     res.json({
@@ -46,6 +48,7 @@ export async function createSolveViewServer(options = {}) {
       game: GAME_ID,
       acts: materials.acts.length,
       linea: materials.linea?.registro_count ?? null,
+      widgets: Object.keys(materials.widgetData || {}),
       timestamp: new Date().toISOString()
     });
   });
@@ -64,7 +67,8 @@ export async function createSolveViewServer(options = {}) {
       {
         title: SOLVE_SCENE.title,
         acts: materials.acts,
-        linea: materials.linea
+        linea: materials.linea,
+        widgetData: materials.widgetData
       }
     );
     res.setHeader('Content-Type', 'text/html; charset=utf-8');
@@ -85,6 +89,7 @@ export async function createSolveViewServer(options = {}) {
     server,
     port,
     host,
+    materials,
     close: () =>
       new Promise((resolve, reject) => {
         server.close((err) => (err ? reject(err) : resolve()));

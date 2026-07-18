@@ -1,5 +1,6 @@
 /**
- * Carga actos (story-board) y meta linea desde dramaturgia / startpack / env.
+ * Carga actos (story-board), payloads de widgets y meta linea desde
+ * dramaturgia / startpack / env.
  */
 
 import { readFileSync, existsSync } from 'node:fs';
@@ -9,7 +10,7 @@ import { fileURLToPath } from 'node:url';
 const PKG_ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 
 /**
- * @param {{ volumesRoot?: string|null, storyBoardPath?: string|null }} [opts]
+ * @param {{ volumesRoot?: string|null, storyBoardPath?: string|null, widgetsDir?: string|null }} [opts]
  */
 export function loadSolveMaterials(opts = {}) {
   const storyBoardPath =
@@ -29,6 +30,27 @@ export function loadSolveMaterials(opts = {}) {
           status: a.status
         }))
       : [];
+  }
+
+  const widgetsDir =
+    opts.widgetsDir ||
+    process.env.ZEUS_SOLVE_WIDGETS_DIR ||
+    join(PKG_ROOT, 'dramaturgia/readerapp/widgets');
+
+  /** @type {Record<string, object>} */
+  const widgetData = {};
+  const widgetIds = new Set();
+  for (const act of acts) {
+    for (const id of act.widgets || []) widgetIds.add(id);
+  }
+  for (const id of widgetIds) {
+    const path = join(widgetsDir, `${id}.json`);
+    if (!existsSync(path)) continue;
+    try {
+      widgetData[id] = JSON.parse(readFileSync(path, 'utf8'));
+    } catch {
+      /* payload roto: el runtime muestra vacío / unknown */
+    }
   }
 
   const volumesRoot =
@@ -60,7 +82,9 @@ export function loadSolveMaterials(opts = {}) {
   return {
     acts,
     linea,
+    widgetData,
     storyBoardPath,
+    widgetsDir,
     lineaRoot: existsSync(manifestPath) ? lineaRoot : null
   };
 }
