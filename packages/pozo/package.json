@@ -1,0 +1,43 @@
+{
+  "name": "@zeus/pozo",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "pozo — segundo juego mínimo: un pozo, nodos, feed, un intent con ledger, vista view-kit, MCP player-mcp-kit, CASOS playbook-kit.",
+  "main": "src/contract.mjs",
+  "exports": {
+    ".": "./src/contract.mjs",
+    "./domain": "./src/domain.mjs",
+    "./contract": "./src/contract.mjs"
+  },
+  "scripts": {
+    "demo": "node launch.mjs",
+    "authority": "node src/authority.mjs",
+    "start:mcp": "node src/player-mcp/start.mjs",
+    "start:view": "node src/view/server.mjs",
+    "test": "node --test test/*.test.mjs"
+  },
+  "zeus": {
+    "role": "game"
+  },
+  "dependencies": {
+    "@zeus/authority-kit": "*",
+    "@zeus/feed-kit": "*",
+    "@zeus/linea-kit": "*",
+    "@zeus/playbook-kit": "*",
+    "@zeus/player-mcp-kit": "*",
+    "@zeus/presets-sdk": "*",
+    "@zeus/protocol": "*",
+    "@zeus/room-client-browser": "*",
+    "@zeus/rooms": "*",
+    "@zeus/ui-3d-kit": "*",
+    "@zeus/view-kit": "*",
+    "@zeus/volumes-ops": "*",
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "socket.io-client": "^4.8.1",
+    "three": "^0.170.0",
+    "zod": "^4.4.3"
+  },
+  "license": "AIPLv1"
+}

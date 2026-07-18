@@ -1,0 +1,28 @@
+{
+  "name": "@zeus/arg-domain",
+  "version": "0.1.0",
+  "description": "delta — dominio puro del ARG: contrato, escena delta-v0, flow-engine (grifos/ríos/mar), maze-engine (cantera), reducers y feeds. Sin three, sin red.",
+  "type": "module",
+  "main": "src/index.mjs",
+  "exports": {
+    ".": "./src/index.mjs",
+    "./contract": "./src/contract.mjs",
+    "./scenes/delta-v0": "./src/scenes/delta-v0.mjs",
+    "./scenes/tap-cloaks": "./src/scenes/tap-cloaks.mjs",
+    "./node": "./src/node.mjs"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.mjs"
+  },
+  "dependencies": {
+    "@zeus/feed-kit": "*",
+    "@zeus/game-engine": "*",
+    "@zeus/linea-kit": "*",
+    "@zeus/protocol": "*"
+  },
+  "devDependencies": {
+    "@zeus/presets-sdk": "*"
+  },
+  "license": "AIPLv1",
+  "private": true
+}

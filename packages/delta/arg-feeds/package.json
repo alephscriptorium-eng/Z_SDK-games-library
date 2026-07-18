@@ -1,0 +1,24 @@
+{
+  "name": "@zeus/arg-feeds",
+  "version": "0.1.0",
+  "description": "delta — adaptador de feeds: maze/cantera + familias comunes vía @zeus/feed-kit. Node-only.",
+  "type": "module",
+  "main": "src/index.mjs",
+  "exports": {
+    ".": "./src/index.mjs"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.mjs"
+  },
+  "dependencies": {
+    "@zeus/arg-domain": "*",
+    "@zeus/feed-kit": "*",
+    "@zeus/linea-kit": "*",
+    "@zeus/presets-sdk": "*"
+  },
+  "devDependencies": {
+    "@zeus/test-utils": "*"
+  },
+  "license": "AIPLv1",
+  "private": true
+}

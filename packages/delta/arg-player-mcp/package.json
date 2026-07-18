@@ -1,0 +1,40 @@
+{
+  "name": "@zeus/arg-player-mcp",
+  "version": "0.1.0",
+  "description": "delta — servidor MCP que envuelve a UN jugador (uno|dos): un agente LLM emite intents y valida el juego mientras un humano observa las vistas. Una instancia = un actor (:4121 uno, :4122 dos).",
+  "type": "module",
+  "main": "src/index.mjs",
+  "exports": {
+    ".": "./src/index.mjs",
+    "./server": "./src/server.mjs"
+  },
+  "scripts": {
+    "start": "node src/start.mjs",
+    "test": "node --test test/*.test.mjs"
+  },
+  "license": "AIPLv1",
+  "zeus": {
+    "role": "mcp",
+    "mcp": "argPlayer",
+    "docs": {
+      "repo": [
+        "packages/delta/spec/CASOS.md",
+        "packages/delta/spec/CONTRATO.md"
+      ]
+    }
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "@zeus/arg-domain": "*",
+    "@zeus/playbook-kit": "*",
+    "@zeus/player-mcp-kit": "*",
+    "@zeus/presets-sdk": "*",
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@zeus/test-utils": "*"
+  },
+  "private": true
+}

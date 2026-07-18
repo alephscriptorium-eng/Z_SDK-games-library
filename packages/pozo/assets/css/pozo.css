@@ -1,0 +1,79 @@
+:root {
+  --bg: #0a1218;
+  --ink: #e8eef4;
+  --muted: #8aa0b2;
+  --accent: #2a6f8f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  background: radial-gradient(ellipse at 40% 20%, #122030 0%, var(--bg) 70%);
+  color: var(--ink);
+  font-family: "Segoe UI", "IBM Plex Sans", sans-serif;
+}
+
+.pozo-page,
+.viewer-stage {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#viewer-canvas {
+  width: 100%;
+  height: 100%;
+}
+
+.viewer-hud {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  min-width: 12rem;
+  padding: 0.85rem 1rem;
+  background: rgba(8, 14, 20, 0.72);
+  border: 1px solid rgba(138, 160, 178, 0.25);
+  backdrop-filter: blur(6px);
+}
+
+.hud-title {
+  margin: 0 0 0.6rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.hud-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.85rem;
+  line-height: 1.55;
+}
+
+.hud-key {
+  color: var(--muted);
+  display: inline-block;
+  min-width: 3.5rem;
+}
+
+.hud-val {
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+
+.hud-note {
+  margin: 0.75rem 0 0;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.hud-note code {
+  color: var(--accent);
+}

@@ -1,0 +1,22 @@
+{
+  "marDef": {
+    "bounds": { "center": { "x": 0, "y": 0, "z": 19 }, "width": 46, "depth": 26 }
+  },
+  "droplets": [
+    { "id": "sf1", "label": "agora", "state": "floating", "seq": 1 },
+    { "id": "sf2", "label": "agora", "state": "floating", "seq": 2 },
+    { "id": "sf3", "label": "agora", "state": "floating", "seq": 5 },
+    { "id": "sf4", "label": "memoria", "state": "floating", "seq": 3 },
+    { "id": "sf5", "label": "memoria", "state": "floating", "seq": 7 },
+    { "id": "sf6", "label": "ruido", "state": "floating", "seq": 4 },
+    { "id": "sf7", "label": "ruido", "state": "floating", "seq": 8 },
+    { "id": "sf8", "label": "ruido", "state": "floating", "seq": 9 },
+    { "id": "sf9", "label": "ruido", "state": "floating", "seq": 11 },
+    { "id": "sf10", "label": "agora", "state": "floating", "seq": 12 },
+    { "id": "ss1", "state": "sunken", "label": null, "seq": 6 },
+    { "id": "ss2", "state": "sunken", "label": null, "seq": 10 },
+    { "id": "ss3", "state": "sunken", "label": null, "seq": 13 },
+    { "id": "ss4", "state": "sunken", "label": null, "seq": 14 },
+    { "id": "ss5", "state": "sunken", "label": null, "seq": 15 }
+  ]
+}
