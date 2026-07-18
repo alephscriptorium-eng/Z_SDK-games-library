@@ -26,24 +26,27 @@ Tercer juego: **WP-U87** → [`packages/solve-coagula/`](./packages/solve-coagul
 | `Z_SDK` | engine · editor · mesh · examples · fixtures VOLUMES |
 | `Z_SDK-games-library` | juegos + start packs + acta/releases |
 
-## Consumo de `@zeus/*` (engine/mesh)
+## Consumo de `@zeus/*` (engine)
 
 Publish real al registry propio (`npm.scriptorium.escrivivir.co`, D-7)
-sigue **gated** (ops / `NPM_TOKEN`). Mientras tanto este repo usa
-**`file:` temporal** vía dependencias `file:` en el package.json raíz → `.deps/zeus-sdk/...`.
+está **vivo**: `npm install` resuelve `@zeus/*` publicados (sin `file:`).
 
 | Pieza | Detalle |
 | ----- | ------- |
-| Ruta | `.deps/zeus-sdk` (symlink/junction o clone) |
-| Setup | `npm run setup:zeus-sdk` (también `preinstall`) |
-| Path | `resolveZeusSdkRoot()` siempre aplica `realpath` — spawns mesh
-  usan el path real (Windows: junction no rompe `isMain`) |
-| Env | `ZEUS_SDK_ROOT` opcional; el default `.deps` basta sin exportarlo |
-| Retiro | tras publish real de `engine/*` (U55): quitar deps `file:` y
-  resolver `@zeus/*` solo desde el registry |
+| Default | registry `@zeus` (`.npmrc`) |
+| Mesh / demos | spawns (socket-server, static webrtc…) siguen necesitando el |
+|  | monorepo hermano vía `resolveZeusSdkRoot()` |
+| Fallback DEV | `npm run setup:zeus-sdk` → `.deps/zeus-sdk` **o** |
+|  | `ZEUS_SDK_ROOT` / sibling `../zeus-sdk` |
+| No es | camino de `npm install` — no hay deps `file:` en package.json |
 
-No hay un segundo camino silencioso: o registry (cuando exista publish) o
-este `file:` documentado.
+```bash
+npm install          # solo registry
+npm test             # unit
+# demos/e2e contra mesh:
+npm run setup:zeus-sdk   # opcional si no hay ../zeus-sdk
+npm run demo:arg
+```
 
 ## Start packs
 

@@ -13,7 +13,8 @@ export const {
   getConfig,
   setTheme,
   getDefaultTheme,
-  getLocalNavEntries
+  getLocalNavEntries,
+  resolveDataDir
 } = createAppConfig({
   appId: 'argConsole',
   defaultPort: DEFAULT_ZEUS_UI_MESH.argConsole.port,

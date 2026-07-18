@@ -1,7 +1,9 @@
 #!/usr/bin/env node
 /**
- * Enlaza o clona Z_SDK en .deps/zeus-sdk para deps file: (WP-U61).
- * Retirar tras publish real de @zeus/* (U55 / ops).
+ * Enlaza o clona Z_SDK en .deps/zeus-sdk (fallback DEV, WP-U123).
+ * Default de npm install: registry D-7. Este script es opcional para
+ * demos/e2e que spawnean mesh no publicado (socket-server, static webrtc…).
+ * Uso: npm run setup:zeus-sdk  ·  o export ZEUS_SDK_ROOT=…
  */
 
 import { existsSync, mkdirSync, readdirSync, rmSync, symlinkSync } from 'node:fs';

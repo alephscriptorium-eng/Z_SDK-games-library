@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 /**
- * Genera overrides file: → .deps/zeus-sdk para todo @zeus/* del monorepo
- * excepto workspaces locales de esta library.
+ * Genera overrides file: → .deps/zeus-sdk (FALLBACK DEV, WP-U123).
+ * El camino default es registry. Este script solo ayuda a re-montar un
+ * puente local temporal — no lo uses en CI de install limpio.
  */
 
 import { readdirSync, readFileSync, writeFileSync, existsSync } from 'node:fs';

@@ -22,7 +22,6 @@
     "@zeus/room-client-browser": "*",
     "@zeus/ui-3d-kit": "*",
     "@zeus/view-kit": "*",
-    "@zeus/webrtc-viewer": "*",
     "@zeus/ui-kit": "*",
     "cors": "^2.8.6",
     "express": "^5.2.1",

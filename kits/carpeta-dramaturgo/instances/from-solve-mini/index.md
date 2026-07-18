@@ -1,6 +1,6 @@
 # From Solve Mini
 
-Tema: **instancia desde obra C:\Users\aleph\OASIS\SCRIPTORIUM_V0\Z_SDK-games-library\.worktrees\wp-u112-carpeta-instantiate-from-obra\kits\carpeta-dramaturgo\fixtures\obra-solve-mini**
+Tema: **instancia desde obra C:\Users\aleph\OASIS\SCRIPTORIUM_V0\Z_SDK-games-library\.worktrees\wp-u123-retiro-file-deps\kits\carpeta-dramaturgo\fixtures\obra-solve-mini**
 
 Slug: `from-solve-mini` · Instanciado: 2026-07-18
 
@@ -46,7 +46,7 @@ Convenciones de sesión:
 
 ## Protocolo REIC (4 ejes intercambiables)
 
-Parametriza los ejes al tema de **instancia desde obra C:\Users\aleph\OASIS\SCRIPTORIUM_V0\Z_SDK-games-library\.worktrees\wp-u112-carpeta-instantiate-from-obra\kits\carpeta-dramaturgo\fixtures\obra-solve-mini**. Los nombres REIC son
+Parametriza los ejes al tema de **instancia desde obra C:\Users\aleph\OASIS\SCRIPTORIUM_V0\Z_SDK-games-library\.worktrees\wp-u123-retiro-file-deps\kits\carpeta-dramaturgo\fixtures\obra-solve-mini**. Los nombres REIC son
 etiquetas del kit; el significado lo define el dramaturgo:
 
 | Eje | Etiqueta en este juego | Qué mide aquí |
@@ -56,7 +56,7 @@ etiquetas del kit; el significado lo define el dramaturgo:
 | **I** | Interacción | qué mide el eje I en este juego |
 | **C** | Corpus / Continuidad | qué mide el eje C en este juego |
 
-**Molde de salida:** párrafo bajo *«En instancia desde obra C:\Users\aleph\OASIS\SCRIPTORIUM_V0\Z_SDK-games-library\.worktrees\wp-u112-carpeta-instantiate-from-obra\kits\carpeta-dramaturgo\fixtures\obra-solve-mini, el sistema presenta…»*
+**Molde de salida:** párrafo bajo *«En instancia desde obra C:\Users\aleph\OASIS\SCRIPTORIUM_V0\Z_SDK-games-library\.worktrees\wp-u123-retiro-file-deps\kits\carpeta-dramaturgo\fixtures\obra-solve-mini, el sistema presenta…»*
 más síntesis por ejes REIC (sin arquetipo puro).
 
 ## Marcas epistémicas

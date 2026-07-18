@@ -25,12 +25,13 @@ npm run demo:arg
 Con `ZEUS_OPEN_BROWSER=1` abre visores; por defecto headless. Puertos y room
 salen de `presets-sdk/env` / env del juego (`ZEUS_ARG_ROOM`, etc.).
 
-### Modo provisional (`file:` / `.deps`)
+### Mesh local (fallback DEV)
 
-Hasta publish real de `@zeus/*` al registry, este repo resuelve el monorepo
-hermano vía dependencias `file:.deps/zeus-sdk/...` (setup:
-`npm run setup:zeus-sdk` / `preinstall`, o `ZEUS_SDK_ROOT`). Es el camino de
-desarrollo local documentado; no es el contrato de consumo público.
+`npm install` resuelve `@zeus/*` del registry (`npm.scriptorium.escrivivir.co`).
+Demos/e2e que levantan mesh no publicado (socket-server, static webrtc…)
+siguen necesitando el monorepo hermano vía `resolveZeusSdkRoot()`:
+`ZEUS_SDK_ROOT`, sibling `../zeus-sdk`, o `npm run setup:zeus-sdk`
+(`.deps/zeus-sdk`). Eso **no** es dependencia `file:` de npm.
 
 Desde start pack (tras instalar — ver [Releases](/releases)):
 

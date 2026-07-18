@@ -1,4 +1,6 @@
-# CI Z_SDK-games-library (WP-U61): setup Z_SDK file: + unit tests.
+# CI Z_SDK-games-library (WP-U123): install desde registry + unit tests.
+# setup:zeus-sdk queda como fallback DEV para resolveZeusSdkRoot en tests
+# que tocan mesh paths (no es puente file: de npm).
 name: CI
 
 on:
@@ -22,12 +24,12 @@ jobs:
         with:
           node-version: '22'
           cache: npm
-      - name: Link / clone Z_SDK (.deps file:)
+      - name: Install (@zeus desde registry)
+        run: npm install
+      - name: Link Z_SDK (fallback DEV · resolveZeusSdkRoot)
         env:
           CI: 'true'
           ZEUS_SDK_REF: main
         run: npm run setup:zeus-sdk
-      - name: Install
-        run: npm install
       - name: Test
         run: npm test

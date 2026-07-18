@@ -1,7 +1,11 @@
 /**
- * Resuelve la raíz del monorepo Z_SDK (engine + mesh) para deps file: y demos.
- * CJS a propósito: lo cargan launches/e2e vía createRequire.
+ * Resuelve la raíz del monorepo Z_SDK (engine + mesh) para demos/e2e
+ * y fallback DEV (WP-U123). CJS a propósito: lo cargan launches/e2e vía
+ * createRequire.
  * Orden: ZEUS_SDK_ROOT → .deps/zeus-sdk → ../zeus-sdk → worktrees
+ *
+ * npm install ya NO usa file:/.deps (registry D-7). `.deps` es opcional
+ * para spawnear mesh no publicado.
  *
  * Siempre devuelve realpath (WP-U61 corrección): en Windows un junction
  * `.deps/zeus-sdk` hace fallar `isMain` de entrypoints mesh si se spawnea
@@ -47,9 +51,15 @@ function resolveZeusSdkRoot(opts = {}) {
   }
   candidates.push(join(libraryRoot, '.deps/zeus-sdk'));
   candidates.push(join(libraryRoot, '../zeus-sdk'));
+  // Library worktree: .../Z_SDK-games-library/.worktrees/<wp> → sibling monorepo
+  candidates.push(join(libraryRoot, '../../../zeus-sdk'));
 
-  const worktrees = join(libraryRoot, '../zeus-sdk/.worktrees');
-  if (existsSync(worktrees)) {
+  const worktreeParents = [
+    join(libraryRoot, '../zeus-sdk/.worktrees'),
+    join(libraryRoot, '../../../zeus-sdk/.worktrees')
+  ];
+  for (const worktrees of worktreeParents) {
+    if (!existsSync(worktrees)) continue;
     for (const name of readdirSync(worktrees)) {
       candidates.push(join(worktrees, name));
     }
@@ -62,8 +72,8 @@ function resolveZeusSdkRoot(opts = {}) {
   if (required) {
     throw new Error(
       [
-        'No se encontró el monorepo Z_SDK (engine/mesh).',
-        'Opciones:',
+        'No se encontró el monorepo Z_SDK (engine/mesh) para demos/e2e.',
+        'Opciones (fallback DEV — npm install ya usa registry):',
         '  1) export ZEUS_SDK_ROOT=/ruta/a/zeus-sdk',
         '  2) npm run setup:zeus-sdk   # enlaza .deps/zeus-sdk',
         '  3) clonar Z_SDK como hermano ../zeus-sdk'
