@@ -1,65 +1,42 @@
 /**
- * @zeus/startpack-solve-coagula — loader (WP-U87).
+ * @zeus/startpack-solve-coagula — loader (WP-U87 / U110).
  */
 
-import { readFileSync, existsSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import {
+  createStartPackLoader,
+  readJsonIfExists,
+  readTextIfExists
+} from '@zeus/startpack-kit';
 
 const PKG_ROOT = dirname(fileURLToPath(import.meta.url));
 
-export function resolveStartPackRoot(root = PKG_ROOT) {
-  return root;
-}
-
-/**
- * @param {{ root?: string }} [opts]
- */
-export function loadStartPack(opts = {}) {
-  const root = resolveStartPackRoot(opts.root);
-  const manifestPath = join(root, 'manifest.json');
-  if (!existsSync(manifestPath)) {
-    throw new Error(`startpack-solve-coagula: missing manifest at ${manifestPath}`);
+const { loadStartPack, resolveStartPackRoot } = createStartPackLoader({
+  packageRoot: PKG_ROOT,
+  packageName: '@zeus/startpack-solve-coagula',
+  game: 'solve-coagula',
+  enrich(base) {
+    const { root, gamemap, manifest, volumesRoot } = base;
+    const storyRel = manifest.seeds?.storyBoard || 'seeds/story-board.json';
+    const storyBoardPath = join(root, storyRel);
+    const storyBoard = readJsonIfExists(storyBoardPath);
+    const casosRel = manifest.seeds?.casos || 'seeds/casos.md';
+    const casosMd = readTextIfExists(join(root, casosRel));
+    return {
+      storyBoard,
+      storyBoardPath: storyBoard ? storyBoardPath : null,
+      casosMd,
+      env: {
+        ZEUS_VOLUMES_ROOT: volumesRoot,
+        ZEUS_SOLVE_STORY_BOARD: storyBoard ? storyBoardPath : '',
+        ZEUS_SOLVE_LINE_ID: String(
+          gamemap.lineId || manifest.round?.lineId || 'solve-coagula'
+        )
+      }
+    };
   }
-  const manifest = JSON.parse(readFileSync(manifestPath, 'utf8'));
-  if (manifest.game !== 'solve-coagula') {
-    throw new Error(
-      `startpack-solve-coagula: expected game=solve-coagula, got ${manifest.game}`
-    );
-  }
+});
 
-  const gamemapRel = manifest.seeds?.gamemap || 'seeds/gamemap.json';
-  const gamemap = JSON.parse(readFileSync(join(root, gamemapRel), 'utf8'));
-  const storyRel = manifest.seeds?.storyBoard || 'seeds/story-board.json';
-  const storyBoardPath = join(root, storyRel);
-  const storyBoard = existsSync(storyBoardPath)
-    ? JSON.parse(readFileSync(storyBoardPath, 'utf8'))
-    : null;
-  const casosRel = manifest.seeds?.casos || 'seeds/casos.md';
-  const casosPath = join(root, casosRel);
-  const casosMd = existsSync(casosPath) ? readFileSync(casosPath, 'utf8') : '';
-  const volumesRoot = join(root, manifest.volumes?.root || 'volumes');
-  const actaPath = join(root, manifest.acta || 'acta/ACTA.md');
-
-  return {
-    root,
-    packageName: '@zeus/startpack-solve-coagula',
-    game: 'solve-coagula',
-    version: manifest.version,
-    manifest,
-    gamemap,
-    storyBoard,
-    storyBoardPath: existsSync(storyBoardPath) ? storyBoardPath : null,
-    casosMd,
-    presets: null,
-    volumesRoot,
-    actaPath,
-    env: {
-      ZEUS_VOLUMES_ROOT: volumesRoot,
-      ZEUS_SOLVE_STORY_BOARD: existsSync(storyBoardPath) ? storyBoardPath : '',
-      ZEUS_SOLVE_LINE_ID: String(gamemap.lineId || manifest.round?.lineId || 'solve-coagula')
-    }
-  };
-}
-
+export { loadStartPack, resolveStartPackRoot };
 export default { loadStartPack, resolveStartPackRoot };

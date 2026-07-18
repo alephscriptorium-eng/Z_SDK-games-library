@@ -21,6 +21,7 @@ import { loadStartPack } from '@zeus/startpack-delta';
 const pack = loadStartPack();
 process.env.ZEUS_VOLUMES_ROOT = pack.volumesRoot;
 // autoridad delta usa pack.gamemap + pack.env
+// Loader: @zeus/startpack-kit (WP-U110); este paquete aporta enrich delta.
 ```
 
 Env útiles: `ZEUS_STARTPACK_ROOT` (árbol descomprimido) o resolución npm
