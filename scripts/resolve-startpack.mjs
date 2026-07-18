@@ -18,11 +18,17 @@ const require = createRequire(import.meta.url);
 export async function resolveInstalledStartPack(game, opts = {}) {
   const entry = resolveStartpackGame(game);
   const env = opts.env || process.env;
+  const gameEnvKey = {
+    delta: env.ZEUS_STARTPACK_DELTA,
+    pozo: env.ZEUS_STARTPACK_POZO,
+    sketch: env.ZEUS_STARTPACK_SKETCH,
+    'solve-coagula': env.ZEUS_STARTPACK_SOLVE_COAGULA
+  };
   const override =
     opts.root ||
     env.ZEUS_STARTPACK_ROOT ||
-    (game === 'delta' ? env.ZEUS_STARTPACK_DELTA : null) ||
-    (game === 'pozo' ? env.ZEUS_STARTPACK_POZO : null);
+    gameEnvKey[game] ||
+    null;
 
   if (override) {
     if (!existsSync(join(override, 'manifest.json'))) {

@@ -29,6 +29,12 @@ export const STARTPACK_GAMES = {
     packageName: '@zeus/startpack-sketch',
     dir: 'packages/startpack-sketch',
     npmPackName: 'zeus-startpack-sketch'
+  },
+  'solve-coagula': {
+    game: 'solve-coagula',
+    packageName: '@zeus/startpack-solve-coagula',
+    dir: 'packages/startpack-solve-coagula',
+    npmPackName: 'zeus-startpack-solve-coagula'
   }
 };
 

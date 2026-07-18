@@ -1,0 +1,44 @@
+/* SOLVE ET COAGULA — vista lectora */
+:root {
+  --bg: #1a1814;
+  --fg: #e8e0d0;
+  --muted: #9a9080;
+  --accent: #c4a35a;
+  --line: #3a342c;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  background: radial-gradient(1200px 600px at 20% 0%, #2a241c, var(--bg));
+  color: var(--fg);
+  min-height: 100vh;
+}
+.solve-page {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 3rem;
+}
+header h1 {
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  margin: 0 0 0.25rem;
+}
+.sub { color: var(--muted); margin: 0 0 1.5rem; font-size: 0.95rem; }
+.hud {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 1rem 0;
+  margin-bottom: 1.5rem;
+}
+.hud ul { list-style: none; padding: 0; margin: 0 0 0.75rem; }
+.hud li { margin: 0.2rem 0; }
+.k { color: var(--accent); margin-right: 0.5rem; font-variant: small-caps; }
+.linea { color: var(--muted); font-size: 0.9rem; }
+.linea.miss { color: #c07070; }
+.note { color: var(--muted); font-size: 0.85rem; }
+.note code { font-family: ui-monospace, Consolas, monospace; font-size: 0.8rem; }
+.acts h2 { font-size: 1.1rem; margin-bottom: 0.5rem; }
+.acts ol { padding-left: 1.25rem; }
+.acts li { margin: 0.35rem 0; }
+.widgets { color: var(--muted); font-size: 0.85rem; }

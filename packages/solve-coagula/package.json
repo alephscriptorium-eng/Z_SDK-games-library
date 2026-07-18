@@ -1,0 +1,35 @@
+{
+  "name": "@zeus/solve-coagula",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "SOLVE ET COAGULA — tercer juego (mundo A): dramaturgia + linea-aleph + mesh (WP-U87).",
+  "main": "src/contract.mjs",
+  "exports": {
+    ".": "./src/contract.mjs",
+    "./domain": "./src/domain.mjs",
+    "./contract": "./src/contract.mjs"
+  },
+  "scripts": {
+    "demo": "node launch.mjs",
+    "authority": "node src/authority.mjs",
+    "start:mcp": "node src/player-mcp/start.mjs",
+    "start:view": "node src/view/server.mjs",
+    "test": "node --test test/*.test.mjs"
+  },
+  "zeus": {
+    "role": "game"
+  },
+  "dependencies": {
+    "@zeus/authority-kit": "*",
+    "@zeus/playbook-kit": "*",
+    "@zeus/player-mcp-kit": "*",
+    "@zeus/presets-sdk": "*",
+    "@zeus/protocol": "*",
+    "@zeus/rooms": "*",
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "zod": "^4.4.3"
+  },
+  "license": "AIPLv1"
+}

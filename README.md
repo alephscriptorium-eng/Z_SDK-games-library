@@ -2,9 +2,9 @@
 
 Repo hermano de [`Z_SDK`](https://github.com/alephscriptorium-eng/Z_SDK)
 (D-10 / D-11 / ARQUITECTURA §6): hogar de los **juegos** Zeus (`delta`,
-`pozo`), sus **start packs** (`@zeus/startpack-<game>` vía registry
-`@zeus` + GitHub Releases — WP-U62) y la **CARPETA DRAMATURGO** (kit de
-experiencia narrativo — WP-U86).
+`pozo`, **`solve-coagula`**), sus **start packs** (`@zeus/startpack-<game>`
+vía registry `@zeus` + GitHub Releases — WP-U62) y la **CARPETA DRAMATURGO**
+(kit de experiencia narrativo — WP-U86).
 
 **Catálogo público** (WP-U107 / D-23): VitePress + GitHub Pages + piel zine.
 Dominio objetivo: `https://games.z-sdk.escrivivir.co/` (DNS/Custom domain =
@@ -17,6 +17,7 @@ npm run docs:build  # artefacto Pages
 
 Migración desde el monorepo: **WP-U61** ✅. Pipeline de datos: **WP-U62**.
 Kit dramaturgo: **WP-U86** → [`kits/carpeta-dramaturgo/`](./kits/carpeta-dramaturgo/).
+Tercer juego: **WP-U87** → [`packages/solve-coagula/`](./packages/solve-coagula/).
 
 ## Relación con Z_SDK
 
@@ -60,11 +61,13 @@ npm run e2e:startpack                                  # ronda desde tarball
 ```bash
 # monorepo hermano en ../zeus-sdk (o ZEUS_SDK_ROOT=…)
 npm install
-npm test                 # unit delta + pozo + startpack + carpeta-dramaturgo
+npm test                 # unit delta + pozo + solve + startpack + carpeta
 npm run demo:arg         # contra mesh del monorepo (socket-server…)
 npm run demo:pozo
+npm run demo:solve-coagula
 npm run e2e:arg          # e2e delta
 npm run e2e:pozo-mcp     # e2e pozo
+npm run e2e:solve-coagula-mcp
 npm run instantiate:carpeta-dramaturgo -- --slug mi-juego --title "…"
 ```
 
@@ -73,18 +76,25 @@ npm run instantiate:carpeta-dramaturgo -- --slug mi-juego --title "…"
 Ver [`kits/carpeta-dramaturgo/README.md`](./kits/carpeta-dramaturgo/README.md).
 Instancia juguete de CA: `kits/carpeta-dramaturgo/instances/toy-plaza/`.
 
+### SOLVE ET COAGULA (3.er juego)
+
+Ver [`packages/solve-coagula/README.md`](./packages/solve-coagula/README.md).
+Start pack: `@zeus/startpack-solve-coagula`.
+
 Navegador: solo si `ZEUS_OPEN_BROWSER=1`.
 
 ## Layout
 
 ```
-packages/delta/            # arg-domain, arg-feeds, arg-console, arg-demos, …
-packages/pozo/             # segundo juego (regla de los dos juegos)
-packages/startpack-delta/  # @zeus/startpack-delta
-packages/startpack-pozo/   # @zeus/startpack-pozo
-e2e/                       # matriz e2e de juegos + startpack-round
-docs/                      # catálogo VitePress (portada + releases + specs)
-docs/startpacks.md         # consumo y release
+packages/delta/                 # arg-domain, arg-feeds, arg-console, …
+packages/pozo/                  # segundo juego (regla de los dos juegos)
+packages/solve-coagula/         # tercer juego (mundo A / WP-U87)
+packages/startpack-delta/       # @zeus/startpack-delta
+packages/startpack-pozo/        # @zeus/startpack-pozo
+packages/startpack-solve-coagula/
+e2e/                            # matriz e2e de juegos + startpack-round
+docs/                           # catálogo VitePress (portada + releases + specs)
+docs/startpacks.md              # consumo y release
 ```
 
 ## Plan-lite
