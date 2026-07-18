@@ -16,6 +16,7 @@ por sí sola:
 
 ```bash
 npm run instantiate:carpeta-dramaturgo -- --slug mi-juego --title "…"
+npm run instantiate:carpeta-dramaturgo -- --slug from-solve --from SOLVE_ET_COAGULA --force
 npm run test:carpeta-dramaturgo
 ```
 
