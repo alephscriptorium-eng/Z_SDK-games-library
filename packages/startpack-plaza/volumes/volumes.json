@@ -1,0 +1,11 @@
+{
+  "root": ".",
+  "volumes": {
+    "lineas": {
+      "disk": "DISK_02",
+      "path": "DISK_02/LINEAS",
+      "readonly": true,
+      "label": "Lineas (startpack plaza)"
+    }
+  }
+}

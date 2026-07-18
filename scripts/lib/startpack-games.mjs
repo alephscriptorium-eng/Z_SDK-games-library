@@ -35,6 +35,12 @@ export const STARTPACK_GAMES = {
     packageName: '@zeus/startpack-solve-coagula',
     dir: 'packages/startpack-solve-coagula',
     npmPackName: 'zeus-startpack-solve-coagula'
+  },
+  plaza: {
+    game: 'plaza',
+    packageName: '@zeus/startpack-plaza',
+    dir: 'packages/startpack-plaza',
+    npmPackName: 'zeus-startpack-plaza'
   }
 };
 

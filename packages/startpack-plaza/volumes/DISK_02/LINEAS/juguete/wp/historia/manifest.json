@@ -1,0 +1,198 @@
+{
+  "meta": {
+    "corpus": "linea-juguete-historia",
+    "title": "Toy Article",
+    "source": "raw/linea.json",
+    "generated_at": "2026-07-18T16:30:16Z",
+    "registro_count": 10,
+    "ordering": "newest_first",
+    "snapshots": {
+      "inicial": {
+        "role": "inicial",
+        "oldid": 100,
+        "timestamp": "12:00 1 ene 1900"
+      },
+      "final": {
+        "role": "final",
+        "oldid": 190,
+        "timestamp": "12:00 1 ene 1990"
+      }
+    },
+    "milestones": [
+      "r0002",
+      "r0005",
+      "r0008"
+    ]
+  },
+  "registros": [
+    {
+      "id": "r0001",
+      "oldid": 190,
+      "parent_oldid": 180,
+      "timestamp": "12:00 1 ene 1990",
+      "user": "dave",
+      "byte_delta": 5,
+      "section": "Cierre",
+      "summary": "null",
+      "milestone": false,
+      "milestone_reasons": [],
+      "delta_status": "pending",
+      "urls": {
+        "revision": "https://example.test/w/index.php?oldid=190"
+      }
+    },
+    {
+      "id": "r0002",
+      "oldid": 180,
+      "parent_oldid": 170,
+      "timestamp": "12:00 1 ene 1980",
+      "user": "alice",
+      "byte_delta": 550,
+      "section": "Cierre",
+      "summary": "traducción parcial",
+      "milestone": true,
+      "milestone_reasons": [
+        "byte_delta",
+        "keyword"
+      ],
+      "delta_status": "pending",
+      "urls": {
+        "revision": "https://example.test/w/index.php?oldid=180"
+      }
+    },
+    {
+      "id": "r0003",
+      "oldid": 170,
+      "parent_oldid": 160,
+      "timestamp": "12:00 1 ene 1970",
+      "user": "bob",
+      "byte_delta": 25,
+      "section": "Cierre",
+      "summary": "style",
+      "milestone": false,
+      "milestone_reasons": [],
+      "delta_status": "pending",
+      "urls": {
+        "revision": "https://example.test/w/index.php?oldid=170"
+      }
+    },
+    {
+      "id": "r0004",
+      "oldid": 160,
+      "parent_oldid": 150,
+      "timestamp": "12:00 1 ene 1960",
+      "user": "carol",
+      "byte_delta": 10,
+      "section": "Cierre",
+      "summary": "link",
+      "milestone": false,
+      "milestone_reasons": [],
+      "delta_status": "pending",
+      "urls": {
+        "revision": "https://example.test/w/index.php?oldid=160"
+      }
+    },
+    {
+      "id": "r0005",
+      "oldid": 150,
+      "parent_oldid": 140,
+      "timestamp": "12:00 1 ene 1950",
+      "user": "alice",
+      "byte_delta": 800,
+      "section": "Medio",
+      "summary": "fusión de artículos",
+      "milestone": true,
+      "milestone_reasons": [
+        "byte_delta",
+        "keyword"
+      ],
+      "delta_status": "pending",
+      "urls": {
+        "revision": "https://example.test/w/index.php?oldid=150"
+      }
+    },
+    {
+      "id": "r0006",
+      "oldid": 140,
+      "parent_oldid": 130,
+      "timestamp": "12:00 1 ene 1940",
+      "user": "bob",
+      "byte_delta": 40,
+      "section": "Medio",
+      "summary": "cite",
+      "milestone": false,
+      "milestone_reasons": [],
+      "delta_status": "pending",
+      "urls": {
+        "revision": "https://example.test/w/index.php?oldid=140"
+      }
+    },
+    {
+      "id": "r0007",
+      "oldid": 130,
+      "parent_oldid": 120,
+      "timestamp": "12:00 1 ene 1930",
+      "user": "carol",
+      "byte_delta": 15,
+      "section": "Medio",
+      "summary": "fix",
+      "milestone": false,
+      "milestone_reasons": [],
+      "delta_status": "pending",
+      "urls": {
+        "revision": "https://example.test/w/index.php?oldid=130"
+      }
+    },
+    {
+      "id": "r0008",
+      "oldid": 120,
+      "parent_oldid": 110,
+      "timestamp": "12:00 1 ene 1920",
+      "user": "alice",
+      "byte_delta": 600,
+      "section": "Intro",
+      "summary": "ampliada sección",
+      "milestone": true,
+      "milestone_reasons": [
+        "byte_delta",
+        "keyword"
+      ],
+      "delta_status": "pending",
+      "urls": {
+        "revision": "https://example.test/w/index.php?oldid=120"
+      }
+    },
+    {
+      "id": "r0009",
+      "oldid": 110,
+      "parent_oldid": 100,
+      "timestamp": "12:00 1 ene 1910",
+      "user": "bob",
+      "byte_delta": 20,
+      "section": "Intro",
+      "summary": "typo",
+      "milestone": false,
+      "milestone_reasons": [],
+      "delta_status": "pending",
+      "urls": {
+        "revision": "https://example.test/w/index.php?oldid=110"
+      }
+    },
+    {
+      "id": "r0010",
+      "oldid": 100,
+      "parent_oldid": 0,
+      "timestamp": "12:00 1 ene 1900",
+      "user": "alice",
+      "byte_delta": 100,
+      "section": "Intro",
+      "summary": "birth",
+      "milestone": false,
+      "milestone_reasons": [],
+      "delta_status": "pending",
+      "urls": {
+        "revision": "https://example.test/w/index.php?oldid=100"
+      }
+    }
+  ]
+}

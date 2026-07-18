@@ -1,0 +1,30 @@
+{
+  "schema": "zeus.startpack/v0",
+  "game": "plaza",
+  "id": "startpack-plaza",
+  "version": "0.1.0",
+  "round": {
+    "gamemapId": "plaza-demo",
+    "lineId": "juguete",
+    "seed": 1,
+    "feeds": "synthetic"
+  },
+  "startPack": [],
+  "objetivo": {
+    "cases": 1,
+    "acts": 1
+  },
+  "seeds": {
+    "presets": null,
+    "gamemap": "seeds/gamemap.json",
+    "storyBoard": "seeds/story-board.json",
+    "casos": "seeds/casos.md"
+  },
+  "volumes": {
+    "root": "volumes",
+    "slots": [
+      "DISK_02"
+    ]
+  },
+  "acta": "acta/ACTA.md"
+}

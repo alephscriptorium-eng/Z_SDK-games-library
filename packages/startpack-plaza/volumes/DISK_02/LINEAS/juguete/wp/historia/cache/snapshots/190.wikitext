@@ -1,0 +1,2 @@
+== Toy Article ==
+Synthetic wikitext for starterkit.
