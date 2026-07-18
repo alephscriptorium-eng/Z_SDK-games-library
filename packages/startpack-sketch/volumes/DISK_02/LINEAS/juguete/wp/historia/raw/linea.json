@@ -1,0 +1,94 @@
+{
+  "registros": [
+    {
+      "oldid": 100,
+      "byte_delta": 100,
+      "summary": "birth",
+      "section": "Intro",
+      "user": "alice",
+      "parent_oldid": 0,
+      "timestamp": "12:00 1 ene 1900"
+    },
+    {
+      "oldid": 110,
+      "byte_delta": 20,
+      "summary": "typo",
+      "section": "Intro",
+      "user": "bob",
+      "parent_oldid": 100,
+      "timestamp": "12:00 1 ene 1910"
+    },
+    {
+      "oldid": 120,
+      "byte_delta": 600,
+      "summary": "ampliada sección",
+      "section": "Intro",
+      "user": "alice",
+      "parent_oldid": 110,
+      "timestamp": "12:00 1 ene 1920"
+    },
+    {
+      "oldid": 130,
+      "byte_delta": 15,
+      "summary": "fix",
+      "section": "Medio",
+      "user": "carol",
+      "parent_oldid": 120,
+      "timestamp": "12:00 1 ene 1930"
+    },
+    {
+      "oldid": 140,
+      "byte_delta": 40,
+      "summary": "cite",
+      "section": "Medio",
+      "user": "bob",
+      "parent_oldid": 130,
+      "timestamp": "12:00 1 ene 1940"
+    },
+    {
+      "oldid": 150,
+      "byte_delta": 800,
+      "summary": "fusión de artículos",
+      "section": "Medio",
+      "user": "alice",
+      "parent_oldid": 140,
+      "timestamp": "12:00 1 ene 1950"
+    },
+    {
+      "oldid": 160,
+      "byte_delta": 10,
+      "summary": "link",
+      "section": "Cierre",
+      "user": "carol",
+      "parent_oldid": 150,
+      "timestamp": "12:00 1 ene 1960"
+    },
+    {
+      "oldid": 170,
+      "byte_delta": 25,
+      "summary": "style",
+      "section": "Cierre",
+      "user": "bob",
+      "parent_oldid": 160,
+      "timestamp": "12:00 1 ene 1970"
+    },
+    {
+      "oldid": 180,
+      "byte_delta": 550,
+      "summary": "traducción parcial",
+      "section": "Cierre",
+      "user": "alice",
+      "parent_oldid": 170,
+      "timestamp": "12:00 1 ene 1980"
+    },
+    {
+      "oldid": 190,
+      "byte_delta": 5,
+      "summary": "null",
+      "section": "Cierre",
+      "user": "dave",
+      "parent_oldid": 180,
+      "timestamp": "12:00 1 ene 1990"
+    }
+  ]
+}

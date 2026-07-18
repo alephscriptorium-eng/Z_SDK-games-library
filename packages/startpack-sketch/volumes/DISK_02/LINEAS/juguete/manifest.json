@@ -1,0 +1,56 @@
+{
+  "meta": {
+    "corpus": "LINEAS/juguete",
+    "version": "0.1.0",
+    "generated_at": "2026-07-18T10:22:59Z",
+    "source": "nodos.yaml",
+    "autor_tronco": "starterkit",
+    "referencia_wp_cima": "Toy_Article",
+    "nodo_count": 3,
+    "partes": [
+      {
+        "id": "I",
+        "titulo": "Parte I",
+        "año_ini": 1900,
+        "año_fin": 1989,
+        "nodos": [
+          "N01",
+          "N02"
+        ]
+      },
+      {
+        "id": "II",
+        "titulo": "Parte II",
+        "año_ini": 1990,
+        "año_fin": 2020,
+        "nodos": [
+          "N03"
+        ]
+      }
+    ],
+    "satelite_wp": "wp/historia/"
+  },
+  "nodos": [
+    {
+      "id": "N01",
+      "paths": {
+        "meta": "nodos/N01/meta.json",
+        "folder": "nodos/N01/"
+      }
+    },
+    {
+      "id": "N02",
+      "paths": {
+        "meta": "nodos/N02/meta.json",
+        "folder": "nodos/N02/"
+      }
+    },
+    {
+      "id": "N03",
+      "paths": {
+        "meta": "nodos/N03/meta.json",
+        "folder": "nodos/N03/"
+      }
+    }
+  ]
+}

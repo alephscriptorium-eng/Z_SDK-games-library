@@ -10,6 +10,7 @@ en este repo.
 | ---- | ------- | --------------- |
 | `delta` | `@zeus/startpack-delta` | `npm run release:startpack -- --game delta` |
 | `pozo` | `@zeus/startpack-pozo` | `npm run release:startpack -- --game pozo` |
+| `sketch` | `@zeus/startpack-sketch` | `npm run release:startpack -- --game sketch` |
 
 Pipeline **parametrizado** (misma forma; no hay camino especial hardcodeado
 para pozo).

@@ -1,0 +1,39 @@
+version: 0.1.0
+corpus: LINEAS/juguete
+autor_tronco: starterkit
+referencia_wp_cima: Toy_Article
+partes:
+  - id: I
+    titulo: Parte I
+    año_ini: 1900
+    año_fin: 1989
+    nodos:
+      - id: N01
+        año_ini: 1900
+        año_fin: 1945
+        años: 1900–1945
+        etiqueta: Origen
+        tesis: Primer tramo sintético del tronco.
+        articulos_wp:
+          - Toy_Article
+      - id: N02
+        año_ini: 1946
+        año_fin: 1989
+        años: 1946–1989
+        etiqueta: Medio
+        tesis: Segundo tramo sintético del tronco.
+        articulos_wp:
+          - Toy_Article
+  - id: II
+    titulo: Parte II
+    año_ini: 1990
+    año_fin: 2020
+    nodos:
+      - id: N03
+        año_ini: 1990
+        año_fin: 2020
+        años: 1990–2020
+        etiqueta: Cierre
+        tesis: Tercer tramo sintético del tronco.
+        articulos_wp:
+          - Toy_Article

@@ -1,0 +1,30 @@
+{
+  "schema": "zeus.startpack/v0",
+  "game": "sketch",
+  "id": "startpack-sketch",
+  "version": "0.1.0",
+  "round": {
+    "gamemapId": "sketch-demo",
+    "lineId": "juguete",
+    "seed": 1,
+    "feeds": "synthetic"
+  },
+  "startPack": [],
+  "objetivo": {
+    "cases": 1
+  },
+  "seeds": {
+    "presets": null,
+    "gamemap": "seeds/gamemap.json",
+    "scene": "seeds/scene.json",
+    "casos": "seeds/casos.md"
+  },
+  "volumes": {
+    "root": "volumes",
+    "slots": [
+      "DISK_02",
+      "DISK_03"
+    ]
+  },
+  "acta": "acta/ACTA.md"
+}

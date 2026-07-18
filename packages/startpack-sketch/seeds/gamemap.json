@@ -1,0 +1,18 @@
+{
+  "id": "sketch-demo",
+  "sceneId": "vaiven-dos-nodos",
+  "scene": "seeds/scene.json",
+  "lineId": "juguete",
+  "labelset": [
+    "norte",
+    "sur"
+  ],
+  "startPack": [],
+  "objetivo": {
+    "cases": 1
+  },
+  "seeds": {
+    "feedSeed": 1
+  },
+  "cues": []
+}
