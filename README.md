@@ -69,12 +69,15 @@ npm run e2e:arg          # e2e delta
 npm run e2e:pozo-mcp     # e2e pozo
 npm run e2e:solve-coagula-mcp
 npm run instantiate:carpeta-dramaturgo -- --slug mi-juego --title "…"
+npm run instantiate:carpeta-dramaturgo -- --slug from-solve --from SOLVE_ET_COAGULA --force
 ```
 
 ### CARPETA DRAMATURGO
 
 Ver [`kits/carpeta-dramaturgo/README.md`](./kits/carpeta-dramaturgo/README.md).
-Instancia juguete de CA: `kits/carpeta-dramaturgo/instances/toy-plaza/`.
+Instancia juguete: `instances/toy-plaza/` · import obra (`--from`):
+`instances/from-solve-mini/` (fixture) o slug `SOLVE_ET_COAGULA` /
+`ALEPH_ET_OMEGA`.
 
 ### SOLVE ET COAGULA (3.er juego)
 
