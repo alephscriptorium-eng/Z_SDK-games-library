@@ -20,6 +20,9 @@
   "scripts": {
     "test": "node --test test/*.test.mjs"
   },
+  "dependencies": {
+    "@zeus/startpack-kit": "0.1.0"
+  },
   "zeus": {
     "role": "startpack",
     "game": "pozo"

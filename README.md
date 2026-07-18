@@ -89,8 +89,10 @@ Navegador: solo si `ZEUS_OPEN_BROWSER=1`.
 packages/delta/                 # arg-domain, arg-feeds, arg-console, …
 packages/pozo/                  # segundo juego (regla de los dos juegos)
 packages/solve-coagula/         # tercer juego (mundo A / WP-U87)
+packages/startpack-kit/         # @zeus/startpack-kit (loadStartPack único · WP-U110)
 packages/startpack-delta/       # @zeus/startpack-delta
 packages/startpack-pozo/        # @zeus/startpack-pozo
+packages/startpack-sketch/      # @zeus/startpack-sketch
 packages/startpack-solve-coagula/
 e2e/                            # matriz e2e de juegos + startpack-round
 docs/                           # catálogo VitePress (portada + releases + specs)

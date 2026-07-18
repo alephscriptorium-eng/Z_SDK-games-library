@@ -1,8 +1,12 @@
-# Start packs — consumo y release (WP-U62)
+# Start packs — consumo y release (WP-U62 / U110)
 
 Cada release de datos es un paquete `@zeus/startpack-<game>` + acta +
 tarball. Canal primario: registry npm propio (D-7). Espejo: GitHub Release
 en este repo.
+
+La carga (`loadStartPack`) vive en **`@zeus/startpack-kit`**; cada
+`@zeus/startpack-*` es un thin wrapper (game + enrich). Sin copias del
+loader por juego.
 
 ## Juegos soportados
 
@@ -20,11 +24,13 @@ por juego).
 
 ```
 manifest.json     # schema zeus.startpack/v0
-index.mjs         # loadStartPack()
-seeds/            # gamemap + presets (delta)
+index.mjs         # thin wrapper → @zeus/startpack-kit loadStartPack
+seeds/            # gamemap + presets (delta) / scene (sketch) / story-board (solve)
 volumes/          # VOLUMES sintéticos de arranque (fixtures)
 acta/ACTA.md      # sin acta no hay release
 ```
+
+Kit compartido: `packages/startpack-kit` (`@zeus/startpack-kit`).
 
 ## Instalar
 
