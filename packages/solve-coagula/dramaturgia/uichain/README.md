@@ -4,6 +4,11 @@ Canal de **especificación UI generativa** para Solve et Coagula. Los `.prompt.m
 
 **Datos canónicos** viven en JSON de sesión y poderes del traje (`ayuda`, `alineacion-dual`, `cache-nav`). Los prompts uichain apuntan a esas fuentes (DRY) y describen solo cómo podría verse.
 
+**Runtime (WP-U113):** al menos `panel-elenco` se renderiza vía
+`@zeus/view-kit` en la vista solve (payload
+`readerapp/widgets/panel-elenco.json`). El resto de prompts siguen siendo
+specs hasta que haya runtime registrado para su id.
+
 ## Plantilla (copiar por bloque)
 
 ```markdown

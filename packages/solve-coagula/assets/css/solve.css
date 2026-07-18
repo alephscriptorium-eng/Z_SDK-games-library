@@ -42,3 +42,44 @@ header h1 {
 .acts ol { padding-left: 1.25rem; }
 .acts li { margin: 0.35rem 0; }
 .widgets { color: var(--muted); font-size: 0.85rem; }
+.widgets.runtime { color: var(--accent); }
+.widgets.pending { opacity: 0.7; }
+.widgets-host {
+  border-top: 1px solid var(--line);
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+}
+.widgets-host h2 { font-size: 1.1rem; margin-bottom: 0.75rem; }
+.vk-widget {
+  border: 1px solid var(--line);
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  background: rgba(0, 0, 0, 0.18);
+}
+.vk-widget-title { margin: 0 0 0.75rem; font-size: 1rem; }
+.vk-widget-empty { color: var(--muted); margin: 0; }
+.vk-widget-unknown { color: var(--muted); font-size: 0.9rem; }
+.vk-cast-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+.vk-cast-table th,
+.vk-cast-table td {
+  border-bottom: 1px solid var(--line);
+  padding: 0.35rem 0.4rem;
+  text-align: left;
+  vertical-align: top;
+}
+.vk-cast-table th { color: var(--accent); font-variant: small-caps; font-weight: 600; }
+.vk-cast-oldid a { color: var(--fg); }
+.vk-cache-badge {
+  display: inline-block;
+  margin-left: 0.4rem;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+.vk-cache-badge.cached { color: #7a9a6a; }
+.vk-cache-badge.miss { color: #c07070; }
