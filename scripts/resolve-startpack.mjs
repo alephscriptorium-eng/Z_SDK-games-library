@@ -22,7 +22,8 @@ export async function resolveInstalledStartPack(game, opts = {}) {
     delta: env.ZEUS_STARTPACK_DELTA,
     pozo: env.ZEUS_STARTPACK_POZO,
     sketch: env.ZEUS_STARTPACK_SKETCH,
-    'solve-coagula': env.ZEUS_STARTPACK_SOLVE_COAGULA
+    'solve-coagula': env.ZEUS_STARTPACK_SOLVE_COAGULA,
+    plaza: env.ZEUS_STARTPACK_PLAZA
   };
   const override =
     opts.root ||

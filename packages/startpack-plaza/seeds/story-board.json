@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "title": "Plaza — story-board",
+  "slug": "plaza",
+  "acts": [
+    {
+      "id": "act-0",
+      "blockchain": 0,
+      "title": "Semilla",
+      "widgets": [
+        "panel-seed",
+        "panel-reic"
+      ],
+      "agentchain": "agentchain/block-0.md",
+      "status": "ready"
+    }
+  ],
+  "uichain_specs": "uichain/*.prompt.md",
+  "ayuda": "readerapp/AYUDA.md"
+}

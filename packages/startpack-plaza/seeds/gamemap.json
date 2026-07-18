@@ -1,0 +1,18 @@
+{
+  "id": "plaza-demo",
+  "lineId": "juguete",
+  "labelset": [
+    "plaza",
+    "semilla"
+  ],
+  "storyBoard": "seeds/story-board.json",
+  "startPack": [],
+  "objetivo": {
+    "cases": 1,
+    "acts": 1
+  },
+  "seeds": {
+    "feedSeed": 1
+  },
+  "cues": []
+}

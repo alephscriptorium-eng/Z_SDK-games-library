@@ -1,0 +1,25 @@
+{
+  "generated_at": "2026-07-18T16:30:16Z",
+  "linea_id": "juguete",
+  "satelite_rel": "wp/historia/",
+  "remotes": {
+    "wiki": {
+      "kind": "static_authority",
+      "title": "Toy_Article",
+      "api_base": null,
+      "note": "Authority snapshots by oldid; materialize with tool fetch (approval gate)."
+    },
+    "atproto": {
+      "kind": "stream",
+      "collection": "app.bsky.feed.post",
+      "endpoint_hint": null,
+      "note": "Stream family (DATOS §3); export JSON to DISK_01 — not fetched here."
+    },
+    "ssb": {
+      "kind": "gossip",
+      "feed_type": "tribe*",
+      "disk_hint": "DISK_04/SSB",
+      "note": "Gossip family; exportador SSB→JSON = @zeus/ssb-system (WP-U84). Dump JSON + sync CLI."
+    }
+  }
+}

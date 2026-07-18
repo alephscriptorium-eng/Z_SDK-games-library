@@ -1,0 +1,34 @@
+{
+  "generated_at": "2026-07-18T16:30:16Z",
+  "linea_id": "juguete",
+  "servers": {
+    "tronco": {
+      "name": "linea-juguete",
+      "kind": "tronco",
+      "resources": [
+        "linea://info",
+        "linea://nodo/{year}",
+        "linea://parte/{id}"
+      ]
+    },
+    "satelite": {
+      "name": "linea-juguete-satelite",
+      "kind": "satelite",
+      "resources": [
+        "linea://info",
+        "linea://cache/stats",
+        "linea://wikitext/{oldid}",
+        "linea://registros/year/{year}",
+        "linea://registro/{id}"
+      ],
+      "tools": [
+        "cache_wikitext"
+      ]
+    }
+  },
+  "point_linea_system": {
+    "env": "ZEUS_VOLUMES_ROOT or pass basePath to loadLineaData / startAll",
+    "lineas_root_hint": "C:\\Users\\aleph\\OASIS\\SCRIPTORIUM_V0\\Z_SDK-games-library\\.worktrees\\wp-u111-editor-materialize-narrativo\\packages\\startpack-plaza\\volumes\\DISK_02\\LINEAS",
+    "registry_entry_id": "juguete"
+  }
+}

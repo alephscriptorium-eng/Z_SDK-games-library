@@ -1,0 +1,35 @@
+{
+  "name": "@zeus/startpack-plaza",
+  "version": "0.1.0",
+  "description": "Start pack narrativo mínimo (story-board solve-inline + línea + casos) — WP-U111.",
+  "type": "module",
+  "main": "index.mjs",
+  "exports": {
+    ".": "./index.mjs",
+    "./manifest.json": "./manifest.json",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.mjs",
+    "manifest.json",
+    "seeds/",
+    "volumes/",
+    "acta/",
+    "README.md"
+  ],
+  "scripts": {
+    "test": "node --test test/*.test.mjs"
+  },
+  "dependencies": {
+    "@zeus/startpack-kit": "0.1.0"
+  },
+  "zeus": {
+    "role": "startpack",
+    "game": "plaza"
+  },
+  "license": "AIPLv1",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://npm.scriptorium.escrivivir.co"
+  }
+}

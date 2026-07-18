@@ -1,0 +1,25 @@
+{
+  "version": "0.1.0",
+  "linea_id": "linea-juguete-historia",
+  "description": "Bridge tronco↔satélite (scaffold)",
+  "nodos": {
+    "N01": {
+      "sections": [
+        "Intro"
+      ],
+      "notes": "synthetic"
+    },
+    "N02": {
+      "sections": [
+        "Sección N02"
+      ],
+      "notes": "synthetic"
+    },
+    "N03": {
+      "sections": [
+        "Sección N03"
+      ],
+      "notes": "synthetic"
+    }
+  }
+}

@@ -1,0 +1,7 @@
+- id: juguete
+  path: juguete
+  etiqueta: Línea juguete (starterkit)
+  autor_tronco: starterkit
+  nodo_prefix: N
+  nodo_count: 3
+  referencia_wp_cima: Toy_Article

@@ -16,6 +16,7 @@ loader por juego.
 | `pozo` | `@zeus/startpack-pozo` | `npm run release:startpack -- --game pozo` |
 | `sketch` | `@zeus/startpack-sketch` | `npm run release:startpack -- --game sketch` |
 | `solve-coagula` | `@zeus/startpack-solve-coagula` | `npm run release:startpack -- --game solve-coagula` |
+| `plaza` | `@zeus/startpack-plaza` | `npm run release:startpack -- --game plaza` |
 
 Pipeline **parametrizado** (misma forma; no hay camino especial hardcodeado
 por juego).
@@ -25,7 +26,7 @@ por juego).
 ```
 manifest.json     # schema zeus.startpack/v0
 index.mjs         # thin wrapper → @zeus/startpack-kit loadStartPack
-seeds/            # gamemap + presets (delta) / scene (sketch) / story-board (solve)
+seeds/            # gamemap + presets (delta) / scene (sketch) / story-board (solve, plaza)
 volumes/          # VOLUMES sintéticos de arranque (fixtures)
 acta/ACTA.md      # sin acta no hay release
 ```
