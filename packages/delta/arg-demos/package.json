@@ -1,0 +1,24 @@
+{
+  "name": "@zeus/arg-demos",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "delta — autoridad (instancia @zeus/authority-kit + arg-domain) y launcher de la demo de 3 visores sobre @zeus/rooms.",
+  "scripts": {
+    "demo": "node launch.mjs",
+    "authority": "node apps/authority/index.mjs"
+  },
+  "zeus": {
+    "role": "app"
+  },
+  "dependencies": {
+    "@zeus/arg-console": "*",
+    "@zeus/arg-domain": "*",
+    "@zeus/arg-feeds": "*",
+    "@zeus/authority-kit": "*",
+    "@zeus/presets-sdk": "*",
+    "@zeus/rooms": "*",
+    "@zeus/volumes-ops": "*"
+  },
+  "license": "AIPLv1"
+}

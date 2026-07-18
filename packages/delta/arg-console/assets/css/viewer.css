@@ -1,0 +1,558 @@
+/* delta · arg-console — derivado del viewer.css del 3d-monitor + overlays
+   propios (menú de contacto, panel de cloak, franja de tracking): estética
+   wireframe/terminal, fondos #0a0a12ee, bordes 1px cian/ámbar, monospace. */
+
+.viewer-page {
+  padding: 0;
+  margin: 0;
+}
+
+/* WP-24: la zona jugable llena el viewport y se redimensiona con el
+   navegador — fuera el max-width del shell y el scroll horizontal. */
+body:has(.viewer-page) {
+  overflow-x: hidden;
+}
+
+body:has(.viewer-page) .main-content {
+  max-width: none;
+  padding: 10px 12px;
+  min-height: 0;
+}
+
+body:has(.viewer-page) .main-footer {
+  display: none;
+}
+
+.viewer-stage {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - var(--header-height, 60px) - 20px);
+  min-height: 420px;
+  background: #05050a;
+  border: 1px solid rgba(0, 212, 255, 0.25);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.viewer-stage canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.viewer-hud {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  min-width: 240px;
+  padding: 10px 14px;
+  background: rgba(10, 10, 18, 0.93);
+  border: 1px solid rgba(0, 212, 255, 0.35);
+  border-radius: 6px;
+  color: #d7fbe6;
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 12px;
+  line-height: 1.55;
+  pointer-events: none;
+}
+
+/* HUD adoptado por su ventanita (WP-24): el panel manda en posición/borde. */
+.arg-panel .viewer-hud {
+  position: static;
+  min-width: 0;
+  padding: 0;
+  background: transparent;
+  border: none;
+  pointer-events: auto;
+}
+
+.arg-panel .viewer-hud .hud-title {
+  display: none; /* el título ya vive en la barra del panel */
+}
+
+.viewer-hud .hud-title {
+  margin: 0 0 6px;
+  font-size: 13px;
+  color: #00d4ff;
+}
+
+.viewer-hud .hud-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.viewer-hud .hud-key {
+  color: #6ad2ff;
+}
+
+.viewer-hud .hud-val {
+  color: #eaffef;
+}
+
+.viewer-hud .hud-note {
+  margin: 8px 0 2px;
+  color: #7a8a80;
+  font-size: 11px;
+}
+
+.viewer-hud .hud-log {
+  max-width: 260px;
+  color: #ffd479;
+  font-size: 11px;
+  word-break: break-word;
+}
+
+/* ---- portal (galería de vistas) ---- */
+
+.portal-page {
+  padding: 18px 6px;
+}
+
+.portal-title {
+  margin: 0 0 4px;
+  font-size: 22px;
+  color: #00d4ff;
+}
+
+.portal-sub {
+  margin: 0 0 18px;
+  color: #7a8a80;
+  font-size: 13px;
+}
+
+.portal-room {
+  color: #d7fbe6;
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+.portal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.portal-card {
+  display: block;
+  padding: 16px 18px;
+  background: rgba(10, 10, 18, 0.93);
+  border: 1px solid rgba(0, 212, 255, 0.25);
+  border-radius: 8px;
+  text-decoration: none;
+  color: #d7fbe6;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.portal-card:hover {
+  border-color: rgba(0, 212, 255, 0.8);
+  transform: translateY(-2px);
+}
+
+.portal-card-title {
+  margin: 0 0 8px;
+  font-size: 15px;
+  color: #00d4ff;
+}
+
+.portal-card-desc {
+  margin: 0 0 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #a8c0b2;
+}
+
+.portal-card-elements {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.portal-card-element {
+  padding: 2px 8px;
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  border-radius: 10px;
+  font-size: 10px;
+  color: #6ad2ff;
+}
+
+/* ---- ledger DOM (WP-24: vive dentro de una ventanita sobre el stage) ---- */
+
+.view-log {
+  width: 340px;
+  max-width: 74vw;
+  max-height: 56vh;
+  overflow-y: auto;
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.view-log .log-line {
+  border-bottom: 1px solid rgba(0, 212, 255, 0.08);
+  padding: 2px 0;
+  word-break: break-word;
+}
+
+.view-log .log-badge {
+  font-weight: 600;
+}
+
+.view-log .log-text {
+  color: #d7fbe6;
+}
+
+/* ---- ventanitas delta (panel.mjs · WP-24, estética terminal) ---- */
+
+.arg-panel {
+  position: absolute;
+  background: #0a0a12ee;
+  border: 1px solid rgba(0, 212, 255, 0.45);
+  border-radius: 6px;
+  color: #d7fbe6;
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 12px;
+  line-height: 1.55;
+  z-index: 10;
+  max-width: min(420px, 86vw);
+}
+
+.arg-panel-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 10px;
+  border-bottom: 1px solid rgba(0, 212, 255, 0.18);
+  user-select: none;
+}
+
+.arg-panel.collapsed .arg-panel-bar {
+  border-bottom: none;
+}
+
+.arg-panel.draggable .arg-panel-bar {
+  cursor: move;
+  touch-action: none;
+}
+
+.arg-panel-title {
+  flex: 1 1 auto;
+  color: #00d4ff;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.arg-panel-toggle {
+  flex: 0 0 auto;
+  background: transparent;
+  border: 1px solid rgba(0, 212, 255, 0.4);
+  border-radius: 3px;
+  color: #00d4ff;
+  font-family: inherit;
+  font-size: 10px;
+  line-height: 1.2;
+  padding: 1px 6px;
+  cursor: pointer;
+}
+
+.arg-panel-toggle:hover {
+  background: rgba(0, 212, 255, 0.18);
+  color: #eaffff;
+}
+
+.arg-panel-body {
+  padding: 10px 12px;
+  max-height: 62vh;
+  overflow: auto;
+}
+
+.arg-panel.collapsed .arg-panel-body {
+  display: none;
+}
+
+/* posiciones por defecto de cada ventanita (arrastrarla las pisa) */
+.panel-hud { top: 12px; left: 12px; }
+.panel-ledger { top: 12px; right: 12px; }
+.panel-contact { top: 12px; right: 12px; min-width: 260px; }
+.panel-cloak { top: 20%; left: 50%; transform: translateX(-50%); min-width: 300px; border-color: rgba(255, 179, 71, 0.55); }
+.cloak-list { display: flex; flex-direction: column; gap: 6px; margin: 8px 0; max-height: 220px; overflow-y: auto; }
+.cloak-item { text-align: left; display: flex; flex-direction: column; gap: 2px; }
+.cloak-item-active { border-color: rgba(255, 179, 71, 0.85); background: rgba(255, 179, 71, 0.12); }
+.cloak-item-locked { opacity: 0.45; cursor: not-allowed; }
+.cloak-desc { font-size: 10px; color: #8aa; font-weight: normal; }
+.panel-track { left: 12px; right: 12px; bottom: 12px; max-width: none; border-color: rgba(255, 179, 71, 0.35); }
+.panel-inspector { right: 12px; bottom: 56px; width: 360px; }
+
+/* contenidos heredados de los overlays */
+.overlay-title {
+  color: #00d4ff;
+  font-weight: 600;
+  margin-bottom: 8px;
+  letter-spacing: 0.04em;
+}
+
+.overlay-pre {
+  margin: 6px 0;
+  padding: 6px 8px;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(0, 212, 255, 0.15);
+  border-radius: 4px;
+  color: #9fd8c8;
+  font-size: 11px;
+  max-height: 180px;
+  overflow: auto;
+}
+
+.overlay-muted {
+  color: #7a8a80;
+  font-size: 11px;
+  margin: 6px 0;
+}
+
+.overlay-hint {
+  color: #ffb347;
+  font-size: 10px;
+  margin: 8px 0 0;
+}
+
+/* ---- inspector de flujo y cantera (WP-25) ---- */
+
+.insp-kv {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 3px 0;
+}
+
+.insp-kv > span:first-child {
+  color: #6ad2ff;
+  font-size: 11px;
+  min-width: 62px;
+}
+
+.insp-section {
+  margin: 10px 0 4px;
+  color: #ffb347;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-bottom: 1px dashed rgba(255, 179, 71, 0.3);
+}
+
+.insp-bar {
+  flex: 1 1 auto;
+  height: 8px;
+  min-width: 70px;
+  border: 1px solid rgba(0, 212, 255, 0.35);
+  border-radius: 3px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.insp-bar-fill {
+  height: 100%;
+  background: #00ff88;
+  transition: width 0.2s linear;
+}
+
+.insp-bar-fill.warn { background: #ffaa00; }
+.insp-bar-fill.danger { background: #ff3344; }
+
+.insp-drop {
+  padding: 2px 0;
+  border-bottom: 1px solid rgba(0, 212, 255, 0.08);
+  font-size: 11px;
+  color: #9fd8c8;
+  word-break: break-all;
+}
+
+.insp-drop-crystal .insp-drop-id { color: #b8fbff; }
+.insp-drop-spill .insp-drop-id,
+.insp-spill { color: #ff3344; }
+
+.insp-drop-id { color: #6ad2ff; }
+.insp-corpus { color: #ffd479; }
+.insp-label { color: #00ff41; }
+.insp-progress { color: #a8c0b2; }
+.insp-uri { color: #9fd8c8; }
+.insp-muted { color: #7a8a80; font-size: 11px; margin: 6px 0; }
+.insp-warn { color: #ff3344; font-size: 11px; margin: 6px 0; }
+.insp-synthetic { color: #7a8a80; letter-spacing: 0.05em; }
+
+.insp-link {
+  color: #00d4ff;
+  text-decoration: none;
+  border-bottom: 1px dotted rgba(0, 212, 255, 0.6);
+}
+
+.insp-link:hover { color: #eaffff; }
+
+.insp-state-ok { color: #00ff88; }
+.insp-state-burst { color: #ff3344; }
+.insp-state-cooldown { color: #ffaa00; }
+.insp-state-cached { color: #00d4ff; }
+.insp-state-ghost { color: #7a8a80; }
+.insp-state-digging { color: #ffb347; }
+
+.arg-btn {
+  background: transparent;
+  border: 1px solid rgba(0, 212, 255, 0.55);
+  border-radius: 4px;
+  color: #00d4ff;
+  font-family: inherit;
+  font-size: 12px;
+  padding: 3px 10px;
+  margin: 2px 3px;
+  cursor: pointer;
+  transition: background 0.12s ease, color 0.12s ease;
+}
+
+.arg-btn:hover {
+  background: rgba(0, 212, 255, 0.18);
+  color: #eaffff;
+}
+
+.arg-btn-close {
+  display: block;
+  margin-top: 10px;
+  border-color: rgba(255, 179, 71, 0.6);
+  color: #ffb347;
+}
+
+.arg-btn-close:hover {
+  background: rgba(255, 179, 71, 0.15);
+  color: #ffe0b0;
+}
+
+/* contenidos del menú de contacto */
+.contact-live {
+  color: #ffd479;
+  margin-bottom: 8px;
+}
+
+.contact-tools {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2px;
+}
+
+.contact-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 8px;
+  margin: 8px 0;
+}
+
+.contact-col-title {
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: #7a8a80;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+}
+
+.contact-item {
+  margin-bottom: 6px;
+}
+
+.contact-arg {
+  display: flex;
+  gap: 4px;
+  font-size: 11px;
+  margin-top: 2px;
+}
+
+.contact-arg input {
+  width: 4rem;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid #3a5048;
+  color: #c8e6d8;
+  padding: 2px 4px;
+}
+
+.contact-rest {
+  margin: 6px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.cloak-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 8px 0;
+}
+
+.cloak-item-active {
+  border-color: #ffb347 !important;
+  color: #ffe0b0 !important;
+}
+
+.cloak-item-locked {
+  opacity: 0.45;
+}
+
+.cloak-desc {
+  display: block;
+  font-size: 10px;
+  opacity: 0.75;
+}
+
+.contact-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.contact-col-title {
+  color: #7a9a8a;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  margin-bottom: 4px;
+}
+
+.contact-col-body {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.contact-tool-row {
+  margin-bottom: 4px;
+}
+
+.contact-rest {
+  margin-bottom: 8px;
+}
+
+.contact-item {
+  font-size: 11px;
+  text-align: left;
+}
+
+/* contenidos de la franja de tracking */
+.panel-track .arg-panel-body {
+  padding: 6px 12px 8px;
+}
+
+.track-line {
+  color: #9fd8c8;
+  font-size: 11px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.track-lines {
+  color: #7a8a80;
+  font-size: 11px;
+}

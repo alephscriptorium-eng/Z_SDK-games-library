@@ -1,0 +1,34 @@
+{
+  "name": "@zeus/arg-console",
+  "version": "0.1.0",
+  "description": "delta — portal de vistas 3D del ARG (:3021): tablero (overview global) y jugador (vista encarnada con input). Derivado evolucionado y autocontenido del 3d-monitor.",
+  "type": "module",
+  "main": "src/server.mjs",
+  "scripts": {
+    "start": "node src/server.mjs",
+    "test": "node --test test/*.test.mjs"
+  },
+  "license": "AIPLv1",
+  "zeus": {
+    "role": "app",
+    "ui": "arg-console"
+  },
+  "dependencies": {
+    "@zeus/app-shell": "*",
+    "@zeus/arg-domain": "*",
+    "@zeus/protocol": "*",
+    "@zeus/presets-sdk": "*",
+    "@zeus/game-engine": "*",
+    "@zeus/room-client-browser": "*",
+    "@zeus/ui-3d-kit": "*",
+    "@zeus/view-kit": "*",
+    "@zeus/webrtc-viewer": "*",
+    "@zeus/ui-kit": "*",
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "hyperaxe": "^3.0.2",
+    "socket.io-client": "^4.8.1",
+    "three": "^0.170.0"
+  },
+  "private": true
+}

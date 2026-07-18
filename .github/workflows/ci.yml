@@ -1,4 +1,4 @@
-# CI mínima Z_SDK-games-library (WP-U60): install + tests (smoke scaffold).
+# CI Z_SDK-games-library (WP-U61): setup Z_SDK file: + unit tests.
 name: CI
 
 on:
@@ -22,7 +22,12 @@ jobs:
         with:
           node-version: '22'
           cache: npm
+      - name: Link / clone Z_SDK (.deps file:)
+        env:
+          CI: 'true'
+          ZEUS_SDK_REF: main
+        run: npm run setup:zeus-sdk
       - name: Install
-        run: npm ci
+        run: npm install
       - name: Test
         run: npm test
