@@ -76,13 +76,13 @@
     "@zeus/socket-server": "file:.deps/zeus-sdk/packages/mesh/socket-server",
     "@zeus/solar-system": "file:.deps/zeus-sdk/packages/mesh/solar-system",
     "@zeus/ssb-system": "file:.deps/zeus-sdk/packages/mesh/ssb-system",
+    "@zeus/story-board-schema": "file:.deps/zeus-sdk/packages/engine/story-board-schema",
     "@zeus/test-utils": "file:.deps/zeus-sdk/packages/engine/test-utils",
     "@zeus/ui-3d-kit": "file:.deps/zeus-sdk/packages/engine/ui-3d-kit",
     "@zeus/ui-kit": "file:.deps/zeus-sdk/packages/engine/ui-kit",
     "@zeus/view-kit": "file:.deps/zeus-sdk/packages/engine/view-kit",
     "@zeus/volumes-ops": "file:.deps/zeus-sdk/packages/engine/volumes-ops",
     "@zeus/webrtc-signaling": "file:.deps/zeus-sdk/packages/engine/webrtc-signaling",
-    "@zeus/webrtc-viewer": "file:.deps/zeus-sdk/packages/mesh/webrtc-viewer",
-    "ajv": "^8.20.0"
+    "@zeus/webrtc-viewer": "file:.deps/zeus-sdk/packages/mesh/webrtc-viewer"
   }
 }
