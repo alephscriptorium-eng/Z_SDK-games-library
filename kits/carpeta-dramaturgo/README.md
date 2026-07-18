@@ -12,7 +12,7 @@ Los juegos originales en `scriptorium-network-games/` **no se tocan**.
 | ----- | ---- |
 | Constitución parametrizable | `plantilla/index.md` (título/tema + 4 ejes REIC) |
 | 4 capas de cadenas | `blockchain/` · `agentchain/` · `readerapp/storychain/` · `readerapp/readerchain/` |
-| Story-board | `plantilla/readerapp/story-board.json` + schema |
+| Story-board | `plantilla/readerapp/story-board.json` + `@zeus/story-board-schema` |
 | UI specs | `plantilla/uichain/panel-*.prompt.md` |
 | Ayuda / marcas / hot | `AYUDA.md` · `EPISTEM.md` · `*-hot.md` |
 | Stubs skills externas | `plantilla/STUBS.md` |
@@ -66,12 +66,13 @@ Todo el contenido nuevo vive en
 
 ## Validar story-boards reales
 
-El schema [`schema/story-board.schema.json`](./schema/story-board.schema.json)
-es el **contrato** (AJV draft 2020-12): no es decoración. El script
-`validate-story-board.mjs` lo carga y aplica; un board inválido falla con
-ruta + mensaje explicable. Acepta los dos dialectos históricos (SOLVE =
-widgets en `acts[]`; ALEPH = widgets en `blocks[].uichain`). Semántica
-extra (p.ej. `blocks[].act` → act id conocido) se comprueba tras el schema.
+El contrato único es **`@zeus/story-board-schema`** (AJV draft 2020-12 en
+zeus; WP-U117) — no hay copia local del JSON Schema en este kit. El script
+`validate-story-board.mjs` importa y aplica ese paquete; un board inválido
+falla con ruta + mensaje explicable. Acepta los dos dialectos históricos
+(SOLVE = widgets en `acts[]`; ALEPH = widgets en `blocks[].uichain`).
+Semántica extra (p.ej. `blocks[].act` → act id conocido) vive en el helper
+del paquete.
 
 ```bash
 npm run test:carpeta-dramaturgo

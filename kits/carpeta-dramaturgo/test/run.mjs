@@ -1,19 +1,21 @@
 #!/usr/bin/env node
 /**
- * CA WP-U86 + U112 + U115: schema AJV + fixtures + plantilla + instantiate --from.
+ * CA WP-U86 + U112 + U115 + U117: schema @zeus/story-board-schema + fixtures + plantilla + instantiate --from.
  */
 import { spawnSync } from 'node:child_process';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { existsSync, readFileSync, rmSync } from 'node:fs';
+import { createRequire } from 'node:module';
 import { validateStoryBoard } from '../scripts/validate-story-board.mjs';
+
+const require = createRequire(import.meta.url);
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const KIT = resolve(__dirname, '..');
 const LIBRARY = resolve(KIT, '../..');
 const validate = join(KIT, 'scripts', 'validate-story-board.mjs');
 const instantiate = join(KIT, 'scripts', 'instantiate.mjs');
-const SCHEMA = join(KIT, 'schema', 'story-board.schema.json');
 
 const plantillaBoard = join(KIT, 'plantilla', 'readerapp', 'story-board.json');
 const toyBoard = join(KIT, 'instances', 'toy-plaza', 'readerapp', 'story-board.json');
@@ -24,7 +26,7 @@ const fromMiniBoard = join(
   'instances',
   fromMiniSlug,
   'readerapp',
-  'story-board.json',
+  'story-board.json'
 );
 
 /**
@@ -35,7 +37,7 @@ const fromMiniBoard = join(
 function run(label, args, opts = {}) {
   const r = spawnSync(process.execPath, args, {
     encoding: 'utf8',
-    cwd: opts.cwd || LIBRARY,
+    cwd: opts.cwd || LIBRARY
   });
   process.stdout.write(r.stdout || '');
   process.stderr.write(r.stderr || '');
@@ -46,14 +48,25 @@ function run(label, args, opts = {}) {
   return r;
 }
 
-if (!existsSync(SCHEMA)) {
-  console.error(`CA FAIL: schema missing: ${SCHEMA}`);
+console.log('--- @zeus/story-board-schema (paquete zeus, no copia kit) ---');
+let schemaPkg;
+try {
+  schemaPkg = require.resolve('@zeus/story-board-schema/package.json');
+} catch {
+  console.error('CA FAIL: @zeus/story-board-schema not resolvable');
   process.exit(1);
 }
+const localSchema = join(KIT, 'schema', 'story-board.schema.json');
+if (existsSync(localSchema)) {
+  console.error(`CA FAIL: local schema copy must be demolished: ${localSchema}`);
+  process.exit(1);
+}
+console.log(`✅ package → ${schemaPkg}`);
+console.log('✅ no kits/carpeta-dramaturgo/schema/story-board.schema.json');
 
 console.log('--- schema AJV (board sintético inválido) ---');
 const invalid = validateStoryBoard({
-  acts: [{ id: 'act-0', widgets: ['BAD_Widget'] }],
+  acts: [{ id: 'act-0', widgets: ['BAD_Widget'] }]
 });
 if (invalid.ok) {
   console.error('CA FAIL: invalid board should be rejected by schema');
@@ -69,7 +82,7 @@ for (const e of invalid.errors) console.log(`   - ${e}`);
 
 const fixtures = spawnSync(process.execPath, [validate, '--fixtures'], {
   encoding: 'utf8',
-  cwd: LIBRARY,
+  cwd: LIBRARY
 });
 
 console.log('--- fixtures (story-boards reales) ---');
@@ -99,7 +112,7 @@ run('instantiate --from mini', [
   miniObra,
   '--title',
   'From Solve Mini',
-  '--force',
+  '--force'
 ]);
 
 if (!existsSync(fromMiniBoard)) {
@@ -123,7 +136,7 @@ if (!existsSync(origin)) {
 const liveSolveCandidates = [
   resolve(LIBRARY, '../scriptorium-network-games/SOLVE_ET_COAGULA'),
   resolve(LIBRARY, '../../scriptorium-network-games/SOLVE_ET_COAGULA'),
-  resolve(LIBRARY, '../../../scriptorium-network-games/SOLVE_ET_COAGULA'),
+  resolve(LIBRARY, '../../../scriptorium-network-games/SOLVE_ET_COAGULA')
 ];
 const liveSolve = liveSolveCandidates.find((p) => existsSync(p));
 if (liveSolve) {
@@ -136,7 +149,7 @@ if (liveSolve) {
     liveSlug,
     '--from',
     'SOLVE_ET_COAGULA',
-    '--force',
+    '--force'
   ]);
   const liveBoard = join(liveInst, 'readerapp', 'story-board.json');
   run('validate from-solve-live', [validate, liveBoard]);
@@ -145,7 +158,7 @@ if (liveSolve) {
   console.log(`   cleaned ${liveSlug} (live overlay; not kept in tree)`);
 } else {
   console.log(
-    '--- skip live SOLVE_ET_COAGULA (sibling scriptorium-network-games absent) ---',
+    '--- skip live SOLVE_ET_COAGULA (sibling scriptorium-network-games absent) ---'
   );
 }
 
