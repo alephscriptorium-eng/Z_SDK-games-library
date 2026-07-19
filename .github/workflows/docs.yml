@@ -30,8 +30,9 @@ jobs:
         with:
           node-version: '22'
           cache: npm
-      - name: Install (@zeus desde registry)
-        run: npm install
+      # npm ci: lockfile + .npmrc (@zeus / @alephscript → registry); mismo canal que portal zeus.
+      - name: Install
+        run: npm ci
       - name: Build VitePress catalog
         # base `/` (custom domain games.z-sdk.escrivivir.co; WP-U107)
         run: npm run docs:build
