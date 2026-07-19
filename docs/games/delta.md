@@ -1,5 +1,7 @@
 # delta (ARG)
 
+**El Común** — construcción de ventana de contexto colaborativa: el archivo compartido crece al jugarlo y la sala gobierna su memoria común.
+
 Juego multijugador three.js sobre el runtime Zeus: el tablero son los
 volúmenes de datos (firehose + wikicache) y jugar los hace crecer. Dominio
 puro + autoridad + vistas + MCP por actor.
@@ -51,3 +53,11 @@ npm run demo:arg
 ## Releases
 
 Ver [Releases · delta](/releases#delta).
+
+Llévatela:
+
+```bash
+npm install @zeus/startpack-delta
+```
+
+*Una obra de Scriptorium. Bajo animus iocandi.*

@@ -1,12 +1,10 @@
 ---
 layout: home
 hero:
-  name: Zeus Games
-  text: Catálogo de la library
+  name: Juegos Z_SDK
+  text: Catálogo
   tagline: |-
-    Juegos FOSS que consumen el Zeus SDK — mismo contrato, cero dialectos en el engine.
-    delta y pozo son el mínimo de la regla de los dos juegos.
-    Start packs + actas Notario + specs viven aquí.
+    Librería de juegos de Ventana de Contexto para ARG
   actions:
     - theme: brand
       text: Releases
@@ -18,14 +16,17 @@ hero:
       text: Repo
       link: https://github.com/alephscriptorium-eng/Z_SDK-games-library
 features:
-  - title: delta
-    details: ARG multijugador (Riada / Cantera). Demo npm run demo:arg · startpack publicado.
+  - title: El Común · delta
+    details: 'Mini-juego de construcción de ventana de contexto colaborativa. Cachear, curar, marcar hitos, etiquetar... Demo npm run demo:arg · start pack publicado.'
     link: /games/delta
-  - title: pozo
-    details: Segundo juego mínimo. Demo npm run demo:pozo · startpack publicado.
+  - title: El Aljibe · pozo
+    details: 'Mini-juego de análisis y curación de datos. Demo npm run demo:pozo · start pack publicado.'
     link: /games/pozo
-  - title: Futuros
-    details: SOLVE ET COAGULA y otros títulos del mundo A — sin inventar releases.
+  - title: SOLVE ET COAGULA
+    details: 'Tablero ARG de correlación de fuerzas y diseño de líneas de demarcación. Demo npm run demo:solve-coagula · start pack publicado.'
+    link: /games/solve-coagula
+  - title: call4makers
+    details: 'Catálogo abierto: start packs, specs y cauces de contribución esperan makers — dramaturgia, código, datos, traducción. Entrá y arrancá el tuyo.'
     link: /games/futuros
 ---
 
