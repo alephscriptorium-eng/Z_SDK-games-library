@@ -12,13 +12,13 @@
     "role": "app"
   },
   "dependencies": {
-    "@zeus/arg-console": "*",
-    "@zeus/arg-domain": "*",
-    "@zeus/arg-feeds": "*",
-    "@zeus/authority-kit": "*",
-    "@zeus/presets-sdk": "*",
-    "@zeus/rooms": "*",
-    "@zeus/volumes-ops": "*"
+    "@zeus/arg-console": "^0.1.0",
+    "@zeus/arg-domain": "^0.1.0",
+    "@zeus/arg-feeds": "^0.1.0",
+    "@zeus/authority-kit": "^0.2.0",
+    "@zeus/presets-sdk": "^0.1.2",
+    "@zeus/rooms": "^0.1.0",
+    "@zeus/volumes-ops": "^0.2.1"
   },
   "license": "AIPLv1"
 }
