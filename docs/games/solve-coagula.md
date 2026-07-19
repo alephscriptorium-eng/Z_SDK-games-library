@@ -17,10 +17,12 @@ Arranque:
 npm run demo:solve-coagula
 ```
 
-Llévatela — la ronda arranca desde el start pack publicado:
+Llévatela — del último release `startpack-solve-coagula-v*` en
+[Releases](https://github.com/alephscriptorium-eng/Z_SDK-games-library/releases),
+tomá el asset `.tgz` (acta incluida) e instalalo:
 
 ```bash
-npm install @zeus/startpack-solve-coagula
+npm install ./zeus-startpack-solve-coagula-<version>.tgz
 ```
 
 La verdad de versiones y actas vive en

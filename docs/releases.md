@@ -14,15 +14,11 @@ mano: si falta un tag o un asset, aún no está publicado.
 
 ## Instalar un start pack
 
-### Registry npm (`@zeus`)
+### Registry npm (@zeus)
 
-```bash
-npm install @zeus/startpack-delta
-npm install @zeus/startpack-pozo
-```
-
-Sustituí el sufijo por el juego (`sketch`, `solve-coagula`, `plaza`, …) cuando
-exista el paquete en el registry.
+Canal previsto para instalar por nombre (`npm install @zeus/startpack-<game>`).
+Estado del publish npm: ver [Futuros](/games/futuros). Mientras esté
+pendiente, usá el tarball del Release (arriba).
 
 ### Tarball desde GitHub Release
 
@@ -39,11 +35,9 @@ npm install ./zeus-startpack-<game>-<version>.tgz
 
 ## Juegos con canal de release
 
-| game | paquete | ancla |
-| ---- | ------- | ----- |
-| `delta` | `@zeus/startpack-delta` | [#delta](#delta) |
-| `pozo` | `@zeus/startpack-pozo` | [#pozo](#pozo) |
-| `sketch` | `@zeus/startpack-sketch` | [#sketch](#sketch) |
+Los juegos con canal se ven en la propia página de
+[Releases](https://github.com/alephscriptorium-eng/Z_SDK-games-library/releases):
+un tag `startpack-<game>-v*` por juego publicado.
 
 ### delta {#delta}
 
@@ -58,10 +52,10 @@ Buscá en Releases el tag `startpack-pozo-v*` y sus assets.
 El paquete vive en `packages/startpack-sketch/`. Aparece en Releases solo
 cuando Notario publica tag `startpack-sketch-v*` + assets.
 
-### Futuros (SOLVE, …)
+### Otros títulos
 
-Sin start packs publicados hasta que exista tag/Release. Ver
-[Futuros](/games/futuros) (página de estado).
+Sin start packs publicados hasta que exista tag/Release. Estado y candidatos
+en [Futuros](/games/futuros).
 
 ---
 

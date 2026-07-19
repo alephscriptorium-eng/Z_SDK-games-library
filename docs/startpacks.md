@@ -1,8 +1,8 @@
 # Start packs — consumo y release
 
 Cada release de datos es un paquete `@zeus/startpack-<game>` + acta +
-tarball. Canal primario: registry npm `@zeus`. Espejo: GitHub Release en este
-repo (verdad viva de versiones → [Releases](/releases)).
+tarball. Dos canales: GitHub Release (tag + acta + tarball — operativo) y registry
+npm `@zeus` (por nombre — estado en [Futuros](/games/futuros)).
 
 La carga (`loadStartPack`) vive en **`@zeus/startpack-kit`**; cada
 `@zeus/startpack-*` es un thin wrapper (game + enrich). Sin copias del

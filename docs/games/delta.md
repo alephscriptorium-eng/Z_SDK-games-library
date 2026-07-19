@@ -54,10 +54,12 @@ npm run demo:arg
 
 Ver [Releases · delta](/releases#delta).
 
-Llévatela:
+Llévatela — del último release `startpack-delta-v*` en
+[Releases](https://github.com/alephscriptorium-eng/Z_SDK-games-library/releases),
+tomá el asset `.tgz` (acta incluida) e instalalo:
 
 ```bash
-npm install @zeus/startpack-delta
+npm install ./zeus-startpack-delta-<version>.tgz
 ```
 
 *Una obra de Scriptorium. Bajo animus iocandi.*

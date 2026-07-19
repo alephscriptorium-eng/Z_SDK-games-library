@@ -35,6 +35,7 @@ export default defineConfig({
         items: [
           { text: 'delta', link: '/games/delta' },
           { text: 'pozo', link: '/games/pozo' },
+          { text: 'SOLVE ET COAGULA', link: '/games/solve-coagula' },
           { text: 'Futuros', link: '/games/futuros' }
         ]
       }
@@ -54,6 +55,7 @@ export default defineConfig({
         items: [
           { text: 'delta (ARG)', link: '/games/delta' },
           { text: 'pozo', link: '/games/pozo' },
+          { text: 'SOLVE ET COAGULA', link: '/games/solve-coagula' },
           { text: 'Futuros', link: '/games/futuros' }
         ]
       }
