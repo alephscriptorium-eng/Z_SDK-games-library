@@ -1,5 +1,7 @@
 # pozo
 
+**El Aljibe** — análisis y curación de datos: gotas contadas, cada una se nombra o se derrama.
+
 Segundo juego mínimo de la library (regla de los dos juegos). Se construye
 solo importando engine (`protocol`, `authority-kit`, `player-mcp-kit`,
 `playbook-kit`, `view-kit`) más mesh vía presets/rooms.
@@ -37,3 +39,11 @@ npm run demo:pozo
 ## Releases
 
 Ver [Releases · pozo](/releases#pozo).
+
+Llévatela:
+
+```bash
+npm install @zeus/startpack-pozo
+```
+
+*Una obra de Scriptorium. Bajo animus iocandi.*
