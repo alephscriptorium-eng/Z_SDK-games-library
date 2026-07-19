@@ -45,7 +45,8 @@ export default defineConfig({
         items: [
           { text: 'Portada', link: '/' },
           { text: 'Releases', link: '/releases' },
-          { text: 'Start packs', link: '/startpacks' }
+          { text: 'Start packs', link: '/startpacks' },
+          { text: 'Publicar la web', link: '/publicar-la-web' }
         ]
       },
       {
