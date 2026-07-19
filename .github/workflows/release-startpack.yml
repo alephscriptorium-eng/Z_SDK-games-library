@@ -1,7 +1,8 @@
 # Release start packs (WP-U62)
-
-Notario → tarball + acta → GitHub Release espejo.
-Publish npm opcional si existe secret `NPM_TOKEN` (registry D-7).
+#
+# Notario → tarball + acta → GitHub Release espejo.
+# Publish npm opcional si existe secret `NPM_TOKEN` (registry D-7).
+# Vía canónica de pack: scripts/notario-release.mjs (este workflow lo invoca).
 
 name: Release startpack
 
