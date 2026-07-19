@@ -35,11 +35,11 @@ Kit compartido: `packages/startpack-kit` (`@zeus/startpack-kit`).
 
 ## Instalar
 
-### Registry
+### Registry npm (@zeus)
 
-```bash
-npm install @zeus/startpack-delta
-```
+Canal previsto para instalar por nombre (`npm install @zeus/startpack-<game>`).
+Estado del publish npm: ver [Futuros](/games/futuros). Mientras esté
+pendiente, usá el tarball del Release (abajo).
 
 ### Tarball / GitHub Release
 
