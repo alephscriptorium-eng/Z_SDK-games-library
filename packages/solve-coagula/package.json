@@ -21,13 +21,13 @@
     "role": "game"
   },
   "dependencies": {
-    "@zeus/authority-kit": "*",
-    "@zeus/playbook-kit": "*",
-    "@zeus/player-mcp-kit": "*",
-    "@zeus/presets-sdk": "*",
-    "@zeus/protocol": "*",
-    "@zeus/rooms": "*",
-    "@zeus/view-kit": "*",
+    "@zeus/authority-kit": "^0.2.0",
+    "@zeus/playbook-kit": "^0.1.2",
+    "@zeus/player-mcp-kit": "^0.1.2",
+    "@zeus/presets-sdk": "^0.1.2",
+    "@zeus/protocol": "^0.2.0",
+    "@zeus/rooms": "^0.1.0",
+    "@zeus/view-kit": "^0.1.2",
     "cors": "^2.8.6",
     "express": "^5.2.1",
     "zod": "^4.4.3"

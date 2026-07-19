@@ -11,13 +11,13 @@
     "test": "node --test test/*.test.mjs"
   },
   "dependencies": {
-    "@zeus/arg-domain": "*",
-    "@zeus/feed-kit": "*",
-    "@zeus/linea-kit": "*",
-    "@zeus/presets-sdk": "*"
+    "@zeus/arg-domain": "^0.1.0",
+    "@zeus/feed-kit": "^0.3.0",
+    "@zeus/linea-kit": "^0.2.0",
+    "@zeus/presets-sdk": "^0.1.2"
   },
   "devDependencies": {
-    "@zeus/test-utils": "*"
+    "@zeus/test-utils": "^0.1.2"
   },
   "license": "AIPLv1",
   "private": true
