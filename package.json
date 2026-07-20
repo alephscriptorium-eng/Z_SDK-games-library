@@ -7,6 +7,7 @@
   "workspaces": [
     "packages/delta/*",
     "packages/pozo",
+    "packages/ciudad",
     "packages/solve-coagula",
     "packages/startpack-*",
     "packages/mockdatas-ciudad"
@@ -16,9 +17,10 @@
   },
   "scripts": {
     "setup:zeus-sdk": "node scripts/ensure-zeus-sdk.mjs",
-    "test": "npm run test:delta && npm run test:pozo && npm run test:solve-coagula && npm run test:startpack && npm run test:carpeta-dramaturgo",
+    "test": "npm run test:delta && npm run test:pozo && npm run test:ciudad && npm run test:solve-coagula && npm run test:startpack && npm run test:carpeta-dramaturgo",
     "test:delta": "npm test -w @zeus/arg-domain && npm test -w @zeus/arg-feeds && npm test -w @zeus/arg-console && npm test -w @zeus/arg-player-mcp",
     "test:pozo": "npm test -w @zeus/pozo",
+    "test:ciudad": "npm test -w @zeus/ciudad",
     "test:solve-coagula": "npm test -w @zeus/solve-coagula",
     "test:startpack": "npm test -w @zeus/startpack-kit && npm test -w @zeus/startpack-delta && npm test -w @zeus/startpack-pozo && npm test -w @zeus/startpack-sketch && npm test -w @zeus/startpack-solve-coagula && npm test -w @zeus/startpack-plaza && npm test -w @zeus/startpack-ciudad",
     "test:carpeta-dramaturgo": "node kits/carpeta-dramaturgo/test/run.mjs",

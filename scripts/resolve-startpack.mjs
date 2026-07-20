@@ -23,7 +23,8 @@ export async function resolveInstalledStartPack(game, opts = {}) {
     pozo: env.ZEUS_STARTPACK_POZO,
     sketch: env.ZEUS_STARTPACK_SKETCH,
     'solve-coagula': env.ZEUS_STARTPACK_SOLVE_COAGULA,
-    plaza: env.ZEUS_STARTPACK_PLAZA
+    plaza: env.ZEUS_STARTPACK_PLAZA,
+    ciudad: env.ZEUS_STARTPACK_CIUDAD
   };
   const override =
     opts.root ||

@@ -1,0 +1,34 @@
+{
+  "name": "@zeus/ciudad",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "ciudad — juego de engine sobre startpack-ciudad: walk entre anchors, announce en plaza, wake de barrio latente.",
+  "main": "src/contract.mjs",
+  "exports": {
+    ".": "./src/contract.mjs",
+    "./domain": "./src/domain.mjs",
+    "./contract": "./src/contract.mjs",
+    "./scene": "./src/scene.mjs"
+  },
+  "scripts": {
+    "authority": "node src/authority.mjs",
+    "start:mcp": "node src/player-mcp/start.mjs",
+    "test": "node --test test/*.test.mjs",
+    "smoke": "node fixtures/mvp-smoke.mjs"
+  },
+  "zeus": {
+    "role": "game"
+  },
+  "dependencies": {
+    "@zeus/authority-kit": "^0.2.0",
+    "@zeus/playbook-kit": "^0.1.2",
+    "@zeus/player-mcp-kit": "^0.1.2",
+    "@zeus/presets-sdk": "^0.1.2",
+    "@zeus/protocol": "^0.2.0",
+    "@zeus/rooms": "^0.1.0",
+    "@zeus/startpack-ciudad": "0.1.0",
+    "zod": "^4.4.3"
+  },
+  "license": "AIPLv1"
+}
