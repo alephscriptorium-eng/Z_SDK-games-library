@@ -1,0 +1,1274 @@
+{
+  "id": "ciudad-demo",
+  "sceneId": "ciudad-v0",
+  "version": "0.1.0",
+  "displayName": "Ciudad · topología",
+  "labelset": [
+    "ciudad",
+    "topologia"
+  ],
+  "startPack": [],
+  "objetivo": {
+    "barriosDespiertos": 1
+  },
+  "seeds": {
+    "feedSeed": 1
+  },
+  "cues": [],
+  "gobierno": {
+    "gobierna": "plaza",
+    "opera": "zigurat",
+    "ejecutan": "barrios"
+  },
+  "zones": [
+    {
+      "id": "zigurat",
+      "displayName": "Zigurat",
+      "role": "opera",
+      "nodeId": "zigurat",
+      "barrios": [
+        "vscode-extension"
+      ]
+    },
+    {
+      "id": "editores",
+      "displayName": "Editores visuales",
+      "role": "ejecuta",
+      "nodeId": "editores",
+      "barrios": [
+        "blockly-editor",
+        "wiring-editor",
+        "prolog-editor",
+        "typed-prompts-editor",
+        "workflow-editor",
+        "wiring-app-hypergraph-editor"
+      ]
+    },
+    {
+      "id": "red-stream",
+      "displayName": "Red / stream",
+      "role": "ejecuta",
+      "nodeId": "red-stream",
+      "barrios": [
+        "blockchain-com-port",
+        "stream-desktop",
+        "stream-desktop-app-cronos",
+        "bot-hub-sdk"
+      ]
+    },
+    {
+      "id": "runtime-mcp",
+      "displayName": "Runtime / MCP",
+      "role": "ejecuta",
+      "nodeId": "runtime-mcp",
+      "barrios": [
+        "aaia-gallery",
+        "mcp-gallery",
+        "state-machine",
+        "novelist-editor",
+        "copilot-engine"
+      ]
+    },
+    {
+      "id": "lore-voz",
+      "displayName": "Lore / voz",
+      "role": "ejecuta",
+      "nodeId": "lore-voz",
+      "barrios": [
+        "document-machine-sdk",
+        "onfalo-asesor-sdk",
+        "agent-lore-sdk",
+        "vector-machine-sdk",
+        "vector-machine-ui"
+      ]
+    },
+    {
+      "id": "infra-ui",
+      "displayName": "Infra / UI",
+      "role": "ejecuta",
+      "nodeId": "infra-ui",
+      "barrios": [
+        "scriptorium-vps",
+        "ui-sdk-threejs",
+        "vibe-coding-suite"
+      ]
+    }
+  ],
+  "nodos": {
+    "plaza": {
+      "id": "plaza",
+      "displayName": "Plaza central",
+      "role": "gobierna",
+      "kind": "gobierno",
+      "entrada": {
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "facing": 0
+      },
+      "anclas": [],
+      "enlaces": [
+        "calle-plaza-zigurat"
+      ]
+    },
+    "zigurat": {
+      "id": "zigurat",
+      "displayName": "Zigurat",
+      "role": "opera",
+      "kind": "gobierno-zona",
+      "entrada": {
+        "x": 12,
+        "y": 0,
+        "z": 0,
+        "facing": 0
+      },
+      "anclas": [
+        "ancla-vscode-extension"
+      ],
+      "enlaces": [
+        "calle-plaza-zigurat",
+        "calle-funcional",
+        "calle-tecnico",
+        "calle-plugins",
+        "calle-mcp-vivos",
+        "calle-infra"
+      ],
+      "zone": "zigurat"
+    },
+    "editores": {
+      "id": "editores",
+      "displayName": "Editores visuales",
+      "role": "ejecuta",
+      "kind": "zona",
+      "zone": "editores",
+      "entrada": {
+        "x": 24,
+        "y": 0,
+        "z": -12,
+        "facing": 0
+      },
+      "anclas": [
+        "ancla-blockly-editor",
+        "ancla-wiring-editor",
+        "ancla-prolog-editor",
+        "ancla-typed-prompts-editor",
+        "ancla-workflow-editor",
+        "ancla-wiring-app-hypergraph-editor"
+      ],
+      "enlaces": [
+        "calle-funcional"
+      ]
+    },
+    "red-stream": {
+      "id": "red-stream",
+      "displayName": "Red / stream",
+      "role": "ejecuta",
+      "kind": "zona",
+      "zone": "red-stream",
+      "entrada": {
+        "x": 24,
+        "y": 0,
+        "z": -4,
+        "facing": 0
+      },
+      "anclas": [
+        "ancla-blockchain-com-port",
+        "ancla-stream-desktop",
+        "ancla-stream-desktop-app-cronos",
+        "ancla-bot-hub-sdk"
+      ],
+      "enlaces": [
+        "calle-tecnico"
+      ]
+    },
+    "runtime-mcp": {
+      "id": "runtime-mcp",
+      "displayName": "Runtime / MCP",
+      "role": "ejecuta",
+      "kind": "zona",
+      "zone": "runtime-mcp",
+      "entrada": {
+        "x": 24,
+        "y": 0,
+        "z": 4,
+        "facing": 0
+      },
+      "anclas": [
+        "ancla-aaia-gallery",
+        "ancla-mcp-gallery",
+        "ancla-state-machine",
+        "ancla-novelist-editor",
+        "ancla-copilot-engine"
+      ],
+      "enlaces": [
+        "calle-plugins"
+      ]
+    },
+    "lore-voz": {
+      "id": "lore-voz",
+      "displayName": "Lore / voz",
+      "role": "ejecuta",
+      "kind": "zona",
+      "zone": "lore-voz",
+      "entrada": {
+        "x": 24,
+        "y": 0,
+        "z": 12,
+        "facing": 0
+      },
+      "anclas": [
+        "ancla-document-machine-sdk",
+        "ancla-onfalo-asesor-sdk",
+        "ancla-agent-lore-sdk",
+        "ancla-vector-machine-sdk",
+        "ancla-vector-machine-ui"
+      ],
+      "enlaces": [
+        "calle-mcp-vivos"
+      ]
+    },
+    "infra-ui": {
+      "id": "infra-ui",
+      "displayName": "Infra / UI",
+      "role": "ejecuta",
+      "kind": "zona",
+      "zone": "infra-ui",
+      "entrada": {
+        "x": 24,
+        "y": 0,
+        "z": 20,
+        "facing": 0
+      },
+      "anclas": [
+        "ancla-scriptorium-vps",
+        "ancla-ui-sdk-threejs",
+        "ancla-vibe-coding-suite"
+      ],
+      "enlaces": [
+        "calle-infra"
+      ]
+    }
+  },
+  "enlaces": {
+    "calle-plaza-zigurat": {
+      "id": "calle-plaza-zigurat",
+      "displayName": "Calle gobierno",
+      "dry": "gobierno",
+      "from": "plaza",
+      "to": "zigurat",
+      "bidirectional": true,
+      "walkSpeed": 1.4,
+      "waypoints": [
+        {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        {
+          "x": 6,
+          "y": 0,
+          "z": 0
+        },
+        {
+          "x": 12,
+          "y": 0,
+          "z": 0
+        }
+      ]
+    },
+    "calle-funcional": {
+      "id": "calle-funcional",
+      "displayName": "Calle funcional",
+      "dry": "funcional",
+      "from": "zigurat",
+      "to": "editores",
+      "bidirectional": true,
+      "walkSpeed": 1.4,
+      "waypoints": [
+        {
+          "x": 12,
+          "y": 0,
+          "z": 0
+        },
+        {
+          "x": 18,
+          "y": 0,
+          "z": -6
+        },
+        {
+          "x": 24,
+          "y": 0,
+          "z": -12
+        }
+      ]
+    },
+    "calle-tecnico": {
+      "id": "calle-tecnico",
+      "displayName": "Calle técnico",
+      "dry": "tecnico",
+      "from": "zigurat",
+      "to": "red-stream",
+      "bidirectional": true,
+      "walkSpeed": 1.4,
+      "waypoints": [
+        {
+          "x": 12,
+          "y": 0,
+          "z": 0
+        },
+        {
+          "x": 18,
+          "y": 0,
+          "z": -2
+        },
+        {
+          "x": 24,
+          "y": 0,
+          "z": -4
+        }
+      ]
+    },
+    "calle-plugins": {
+      "id": "calle-plugins",
+      "displayName": "Calle plugins",
+      "dry": "plugins",
+      "from": "zigurat",
+      "to": "runtime-mcp",
+      "bidirectional": true,
+      "walkSpeed": 1.4,
+      "waypoints": [
+        {
+          "x": 12,
+          "y": 0,
+          "z": 0
+        },
+        {
+          "x": 18,
+          "y": 0,
+          "z": 2
+        },
+        {
+          "x": 24,
+          "y": 0,
+          "z": 4
+        }
+      ]
+    },
+    "calle-mcp-vivos": {
+      "id": "calle-mcp-vivos",
+      "displayName": "Calle MCP vivos",
+      "dry": "mcp-vivos",
+      "from": "zigurat",
+      "to": "lore-voz",
+      "bidirectional": true,
+      "walkSpeed": 1.4,
+      "waypoints": [
+        {
+          "x": 12,
+          "y": 0,
+          "z": 0
+        },
+        {
+          "x": 18,
+          "y": 0,
+          "z": 6
+        },
+        {
+          "x": 24,
+          "y": 0,
+          "z": 12
+        }
+      ]
+    },
+    "calle-infra": {
+      "id": "calle-infra",
+      "displayName": "Calle infra",
+      "dry": "infra",
+      "from": "zigurat",
+      "to": "infra-ui",
+      "bidirectional": true,
+      "walkSpeed": 1.4,
+      "waypoints": [
+        {
+          "x": 12,
+          "y": 0,
+          "z": 0
+        },
+        {
+          "x": 18,
+          "y": 0,
+          "z": 10
+        },
+        {
+          "x": 24,
+          "y": 0,
+          "z": 20
+        }
+      ]
+    }
+  },
+  "anclas": {
+    "ancla-vscode-extension": {
+      "id": "ancla-vscode-extension",
+      "parent": "zigurat",
+      "displayName": "VsCodeExtension",
+      "barrioId": "vscode-extension",
+      "slug": "vscode-extension",
+      "estado": "vivo",
+      "position": {
+        "x": 14,
+        "y": 0,
+        "z": 0
+      },
+      "facing": 0,
+      "slot": "sit",
+      "kind": "gamething.barrio"
+    },
+    "ancla-blockly-editor": {
+      "id": "ancla-blockly-editor",
+      "parent": "editores",
+      "displayName": "BlocklyEditor",
+      "barrioId": "blockly-editor",
+      "slug": "blockly-editor",
+      "estado": "latente",
+      "position": {
+        "x": 26,
+        "y": 0,
+        "z": -17
+      },
+      "facing": 0,
+      "slot": "sit",
+      "kind": "gamething.barrio"
+    },
+    "ancla-wiring-editor": {
+      "id": "ancla-wiring-editor",
+      "parent": "editores",
+      "displayName": "WiringEditor",
+      "barrioId": "wiring-editor",
+      "slug": "wiring-editor",
+      "estado": "vivo",
+      "position": {
+        "x": 26,
+        "y": 0,
+        "z": -15
+      },
+      "facing": 0,
+      "slot": "sit",
+      "kind": "gamething.barrio"
+    },
+    "ancla-prolog-editor": {
+      "id": "ancla-prolog-editor",
+      "parent": "editores",
+      "displayName": "PrologEditor",
+      "barrioId": "prolog-editor",
+      "slug": "prolog-editor",
+      "estado": "latente",
+      "position": {
+        "x": 26,
+        "y": 0,
+        "z": -13
+      },
+      "facing": 0,
+      "slot": "sit",
+      "kind": "gamething.barrio"
+    },
+    "ancla-typed-prompts-editor": {
+      "id": "ancla-typed-prompts-editor",
+      "parent": "editores",
+      "displayName": "TypedPromptsEditor",
+      "barrioId": "typed-prompts-editor",
+      "slug": "typed-prompts-editor",
+      "estado": "latente",
+      "position": {
+        "x": 26,
+        "y": 0,
+        "z": -11
+      },
+      "facing": 0,
+      "slot": "sit",
+      "kind": "gamething.barrio"
+    },
+    "ancla-workflow-editor": {
+      "id": "ancla-workflow-editor",
+      "parent": "editores",
+      "displayName": "WorkflowEditor",
+      "barrioId": "workflow-editor",
+      "slug": "workflow-editor",
+      "estado": "muerto",
+      "position": {
+        "x": 26,
+        "y": 0,
+        "z": -9
+      },
+      "facing": 0,
+      "slot": "sit",
+      "kind": "gamething.barrio"
+    },
+    "ancla-wiring-app-hypergraph-editor": {
+      "id": "ancla-wiring-app-hypergraph-editor",
+      "parent": "editores",
+      "displayName": "WiringAppHypergraphEditor",
+      "barrioId": "wiring-app-hypergraph-editor",
+      "slug": "wiring-app-hypergraph-editor",
+      "estado": "latente",
+      "position": {
+        "x": 26,
+        "y": 0,
+        "z": -7
+      },
+      "facing": 0,
+      "slot": "sit",
+      "kind": "gamething.barrio"
+    },
+    "ancla-blockchain-com-port": {
+      "id": "ancla-blockchain-com-port",
+      "parent": "red-stream",
+      "displayName": "BlockchainComPort",
+      "barrioId": "blockchain-com-port",
+      "slug": "blockchain-com-port",
+      "estado": "vivo",
+      "position": {
+        "x": 26,
+        "y": 0,
+        "z": -7
+      },
+      "facing": 0,
+      "slot": "sit",
+      "kind": "gamething.barrio"
+    },
+    "ancla-stream-desktop": {
+      "id": "ancla-stream-desktop",
+      "parent": "red-stream",
+      "displayName": "StreamDesktop",
+      "barrioId": "stream-desktop",
+      "slug": "stream-desktop",
+      "estado": "muerto",
+      "position": {
+        "x": 26,
+        "y": 0,
+        "z": -5
+      },
+      "facing": 0,
+      "slot": "sit",
+      "kind": "gamething.barrio"
+    },
+    "ancla-stream-desktop-app-cronos": {
+      "id": "ancla-stream-desktop-app-cronos",
+      "parent": "red-stream",
+      "displayName": "StreamDesktopAppCronos",
+      "barrioId": "stream-desktop-app-cronos",
+      "slug": "stream-desktop-app-cronos",
+      "estado": "muerto",
+      "position": {
+        "x": 26,
+        "y": 0,
+        "z": -3
+      },
+      "facing": 0,
+      "slot": "sit",
+      "kind": "gamething.barrio"
+    },
+    "ancla-bot-hub-sdk": {
+      "id": "ancla-bot-hub-sdk",
+      "parent": "red-stream",
+      "displayName": "BotHubSDK",
+      "barrioId": "bot-hub-sdk",
+      "slug": "bot-hub-sdk",
+      "estado": "vivo",
+      "position": {
+        "x": 26,
+        "y": 0,
+        "z": -1
+      },
+      "facing": 0,
+      "slot": "sit",
+      "kind": "gamething.barrio"
+    },
+    "ancla-aaia-gallery": {
+      "id": "ancla-aaia-gallery",
+      "parent": "runtime-mcp",
+      "displayName": "AAIAGallery",
+      "barrioId": "aaia-gallery",
+      "slug": "aaia-gallery",
+      "estado": "latente",
+      "position": {
+        "x": 26,
+        "y": 0,
+        "z": 0
+      },
+      "facing": 0,
+      "slot": "sit",
+      "kind": "gamething.barrio"
+    },
+    "ancla-mcp-gallery": {
+      "id": "ancla-mcp-gallery",
+      "parent": "runtime-mcp",
+      "displayName": "MCPGallery",
+      "barrioId": "mcp-gallery",
+      "slug": "mcp-gallery",
+      "estado": "vivo",
+      "position": {
+        "x": 26,
+        "y": 0,
+        "z": 2
+      },
+      "facing": 0,
+      "slot": "sit",
+      "kind": "gamething.barrio"
+    },
+    "ancla-state-machine": {
+      "id": "ancla-state-machine",
+      "parent": "runtime-mcp",
+      "displayName": "StateMachine",
+      "barrioId": "state-machine",
+      "slug": "state-machine",
+      "estado": "latente",
+      "position": {
+        "x": 26,
+        "y": 0,
+        "z": 4
+      },
+      "facing": 0,
+      "slot": "sit",
+      "kind": "gamething.barrio"
+    },
+    "ancla-novelist-editor": {
+      "id": "ancla-novelist-editor",
+      "parent": "runtime-mcp",
+      "displayName": "NovelistEditor",
+      "barrioId": "novelist-editor",
+      "slug": "novelist-editor",
+      "estado": "vivo",
+      "position": {
+        "x": 26,
+        "y": 0,
+        "z": 6
+      },
+      "facing": 0,
+      "slot": "sit",
+      "kind": "gamething.barrio"
+    },
+    "ancla-copilot-engine": {
+      "id": "ancla-copilot-engine",
+      "parent": "runtime-mcp",
+      "displayName": "CopilotEngine",
+      "barrioId": "copilot-engine",
+      "slug": "copilot-engine",
+      "estado": "vivo",
+      "position": {
+        "x": 26,
+        "y": 0,
+        "z": 8
+      },
+      "facing": 0,
+      "slot": "sit",
+      "kind": "gamething.barrio"
+    },
+    "ancla-document-machine-sdk": {
+      "id": "ancla-document-machine-sdk",
+      "parent": "lore-voz",
+      "displayName": "DocumentMachineSDK",
+      "barrioId": "document-machine-sdk",
+      "slug": "document-machine-sdk",
+      "estado": "vivo",
+      "position": {
+        "x": 26,
+        "y": 0,
+        "z": 8
+      },
+      "facing": 0,
+      "slot": "sit",
+      "kind": "gamething.barrio"
+    },
+    "ancla-onfalo-asesor-sdk": {
+      "id": "ancla-onfalo-asesor-sdk",
+      "parent": "lore-voz",
+      "displayName": "onfalo-asesor-sdk",
+      "barrioId": "onfalo-asesor-sdk",
+      "slug": "onfalo-asesor-sdk",
+      "estado": "vivo",
+      "position": {
+        "x": 26,
+        "y": 0,
+        "z": 10
+      },
+      "facing": 0,
+      "slot": "sit",
+      "kind": "gamething.barrio"
+    },
+    "ancla-agent-lore-sdk": {
+      "id": "ancla-agent-lore-sdk",
+      "parent": "lore-voz",
+      "displayName": "AgentLoreSDK",
+      "barrioId": "agent-lore-sdk",
+      "slug": "agent-lore-sdk",
+      "estado": "vivo",
+      "position": {
+        "x": 26,
+        "y": 0,
+        "z": 12
+      },
+      "facing": 0,
+      "slot": "sit",
+      "kind": "gamething.barrio"
+    },
+    "ancla-vector-machine-sdk": {
+      "id": "ancla-vector-machine-sdk",
+      "parent": "lore-voz",
+      "displayName": "VectorMachineSDK",
+      "barrioId": "vector-machine-sdk",
+      "slug": "vector-machine-sdk",
+      "estado": "vivo",
+      "position": {
+        "x": 26,
+        "y": 0,
+        "z": 14
+      },
+      "facing": 0,
+      "slot": "sit",
+      "kind": "gamething.barrio"
+    },
+    "ancla-vector-machine-ui": {
+      "id": "ancla-vector-machine-ui",
+      "parent": "lore-voz",
+      "displayName": "VectorMachineUI",
+      "barrioId": "vector-machine-ui",
+      "slug": "vector-machine-ui",
+      "estado": "vivo",
+      "position": {
+        "x": 26,
+        "y": 0,
+        "z": 16
+      },
+      "facing": 0,
+      "slot": "sit",
+      "kind": "gamething.barrio"
+    },
+    "ancla-scriptorium-vps": {
+      "id": "ancla-scriptorium-vps",
+      "parent": "infra-ui",
+      "displayName": "ScriptoriumVps",
+      "barrioId": "scriptorium-vps",
+      "slug": "scriptorium-vps",
+      "estado": "vivo",
+      "position": {
+        "x": 26,
+        "y": 0,
+        "z": 18
+      },
+      "facing": 0,
+      "slot": "sit",
+      "kind": "gamething.barrio"
+    },
+    "ancla-ui-sdk-threejs": {
+      "id": "ancla-ui-sdk-threejs",
+      "parent": "infra-ui",
+      "displayName": "UISDKThreejs",
+      "barrioId": "ui-sdk-threejs",
+      "slug": "ui-sdk-threejs",
+      "estado": "vivo",
+      "position": {
+        "x": 26,
+        "y": 0,
+        "z": 20
+      },
+      "facing": 0,
+      "slot": "sit",
+      "kind": "gamething.barrio"
+    },
+    "ancla-vibe-coding-suite": {
+      "id": "ancla-vibe-coding-suite",
+      "parent": "infra-ui",
+      "displayName": "VibeCodingSuite",
+      "barrioId": "vibe-coding-suite",
+      "slug": "vibe-coding-suite",
+      "estado": "latente",
+      "position": {
+        "x": 26,
+        "y": 0,
+        "z": 22
+      },
+      "facing": 0,
+      "slot": "sit",
+      "kind": "gamething.barrio"
+    }
+  },
+  "defaultAnchorByNode": {
+    "zigurat": "ancla-vscode-extension",
+    "editores": "ancla-blockly-editor",
+    "red-stream": "ancla-blockchain-com-port",
+    "runtime-mcp": "ancla-aaia-gallery",
+    "lore-voz": "ancla-document-machine-sdk",
+    "infra-ui": "ancla-scriptorium-vps"
+  },
+  "arbol": {
+    "barrios": {
+      "vscode-extension": {
+        "distrito": "zigurat",
+        "estado": "vivo",
+        "edificios": [
+          {
+            "id": "host-ide",
+            "tipo": "nave"
+          }
+        ],
+        "maquinarias": {
+          "host-ide-extension": {
+            "cmd": "code --extensionDevelopmentPath=.",
+            "puerto": null,
+            "health": "extension-host",
+            "autoRestart": false,
+            "deps": [],
+            "barrio": "vscode-extension",
+            "edificio": "host-ide"
+          }
+        }
+      },
+      "blockly-editor": {
+        "distrito": "editores",
+        "estado": "latente",
+        "edificios": [
+          {
+            "id": "blockly-editor",
+            "tipo": "local"
+          }
+        ],
+        "maquinarias": {
+          "blockly-editor-ui": {
+            "cmd": "npm run start",
+            "puerto": null,
+            "health": "/",
+            "autoRestart": true,
+            "deps": [],
+            "barrio": "blockly-editor",
+            "edificio": "blockly-editor"
+          }
+        }
+      },
+      "wiring-editor": {
+        "distrito": "editores",
+        "estado": "vivo",
+        "edificios": [
+          {
+            "id": "wire-editor",
+            "tipo": "local"
+          },
+          {
+            "id": "escribiente",
+            "tipo": "local"
+          }
+        ],
+        "maquinarias": {
+          "wire-editor-nodered": {
+            "cmd": "npm start",
+            "puerto": 1880,
+            "health": "/",
+            "autoRestart": true,
+            "deps": [],
+            "barrio": "wiring-editor",
+            "edificio": "wire-editor"
+          }
+        }
+      },
+      "prolog-editor": {
+        "distrito": "editores",
+        "estado": "latente",
+        "edificios": [
+          {
+            "id": "prolog-editor",
+            "tipo": "local"
+          }
+        ],
+        "maquinarias": {
+          "prolog-ui": {
+            "cmd": "npm run start:ui",
+            "puerto": 5001,
+            "health": "/",
+            "autoRestart": true,
+            "deps": [
+              "prolog-backend"
+            ],
+            "barrio": "prolog-editor",
+            "edificio": "prolog-editor"
+          },
+          "prolog-backend": {
+            "cmd": "npm run start:backend",
+            "puerto": 8000,
+            "health": "/health",
+            "autoRestart": true,
+            "deps": [],
+            "barrio": "prolog-editor",
+            "edificio": "prolog-editor"
+          },
+          "prolog-mcp": {
+            "cmd": "npm run start:mcp",
+            "puerto": 3006,
+            "health": "/health",
+            "autoRestart": true,
+            "deps": [
+              "prolog-backend"
+            ],
+            "barrio": "prolog-editor",
+            "edificio": "prolog-editor"
+          }
+        }
+      },
+      "typed-prompts-editor": {
+        "distrito": "editores",
+        "estado": "latente",
+        "edificios": [
+          {
+            "id": "typed-prompting",
+            "tipo": "local"
+          }
+        ],
+        "maquinarias": {
+          "typed-prompt-ui": {
+            "cmd": "npm run dev",
+            "puerto": 3019,
+            "health": "/",
+            "autoRestart": true,
+            "deps": [],
+            "barrio": "typed-prompts-editor",
+            "edificio": "typed-prompting"
+          },
+          "typed-prompt-mcp": {
+            "cmd": "npm run start:mcp",
+            "puerto": 3020,
+            "health": "/health",
+            "autoRestart": true,
+            "deps": [],
+            "barrio": "typed-prompts-editor",
+            "edificio": "typed-prompting"
+          }
+        }
+      },
+      "workflow-editor": {
+        "distrito": "editores",
+        "estado": "muerto",
+        "edificios": [
+          {
+            "id": "n8n-editor",
+            "tipo": "local"
+          }
+        ],
+        "maquinarias": {
+          "n8n-angular-dev": {
+            "cmd": "npm run start",
+            "puerto": 4200,
+            "health": "/",
+            "autoRestart": false,
+            "deps": [],
+            "barrio": "workflow-editor",
+            "edificio": "n8n-editor"
+          }
+        }
+      },
+      "wiring-app-hypergraph-editor": {
+        "distrito": "editores",
+        "estado": "latente",
+        "edificios": [
+          {
+            "id": "wiring-app",
+            "tipo": "local"
+          },
+          {
+            "id": "arg-board-app",
+            "tipo": "local"
+          },
+          {
+            "id": "hypergraph-editor",
+            "tipo": "local"
+          }
+        ],
+        "maquinarias": {
+          "wiring-app-ui": {
+            "cmd": "npm run start",
+            "puerto": null,
+            "health": "/",
+            "autoRestart": true,
+            "deps": [],
+            "barrio": "wiring-app-hypergraph-editor",
+            "edificio": "wiring-app"
+          }
+        }
+      },
+      "blockchain-com-port": {
+        "distrito": "red-stream",
+        "estado": "vivo",
+        "edificios": [
+          {
+            "id": "network",
+            "tipo": "local"
+          }
+        ],
+        "maquinarias": {
+          "network-stack": {
+            "cmd": "docker compose up",
+            "puerto": null,
+            "health": "compose",
+            "autoRestart": true,
+            "deps": [],
+            "barrio": "blockchain-com-port",
+            "edificio": "network"
+          }
+        }
+      },
+      "stream-desktop": {
+        "distrito": "red-stream",
+        "estado": "muerto",
+        "edificios": [],
+        "maquinarias": {}
+      },
+      "stream-desktop-app-cronos": {
+        "distrito": "red-stream",
+        "estado": "muerto",
+        "edificios": [],
+        "maquinarias": {}
+      },
+      "bot-hub-sdk": {
+        "distrito": "red-stream",
+        "estado": "vivo",
+        "edificios": [
+          {
+            "id": "bot-hub-sdk",
+            "tipo": "local"
+          }
+        ],
+        "maquinarias": {
+          "bot-hub-runtime": {
+            "cmd": "npm start",
+            "puerto": null,
+            "health": "/",
+            "autoRestart": true,
+            "deps": [],
+            "barrio": "bot-hub-sdk",
+            "edificio": "bot-hub-sdk"
+          }
+        }
+      },
+      "aaia-gallery": {
+        "distrito": "runtime-mcp",
+        "estado": "latente",
+        "edificios": [
+          {
+            "id": "aaia-editor",
+            "tipo": "local"
+          }
+        ],
+        "maquinarias": {
+          "aaia-mcp-server": {
+            "cmd": "npm run start:mcp",
+            "puerto": 3007,
+            "health": "/health",
+            "autoRestart": true,
+            "deps": [],
+            "barrio": "aaia-gallery",
+            "edificio": "aaia-editor"
+          }
+        }
+      },
+      "mcp-gallery": {
+        "distrito": "runtime-mcp",
+        "estado": "vivo",
+        "edificios": [
+          {
+            "id": "mcp-presets",
+            "tipo": "local"
+          }
+        ],
+        "maquinarias": {
+          "mcp-launcher": {
+            "cmd": "npm run start:launcher",
+            "puerto": 3050,
+            "health": "/health",
+            "autoRestart": true,
+            "deps": [],
+            "barrio": "mcp-gallery",
+            "edificio": "mcp-presets"
+          },
+          "socket-io-mesh": {
+            "cmd": "npm run start:mesh",
+            "puerto": 3010,
+            "health": "/health",
+            "autoRestart": true,
+            "deps": [],
+            "barrio": "mcp-gallery",
+            "edificio": "mcp-presets"
+          }
+        }
+      },
+      "state-machine": {
+        "distrito": "runtime-mcp",
+        "estado": "latente",
+        "edificios": [
+          {
+            "id": "state-machine-server",
+            "tipo": "local"
+          }
+        ],
+        "maquinarias": {
+          "state-machine-server": {
+            "cmd": "npm run start",
+            "puerto": 3004,
+            "health": "/health",
+            "autoRestart": true,
+            "deps": [],
+            "barrio": "state-machine",
+            "edificio": "state-machine-server"
+          }
+        }
+      },
+      "novelist-editor": {
+        "distrito": "runtime-mcp",
+        "estado": "vivo",
+        "edificios": [
+          {
+            "id": "novelist",
+            "tipo": "local"
+          }
+        ],
+        "maquinarias": {
+          "novelist-mcp": {
+            "cmd": "npm run start:mcp",
+            "puerto": 3066,
+            "health": "/health",
+            "autoRestart": true,
+            "deps": [],
+            "barrio": "novelist-editor",
+            "edificio": "novelist"
+          }
+        }
+      },
+      "copilot-engine": {
+        "distrito": "runtime-mcp",
+        "estado": "vivo",
+        "edificios": [],
+        "maquinarias": {}
+      },
+      "document-machine-sdk": {
+        "distrito": "lore-voz",
+        "estado": "vivo",
+        "edificios": [
+          {
+            "id": "lore-sdk",
+            "tipo": "nave"
+          }
+        ],
+        "maquinarias": {
+          "lore-sdk-runtime": {
+            "cmd": "npm start",
+            "puerto": null,
+            "health": "/",
+            "autoRestart": true,
+            "deps": [],
+            "barrio": "document-machine-sdk",
+            "edificio": "lore-sdk"
+          }
+        }
+      },
+      "onfalo-asesor-sdk": {
+        "distrito": "lore-voz",
+        "estado": "vivo",
+        "edificios": [
+          {
+            "id": "consejo-asesor",
+            "tipo": "nave"
+          }
+        ],
+        "maquinarias": {
+          "consejo-asesor-runtime": {
+            "cmd": "npm start",
+            "puerto": null,
+            "health": "/",
+            "autoRestart": true,
+            "deps": [],
+            "barrio": "onfalo-asesor-sdk",
+            "edificio": "consejo-asesor"
+          }
+        }
+      },
+      "agent-lore-sdk": {
+        "distrito": "lore-voz",
+        "estado": "vivo",
+        "edificios": [],
+        "maquinarias": {}
+      },
+      "vector-machine-sdk": {
+        "distrito": "lore-voz",
+        "estado": "vivo",
+        "edificios": [
+          {
+            "id": "vector-machine",
+            "tipo": "local"
+          }
+        ],
+        "maquinarias": {
+          "vector-machine-runtime": {
+            "cmd": "npm start",
+            "puerto": null,
+            "health": "/",
+            "autoRestart": true,
+            "deps": [],
+            "barrio": "vector-machine-sdk",
+            "edificio": "vector-machine"
+          }
+        }
+      },
+      "vector-machine-ui": {
+        "distrito": "lore-voz",
+        "estado": "vivo",
+        "edificios": [
+          {
+            "id": "vector-machine-ui",
+            "tipo": "local"
+          }
+        ],
+        "maquinarias": {
+          "vector-machine-admin": {
+            "cmd": "npm run dev",
+            "puerto": 3001,
+            "health": "/",
+            "autoRestart": true,
+            "deps": [],
+            "barrio": "vector-machine-ui",
+            "edificio": "vector-machine-ui"
+          }
+        }
+      },
+      "scriptorium-vps": {
+        "distrito": "infra-ui",
+        "estado": "vivo",
+        "edificios": [
+          {
+            "id": "scriptorium-vps",
+            "tipo": "nave"
+          }
+        ],
+        "maquinarias": {
+          "vps-deploy": {
+            "cmd": "npm run deploy:status",
+            "puerto": null,
+            "health": "deploy",
+            "autoRestart": false,
+            "deps": [],
+            "barrio": "scriptorium-vps",
+            "edificio": "scriptorium-vps"
+          }
+        }
+      },
+      "ui-sdk-threejs": {
+        "distrito": "infra-ui",
+        "estado": "vivo",
+        "edificios": [],
+        "maquinarias": {}
+      },
+      "vibe-coding-suite": {
+        "distrito": "infra-ui",
+        "estado": "latente",
+        "edificios": [],
+        "maquinarias": {}
+      }
+    }
+  }
+}

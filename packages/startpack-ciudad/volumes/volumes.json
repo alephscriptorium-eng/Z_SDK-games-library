@@ -1,0 +1,11 @@
+{
+  "root": ".",
+  "volumes": {
+    "ciudad": {
+      "disk": "DISK_04",
+      "path": "DISK_04",
+      "readonly": true,
+      "label": "Ciudad startpack (topology seeds)"
+    }
+  }
+}

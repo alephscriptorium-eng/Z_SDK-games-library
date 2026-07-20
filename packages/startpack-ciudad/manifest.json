@@ -1,0 +1,25 @@
+{
+  "schema": "zeus.startpack/v0",
+  "game": "ciudad",
+  "id": "startpack-ciudad",
+  "version": "0.1.0",
+  "round": {
+    "gamemapId": "ciudad-demo",
+    "seed": 1,
+    "feeds": "synthetic"
+  },
+  "startPack": [],
+  "objetivo": {
+    "barriosDespiertos": 1
+  },
+  "seeds": {
+    "presets": null,
+    "gamemap": "seeds/gamemap.json",
+    "feedSeed": 1
+  },
+  "volumes": {
+    "root": "volumes",
+    "slots": ["DISK_04"]
+  },
+  "acta": "acta/ACTA.md"
+}

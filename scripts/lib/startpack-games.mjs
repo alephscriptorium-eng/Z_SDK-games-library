@@ -41,6 +41,12 @@ export const STARTPACK_GAMES = {
     packageName: '@zeus/startpack-plaza',
     dir: 'packages/startpack-plaza',
     npmPackName: 'zeus-startpack-plaza'
+  },
+  ciudad: {
+    game: 'ciudad',
+    packageName: '@zeus/startpack-ciudad',
+    dir: 'packages/startpack-ciudad',
+    npmPackName: 'zeus-startpack-ciudad'
   }
 };
 

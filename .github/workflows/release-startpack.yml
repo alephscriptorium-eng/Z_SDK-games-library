@@ -10,13 +10,17 @@ on:
   workflow_dispatch:
     inputs:
       game:
-        description: 'Game id (delta|pozo)'
+        description: 'Game id (delta|pozo|plaza|ciudad|…)'
         required: true
         default: 'delta'
         type: choice
         options:
           - delta
           - pozo
+          - plaza
+          - sketch
+          - solve-coagula
+          - ciudad
       publish_npm:
         description: 'Also npm publish (needs NPM_TOKEN)'
         required: false

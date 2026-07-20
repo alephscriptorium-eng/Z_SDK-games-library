@@ -1,0 +1,39 @@
+{
+  "name": "@zeus/startpack-ciudad",
+  "version": "0.1.0",
+  "description": "Start pack: city topology as flat gamemap seeds (plaza/zigurat/districts/barrios + arbol catalog).",
+  "type": "module",
+  "main": "index.mjs",
+  "exports": {
+    ".": "./index.mjs",
+    "./scene": "./scene.mjs",
+    "./manifest.json": "./manifest.json",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.mjs",
+    "scene.mjs",
+    "manifest.json",
+    "seeds/",
+    "volumes/",
+    "acta/",
+    "schemas/",
+    "README.md"
+  ],
+  "scripts": {
+    "generate": "node scripts/generate-seeds.mjs",
+    "test": "node --test test/*.test.mjs"
+  },
+  "dependencies": {
+    "@zeus/startpack-kit": "0.1.0"
+  },
+  "zeus": {
+    "role": "startpack",
+    "game": "ciudad"
+  },
+  "license": "AIPLv1",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://npm.scriptorium.escrivivir.co"
+  }
+}

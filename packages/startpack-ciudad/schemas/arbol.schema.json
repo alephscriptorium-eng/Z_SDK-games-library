@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "zeus.startpack-ciudad.arbol/v0",
+  "title": "Ciudad arbol catalog (lifecycle leaves)",
+  "type": "object",
+  "required": ["barrios"],
+  "additionalProperties": false,
+  "properties": {
+    "barrios": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["distrito", "estado", "edificios", "maquinarias"],
+        "additionalProperties": false,
+        "properties": {
+          "distrito": { "type": "string", "minLength": 1 },
+          "estado": {
+            "type": "string",
+            "enum": ["vivo", "latente", "muerto", "roto"]
+          },
+          "edificios": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["id", "tipo"],
+              "additionalProperties": false,
+              "properties": {
+                "id": { "type": "string", "minLength": 1 },
+                "tipo": { "type": "string", "enum": ["local", "nave"] }
+              }
+            }
+          },
+          "maquinarias": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object",
+              "required": [
+                "cmd",
+                "puerto",
+                "health",
+                "autoRestart",
+                "deps",
+                "barrio",
+                "edificio"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "cmd": { "type": "string", "minLength": 1 },
+                "puerto": { "type": ["integer", "null"], "minimum": 1 },
+                "health": { "type": "string", "minLength": 1 },
+                "autoRestart": { "type": "boolean" },
+                "deps": {
+                  "type": "array",
+                  "items": { "type": "string" }
+                },
+                "barrio": { "type": "string", "minLength": 1 },
+                "edificio": { "type": "string", "minLength": 1 }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
