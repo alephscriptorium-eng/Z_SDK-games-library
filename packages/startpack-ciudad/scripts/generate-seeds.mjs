@@ -1,15 +1,34 @@
 #!/usr/bin/env node
 /**
- * Build-time generator: ciudad-source → seeds/gamemap.json
- * Does not read cantera at runtime; source is embedded in ciudad-source.mjs.
+ * Build-time generator: ciudad-source + census → seeds/gamemap.json
+ *
+ * Playable `estado` comes from sprint cantera `cantera/CIUDAD/CENSO-ESTADOS.md`
+ * (default projection: data/censo-estados.json). Optional:
+ *   node scripts/generate-seeds.mjs --censo <path-to-CENSO-ESTADOS.md|json>
+ *
+ * Does not read TEMP/ drafts. Runtime never opens cantera.
  */
 import { writeFileSync, mkdirSync } from 'node:fs';
-import { dirname, join } from 'node:path';
+import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { BARRIOS, CALLES, DISTRITOS, GOBIERNO } from './ciudad-source.mjs';
+import { BARRIOS as BARRIOS_BASE, CALLES, DISTRITOS, GOBIERNO } from './ciudad-source.mjs';
+import {
+  applyCensoEstados,
+  DEFAULT_CENSO_JSON,
+  loadCensoEstados
+} from './load-censo-estados.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const OUT = join(ROOT, 'seeds', 'gamemap.json');
+
+function parseCensoArg(argv) {
+  const i = argv.indexOf('--censo');
+  if (i >= 0 && argv[i + 1]) return resolve(argv[i + 1]);
+  return DEFAULT_CENSO_JSON;
+}
+
+const censo = loadCensoEstados(parseCensoArg(process.argv));
+const BARRIOS = applyCensoEstados(BARRIOS_BASE, censo);
 
 const NODE_LAYOUT = {
   plaza: { x: 0, y: 0, z: 0 },
@@ -215,5 +234,5 @@ mkdirSync(dirname(OUT), { recursive: true });
 const gamemap = buildGamemap();
 writeFileSync(OUT, `${JSON.stringify(gamemap, null, 2)}\n`, 'utf8');
 console.log(
-  `wrote ${OUT} · nodes=${Object.keys(gamemap.nodos).length} links=${Object.keys(gamemap.enlaces).length} anchors=${Object.keys(gamemap.anclas).length} barrios=${Object.keys(gamemap.arbol.barrios).length}`
+  `wrote ${OUT} · censo=${censo.source} · nodes=${Object.keys(gamemap.nodos).length} links=${Object.keys(gamemap.enlaces).length} anchors=${Object.keys(gamemap.anclas).length} barrios=${Object.keys(gamemap.arbol.barrios).length}`
 );

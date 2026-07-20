@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "note": "Census states drained as data for city mockdatas (vivo|latente|muerto|roto).",
+  "note": "Census states drained as data for city mockdatas (vivo|latente|muerto|roto). Authoritative sprint source: cantera/CIUDAD/CENSO-ESTADOS.md (ids keyed by displayName here).",
   "barrios": {
     "VsCodeExtension": { "estado": "vivo", "distrito": "Zigurat" },
     "MCPGallery": { "estado": "vivo", "distrito": "Runtime-MCP" },

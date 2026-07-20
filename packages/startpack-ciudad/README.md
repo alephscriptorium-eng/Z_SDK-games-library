@@ -16,6 +16,14 @@ Loader: `loadStartPack()` → `{ gamemap, scene, arbol, zones, volumesRoot, acta
 Scene for `@zeus/game-engine`: `toMapScene(gamemap)` or `pack.scene`, then
 `createMapEngine(pack.scene)`.
 
+## Census provenance (`estado`)
+
+Playable barrio `estado` is authored in the sprint city cantera file
+`cantera/CIUDAD/CENSO-ESTADOS.md`. The pack ships a build-time projection at
+`data/censo-estados.json`. `scripts/generate-seeds.mjs` reads that census
+(optional `--censo <md|json>`) and writes `seeds/gamemap.json`. Runtime never
+opens cantera paths.
+
 ## Solape with `@zeus/startpack-plaza`
 
 | | plaza | ciudad |

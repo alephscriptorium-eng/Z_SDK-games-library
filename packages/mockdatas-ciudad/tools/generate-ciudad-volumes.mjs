@@ -3,6 +3,8 @@
  * Generate city mock volumes for firehose-browser (DISK_01) and cache-browser (DISK_02/LINEAS).
  *
  * Build-time only: reads a cantera CIUDAD tree passed via --cantera.
+ * Barrio `estado` cadence comes from --censo (default data/censo.json), which
+ * projects sprint cantera `cantera/CIUDAD/CENSO-ESTADOS.md`.
  * Runtime browsers never open the cantera; they consume --out (versioned volumes/).
  *
  * Idempotent: same cantera + censo → same bytes (sorted edges, fixed epoch timestamps).

@@ -1,7 +1,11 @@
 /**
- * Topology + census + tree catalog — build-time source for seeds.
- * Transformed from city map / barrio sheets / census at authoring time.
- * Runtime never reads external cantera paths.
+ * Topology + tree catalog — build-time source for seeds.
+ * Transformed from city map / barrio sheets at authoring time.
+ *
+ * Playable `estado` is NOT authored here: it comes from the sprint cantera
+ * census `cantera/CIUDAD/CENSO-ESTADOS.md` (pack projection:
+ * `data/censo-estados.json`), applied by generate-seeds via load-censo-estados.
+ * Runtime never reads cantera paths.
  */
 
 /** @typedef {'vivo'|'latente'|'muerto'|'roto'} BarrioEstado */
@@ -12,7 +16,6 @@
  *   slug: string,
  *   displayName: string,
  *   distrito: string,
- *   estado: BarrioEstado,
  *   edificios: Array<{ id: string, tipo: 'local'|'nave' }>,
  *   maquinarias: Record<string, {
  *     cmd: string,
@@ -92,7 +95,8 @@ export const CALLES = [
 ];
 
 /**
- * 24 barrios — census estado + edificios/maquinarias from barrio sheets.
+ * 24 barrios — edificios/maquinarias from barrio sheets.
+ * `estado` applied at generate-time from cantera/CIUDAD/CENSO-ESTADOS.md.
  * @type {BarrioSource[]}
  */
 export const BARRIOS = [
@@ -101,7 +105,6 @@ export const BARRIOS = [
     slug: 'vscode-extension',
     displayName: 'VsCodeExtension',
     distrito: 'zigurat',
-    estado: 'vivo',
     edificios: [{ id: 'host-ide', tipo: 'nave' }],
     maquinarias: {
       'host-ide-extension': {
@@ -120,7 +123,6 @@ export const BARRIOS = [
     slug: 'blockly-editor',
     displayName: 'BlocklyEditor',
     distrito: 'editores',
-    estado: 'latente',
     edificios: [{ id: 'blockly-editor', tipo: 'local' }],
     maquinarias: {
       'blockly-editor-ui': {
@@ -139,7 +141,6 @@ export const BARRIOS = [
     slug: 'wiring-editor',
     displayName: 'WiringEditor',
     distrito: 'editores',
-    estado: 'vivo',
     edificios: [
       { id: 'wire-editor', tipo: 'local' },
       { id: 'escribiente', tipo: 'local' }
@@ -161,7 +162,6 @@ export const BARRIOS = [
     slug: 'prolog-editor',
     displayName: 'PrologEditor',
     distrito: 'editores',
-    estado: 'latente',
     edificios: [{ id: 'prolog-editor', tipo: 'local' }],
     maquinarias: {
       'prolog-ui': {
@@ -198,7 +198,6 @@ export const BARRIOS = [
     slug: 'typed-prompts-editor',
     displayName: 'TypedPromptsEditor',
     distrito: 'editores',
-    estado: 'latente',
     edificios: [{ id: 'typed-prompting', tipo: 'local' }],
     maquinarias: {
       'typed-prompt-ui': {
@@ -226,7 +225,6 @@ export const BARRIOS = [
     slug: 'workflow-editor',
     displayName: 'WorkflowEditor',
     distrito: 'editores',
-    estado: 'muerto',
     edificios: [{ id: 'n8n-editor', tipo: 'local' }],
     maquinarias: {
       'n8n-angular-dev': {
@@ -245,7 +243,6 @@ export const BARRIOS = [
     slug: 'wiring-app-hypergraph-editor',
     displayName: 'WiringAppHypergraphEditor',
     distrito: 'editores',
-    estado: 'latente',
     edificios: [
       { id: 'wiring-app', tipo: 'local' },
       { id: 'arg-board-app', tipo: 'local' },
@@ -268,7 +265,6 @@ export const BARRIOS = [
     slug: 'blockchain-com-port',
     displayName: 'BlockchainComPort',
     distrito: 'red-stream',
-    estado: 'vivo',
     edificios: [{ id: 'network', tipo: 'local' }],
     maquinarias: {
       'network-stack': {
@@ -287,7 +283,6 @@ export const BARRIOS = [
     slug: 'stream-desktop',
     displayName: 'StreamDesktop',
     distrito: 'red-stream',
-    estado: 'muerto',
     edificios: [],
     maquinarias: {}
   },
@@ -296,7 +291,6 @@ export const BARRIOS = [
     slug: 'stream-desktop-app-cronos',
     displayName: 'StreamDesktopAppCronos',
     distrito: 'red-stream',
-    estado: 'muerto',
     edificios: [],
     maquinarias: {}
   },
@@ -305,7 +299,6 @@ export const BARRIOS = [
     slug: 'bot-hub-sdk',
     displayName: 'BotHubSDK',
     distrito: 'red-stream',
-    estado: 'vivo',
     edificios: [{ id: 'bot-hub-sdk', tipo: 'local' }],
     maquinarias: {
       'bot-hub-runtime': {
@@ -324,7 +317,6 @@ export const BARRIOS = [
     slug: 'aaia-gallery',
     displayName: 'AAIAGallery',
     distrito: 'runtime-mcp',
-    estado: 'latente',
     edificios: [{ id: 'aaia-editor', tipo: 'local' }],
     maquinarias: {
       'aaia-mcp-server': {
@@ -343,7 +335,6 @@ export const BARRIOS = [
     slug: 'mcp-gallery',
     displayName: 'MCPGallery',
     distrito: 'runtime-mcp',
-    estado: 'vivo',
     edificios: [{ id: 'mcp-presets', tipo: 'local' }],
     maquinarias: {
       'mcp-launcher': {
@@ -371,7 +362,6 @@ export const BARRIOS = [
     slug: 'state-machine',
     displayName: 'StateMachine',
     distrito: 'runtime-mcp',
-    estado: 'latente',
     edificios: [{ id: 'state-machine-server', tipo: 'local' }],
     maquinarias: {
       'state-machine-server': {
@@ -390,7 +380,6 @@ export const BARRIOS = [
     slug: 'novelist-editor',
     displayName: 'NovelistEditor',
     distrito: 'runtime-mcp',
-    estado: 'vivo',
     edificios: [{ id: 'novelist', tipo: 'local' }],
     maquinarias: {
       'novelist-mcp': {
@@ -409,7 +398,6 @@ export const BARRIOS = [
     slug: 'copilot-engine',
     displayName: 'CopilotEngine',
     distrito: 'runtime-mcp',
-    estado: 'vivo',
     edificios: [],
     maquinarias: {}
   },
@@ -418,7 +406,6 @@ export const BARRIOS = [
     slug: 'document-machine-sdk',
     displayName: 'DocumentMachineSDK',
     distrito: 'lore-voz',
-    estado: 'vivo',
     edificios: [{ id: 'lore-sdk', tipo: 'nave' }],
     maquinarias: {
       'lore-sdk-runtime': {
@@ -437,7 +424,6 @@ export const BARRIOS = [
     slug: 'onfalo-asesor-sdk',
     displayName: 'onfalo-asesor-sdk',
     distrito: 'lore-voz',
-    estado: 'vivo',
     edificios: [{ id: 'consejo-asesor', tipo: 'nave' }],
     maquinarias: {
       'consejo-asesor-runtime': {
@@ -456,7 +442,6 @@ export const BARRIOS = [
     slug: 'agent-lore-sdk',
     displayName: 'AgentLoreSDK',
     distrito: 'lore-voz',
-    estado: 'vivo',
     edificios: [],
     maquinarias: {}
   },
@@ -465,7 +450,6 @@ export const BARRIOS = [
     slug: 'vector-machine-sdk',
     displayName: 'VectorMachineSDK',
     distrito: 'lore-voz',
-    estado: 'vivo',
     edificios: [{ id: 'vector-machine', tipo: 'local' }],
     maquinarias: {
       'vector-machine-runtime': {
@@ -484,7 +468,6 @@ export const BARRIOS = [
     slug: 'vector-machine-ui',
     displayName: 'VectorMachineUI',
     distrito: 'lore-voz',
-    estado: 'vivo',
     edificios: [{ id: 'vector-machine-ui', tipo: 'local' }],
     maquinarias: {
       'vector-machine-admin': {
@@ -503,7 +486,6 @@ export const BARRIOS = [
     slug: 'scriptorium-vps',
     displayName: 'ScriptoriumVps',
     distrito: 'infra-ui',
-    estado: 'vivo',
     edificios: [{ id: 'scriptorium-vps', tipo: 'nave' }],
     maquinarias: {
       'vps-deploy': {
@@ -522,7 +504,6 @@ export const BARRIOS = [
     slug: 'ui-sdk-threejs',
     displayName: 'UISDKThreejs',
     distrito: 'infra-ui',
-    estado: 'vivo',
     edificios: [],
     maquinarias: {}
   },
@@ -531,7 +512,6 @@ export const BARRIOS = [
     slug: 'vibe-coding-suite',
     displayName: 'VibeCodingSuite',
     distrito: 'infra-ui',
-    estado: 'latente',
     edificios: [],
     maquinarias: {}
   }

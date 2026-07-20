@@ -1,0 +1,151 @@
+{
+  "schemaVersion": 1,
+  "note": "Projection of cantera/CIUDAD/CENSO-ESTADOS.md (sprint city cantera). Build-time only.",
+  "source": "cantera/CIUDAD/CENSO-ESTADOS.md",
+  "barrios": {
+    "vscode-extension": {
+      "slug": "vscode-extension",
+      "displayName": "VsCodeExtension",
+      "distrito": "zigurat",
+      "estado": "vivo"
+    },
+    "blockly-editor": {
+      "slug": "blockly-editor",
+      "displayName": "BlocklyEditor",
+      "distrito": "editores",
+      "estado": "latente"
+    },
+    "wiring-editor": {
+      "slug": "wiring-editor",
+      "displayName": "WiringEditor",
+      "distrito": "editores",
+      "estado": "vivo"
+    },
+    "prolog-editor": {
+      "slug": "prolog-editor",
+      "displayName": "PrologEditor",
+      "distrito": "editores",
+      "estado": "latente"
+    },
+    "typed-prompts-editor": {
+      "slug": "typed-prompts-editor",
+      "displayName": "TypedPromptsEditor",
+      "distrito": "editores",
+      "estado": "latente"
+    },
+    "workflow-editor": {
+      "slug": "workflow-editor",
+      "displayName": "WorkflowEditor",
+      "distrito": "editores",
+      "estado": "muerto"
+    },
+    "wiring-app-hypergraph-editor": {
+      "slug": "wiring-app-hypergraph-editor",
+      "displayName": "WiringAppHypergraphEditor",
+      "distrito": "editores",
+      "estado": "latente"
+    },
+    "blockchain-com-port": {
+      "slug": "blockchain-com-port",
+      "displayName": "BlockchainComPort",
+      "distrito": "red-stream",
+      "estado": "vivo"
+    },
+    "stream-desktop": {
+      "slug": "stream-desktop",
+      "displayName": "StreamDesktop",
+      "distrito": "red-stream",
+      "estado": "muerto"
+    },
+    "stream-desktop-app-cronos": {
+      "slug": "stream-desktop-app-cronos",
+      "displayName": "StreamDesktopAppCronos",
+      "distrito": "red-stream",
+      "estado": "muerto"
+    },
+    "bot-hub-sdk": {
+      "slug": "bot-hub-sdk",
+      "displayName": "BotHubSDK",
+      "distrito": "red-stream",
+      "estado": "vivo"
+    },
+    "aaia-gallery": {
+      "slug": "aaia-gallery",
+      "displayName": "AAIAGallery",
+      "distrito": "runtime-mcp",
+      "estado": "latente"
+    },
+    "mcp-gallery": {
+      "slug": "mcp-gallery",
+      "displayName": "MCPGallery",
+      "distrito": "runtime-mcp",
+      "estado": "vivo"
+    },
+    "state-machine": {
+      "slug": "state-machine",
+      "displayName": "StateMachine",
+      "distrito": "runtime-mcp",
+      "estado": "latente"
+    },
+    "novelist-editor": {
+      "slug": "novelist-editor",
+      "displayName": "NovelistEditor",
+      "distrito": "runtime-mcp",
+      "estado": "vivo"
+    },
+    "copilot-engine": {
+      "slug": "copilot-engine",
+      "displayName": "CopilotEngine",
+      "distrito": "runtime-mcp",
+      "estado": "vivo"
+    },
+    "document-machine-sdk": {
+      "slug": "document-machine-sdk",
+      "displayName": "DocumentMachineSDK",
+      "distrito": "lore-voz",
+      "estado": "vivo"
+    },
+    "onfalo-asesor-sdk": {
+      "slug": "onfalo-asesor-sdk",
+      "displayName": "onfalo-asesor-sdk",
+      "distrito": "lore-voz",
+      "estado": "vivo"
+    },
+    "agent-lore-sdk": {
+      "slug": "agent-lore-sdk",
+      "displayName": "AgentLoreSDK",
+      "distrito": "lore-voz",
+      "estado": "vivo"
+    },
+    "vector-machine-sdk": {
+      "slug": "vector-machine-sdk",
+      "displayName": "VectorMachineSDK",
+      "distrito": "lore-voz",
+      "estado": "vivo"
+    },
+    "vector-machine-ui": {
+      "slug": "vector-machine-ui",
+      "displayName": "VectorMachineUI",
+      "distrito": "lore-voz",
+      "estado": "vivo"
+    },
+    "scriptorium-vps": {
+      "slug": "scriptorium-vps",
+      "displayName": "ScriptoriumVps",
+      "distrito": "infra-ui",
+      "estado": "vivo"
+    },
+    "ui-sdk-threejs": {
+      "slug": "ui-sdk-threejs",
+      "displayName": "UISDKThreejs",
+      "distrito": "infra-ui",
+      "estado": "vivo"
+    },
+    "vibe-coding-suite": {
+      "slug": "vibe-coding-suite",
+      "displayName": "VibeCodingSuite",
+      "distrito": "infra-ui",
+      "estado": "latente"
+    }
+  }
+}
