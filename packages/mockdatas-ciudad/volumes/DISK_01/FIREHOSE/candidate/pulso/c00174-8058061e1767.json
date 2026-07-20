@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-relatista",
+  "kind": "commit",
+  "handle": "relatista.ciudad.local",
+  "uri": "at://did:plc:ciudad-relatista/app.bsky.feed.post/c00174-8058061e1767",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00174-8058061e1767",
+    "cid": "bafyc00174-8058061e1767",
+    "record": {
+      "text": "[pulso:vivo/high] relatista → Revisor: Revision doctrinal",
+      "createdAt": "2026-07-01T02:54:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "relatista"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Revisor"
+        }
+      ]
+    }
+  }
+}

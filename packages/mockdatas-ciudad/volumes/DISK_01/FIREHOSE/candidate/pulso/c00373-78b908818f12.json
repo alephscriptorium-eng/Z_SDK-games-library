@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-ox",
+  "kind": "commit",
+  "handle": "ox.ciudad.local",
+  "uri": "at://did:plc:ciudad-ox/app.bsky.feed.post/c00373-78b908818f12",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00373-78b908818f12",
+    "cid": "bafyc00373-78b908818f12",
+    "record": {
+      "text": "[pulso:vivo/high] ox → Ox: Diagnosticar espejo sala-dossier",
+      "createdAt": "2026-07-01T06:13:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "ox"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Ox"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-racionalista",
+  "kind": "commit",
+  "handle": "racionalista.ciudad.local",
+  "uri": "at://did:plc:ciudad-racionalista/app.bsky.feed.post/c00161-78caec902a14",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00161-78caec902a14",
+    "cid": "bafyc00161-78caec902a14",
+    "record": {
+      "text": "[pulso:vivo/high] racionalista → protagonista: Turno del Protagonista",
+      "createdAt": "2026-07-01T02:41:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "racionalista"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "protagonista"
+        }
+      ]
+    }
+  }
+}

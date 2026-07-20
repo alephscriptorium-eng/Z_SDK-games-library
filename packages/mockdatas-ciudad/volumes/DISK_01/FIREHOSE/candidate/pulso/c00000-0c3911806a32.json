@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-bot-biblioteca",
+  "kind": "commit",
+  "handle": "bot-biblioteca.ciudad.local",
+  "uri": "at://did:plc:ciudad-bot-biblioteca/app.bsky.feed.post/c00000-0c3911806a32",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00000-0c3911806a32",
+    "cid": "bafyc00000-0c3911806a32",
+    "record": {
+      "text": "[pulso:vivo/high] bot-biblioteca → bot-biblioteca: Cristalizar · proponer mapa / nave / itinerario / customization",
+      "createdAt": "2026-07-01T00:00:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "bot-biblioteca"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "bot-biblioteca"
+        }
+      ]
+    }
+  }
+}

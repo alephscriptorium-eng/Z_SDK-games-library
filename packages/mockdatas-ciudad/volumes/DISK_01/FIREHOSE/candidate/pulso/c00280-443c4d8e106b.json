@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-ghpages",
+  "kind": "commit",
+  "handle": "ghpages.ciudad.local",
+  "uri": "at://did:plc:ciudad-ghpages/app.bsky.feed.post/c00280-443c4d8e106b",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00280-443c4d8e106b",
+    "cid": "bafyc00280-443c4d8e106b",
+    "record": {
+      "text": "[pulso:vivo/high] ghpages → plugin_ox_ghpages: Publicar obra de Teatro",
+      "createdAt": "2026-07-01T04:40:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "ghpages"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "plugin_ox_ghpages"
+        }
+      ]
+    }
+  }
+}

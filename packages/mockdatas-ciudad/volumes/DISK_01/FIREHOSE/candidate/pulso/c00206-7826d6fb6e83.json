@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-aaia-editor",
+  "kind": "commit",
+  "handle": "aaia-editor.ciudad.local",
+  "uri": "at://did:plc:ciudad-aaia-editor/app.bsky.feed.post/c00206-7826d6fb6e83",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00206-7826d6fb6e83",
+    "cid": "bafyc00206-7826d6fb6e83",
+    "record": {
+      "text": "[pulso:latente/low] aaia-editor → AAIAEditor: [DevOps] Diseñar arquitectura MCP",
+      "createdAt": "2026-07-01T03:26:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "latente"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "low"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "aaia-editor"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "AAIAEditor"
+        }
+      ]
+    }
+  }
+}

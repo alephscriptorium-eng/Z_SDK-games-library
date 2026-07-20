@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-plugin_ox_wireeditor",
+  "kind": "commit",
+  "handle": "plugin_ox_wireeditor.ciudad.local",
+  "uri": "at://did:plc:ciudad-plugin_ox_wireeditor/app.bsky.feed.post/c00527-2b02331c1158",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00527-2b02331c1158",
+    "cid": "bafyc00527-2b02331c1158",
+    "record": {
+      "text": "[pulso:vivo/high] plugin_ox_wireeditor → .github/plugins/wire-editor/agents/wire-editor.agent.md: Asesorar sobre nodos",
+      "createdAt": "2026-07-01T08:47:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "plugin_ox_wireeditor"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": ".github/plugins/wire-editor/agents/wire-editor.agent.md"
+        }
+      ]
+    }
+  }
+}

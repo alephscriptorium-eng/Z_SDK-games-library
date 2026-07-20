@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-bot-biblioteca",
+  "kind": "commit",
+  "handle": "bot-biblioteca.ciudad.local",
+  "uri": "at://did:plc:ciudad-bot-biblioteca/app.bsky.feed.post/c00003-5fe2da50f66a",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00003-5fe2da50f66a",
+    "cid": "bafyc00003-5fe2da50f66a",
+    "record": {
+      "text": "[pulso:vivo/high] bot-biblioteca → bot-parking: Piloto · viajar este dossier (con o sin nave)",
+      "createdAt": "2026-07-01T00:03:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "bot-biblioteca"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "bot-parking"
+        }
+      ]
+    }
+  }
+}

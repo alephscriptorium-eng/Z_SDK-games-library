@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-cartas-puerta",
+  "kind": "commit",
+  "handle": "cartas-puerta.ciudad.local",
+  "uri": "at://did:plc:ciudad-cartas-puerta/app.bsky.feed.post/c00254-09e9f04e4b3e",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00254-09e9f04e4b3e",
+    "cid": "bafyc00254-09e9f04e4b3e",
+    "record": {
+      "text": "[pulso:vivo/high] cartas-puerta → Aleph: Volver a producción",
+      "createdAt": "2026-07-01T04:14:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "cartas-puerta"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Aleph"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-blockly-editor",
+  "kind": "commit",
+  "handle": "blockly-editor.ciudad.local",
+  "uri": "at://did:plc:ciudad-blockly-editor/app.bsky.feed.post/c00246-2f666e72b5f4",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00246-2f666e72b5f4",
+    "cid": "bafyc00246-2f666e72b5f4",
+    "record": {
+      "text": "[pulso:latente/low] blockly-editor → BlocklyEditor: Abrir editor para personaje",
+      "createdAt": "2026-07-01T04:06:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "latente"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "low"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "blockly-editor"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "BlocklyEditor"
+        }
+      ]
+    }
+  }
+}

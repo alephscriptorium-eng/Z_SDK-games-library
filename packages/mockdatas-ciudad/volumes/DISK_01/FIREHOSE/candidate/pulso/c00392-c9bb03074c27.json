@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-periodico",
+  "kind": "commit",
+  "handle": "periodico.ciudad.local",
+  "uri": "at://did:plc:ciudad-periodico/app.bsky.feed.post/c00392-c9bb03074c27",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00392-c9bb03074c27",
+    "cid": "bafyc00392-c9bb03074c27",
+    "record": {
+      "text": "[pulso:vivo/high] periodico → Orangeflag: Invocar Orangeflag",
+      "createdAt": "2026-07-01T06:32:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "periodico"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Orangeflag"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-cartas-puerta",
+  "kind": "commit",
+  "handle": "cartas-puerta.ciudad.local",
+  "uri": "at://did:plc:ciudad-cartas-puerta/app.bsky.feed.post/c00129-6d2e9b4cabf5",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00129-6d2e9b4cabf5",
+    "cid": "bafyc00129-6d2e9b4cabf5",
+    "record": {
+      "text": "[pulso:vivo/high] cartas-puerta → Vestibulo: Volver a vestíbulo",
+      "createdAt": "2026-07-01T02:09:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "cartas-puerta"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Vestibulo"
+        }
+      ]
+    }
+  }
+}

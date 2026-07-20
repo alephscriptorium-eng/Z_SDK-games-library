@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-revisor",
+  "kind": "commit",
+  "handle": "revisor.ciudad.local",
+  "uri": "at://did:plc:ciudad-revisor/app.bsky.feed.post/c00561-ea934702bee0",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00561-ea934702bee0",
+    "cid": "bafyc00561-ea934702bee0",
+    "record": {
+      "text": "[pulso:vivo/high] revisor → Blackflag: Solicitar auditoría de sombras",
+      "createdAt": "2026-07-01T09:21:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "revisor"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Blackflag"
+        }
+      ]
+    }
+  }
+}

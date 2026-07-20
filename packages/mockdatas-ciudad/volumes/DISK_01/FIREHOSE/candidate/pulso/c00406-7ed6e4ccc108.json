@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-plugin_ox_agentcreator",
+  "kind": "commit",
+  "handle": "plugin_ox_agentcreator.ciudad.local",
+  "uri": "at://did:plc:ciudad-plugin_ox_agentcreator/app.bsky.feed.post/c00406-7ed6e4ccc108",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00406-7ed6e4ccc108",
+    "cid": "bafyc00406-7ed6e4ccc108",
+    "record": {
+      "text": "[pulso:vivo/high] plugin_ox_agentcreator → .github/plugins/agent-creator/agents/agent-creator.agent.md: Fusionar agentes",
+      "createdAt": "2026-07-01T06:46:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "plugin_ox_agentcreator"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": ".github/plugins/agent-creator/agents/agent-creator.agent.md"
+        }
+      ]
+    }
+  }
+}

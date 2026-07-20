@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-bot-volatil",
+  "kind": "commit",
+  "handle": "bot-volatil.ciudad.local",
+  "uri": "at://did:plc:ciudad-bot-volatil/app.bsky.feed.post/c00026-6a0711ad899e",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00026-6a0711ad899e",
+    "cid": "bafyc00026-6a0711ad899e",
+    "record": {
+      "text": "[pulso:vivo/high] bot-volatil → bot-parking: Piloto · viajar dossier existente",
+      "createdAt": "2026-07-01T00:26:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "bot-volatil"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "bot-parking"
+        }
+      ]
+    }
+  }
+}

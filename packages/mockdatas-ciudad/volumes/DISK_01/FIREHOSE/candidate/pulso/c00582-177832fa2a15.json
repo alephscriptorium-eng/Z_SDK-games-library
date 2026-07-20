@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-scrum",
+  "kind": "commit",
+  "handle": "scrum.ciudad.local",
+  "uri": "at://did:plc:ciudad-scrum/app.bsky.feed.post/c00582-177832fa2a15",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00582-177832fa2a15",
+    "cid": "bafyc00582-177832fa2a15",
+    "record": {
+      "text": "[pulso:vivo/high] scrum → Scrum: 🆕 Generar desde sesión de cotrabajo",
+      "createdAt": "2026-07-01T09:42:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "scrum"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Scrum"
+        }
+      ]
+    }
+  }
+}

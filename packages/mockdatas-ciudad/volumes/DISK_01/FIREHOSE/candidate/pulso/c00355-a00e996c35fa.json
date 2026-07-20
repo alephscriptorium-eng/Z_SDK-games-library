@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-orangeflag",
+  "kind": "commit",
+  "handle": "orangeflag.ciudad.local",
+  "uri": "at://did:plc:ciudad-orangeflag/app.bsky.feed.post/c00355-a00e996c35fa",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00355-a00e996c35fa",
+    "cid": "bafyc00355-a00e996c35fa",
+    "record": {
+      "text": "[pulso:vivo/high] orangeflag → Blueflag: Escalar a test de verdad",
+      "createdAt": "2026-07-01T05:55:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "orangeflag"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Blueflag"
+        }
+      ]
+    }
+  }
+}

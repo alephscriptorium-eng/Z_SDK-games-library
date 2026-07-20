@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-consejo-asesor",
+  "kind": "commit",
+  "handle": "consejo-asesor.ciudad.local",
+  "uri": "at://did:plc:ciudad-consejo-asesor/app.bsky.feed.post/c00260-c76fba68de11",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00260-c76fba68de11",
+    "cid": "bafyc00260-c76fba68de11",
+    "record": {
+      "text": "[pulso:vivo/high] consejo-asesor → .github/plugins/consejo-asesor/agents/consejo-asesor.agent.md: Modo PRODUCCION",
+      "createdAt": "2026-07-01T04:20:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "consejo-asesor"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": ".github/plugins/consejo-asesor/agents/consejo-asesor.agent.md"
+        }
+      ]
+    }
+  }
+}

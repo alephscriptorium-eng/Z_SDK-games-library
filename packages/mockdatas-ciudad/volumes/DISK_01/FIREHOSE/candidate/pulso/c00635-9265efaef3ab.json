@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-hackertasks-scp",
+  "kind": "commit",
+  "handle": "hackertasks-scp.ciudad.local",
+  "uri": "at://did:plc:ciudad-hackertasks-scp/app.bsky.feed.post/c00635-9265efaef3ab",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00635-9265efaef3ab",
+    "cid": "bafyc00635-9265efaef3ab",
+    "record": {
+      "text": "[pulso:vivo/high] HackerTasks:SCP → Scriptorium (root): PREFIX_METADATA",
+      "createdAt": "2026-07-01T10:35:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "HackerTasks:SCP"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Scriptorium (root)"
+        }
+      ]
+    }
+  }
+}

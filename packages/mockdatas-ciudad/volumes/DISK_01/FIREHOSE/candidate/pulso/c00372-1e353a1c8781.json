@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-ox",
+  "kind": "commit",
+  "handle": "ox.ciudad.local",
+  "uri": "at://did:plc:ciudad-ox/app.bsky.feed.post/c00372-1e353a1c8781",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00372-1e353a1c8781",
+    "cid": "bafyc00372-1e353a1c8781",
+    "record": {
+      "text": "[pulso:vivo/high] ox → Ox: Diagnosticar agentes",
+      "createdAt": "2026-07-01T06:12:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "ox"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Ox"
+        }
+      ]
+    }
+  }
+}

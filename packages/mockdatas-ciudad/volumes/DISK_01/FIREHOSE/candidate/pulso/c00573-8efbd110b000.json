@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-scrum",
+  "kind": "commit",
+  "handle": "scrum.ciudad.local",
+  "uri": "at://did:plc:ciudad-scrum/app.bsky.feed.post/c00573-8efbd110b000",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00573-8efbd110b000",
+    "cid": "bafyc00573-8efbd110b000",
+    "record": {
+      "text": "[pulso:vivo/high] scrum → Scrum: 📋 Vincular sesión cotrabajo a épica",
+      "createdAt": "2026-07-01T09:33:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "scrum"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Scrum"
+        }
+      ]
+    }
+  }
+}

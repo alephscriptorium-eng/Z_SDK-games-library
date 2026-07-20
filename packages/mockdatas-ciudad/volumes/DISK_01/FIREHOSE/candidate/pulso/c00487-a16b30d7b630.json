@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-plugin_ox_openasyncapied",
+  "kind": "commit",
+  "handle": "plugin_ox_openasyncapieditor.ciudad.local",
+  "uri": "at://did:plc:ciudad-plugin_ox_openasyncapied/app.bsky.feed.post/c00487-a16b30d7b630",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00487-a16b30d7b630",
+    "cid": "bafyc00487-a16b30d7b630",
+    "record": {
+      "text": "[pulso:vivo/high] plugin_ox_openasyncapieditor → .github/plugins/openasyncapi-editor/agents/openasyncapi-editor.agent.md: Generar cliente",
+      "createdAt": "2026-07-01T08:07:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "plugin_ox_openasyncapieditor"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": ".github/plugins/openasyncapi-editor/agents/openasyncapi-editor.agent.md"
+        }
+      ]
+    }
+  }
+}

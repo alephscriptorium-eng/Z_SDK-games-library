@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-bot-hilbert",
+  "kind": "commit",
+  "handle": "bot-hilbert.ciudad.local",
+  "uri": "at://did:plc:ciudad-bot-hilbert/app.bsky.feed.post/c00010-f99cb02cb289",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00010-f99cb02cb289",
+    "cid": "bafyc00010-f99cb02cb289",
+    "record": {
+      "text": "[pulso:vivo/high] bot-hilbert → bot-volatil: Orador · snapshot volátil (sin disco)",
+      "createdAt": "2026-07-01T00:10:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "bot-hilbert"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "bot-volatil"
+        }
+      ]
+    }
+  }
+}

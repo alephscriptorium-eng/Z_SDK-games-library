@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-vestibulo",
+  "kind": "commit",
+  "handle": "vestibulo.ciudad.local",
+  "uri": "at://did:plc:ciudad-vestibulo/app.bsky.feed.post/c00604-b892ddc6ce92",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00604-b892ddc6ce92",
+    "cid": "bafyc00604-b892ddc6ce92",
+    "record": {
+      "text": "[pulso:vivo/high] vestibulo → CartasPuerta: Mostrar carta-puerta asignada",
+      "createdAt": "2026-07-01T10:04:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "vestibulo"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "CartasPuerta"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-prolog-editor",
+  "kind": "commit",
+  "handle": "prolog-editor.ciudad.local",
+  "uri": "at://did:plc:ciudad-prolog-editor/app.bsky.feed.post/c00545-be78d1a6ecca",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00545-be78d1a6ecca",
+    "cid": "bafyc00545-be78d1a6ecca",
+    "record": {
+      "text": "[pulso:latente/low] prolog-editor → PrologEditor: 📋 Consultar Guía Arquitectura",
+      "createdAt": "2026-07-01T09:05:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "latente"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "low"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "prolog-editor"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "PrologEditor"
+        }
+      ]
+    }
+  }
+}

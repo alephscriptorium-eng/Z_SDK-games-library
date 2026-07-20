@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-plugin_ox_prologeditor",
+  "kind": "commit",
+  "handle": "plugin_ox_prologeditor.ciudad.local",
+  "uri": "at://did:plc:ciudad-plugin_ox_prologeditor/app.bsky.feed.post/c00499-13da9c8b2869",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00499-13da9c8b2869",
+    "cid": "bafyc00499-13da9c8b2869",
+    "record": {
+      "text": "[pulso:latente/low] plugin_ox_prologeditor → plugin_ox_prologeditor: Listar agentes de PrologEditor",
+      "createdAt": "2026-07-01T08:19:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "latente"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "low"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "plugin_ox_prologeditor"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "plugin_ox_prologeditor"
+        }
+      ]
+    }
+  }
+}

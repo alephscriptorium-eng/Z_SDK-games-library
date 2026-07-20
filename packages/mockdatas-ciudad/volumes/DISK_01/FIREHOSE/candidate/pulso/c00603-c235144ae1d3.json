@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-vestibulo",
+  "kind": "commit",
+  "handle": "vestibulo.ciudad.local",
+  "uri": "at://did:plc:ciudad-vestibulo/app.bsky.feed.post/c00603-c235144ae1d3",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00603-c235144ae1d3",
+    "cid": "bafyc00603-c235144ae1d3",
+    "record": {
+      "text": "[pulso:vivo/high] vestibulo → Aleph: Volver a producción",
+      "createdAt": "2026-07-01T10:03:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "vestibulo"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Aleph"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-bot-parking",
+  "kind": "commit",
+  "handle": "bot-parking.ciudad.local",
+  "uri": "at://did:plc:ciudad-bot-parking/app.bsky.feed.post/c00011-7417960ba835",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00011-7417960ba835",
+    "cid": "bafyc00011-7417960ba835",
+    "record": {
+      "text": "[pulso:vivo/high] bot-parking → bot-biblioteca: Cartógrafo · cultivar mapa (extender dossier)",
+      "createdAt": "2026-07-01T00:11:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "bot-parking"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "bot-biblioteca"
+        }
+      ]
+    }
+  }
+}

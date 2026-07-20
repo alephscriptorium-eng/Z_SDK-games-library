@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-plugin-manager",
+  "kind": "commit",
+  "handle": "plugin-manager.ciudad.local",
+  "uri": "at://did:plc:ciudad-plugin-manager/app.bsky.feed.post/c00541-ef720e8e0882",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00541-ef720e8e0882",
+    "cid": "bafyc00541-ef720e8e0882",
+    "record": {
+      "text": "[pulso:vivo/high] plugin-manager → PluginManager: Desinstalar plugin",
+      "createdAt": "2026-07-01T09:01:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "plugin-manager"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "PluginManager"
+        }
+      ]
+    }
+  }
+}

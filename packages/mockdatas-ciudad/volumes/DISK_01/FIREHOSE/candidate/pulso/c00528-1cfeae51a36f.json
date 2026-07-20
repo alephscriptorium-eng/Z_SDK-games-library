@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-plugin_ox_wireeditor",
+  "kind": "commit",
+  "handle": "plugin_ox_wireeditor.ciudad.local",
+  "uri": "at://did:plc:ciudad-plugin_ox_wireeditor/app.bsky.feed.post/c00528-1cfeae51a36f",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00528-1cfeae51a36f",
+    "cid": "bafyc00528-1cfeae51a36f",
+    "record": {
+      "text": "[pulso:vivo/high] plugin_ox_wireeditor → .github/plugins/wire-editor/agents/wire-editor.agent.md: Configurar feed asíncrono",
+      "createdAt": "2026-07-01T08:48:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "plugin_ox_wireeditor"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": ".github/plugins/wire-editor/agents/wire-editor.agent.md"
+        }
+      ]
+    }
+  }
+}

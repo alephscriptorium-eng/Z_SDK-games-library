@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-observatorio",
+  "kind": "commit",
+  "handle": "observatorio.ciudad.local",
+  "uri": "at://did:plc:ciudad-observatorio/app.bsky.feed.post/c00138-c9913d494d57",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00138-c9913d494d57",
+    "cid": "bafyc00138-c9913d494d57",
+    "record": {
+      "text": "[pulso:vivo/high] observatorio → registro: Analizar retorica de los marcos",
+      "createdAt": "2026-07-01T02:18:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "observatorio"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "registro"
+        }
+      ]
+    }
+  }
+}

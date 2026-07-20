@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-plugin_ox_foroscraper",
+  "kind": "commit",
+  "handle": "plugin_ox_foroscraper.ciudad.local",
+  "uri": "at://did:plc:ciudad-plugin_ox_foroscraper/app.bsky.feed.post/c00431-a2d433354240",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00431-a2d433354240",
+    "cid": "bafyc00431-a2d433354240",
+    "record": {
+      "text": "[pulso:vivo/high] plugin_ox_foroscraper → .github/plugins/foro-scraper/agents/foro-scraper.agent.md: Invocar ForoScraper",
+      "createdAt": "2026-07-01T07:11:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "plugin_ox_foroscraper"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": ".github/plugins/foro-scraper/agents/foro-scraper.agent.md"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-nodejs-notebooks",
+  "kind": "commit",
+  "handle": "nodejs-notebooks.ciudad.local",
+  "uri": "at://did:plc:ciudad-nodejs-notebooks/app.bsky.feed.post/c00329-f2ec721c1130",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00329-f2ec721c1130",
+    "cid": "bafyc00329-f2ec721c1130",
+    "record": {
+      "text": "[pulso:vivo/high] nodejs-notebooks → NodejsNotebooks: Panel de Control (Tasks)",
+      "createdAt": "2026-07-01T05:29:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "nodejs-notebooks"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "NodejsNotebooks"
+        }
+      ]
+    }
+  }
+}

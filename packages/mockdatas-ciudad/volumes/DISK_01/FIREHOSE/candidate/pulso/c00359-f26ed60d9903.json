@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-ox",
+  "kind": "commit",
+  "handle": "ox.ciudad.local",
+  "uri": "at://did:plc:ciudad-ox/app.bsky.feed.post/c00359-f26ed60d9903",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00359-f26ed60d9903",
+    "cid": "bafyc00359-f26ed60d9903",
+    "record": {
+      "text": "[pulso:vivo/high] ox → Blueflag: Invocar agente de Backend",
+      "createdAt": "2026-07-01T05:59:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "ox"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Blueflag"
+        }
+      ]
+    }
+  }
+}

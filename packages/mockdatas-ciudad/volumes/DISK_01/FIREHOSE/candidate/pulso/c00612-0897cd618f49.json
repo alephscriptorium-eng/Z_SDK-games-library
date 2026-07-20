@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-wire-editor",
+  "kind": "commit",
+  "handle": "wire-editor.ciudad.local",
+  "uri": "at://did:plc:ciudad-wire-editor/app.bsky.feed.post/c00612-0897cd618f49",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00612-0897cd618f49",
+    "cid": "bafyc00612-0897cd618f49",
+    "record": {
+      "text": "[pulso:vivo/high] wire-editor → WireEditor: Importar flow desde archivo",
+      "createdAt": "2026-07-01T10:12:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "wire-editor"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "WireEditor"
+        }
+      ]
+    }
+  }
+}

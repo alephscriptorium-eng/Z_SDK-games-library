@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-voz",
+  "kind": "commit",
+  "handle": "voz.ciudad.local",
+  "uri": "at://did:plc:ciudad-voz/app.bsky.feed.post/c00076-d9ed485b8a12",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00076-d9ed485b8a12",
+    "cid": "bafyc00076-d9ed485b8a12",
+    "record": {
+      "text": "[pulso:vivo/high] voz → Portal Editorial: Adaptar para otro perfil de lector",
+      "createdAt": "2026-07-01T01:16:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "voz"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Portal Editorial"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-hackertasks-dmo",
+  "kind": "commit",
+  "handle": "hackertasks-dmo.ciudad.local",
+  "uri": "at://did:plc:ciudad-hackertasks-dmo/app.bsky.feed.post/c00628-e27364d9a426",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00628-e27364d9a426",
+    "cid": "bafyc00628-e27364d9a426",
+    "record": {
+      "text": "[pulso:vivo/high] HackerTasks:DMO → demo: PREFIX_METADATA",
+      "createdAt": "2026-07-01T10:28:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "HackerTasks:DMO"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "demo"
+        }
+      ]
+    }
+  }
+}

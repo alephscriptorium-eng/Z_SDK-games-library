@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-plugin_ox_loresdk",
+  "kind": "commit",
+  "handle": "plugin_ox_loresdk.ciudad.local",
+  "uri": "at://did:plc:ciudad-plugin_ox_loresdk/app.bsky.feed.post/c00448-6a9e85686cbc",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00448-6a9e85686cbc",
+    "cid": "bafyc00448-6a9e85686cbc",
+    "record": {
+      "text": "[pulso:vivo/high] plugin_ox_loresdk → plugin_ox_loresdk: Listar capacidades del LoreSDK",
+      "createdAt": "2026-07-01T07:28:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "plugin_ox_loresdk"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "plugin_ox_loresdk"
+        }
+      ]
+    }
+  }
+}

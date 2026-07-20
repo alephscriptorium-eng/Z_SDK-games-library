@@ -1,0 +1,7 @@
+{
+  "id": "StateMachine",
+  "estado": "latente",
+  "distrito": "Runtime-MCP",
+  "ficha": "ficha.md",
+  "sourceFicha": "16-StateMachine.md"
+}

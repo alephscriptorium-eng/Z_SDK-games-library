@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-verdaccio-keeper",
+  "kind": "commit",
+  "handle": "verdaccio-keeper.ciudad.local",
+  "uri": "at://did:plc:ciudad-verdaccio-keeper/app.bsky.feed.post/c00601-0b18b3981635",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00601-0b18b3981635",
+    "cid": "bafyc00601-0b18b3981635",
+    "record": {
+      "text": "[pulso:vivo/high] verdaccio-keeper → Indice: Consultar Indice",
+      "createdAt": "2026-07-01T10:01:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "verdaccio-keeper"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Indice"
+        }
+      ]
+    }
+  }
+}

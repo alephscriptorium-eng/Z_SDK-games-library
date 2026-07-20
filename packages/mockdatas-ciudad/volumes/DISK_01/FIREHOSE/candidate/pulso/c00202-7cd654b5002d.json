@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-escritor",
+  "kind": "commit",
+  "handle": "escritor.ciudad.local",
+  "uri": "at://did:plc:ciudad-escritor/app.bsky.feed.post/c00202-7cd654b5002d",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00202-7cd654b5002d",
+    "cid": "bafyc00202-7cd654b5002d",
+    "record": {
+      "text": "[pulso:vivo/high] escritor → Lector: Consultar Información",
+      "createdAt": "2026-07-01T03:22:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "escritor"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Lector"
+        }
+      ]
+    }
+  }
+}

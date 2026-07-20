@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-demiurgo",
+  "kind": "commit",
+  "handle": "demiurgo.ciudad.local",
+  "uri": "at://did:plc:ciudad-demiurgo/app.bsky.feed.post/c00039-3626f4c3b6a1",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00039-3626f4c3b6a1",
+    "cid": "bafyc00039-3626f4c3b6a1",
+    "record": {
+      "text": "[pulso:vivo/high] demiurgo → Dramaturgo Cortos: Generar corto desde universo",
+      "createdAt": "2026-07-01T00:39:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "demiurgo"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Dramaturgo Cortos"
+        }
+      ]
+    }
+  }
+}

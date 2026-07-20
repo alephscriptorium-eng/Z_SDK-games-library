@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-teatro",
+  "kind": "commit",
+  "handle": "teatro.ciudad.local",
+  "uri": "at://did:plc:ciudad-teatro/app.bsky.feed.post/c00593-207781727403",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00593-207781727403",
+    "cid": "bafyc00593-207781727403",
+    "record": {
+      "text": "[pulso:vivo/high] teatro → Teatro: Ver cartelera actual",
+      "createdAt": "2026-07-01T09:53:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "teatro"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Teatro"
+        }
+      ]
+    }
+  }
+}

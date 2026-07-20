@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-escritor",
+  "kind": "commit",
+  "handle": "escritor.ciudad.local",
+  "uri": "at://did:plc:ciudad-escritor/app.bsky.feed.post/c00086-549bceac3f30",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00086-549bceac3f30",
+    "cid": "bafyc00086-549bceac3f30",
+    "record": {
+      "text": "[pulso:vivo/high] escritor → Escritor: Arrancar Servidor MCP",
+      "createdAt": "2026-07-01T01:26:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "escritor"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Escritor"
+        }
+      ]
+    }
+  }
+}

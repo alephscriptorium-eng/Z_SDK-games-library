@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-mcp-presets",
+  "kind": "commit",
+  "handle": "mcp-presets.ciudad.local",
+  "uri": "at://did:plc:ciudad-mcp-presets/app.bsky.feed.post/c00310-37d0576b6a41",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00310-37d0576b6a41",
+    "cid": "bafyc00310-37d0576b6a41",
+    "record": {
+      "text": "[pulso:vivo/high] mcp-presets → McpPresets: Asignar preset a agente",
+      "createdAt": "2026-07-01T05:10:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "mcp-presets"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "McpPresets"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-escritor",
+  "kind": "commit",
+  "handle": "escritor.ciudad.local",
+  "uri": "at://did:plc:ciudad-escritor/app.bsky.feed.post/c00199-b63c1354928b",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00199-b63c1354928b",
+    "cid": "bafyc00199-b63c1354928b",
+    "record": {
+      "text": "[pulso:vivo/high] escritor → Editor: Inicializar Contenedor",
+      "createdAt": "2026-07-01T03:19:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "escritor"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Editor"
+        }
+      ]
+    }
+  }
+}

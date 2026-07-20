@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-relatista",
+  "kind": "commit",
+  "handle": "relatista.ciudad.local",
+  "uri": "at://did:plc:ciudad-relatista/app.bsky.feed.post/c00175-1c284595e9b5",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00175-1c284595e9b5",
+    "cid": "bafyc00175-1c284595e9b5",
+    "record": {
+      "text": "[pulso:vivo/high] relatista → Santome: Revision literaria",
+      "createdAt": "2026-07-01T02:55:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "relatista"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Santome"
+        }
+      ]
+    }
+  }
+}

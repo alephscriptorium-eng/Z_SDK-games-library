@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-plugin_ox_loresdk",
+  "kind": "commit",
+  "handle": "plugin_ox_loresdk.ciudad.local",
+  "uri": "at://did:plc:ciudad-plugin_ox_loresdk/app.bsky.feed.post/c00443-5835cd7d0f1b",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00443-5835cd7d0f1b",
+    "cid": "bafyc00443-5835cd7d0f1b",
+    "record": {
+      "text": "[pulso:vivo/high] plugin_ox_loresdk → LoreSDK: Alimentar corpus",
+      "createdAt": "2026-07-01T07:23:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "plugin_ox_loresdk"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "LoreSDK"
+        }
+      ]
+    }
+  }
+}

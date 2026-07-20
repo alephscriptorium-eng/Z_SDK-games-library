@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-pipeline",
+  "kind": "commit",
+  "handle": "pipeline.ciudad.local",
+  "uri": "at://did:plc:ciudad-pipeline/app.bsky.feed.post/c00050-8693ab933f0a",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00050-8693ab933f0a",
+    "cid": "bafyc00050-8693ab933f0a",
+    "record": {
+      "text": "[pulso:vivo/high] pipeline → Archivero: Ver estado del corpus",
+      "createdAt": "2026-07-01T00:50:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "pipeline"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Archivero"
+        }
+      ]
+    }
+  }
+}

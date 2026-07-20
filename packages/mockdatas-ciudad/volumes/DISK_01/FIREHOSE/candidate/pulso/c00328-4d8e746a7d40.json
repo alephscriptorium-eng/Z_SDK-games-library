@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-nodejs-notebooks",
+  "kind": "commit",
+  "handle": "nodejs-notebooks.ciudad.local",
+  "uri": "at://did:plc:ciudad-nodejs-notebooks/app.bsky.feed.post/c00328-4d8e746a7d40",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00328-4d8e746a7d40",
+    "cid": "bafyc00328-4d8e746a7d40",
+    "record": {
+      "text": "[pulso:vivo/high] nodejs-notebooks → NodejsNotebooks: Diagnóstico Stack",
+      "createdAt": "2026-07-01T05:28:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "nodejs-notebooks"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "NodejsNotebooks"
+        }
+      ]
+    }
+  }
+}

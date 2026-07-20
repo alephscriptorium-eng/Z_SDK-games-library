@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-ghpages",
+  "kind": "commit",
+  "handle": "ghpages.ciudad.local",
+  "uri": "at://did:plc:ciudad-ghpages/app.bsky.feed.post/c00277-f0cbfe604cb7",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00277-f0cbfe604cb7",
+    "cid": "bafyc00277-f0cbfe604cb7",
+    "record": {
+      "text": "[pulso:vivo/high] ghpages → plugin_ox_ghpages: Actualizar portada del periódico",
+      "createdAt": "2026-07-01T04:37:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "ghpages"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "plugin_ox_ghpages"
+        }
+      ]
+    }
+  }
+}

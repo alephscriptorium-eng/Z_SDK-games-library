@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-alephscript.demo.runall",
+  "kind": "commit",
+  "handle": "alephscript.demo.runall.ciudad.local",
+  "uri": "at://did:plc:ciudad-alephscript.demo.runall/app.bsky.feed.post/c00622-3d1085cf6e78",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00622-3d1085cf6e78",
+    "cid": "bafyc00622-3d1085cf6e78",
+    "record": {
+      "text": "[pulso:vivo/high] alephscript.demo.runAll → NovelistEditor: demo.runAll → novelist + docs:serve",
+      "createdAt": "2026-07-01T10:22:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "alephscript.demo.runAll"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "NovelistEditor"
+        }
+      ]
+    }
+  }
+}

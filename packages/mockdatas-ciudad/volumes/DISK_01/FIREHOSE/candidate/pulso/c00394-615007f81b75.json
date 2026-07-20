@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-periodico",
+  "kind": "commit",
+  "handle": "periodico.ciudad.local",
+  "uri": "at://did:plc:ciudad-periodico/app.bsky.feed.post/c00394-615007f81b75",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00394-615007f81b75",
+    "cid": "bafyc00394-615007f81b75",
+    "record": {
+      "text": "[pulso:vivo/high] periodico → Periodico: [ARG] Crear noticia desde escena [obra]",
+      "createdAt": "2026-07-01T06:34:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "periodico"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Periodico"
+        }
+      ]
+    }
+  }
+}

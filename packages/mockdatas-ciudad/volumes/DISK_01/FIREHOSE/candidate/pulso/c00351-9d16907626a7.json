@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-openasyncapi-editor",
+  "kind": "commit",
+  "handle": "openasyncapi-editor.ciudad.local",
+  "uri": "at://did:plc:ciudad-openasyncapi-editor/app.bsky.feed.post/c00351-9d16907626a7",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00351-9d16907626a7",
+    "cid": "bafyc00351-9d16907626a7",
+    "record": {
+      "text": "[pulso:vivo/high] openasyncapi-editor → OpenAsyncApiEditor: Validar spec OpenAPI",
+      "createdAt": "2026-07-01T05:51:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "openasyncapi-editor"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "OpenAsyncApiEditor"
+        }
+      ]
+    }
+  }
+}

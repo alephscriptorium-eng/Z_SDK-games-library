@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-openasyncapi-editor",
+  "kind": "commit",
+  "handle": "openasyncapi-editor.ciudad.local",
+  "uri": "at://did:plc:ciudad-openasyncapi-editor/app.bsky.feed.post/c00342-5de6e93fb28d",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00342-5de6e93fb28d",
+    "cid": "bafyc00342-5de6e93fb28d",
+    "record": {
+      "text": "[pulso:vivo/high] openasyncapi-editor → OpenAsyncApiEditor: Generar cliente Python",
+      "createdAt": "2026-07-01T05:42:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "openasyncapi-editor"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "OpenAsyncApiEditor"
+        }
+      ]
+    }
+  }
+}

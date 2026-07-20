@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-voz",
+  "kind": "commit",
+  "handle": "voz.ciudad.local",
+  "uri": "at://did:plc:ciudad-voz/app.bsky.feed.post/c00075-2bfd2036746a",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00075-2bfd2036746a",
+    "cid": "bafyc00075-2bfd2036746a",
+    "record": {
+      "text": "[pulso:vivo/high] voz → Bartleby: ¿Por qué este poema dice lo que dice?",
+      "createdAt": "2026-07-01T01:15:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "voz"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Bartleby"
+        }
+      ]
+    }
+  }
+}

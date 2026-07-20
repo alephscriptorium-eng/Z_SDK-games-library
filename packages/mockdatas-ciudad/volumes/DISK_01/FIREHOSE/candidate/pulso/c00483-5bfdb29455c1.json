@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-plugin_ox_novelist",
+  "kind": "commit",
+  "handle": "plugin_ox_novelist.ciudad.local",
+  "uri": "at://did:plc:ciudad-plugin_ox_novelist/app.bsky.feed.post/c00483-5bfdb29455c1",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00483-5bfdb29455c1",
+    "cid": "bafyc00483-5bfdb29455c1",
+    "record": {
+      "text": "[pulso:vivo/high] plugin_ox_novelist → .github/plugins/novelist/agents/novelist.agent.md: Sincronizar personajes",
+      "createdAt": "2026-07-01T08:03:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "plugin_ox_novelist"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": ".github/plugins/novelist/agents/novelist.agent.md"
+        }
+      ]
+    }
+  }
+}

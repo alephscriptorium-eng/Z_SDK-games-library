@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-plugin_ox_scrum",
+  "kind": "commit",
+  "handle": "plugin_ox_scrum.ciudad.local",
+  "uri": "at://did:plc:ciudad-plugin_ox_scrum/app.bsky.feed.post/c00509-c202edc196b2",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00509-c202edc196b2",
+    "cid": "bafyc00509-c202edc196b2",
+    "record": {
+      "text": "[pulso:vivo/high] plugin_ox_scrum → plugin_ox_scrum: Listar capacidades",
+      "createdAt": "2026-07-01T08:29:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "plugin_ox_scrum"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "plugin_ox_scrum"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-lore-sdk",
+  "kind": "commit",
+  "handle": "lore-sdk.ciudad.local",
+  "uri": "at://did:plc:ciudad-lore-sdk/app.bsky.feed.post/c00307-abd8964b365d",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00307-abd8964b365d",
+    "cid": "bafyc00307-abd8964b365d",
+    "record": {
+      "text": "[pulso:vivo/high] lore-sdk → LoreSDK: Publicar catálogo Jekyll",
+      "createdAt": "2026-07-01T05:07:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "lore-sdk"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "LoreSDK"
+        }
+      ]
+    }
+  }
+}

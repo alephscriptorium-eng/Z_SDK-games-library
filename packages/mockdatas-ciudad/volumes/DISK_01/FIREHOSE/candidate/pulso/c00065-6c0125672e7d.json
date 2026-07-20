@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-portal",
+  "kind": "commit",
+  "handle": "portal.ciudad.local",
+  "uri": "at://did:plc:ciudad-portal/app.bsky.feed.post/c00065-6c0125672e7d",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00065-6c0125672e7d",
+    "cid": "bafyc00065-6c0125672e7d",
+    "record": {
+      "text": "[pulso:vivo/high] portal → Grafista: 🔀 Ver o generar el grafo de futuros",
+      "createdAt": "2026-07-01T01:05:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "portal"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Grafista"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-turin",
+  "kind": "commit",
+  "handle": "turin.ciudad.local",
+  "uri": "at://did:plc:ciudad-turin/app.bsky.feed.post/c00185-d403fa27caf6",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00185-d403fa27caf6",
+    "cid": "bafyc00185-d403fa27caf6",
+    "record": {
+      "text": "[pulso:vivo/high] turin → sombra: Analizar economia politica del sesgo etiquetado",
+      "createdAt": "2026-07-01T03:05:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "turin"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "sombra"
+        }
+      ]
+    }
+  }
+}

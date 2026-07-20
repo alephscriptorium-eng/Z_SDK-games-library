@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-calibrador",
+  "kind": "commit",
+  "handle": "calibrador.ciudad.local",
+  "uri": "at://did:plc:ciudad-calibrador/app.bsky.feed.post/c00116-9fe8f4fd2799",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00116-9fe8f4fd2799",
+    "cid": "bafyc00116-9fe8f4fd2799",
+    "record": {
+      "text": "[pulso:vivo/high] calibrador → protagonista: Devolver terreno corregido al Protagonista",
+      "createdAt": "2026-07-01T01:56:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "calibrador"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "protagonista"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-plugin_ox_loresdk",
+  "kind": "commit",
+  "handle": "plugin_ox_loresdk.ciudad.local",
+  "uri": "at://did:plc:ciudad-plugin_ox_loresdk/app.bsky.feed.post/c00447-f0717339ec40",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00447-f0717339ec40",
+    "cid": "bafyc00447-f0717339ec40",
+    "record": {
+      "text": "[pulso:vivo/high] plugin_ox_loresdk → LoreSDK: Ver estado del corpus",
+      "createdAt": "2026-07-01T07:27:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "plugin_ox_loresdk"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "LoreSDK"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-plugin_ox_teatro",
+  "kind": "commit",
+  "handle": "plugin_ox_teatro.ciudad.local",
+  "uri": "at://did:plc:ciudad-plugin_ox_teatro/app.bsky.feed.post/c00517-72ebef52d01c",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00517-72ebef52d01c",
+    "cid": "bafyc00517-72ebef52d01c",
+    "record": {
+      "text": "[pulso:vivo/high] plugin_ox_teatro → Teatro: Instalar obra en cartelera",
+      "createdAt": "2026-07-01T08:37:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "plugin_ox_teatro"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Teatro"
+        }
+      ]
+    }
+  }
+}

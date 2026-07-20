@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-periodico",
+  "kind": "commit",
+  "handle": "periodico.ciudad.local",
+  "uri": "at://did:plc:ciudad-periodico/app.bsky.feed.post/c00384-9dea6dd72e77",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00384-9dea6dd72e77",
+    "cid": "bafyc00384-9dea6dd72e77",
+    "record": {
+      "text": "[pulso:vivo/high] periodico → .github/plugins/agent-creator/agents/agent-creator.agent.md: [AGENT-CREATOR] Crear agente periodístico",
+      "createdAt": "2026-07-01T06:24:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "periodico"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": ".github/plugins/agent-creator/agents/agent-creator.agent.md"
+        }
+      ]
+    }
+  }
+}

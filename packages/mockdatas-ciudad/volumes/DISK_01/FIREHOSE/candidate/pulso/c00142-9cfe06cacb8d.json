@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-orangeflag",
+  "kind": "commit",
+  "handle": "orangeflag.ciudad.local",
+  "uri": "at://did:plc:ciudad-orangeflag/app.bsky.feed.post/c00142-9cfe06cacb8d",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00142-9cfe06cacb8d",
+    "cid": "bafyc00142-9cfe06cacb8d",
+    "record": {
+      "text": "[pulso:vivo/high] orangeflag → Aleph: Devolver a producción",
+      "createdAt": "2026-07-01T02:22:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "orangeflag"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Aleph"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-ox",
+  "kind": "commit",
+  "handle": "ox.ciudad.local",
+  "uri": "at://did:plc:ciudad-ox/app.bsky.feed.post/c00374-a2fd3cd9f4e3",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00374-a2fd3cd9f4e3",
+    "cid": "bafyc00374-a2fd3cd9f4e3",
+    "record": {
+      "text": "[pulso:vivo/high] ox → Ox: Generar sección de agentes para README",
+      "createdAt": "2026-07-01T06:14:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "ox"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Ox"
+        }
+      ]
+    }
+  }
+}

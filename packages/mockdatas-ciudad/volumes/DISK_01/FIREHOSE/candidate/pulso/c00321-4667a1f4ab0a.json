@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-network",
+  "kind": "commit",
+  "handle": "network.ciudad.local",
+  "uri": "at://did:plc:ciudad-network/app.bsky.feed.post/c00321-4667a1f4ab0a",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00321-4667a1f4ab0a",
+    "cid": "bafyc00321-4667a1f4ab0a",
+    "record": {
+      "text": "[pulso:vivo/high] network → Network: Sincronizar BOEs bidireccional",
+      "createdAt": "2026-07-01T05:21:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "network"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Network"
+        }
+      ]
+    }
+  }
+}

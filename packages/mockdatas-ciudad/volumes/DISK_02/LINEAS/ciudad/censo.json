@@ -1,0 +1,160 @@
+{
+  "schemaVersion": 1,
+  "note": "Census states drained as data for city mockdatas (vivo|latente|muerto|roto).",
+  "barrios": {
+    "VsCodeExtension": {
+      "estado": "vivo",
+      "distrito": "Zigurat"
+    },
+    "MCPGallery": {
+      "estado": "vivo",
+      "distrito": "Runtime-MCP"
+    },
+    "VibeCodingSuite": {
+      "estado": "latente",
+      "distrito": "Infra-UI"
+    },
+    "AAIAGallery": {
+      "estado": "latente",
+      "distrito": "Runtime-MCP"
+    },
+    "BlockchainComPort": {
+      "estado": "vivo",
+      "distrito": "Red-stream"
+    },
+    "StreamDesktop": {
+      "estado": "muerto",
+      "distrito": "Red-stream"
+    },
+    "StreamDesktopAppCronos": {
+      "estado": "muerto",
+      "distrito": "Red-stream"
+    },
+    "NovelistEditor": {
+      "estado": "vivo",
+      "distrito": "Runtime-MCP"
+    },
+    "BlocklyEditor": {
+      "estado": "latente",
+      "distrito": "Editores"
+    },
+    "WiringEditor": {
+      "estado": "vivo",
+      "distrito": "Editores"
+    },
+    "PrologEditor": {
+      "estado": "latente",
+      "distrito": "Editores"
+    },
+    "TypedPromptsEditor": {
+      "estado": "latente",
+      "distrito": "Editores"
+    },
+    "WorkflowEditor": {
+      "estado": "muerto",
+      "distrito": "Editores"
+    },
+    "WiringAppHypergraphEditor": {
+      "estado": "latente",
+      "distrito": "Editores"
+    },
+    "CopilotEngine": {
+      "estado": "vivo",
+      "distrito": "Runtime-MCP"
+    },
+    "StateMachine": {
+      "estado": "latente",
+      "distrito": "Runtime-MCP"
+    },
+    "AgentLoreSDK": {
+      "estado": "vivo",
+      "distrito": "Lore-voz"
+    },
+    "BotHubSDK": {
+      "estado": "vivo",
+      "distrito": "Red-stream"
+    },
+    "UISDKThreejs": {
+      "estado": "vivo",
+      "distrito": "Infra-UI"
+    },
+    "DocumentMachineSDK": {
+      "estado": "vivo",
+      "distrito": "Lore-voz"
+    },
+    "onfalo-asesor-sdk": {
+      "estado": "vivo",
+      "distrito": "Lore-voz"
+    },
+    "VectorMachineSDK": {
+      "estado": "vivo",
+      "distrito": "Lore-voz"
+    },
+    "VectorMachineUI": {
+      "estado": "vivo",
+      "distrito": "Lore-voz"
+    },
+    "ScriptoriumVps": {
+      "estado": "vivo",
+      "distrito": "Infra-UI"
+    }
+  },
+  "cadence": {
+    "vivo": {
+      "emitEvery": 1,
+      "intensity": "high"
+    },
+    "latente": {
+      "emitEvery": 3,
+      "intensity": "low"
+    },
+    "muerto": {
+      "emitEvery": 0,
+      "intensity": "none"
+    },
+    "roto": {
+      "emitEvery": 0,
+      "intensity": "none",
+      "corpus": "discarded"
+    }
+  },
+  "actorAliases": {
+    "blockly-editor": "BlocklyEditor",
+    "plugin_ox_blocklyeditor": "BlocklyEditor",
+    "n8n-editor": "WorkflowEditor",
+    "plugin_ox_n8neditor": "WorkflowEditor",
+    "wire-editor": "WiringEditor",
+    "plugin_ox_wireeditor": "WiringEditor",
+    "wiring-app": "WiringAppHypergraphEditor",
+    "plugin_ox_wiringapp": "WiringAppHypergraphEditor",
+    "hypergraph-editor": "WiringAppHypergraphEditor",
+    "plugin_ox_hypergrapheditor": "WiringAppHypergraphEditor",
+    "prolog-editor": "PrologEditor",
+    "plugin_ox_prologeditor": "PrologEditor",
+    "typed-prompting": "TypedPromptsEditor",
+    "plugin_ox_typedprompting": "TypedPromptsEditor",
+    "novelist": "NovelistEditor",
+    "plugin_ox_novelist": "NovelistEditor",
+    "mcp-presets": "MCPGallery",
+    "plugin_ox_mcppresets": "MCPGallery",
+    "aaia-editor": "AAIAGallery",
+    "plugin_ox_aaiaeditor": "AAIAGallery",
+    "lore-sdk": "AgentLoreSDK",
+    "plugin_ox_loresdk": "AgentLoreSDK",
+    "vector-machine": "VectorMachineSDK",
+    "plugin_ox_vectormachine": "VectorMachineSDK",
+    "network": "BlockchainComPort",
+    "plugin_ox_network": "BlockchainComPort",
+    "consejo-asesor": "onfalo-asesor-sdk",
+    "plugin_ox_consejoasesor": "onfalo-asesor-sdk",
+    "vps-ops": "ScriptoriumVps",
+    "verdaccio-keeper": "ScriptoriumVps",
+    "agent-creator": "CopilotEngine",
+    "plugin_ox_agentcreator": "CopilotEngine",
+    "arg-board-app": "WiringAppHypergraphEditor",
+    "plugin_ox_argboardapp": "WiringAppHypergraphEditor",
+    "plugin_ox_argboard": "WiringAppHypergraphEditor",
+    "openasyncapi-editor": "WiringEditor",
+    "plugin_ox_openasyncapieditor": "WiringEditor"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-albacea",
+  "kind": "commit",
+  "handle": "albacea.ciudad.local",
+  "uri": "at://did:plc:ciudad-albacea/app.bsky.feed.post/c00079-f943f6f68fe3",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00079-f943f6f68fe3",
+    "cid": "bafyc00079-f943f6f68fe3",
+    "record": {
+      "text": "[pulso:vivo/high] albacea → lector: Query Memory Structures",
+      "createdAt": "2026-07-01T01:19:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "albacea"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "lector"
+        }
+      ]
+    }
+  }
+}

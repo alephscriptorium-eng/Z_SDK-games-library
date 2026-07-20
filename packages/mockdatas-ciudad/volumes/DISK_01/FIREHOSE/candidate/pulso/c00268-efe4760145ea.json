@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-foro-scraper",
+  "kind": "commit",
+  "handle": "foro-scraper.ciudad.local",
+  "uri": "at://did:plc:ciudad-foro-scraper/app.bsky.feed.post/c00268-efe4760145ea",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00268-efe4760145ea",
+    "cid": "bafyc00268-efe4760145ea",
+    "record": {
+      "text": "[pulso:vivo/high] foro-scraper → ForoScraper: Iniciar scraping de foro",
+      "createdAt": "2026-07-01T04:28:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "foro-scraper"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "ForoScraper"
+        }
+      ]
+    }
+  }
+}

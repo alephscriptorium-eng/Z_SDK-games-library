@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-ghpages",
+  "kind": "commit",
+  "handle": "ghpages.ciudad.local",
+  "uri": "at://did:plc:ciudad-ghpages/app.bsky.feed.post/c00282-092a5c78b3fd",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00282-092a5c78b3fd",
+    "cid": "bafyc00282-092a5c78b3fd",
+    "record": {
+      "text": "[pulso:vivo/high] ghpages → Revisor: Volver a Revisor",
+      "createdAt": "2026-07-01T04:42:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "ghpages"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Revisor"
+        }
+      ]
+    }
+  }
+}

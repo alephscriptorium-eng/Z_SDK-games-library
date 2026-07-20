@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-plugin_ox_ghpages",
+  "kind": "commit",
+  "handle": "plugin_ox_ghpages.ciudad.local",
+  "uri": "at://did:plc:ciudad-plugin_ox_ghpages/app.bsky.feed.post/c00438-214159b48517",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00438-214159b48517",
+    "cid": "bafyc00438-214159b48517",
+    "record": {
+      "text": "[pulso:vivo/high] plugin_ox_ghpages → .github/plugins/gh-pages/agents/ghpages.agent.md: Publicar contenido (modo fusionar)",
+      "createdAt": "2026-07-01T07:18:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "plugin_ox_ghpages"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": ".github/plugins/gh-pages/agents/ghpages.agent.md"
+        }
+      ]
+    }
+  }
+}

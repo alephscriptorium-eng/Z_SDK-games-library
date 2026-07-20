@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-hackertasks-apb",
+  "kind": "commit",
+  "handle": "hackertasks-apb.ciudad.local",
+  "uri": "at://did:plc:ciudad-hackertasks-apb/app.bsky.feed.post/c00624-a15e6f522e75",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00624-a15e6f522e75",
+    "cid": "bafyc00624-a15e6f522e75",
+    "record": {
+      "text": "[pulso:latente/low] HackerTasks:APB → PrologEditor: PREFIX_METADATA",
+      "createdAt": "2026-07-01T10:24:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "latente"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "low"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "HackerTasks:APB"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "PrologEditor"
+        }
+      ]
+    }
+  }
+}

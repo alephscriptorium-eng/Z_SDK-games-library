@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-plugin_ox_mcppresets",
+  "kind": "commit",
+  "handle": "plugin_ox_mcppresets.ciudad.local",
+  "uri": "at://did:plc:ciudad-plugin_ox_mcppresets/app.bsky.feed.post/c00457-7031d36cda0c",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00457-7031d36cda0c",
+    "cid": "bafyc00457-7031d36cda0c",
+    "record": {
+      "text": "[pulso:vivo/high] plugin_ox_mcppresets → plugin_ox_mcppresets: 📤 Exportar preset a JSON",
+      "createdAt": "2026-07-01T07:37:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "plugin_ox_mcppresets"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "plugin_ox_mcppresets"
+        }
+      ]
+    }
+  }
+}

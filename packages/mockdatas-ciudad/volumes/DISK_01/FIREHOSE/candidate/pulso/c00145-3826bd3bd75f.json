@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-orangeflag",
+  "kind": "commit",
+  "handle": "orangeflag.ciudad.local",
+  "uri": "at://did:plc:ciudad-orangeflag/app.bsky.feed.post/c00145-3826bd3bd75f",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00145-3826bd3bd75f",
+    "cid": "bafyc00145-3826bd3bd75f",
+    "record": {
+      "text": "[pulso:vivo/high] orangeflag → Redflag: Escalar a test de viabilidad",
+      "createdAt": "2026-07-01T02:25:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "orangeflag"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Redflag"
+        }
+      ]
+    }
+  }
+}

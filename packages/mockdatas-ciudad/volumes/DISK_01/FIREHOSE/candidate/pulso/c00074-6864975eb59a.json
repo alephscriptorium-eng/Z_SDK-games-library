@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-puzzle",
+  "kind": "commit",
+  "handle": "puzzle.ciudad.local",
+  "uri": "at://did:plc:ciudad-puzzle/app.bsky.feed.post/c00074-6864975eb59a",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00074-6864975eb59a",
+    "cid": "bafyc00074-6864975eb59a",
+    "record": {
+      "text": "[pulso:vivo/high] puzzle → Pipeline: Refrescar pipeline",
+      "createdAt": "2026-07-01T01:14:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "puzzle"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Pipeline"
+        }
+      ]
+    }
+  }
+}

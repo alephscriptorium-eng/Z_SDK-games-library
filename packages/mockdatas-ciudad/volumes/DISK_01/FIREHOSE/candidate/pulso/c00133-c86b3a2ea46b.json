@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-integrador",
+  "kind": "commit",
+  "handle": "integrador.ciudad.local",
+  "uri": "at://did:plc:ciudad-integrador/app.bsky.feed.post/c00133-c86b3a2ea46b",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00133-c86b3a2ea46b",
+    "cid": "bafyc00133-c86b3a2ea46b",
+    "record": {
+      "text": "[pulso:vivo/high] integrador → sombra: Auditoria de Sombra",
+      "createdAt": "2026-07-01T02:13:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "integrador"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "sombra"
+        }
+      ]
+    }
+  }
+}

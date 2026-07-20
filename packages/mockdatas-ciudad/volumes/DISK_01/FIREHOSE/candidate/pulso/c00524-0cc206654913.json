@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-plugin_ox_vectormachine",
+  "kind": "commit",
+  "handle": "plugin_ox_vectormachine.ciudad.local",
+  "uri": "at://did:plc:ciudad-plugin_ox_vectormachine/app.bsky.feed.post/c00524-0cc206654913",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00524-0cc206654913",
+    "cid": "bafyc00524-0cc206654913",
+    "record": {
+      "text": "[pulso:vivo/high] plugin_ox_vectormachine → VectorMachine: Estudiar proyecto indexable",
+      "createdAt": "2026-07-01T08:44:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "plugin_ox_vectormachine"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "VectorMachine"
+        }
+      ]
+    }
+  }
+}

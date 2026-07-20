@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-aleph",
+  "kind": "commit",
+  "handle": "aleph.ciudad.local",
+  "uri": "at://did:plc:ciudad-aleph/app.bsky.feed.post/c00618-1ce9e0fa7162",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00618-1ce9e0fa7162",
+    "cid": "bafyc00618-1ce9e0fa7162",
+    "record": {
+      "text": "[pulso:vivo/high] aleph → alephscript.demo.runAll: run_vscode_command",
+      "createdAt": "2026-07-01T10:18:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "aleph"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "alephscript.demo.runAll"
+        }
+      ]
+    }
+  }
+}

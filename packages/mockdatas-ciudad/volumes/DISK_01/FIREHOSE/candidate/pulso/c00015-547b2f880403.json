@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-bot-parking",
+  "kind": "commit",
+  "handle": "bot-parking.ciudad.local",
+  "uri": "at://did:plc:ciudad-bot-parking/app.bsky.feed.post/c00015-547b2f880403",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00015-547b2f880403",
+    "cid": "bafyc00015-547b2f880403",
+    "record": {
+      "text": "[pulso:vivo/high] bot-parking → bot-parking: Viajar dossier (con o sin nave)",
+      "createdAt": "2026-07-01T00:15:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "bot-parking"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "bot-parking"
+        }
+      ]
+    }
+  }
+}

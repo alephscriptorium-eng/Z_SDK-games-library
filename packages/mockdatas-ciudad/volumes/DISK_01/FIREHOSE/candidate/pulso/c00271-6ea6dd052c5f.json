@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-foro-scraper",
+  "kind": "commit",
+  "handle": "foro-scraper.ciudad.local",
+  "uri": "at://did:plc:ciudad-foro-scraper/app.bsky.feed.post/c00271-6ea6dd052c5f",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00271-6ea6dd052c5f",
+    "cid": "bafyc00271-6ea6dd052c5f",
+    "record": {
+      "text": "[pulso:vivo/high] foro-scraper → ForoScraper: Ver estado de trabajos",
+      "createdAt": "2026-07-01T04:31:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "foro-scraper"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "ForoScraper"
+        }
+      ]
+    }
+  }
+}

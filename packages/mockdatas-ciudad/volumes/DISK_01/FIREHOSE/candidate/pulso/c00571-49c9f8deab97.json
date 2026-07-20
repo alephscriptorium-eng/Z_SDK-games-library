@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-scrum",
+  "kind": "commit",
+  "handle": "scrum.ciudad.local",
+  "uri": "at://did:plc:ciudad-scrum/app.bsky.feed.post/c00571-49c9f8deab97",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00571-49c9f8deab97",
+    "cid": "bafyc00571-49c9f8deab97",
+    "record": {
+      "text": "[pulso:vivo/high] scrum → Scrum: 📊 Registrar métricas de sesión",
+      "createdAt": "2026-07-01T09:31:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "scrum"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Scrum"
+        }
+      ]
+    }
+  }
+}

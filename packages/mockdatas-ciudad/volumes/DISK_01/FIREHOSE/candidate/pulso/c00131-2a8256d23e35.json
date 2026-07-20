@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-estructuralista",
+  "kind": "commit",
+  "handle": "estructuralista.ciudad.local",
+  "uri": "at://did:plc:ciudad-estructuralista/app.bsky.feed.post/c00131-2a8256d23e35",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00131-2a8256d23e35",
+    "cid": "bafyc00131-2a8256d23e35",
+    "record": {
+      "text": "[pulso:vivo/high] estructuralista → protagonista: Turno del Protagonista",
+      "createdAt": "2026-07-01T02:11:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "estructuralista"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "protagonista"
+        }
+      ]
+    }
+  }
+}

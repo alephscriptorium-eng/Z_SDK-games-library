@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-plugin_ox_vectormachine",
+  "kind": "commit",
+  "handle": "plugin_ox_vectormachine.ciudad.local",
+  "uri": "at://did:plc:ciudad-plugin_ox_vectormachine/app.bsky.feed.post/c00525-3cbee3432798",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00525-3cbee3432798",
+    "cid": "bafyc00525-3cbee3432798",
+    "record": {
+      "text": "[pulso:vivo/high] plugin_ox_vectormachine → VectorMachine: Mapear stack VectorMachineSDK",
+      "createdAt": "2026-07-01T08:45:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "plugin_ox_vectormachine"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "VectorMachine"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-vps-ops",
+  "kind": "commit",
+  "handle": "vps-ops.ciudad.local",
+  "uri": "at://did:plc:ciudad-vps-ops/app.bsky.feed.post/c00605-17aae40c3e03",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00605-17aae40c3e03",
+    "cid": "bafyc00605-17aae40c3e03",
+    "record": {
+      "text": "[pulso:vivo/high] vps-ops → Indice: Consultar Indice",
+      "createdAt": "2026-07-01T10:05:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "vps-ops"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Indice"
+        }
+      ]
+    }
+  }
+}

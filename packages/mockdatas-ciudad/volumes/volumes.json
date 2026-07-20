@@ -1,0 +1,44 @@
+{
+  "root": ".",
+  "policy": "mockdatas-ciudad",
+  "volumes": {
+    "firehose": {
+      "disk": "DISK_01",
+      "path": "DISK_01/FIREHOSE",
+      "readonly": true,
+      "label": "Firehose — city pulse",
+      "corpora": [
+        {
+          "id": "candidate",
+          "path": "candidate",
+          "label": "Pulso (candidate)",
+          "files": 666
+        },
+        {
+          "id": "raw",
+          "path": "raw",
+          "label": "Raw",
+          "files": 0
+        },
+        {
+          "id": "discarded",
+          "path": "discarded",
+          "label": "Discarded",
+          "files": 0
+        },
+        {
+          "id": "labeled",
+          "path": "labeled",
+          "label": "Labeled",
+          "files": 0
+        }
+      ]
+    },
+    "lineas": {
+      "disk": "DISK_02",
+      "path": "DISK_02/LINEAS",
+      "readonly": true,
+      "label": "Lineas — city filesystem"
+    }
+  }
+}

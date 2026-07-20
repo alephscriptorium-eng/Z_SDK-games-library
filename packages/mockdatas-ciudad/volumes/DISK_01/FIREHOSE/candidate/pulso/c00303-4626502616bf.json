@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-indice",
+  "kind": "commit",
+  "handle": "indice.ciudad.local",
+  "uri": "at://did:plc:ciudad-indice/app.bsky.feed.post/c00303-4626502616bf",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00303-4626502616bf",
+    "cid": "bafyc00303-4626502616bf",
+    "record": {
+      "text": "[pulso:vivo/high] indice → plugin_ox_vectormachine: Consultar mapa VectorMachineSDK",
+      "createdAt": "2026-07-01T05:03:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "indice"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "plugin_ox_vectormachine"
+        }
+      ]
+    }
+  }
+}

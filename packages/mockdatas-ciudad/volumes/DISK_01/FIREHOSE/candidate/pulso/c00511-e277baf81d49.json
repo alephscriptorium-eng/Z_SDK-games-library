@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-plugin_ox_teatro",
+  "kind": "commit",
+  "handle": "plugin_ox_teatro.ciudad.local",
+  "uri": "at://did:plc:ciudad-plugin_ox_teatro/app.bsky.feed.post/c00511-e277baf81d49",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00511-e277baf81d49",
+    "cid": "bafyc00511-e277baf81d49",
+    "record": {
+      "text": "[pulso:vivo/high] plugin_ox_teatro → plugin_ox_agentcreator: Crear personaje para obra",
+      "createdAt": "2026-07-01T08:31:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "plugin_ox_teatro"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "plugin_ox_agentcreator"
+        }
+      ]
+    }
+  }
+}

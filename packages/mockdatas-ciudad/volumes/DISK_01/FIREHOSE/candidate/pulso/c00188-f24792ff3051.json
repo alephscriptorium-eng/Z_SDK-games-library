@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-verdad",
+  "kind": "commit",
+  "handle": "verdad.ciudad.local",
+  "uri": "at://did:plc:ciudad-verdad/app.bsky.feed.post/c00188-f24792ff3051",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00188-f24792ff3051",
+    "cid": "bafyc00188-f24792ff3051",
+    "record": {
+      "text": "[pulso:vivo/high] verdad → integrador: Devolver a Integrador",
+      "createdAt": "2026-07-01T03:08:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "verdad"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "integrador"
+        }
+      ]
+    }
+  }
+}

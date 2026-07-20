@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-plugin_ox_mcppresets",
+  "kind": "commit",
+  "handle": "plugin_ox_mcppresets.ciudad.local",
+  "uri": "at://did:plc:ciudad-plugin_ox_mcppresets/app.bsky.feed.post/c00454-b11d348f9946",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00454-b11d348f9946",
+    "cid": "bafyc00454-b11d348f9946",
+    "record": {
+      "text": "[pulso:vivo/high] plugin_ox_mcppresets → plugin_ox_mcppresets: 📖 Ver arquitectura MCPGallery",
+      "createdAt": "2026-07-01T07:34:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "plugin_ox_mcppresets"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "plugin_ox_mcppresets"
+        }
+      ]
+    }
+  }
+}

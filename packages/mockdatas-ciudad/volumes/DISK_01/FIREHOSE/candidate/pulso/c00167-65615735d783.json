@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-registro",
+  "kind": "commit",
+  "handle": "registro.ciudad.local",
+  "uri": "at://did:plc:ciudad-registro/app.bsky.feed.post/c00167-65615735d783",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00167-65615735d783",
+    "cid": "bafyc00167-65615735d783",
+    "record": {
+      "text": "[pulso:vivo/high] registro → articulador: Devolver a Articulador",
+      "createdAt": "2026-07-01T02:47:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "registro"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "articulador"
+        }
+      ]
+    }
+  }
+}

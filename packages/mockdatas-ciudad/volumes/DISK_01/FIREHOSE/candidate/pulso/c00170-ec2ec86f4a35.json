@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-registro",
+  "kind": "commit",
+  "handle": "registro.ciudad.local",
+  "uri": "at://did:plc:ciudad-registro/app.bsky.feed.post/c00170-ec2ec86f4a35",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00170-ec2ec86f4a35",
+    "cid": "bafyc00170-ec2ec86f4a35",
+    "record": {
+      "text": "[pulso:vivo/high] registro → sombra: Escalar a Sombra",
+      "createdAt": "2026-07-01T02:50:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "registro"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "sombra"
+        }
+      ]
+    }
+  }
+}

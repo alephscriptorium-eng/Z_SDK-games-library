@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-plugin_ox_consejoasesor",
+  "kind": "commit",
+  "handle": "plugin_ox_consejoasesor.ciudad.local",
+  "uri": "at://did:plc:ciudad-plugin_ox_consejoasesor/app.bsky.feed.post/c00425-5362c157408e",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00425-5362c157408e",
+    "cid": "bafyc00425-5362c157408e",
+    "record": {
+      "text": "[pulso:vivo/high] plugin_ox_consejoasesor → plugin_ox_consejoasesor: Listar agentes del Consejo",
+      "createdAt": "2026-07-01T07:05:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "plugin_ox_consejoasesor"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "plugin_ox_consejoasesor"
+        }
+      ]
+    }
+  }
+}

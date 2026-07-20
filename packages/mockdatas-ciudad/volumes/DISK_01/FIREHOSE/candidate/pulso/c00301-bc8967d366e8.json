@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-indice",
+  "kind": "commit",
+  "handle": "indice.ciudad.local",
+  "uri": "at://did:plc:ciudad-indice/app.bsky.feed.post/c00301-bc8967d366e8",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00301-bc8967d366e8",
+    "cid": "bafyc00301-bc8967d366e8",
+    "record": {
+      "text": "[pulso:vivo/high] indice → Ox: 🎬 Lanzar servidores demo",
+      "createdAt": "2026-07-01T05:01:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "indice"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Ox"
+        }
+      ]
+    }
+  }
+}

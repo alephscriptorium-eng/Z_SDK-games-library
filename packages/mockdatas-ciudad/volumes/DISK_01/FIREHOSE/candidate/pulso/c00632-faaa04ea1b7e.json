@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-hackertasks-nov",
+  "kind": "commit",
+  "handle": "hackertasks-nov.ciudad.local",
+  "uri": "at://did:plc:ciudad-hackertasks-nov/app.bsky.feed.post/c00632-faaa04ea1b7e",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00632-faaa04ea1b7e",
+    "cid": "bafyc00632-faaa04ea1b7e",
+    "record": {
+      "text": "[pulso:vivo/high] HackerTasks:NOV → NovelistEditor: PREFIX_METADATA",
+      "createdAt": "2026-07-01T10:32:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "HackerTasks:NOV"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "NovelistEditor"
+        }
+      ]
+    }
+  }
+}

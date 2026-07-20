@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-plugin_ox_scrum",
+  "kind": "commit",
+  "handle": "plugin_ox_scrum.ciudad.local",
+  "uri": "at://did:plc:ciudad-plugin_ox_scrum/app.bsky.feed.post/c00500-fb32e290ce08",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00500-fb32e290ce08",
+    "cid": "bafyc00500-fb32e290ce08",
+    "record": {
+      "text": "[pulso:vivo/high] plugin_ox_scrum → .github/plugins/scrum/agents/scrum.agent.md: 🎭 Cargar contexto Lucas",
+      "createdAt": "2026-07-01T08:20:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "plugin_ox_scrum"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": ".github/plugins/scrum/agents/scrum.agent.md"
+        }
+      ]
+    }
+  }
+}

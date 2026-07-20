@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-bot-volatil",
+  "kind": "commit",
+  "handle": "bot-volatil.ciudad.local",
+  "uri": "at://did:plc:ciudad-bot-volatil/app.bsky.feed.post/c00027-2723245e9ed4",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00027-2723245e9ed4",
+    "cid": "bafyc00027-2723245e9ed4",
+    "record": {
+      "text": "[pulso:vivo/high] bot-volatil → bot-taller: Mecánico · construir nave detectada (taller)",
+      "createdAt": "2026-07-01T00:27:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "bot-volatil"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "bot-taller"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-grafista",
+  "kind": "commit",
+  "handle": "grafista.ciudad.local",
+  "uri": "at://did:plc:ciudad-grafista/app.bsky.feed.post/c00047-729fa58d5f02",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00047-729fa58d5f02",
+    "cid": "bafyc00047-729fa58d5f02",
+    "record": {
+      "text": "[pulso:vivo/high] grafista → Archivero Lore: Volver al corpus",
+      "createdAt": "2026-07-01T00:47:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "grafista"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Archivero Lore"
+        }
+      ]
+    }
+  }
+}

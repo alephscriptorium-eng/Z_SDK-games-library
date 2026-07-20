@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-bot-hilbert",
+  "kind": "commit",
+  "handle": "bot-hilbert.ciudad.local",
+  "uri": "at://did:plc:ciudad-bot-hilbert/app.bsky.feed.post/c00006-3b64da0afe5d",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00006-3b64da0afe5d",
+    "cid": "bafyc00006-3b64da0afe5d",
+    "record": {
+      "text": "[pulso:vivo/high] bot-hilbert → bot-biblioteca: Cartógrafo · cultivar mapa (biblioteca)",
+      "createdAt": "2026-07-01T00:06:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "bot-hilbert"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "bot-biblioteca"
+        }
+      ]
+    }
+  }
+}

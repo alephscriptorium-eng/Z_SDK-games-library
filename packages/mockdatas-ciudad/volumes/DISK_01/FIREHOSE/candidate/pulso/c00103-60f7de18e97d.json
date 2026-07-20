@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-blackflag",
+  "kind": "commit",
+  "handle": "blackflag.ciudad.local",
+  "uri": "at://did:plc:ciudad-blackflag/app.bsky.feed.post/c00103-60f7de18e97d",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00103-60f7de18e97d",
+    "cid": "bafyc00103-60f7de18e97d",
+    "record": {
+      "text": "[pulso:vivo/high] blackflag → Aleph: Llevar crítica a redacción",
+      "createdAt": "2026-07-01T01:43:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "blackflag"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Aleph"
+        }
+      ]
+    }
+  }
+}

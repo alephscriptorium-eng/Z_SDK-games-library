@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-novelist",
+  "kind": "commit",
+  "handle": "novelist.ciudad.local",
+  "uri": "at://did:plc:ciudad-novelist/app.bsky.feed.post/c00340-af484fbd8db6",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00340-af484fbd8db6",
+    "cid": "bafyc00340-af484fbd8db6",
+    "record": {
+      "text": "[pulso:vivo/high] novelist → Novelist: Verificar servidor MCP",
+      "createdAt": "2026-07-01T05:40:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "novelist"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Novelist"
+        }
+      ]
+    }
+  }
+}

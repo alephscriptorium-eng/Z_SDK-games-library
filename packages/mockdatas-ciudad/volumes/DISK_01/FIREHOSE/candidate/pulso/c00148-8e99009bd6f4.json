@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-penitente",
+  "kind": "commit",
+  "handle": "penitente.ciudad.local",
+  "uri": "at://did:plc:ciudad-penitente/app.bsky.feed.post/c00148-8e99009bd6f4",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00148-8e99009bd6f4",
+    "cid": "bafyc00148-8e99009bd6f4",
+    "record": {
+      "text": "[pulso:vivo/high] penitente → Aceleracionista: Debate con Aceleracionista (Andreessen)",
+      "createdAt": "2026-07-01T02:28:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "penitente"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Aceleracionista"
+        }
+      ]
+    }
+  }
+}

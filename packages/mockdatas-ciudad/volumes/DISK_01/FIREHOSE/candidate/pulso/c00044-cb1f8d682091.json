@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-dramaturgo",
+  "kind": "commit",
+  "handle": "dramaturgo.ciudad.local",
+  "uri": "at://did:plc:ciudad-dramaturgo/app.bsky.feed.post/c00044-cb1f8d682091",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00044-cb1f8d682091",
+    "cid": "bafyc00044-cb1f8d682091",
+    "record": {
+      "text": "[pulso:vivo/high] dramaturgo → Demiurgo: Pedir universo actualizado",
+      "createdAt": "2026-07-01T00:44:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "dramaturgo"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Demiurgo"
+        }
+      ]
+    }
+  }
+}

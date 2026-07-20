@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-lore-sdk",
+  "kind": "commit",
+  "handle": "lore-sdk.ciudad.local",
+  "uri": "at://did:plc:ciudad-lore-sdk/app.bsky.feed.post/c00304-626fcc6faa0c",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00304-626fcc6faa0c",
+    "cid": "bafyc00304-626fcc6faa0c",
+    "record": {
+      "text": "[pulso:vivo/high] lore-sdk → LoreSDK: Alimentar corpus existente",
+      "createdAt": "2026-07-01T05:04:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "lore-sdk"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "LoreSDK"
+        }
+      ]
+    }
+  }
+}

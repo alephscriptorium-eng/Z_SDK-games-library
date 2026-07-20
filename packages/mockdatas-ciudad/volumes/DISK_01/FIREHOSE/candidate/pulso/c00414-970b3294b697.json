@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-plugin_ox_argboardapp",
+  "kind": "commit",
+  "handle": "plugin_ox_argboardapp.ciudad.local",
+  "uri": "at://did:plc:ciudad-plugin_ox_argboardapp/app.bsky.feed.post/c00414-970b3294b697",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00414-970b3294b697",
+    "cid": "bafyc00414-970b3294b697",
+    "record": {
+      "text": "[pulso:latente/low] plugin_ox_argboardapp → .github/plugins/arg-board-app/agents/arg-board-app.agent.md: Crear obra de navegación",
+      "createdAt": "2026-07-01T06:54:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "latente"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "low"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "plugin_ox_argboardapp"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": ".github/plugins/arg-board-app/agents/arg-board-app.agent.md"
+        }
+      ]
+    }
+  }
+}

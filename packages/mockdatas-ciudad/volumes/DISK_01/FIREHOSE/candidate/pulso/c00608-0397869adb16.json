@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-wire-editor",
+  "kind": "commit",
+  "handle": "wire-editor.ciudad.local",
+  "uri": "at://did:plc:ciudad-wire-editor/app.bsky.feed.post/c00608-0397869adb16",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00608-0397869adb16",
+    "cid": "bafyc00608-0397869adb16",
+    "record": {
+      "text": "[pulso:vivo/high] wire-editor → WireEditor: Asesorar sobre nodos a usar",
+      "createdAt": "2026-07-01T10:08:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "wire-editor"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "WireEditor"
+        }
+      ]
+    }
+  }
+}

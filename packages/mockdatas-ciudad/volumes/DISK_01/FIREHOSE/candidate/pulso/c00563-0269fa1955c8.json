@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-revisor",
+  "kind": "commit",
+  "handle": "revisor.ciudad.local",
+  "uri": "at://did:plc:ciudad-revisor/app.bsky.feed.post/c00563-0269fa1955c8",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00563-0269fa1955c8",
+    "cid": "bafyc00563-0269fa1955c8",
+    "record": {
+      "text": "[pulso:vivo/high] revisor → Orangeflag: Solicitar auditoría de registro",
+      "createdAt": "2026-07-01T09:23:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "revisor"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Orangeflag"
+        }
+      ]
+    }
+  }
+}

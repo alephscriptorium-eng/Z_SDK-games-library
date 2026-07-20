@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-portal",
+  "kind": "commit",
+  "handle": "portal.ciudad.local",
+  "uri": "at://did:plc:ciudad-portal/app.bsky.feed.post/c00066-f5a6b7d38eaf",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00066-f5a6b7d38eaf",
+    "cid": "bafyc00066-f5a6b7d38eaf",
+    "record": {
+      "text": "[pulso:vivo/high] portal → Pipeline: 🔄 Refrescar el pipeline",
+      "createdAt": "2026-07-01T01:06:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "portal"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Pipeline"
+        }
+      ]
+    }
+  }
+}

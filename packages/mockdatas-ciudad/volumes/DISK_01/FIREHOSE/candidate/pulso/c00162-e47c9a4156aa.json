@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-redflag",
+  "kind": "commit",
+  "handle": "redflag.ciudad.local",
+  "uri": "at://did:plc:ciudad-redflag/app.bsky.feed.post/c00162-e47c9a4156aa",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00162-e47c9a4156aa",
+    "cid": "bafyc00162-e47c9a4156aa",
+    "record": {
+      "text": "[pulso:vivo/high] redflag → Aleph: Llevar crítica a redacción",
+      "createdAt": "2026-07-01T02:42:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "redflag"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Aleph"
+        }
+      ]
+    }
+  }
+}

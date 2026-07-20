@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-typed-prompting",
+  "kind": "commit",
+  "handle": "typed-prompting.ciudad.local",
+  "uri": "at://did:plc:ciudad-typed-prompting/app.bsky.feed.post/c00595-9010d78a42a3",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00595-9010d78a42a3",
+    "cid": "bafyc00595-9010d78a42a3",
+    "record": {
+      "text": "[pulso:latente/low] typed-prompting → TypedPrompting: Instalar protocolo en flujo ARG",
+      "createdAt": "2026-07-01T09:55:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "latente"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "low"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "typed-prompting"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "TypedPrompting"
+        }
+      ]
+    }
+  }
+}

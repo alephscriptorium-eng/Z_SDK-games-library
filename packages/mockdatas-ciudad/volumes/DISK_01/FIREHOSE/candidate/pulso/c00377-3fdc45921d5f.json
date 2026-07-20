@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-ox",
+  "kind": "commit",
+  "handle": "ox.ciudad.local",
+  "uri": "at://did:plc:ciudad-ox/app.bsky.feed.post/c00377-3fdc45921d5f",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00377-3fdc45921d5f",
+    "cid": "bafyc00377-3fdc45921d5f",
+    "record": {
+      "text": "[pulso:vivo/high] ox → Ox: Listar agentes por capa",
+      "createdAt": "2026-07-01T06:17:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "ox"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Ox"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-integrador",
+  "kind": "commit",
+  "handle": "integrador.ciudad.local",
+  "uri": "at://did:plc:ciudad-integrador/app.bsky.feed.post/c00134-fbe1c4ae358d",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00134-fbe1c4ae358d",
+    "cid": "bafyc00134-fbe1c4ae358d",
+    "record": {
+      "text": "[pulso:vivo/high] integrador → verdad: Auditoria de Verdad",
+      "createdAt": "2026-07-01T02:14:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "integrador"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "verdad"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-registro",
+  "kind": "commit",
+  "handle": "registro.ciudad.local",
+  "uri": "at://did:plc:ciudad-registro/app.bsky.feed.post/c00168-88e9cb6e75f5",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00168-88e9cb6e75f5",
+    "cid": "bafyc00168-88e9cb6e75f5",
+    "record": {
+      "text": "[pulso:vivo/high] registro → campo: Escalar a Campo",
+      "createdAt": "2026-07-01T02:48:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "registro"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "campo"
+        }
+      ]
+    }
+  }
+}

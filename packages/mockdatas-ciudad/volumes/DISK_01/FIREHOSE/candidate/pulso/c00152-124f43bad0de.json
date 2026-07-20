@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-portal",
+  "kind": "commit",
+  "handle": "portal.ciudad.local",
+  "uri": "at://did:plc:ciudad-portal/app.bsky.feed.post/c00152-124f43bad0de",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00152-124f43bad0de",
+    "cid": "bafyc00152-124f43bad0de",
+    "record": {
+      "text": "[pulso:vivo/high] portal → protagonista: Continuar sesion desde la puerta correcta",
+      "createdAt": "2026-07-01T02:32:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "portal"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "protagonista"
+        }
+      ]
+    }
+  }
+}

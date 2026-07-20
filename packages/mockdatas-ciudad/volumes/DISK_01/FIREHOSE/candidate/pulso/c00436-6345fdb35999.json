@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-plugin_ox_ghpages",
+  "kind": "commit",
+  "handle": "plugin_ox_ghpages.ciudad.local",
+  "uri": "at://did:plc:ciudad-plugin_ox_ghpages/app.bsky.feed.post/c00436-6345fdb35999",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00436-6345fdb35999",
+    "cid": "bafyc00436-6345fdb35999",
+    "record": {
+      "text": "[pulso:vivo/high] plugin_ox_ghpages → .github/plugins/gh-pages/agents/ghpages.agent.md: Inicializar sitio GitHub Pages",
+      "createdAt": "2026-07-01T07:16:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "plugin_ox_ghpages"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": ".github/plugins/gh-pages/agents/ghpages.agent.md"
+        }
+      ]
+    }
+  }
+}

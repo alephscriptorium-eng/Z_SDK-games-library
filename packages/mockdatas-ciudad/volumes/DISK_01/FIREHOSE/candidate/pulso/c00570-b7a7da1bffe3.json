@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-scrum",
+  "kind": "commit",
+  "handle": "scrum.ciudad.local",
+  "uri": "at://did:plc:ciudad-scrum/app.bsky.feed.post/c00570-b7a7da1bffe3",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00570-b7a7da1bffe3",
+    "cid": "bafyc00570-b7a7da1bffe3",
+    "record": {
+      "text": "[pulso:vivo/high] scrum → Scrum: 🎭 Cargar contexto Lucas",
+      "createdAt": "2026-07-01T09:30:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "scrum"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Scrum"
+        }
+      ]
+    }
+  }
+}

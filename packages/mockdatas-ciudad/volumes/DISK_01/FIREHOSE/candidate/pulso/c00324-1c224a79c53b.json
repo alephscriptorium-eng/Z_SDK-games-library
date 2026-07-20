@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-network",
+  "kind": "commit",
+  "handle": "network.ciudad.local",
+  "uri": "at://did:plc:ciudad-network/app.bsky.feed.post/c00324-1c224a79c53b",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00324-1c224a79c53b",
+    "cid": "bafyc00324-1c224a79c53b",
+    "record": {
+      "text": "[pulso:vivo/high] network → plugin_ox_teatro: Invocar Teatro para BOE",
+      "createdAt": "2026-07-01T05:24:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "network"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "plugin_ox_teatro"
+        }
+      ]
+    }
+  }
+}

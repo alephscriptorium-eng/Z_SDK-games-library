@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-revisor",
+  "kind": "commit",
+  "handle": "revisor.ciudad.local",
+  "uri": "at://did:plc:ciudad-revisor/app.bsky.feed.post/c00559-9b3e63236cf5",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00559-9b3e63236cf5",
+    "cid": "bafyc00559-9b3e63236cf5",
+    "record": {
+      "text": "[pulso:vivo/high] revisor → Aleph: Llevar correcciones a redacción",
+      "createdAt": "2026-07-01T09:19:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "revisor"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Aleph"
+        }
+      ]
+    }
+  }
+}

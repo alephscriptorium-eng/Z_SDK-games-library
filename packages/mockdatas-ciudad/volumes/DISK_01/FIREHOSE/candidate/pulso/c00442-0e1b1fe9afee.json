@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-plugin_ox_hypergraphedit",
+  "kind": "commit",
+  "handle": "plugin_ox_hypergrapheditor.ciudad.local",
+  "uri": "at://did:plc:ciudad-plugin_ox_hypergraphedit/app.bsky.feed.post/c00442-0e1b1fe9afee",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00442-0e1b1fe9afee",
+    "cid": "bafyc00442-0e1b1fe9afee",
+    "record": {
+      "text": "[pulso:latente/low] plugin_ox_hypergrapheditor → plugin_ox_hypergrapheditor: Listar capacidades de HyperGraphEditor",
+      "createdAt": "2026-07-01T07:22:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "latente"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "low"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "plugin_ox_hypergrapheditor"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "plugin_ox_hypergrapheditor"
+        }
+      ]
+    }
+  }
+}

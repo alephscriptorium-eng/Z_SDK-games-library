@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-vps-ops",
+  "kind": "commit",
+  "handle": "vps-ops.ciudad.local",
+  "uri": "at://did:plc:ciudad-vps-ops/app.bsky.feed.post/c00607-6fe2af1482be",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00607-6fe2af1482be",
+    "cid": "bafyc00607-6fe2af1482be",
+    "record": {
+      "text": "[pulso:vivo/high] vps-ops → VerdaccioKeeper: Preparar Verdaccio",
+      "createdAt": "2026-07-01T10:07:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "vps-ops"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "VerdaccioKeeper"
+        }
+      ]
+    }
+  }
+}

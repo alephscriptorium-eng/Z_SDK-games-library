@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-sombra",
+  "kind": "commit",
+  "handle": "sombra.ciudad.local",
+  "uri": "at://did:plc:ciudad-sombra/app.bsky.feed.post/c00180-cddc4f27d298",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00180-cddc4f27d298",
+    "cid": "bafyc00180-cddc4f27d298",
+    "record": {
+      "text": "[pulso:vivo/high] sombra → verdad: Escalar a Verdad",
+      "createdAt": "2026-07-01T03:00:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "sombra"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "verdad"
+        }
+      ]
+    }
+  }
+}

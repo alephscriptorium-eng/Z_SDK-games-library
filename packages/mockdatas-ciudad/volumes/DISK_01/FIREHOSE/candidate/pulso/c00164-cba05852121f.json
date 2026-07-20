@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-redflag",
+  "kind": "commit",
+  "handle": "redflag.ciudad.local",
+  "uri": "at://did:plc:ciudad-redflag/app.bsky.feed.post/c00164-cba05852121f",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00164-cba05852121f",
+    "cid": "bafyc00164-cba05852121f",
+    "record": {
+      "text": "[pulso:vivo/high] redflag → Orangeflag: Tensionar con Bandera Naranja",
+      "createdAt": "2026-07-01T02:44:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "redflag"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Orangeflag"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-blueflag",
+  "kind": "commit",
+  "handle": "blueflag.ciudad.local",
+  "uri": "at://did:plc:ciudad-blueflag/app.bsky.feed.post/c00111-7d34da5e7460",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00111-7d34da5e7460",
+    "cid": "bafyc00111-7d34da5e7460",
+    "record": {
+      "text": "[pulso:vivo/high] blueflag → Redflag: Tensionar con Bandera Roja",
+      "createdAt": "2026-07-01T01:51:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "blueflag"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Redflag"
+        }
+      ]
+    }
+  }
+}

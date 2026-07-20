@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-plugin_ox_mcppresets",
+  "kind": "commit",
+  "handle": "plugin_ox_mcppresets.ciudad.local",
+  "uri": "at://did:plc:ciudad-plugin_ox_mcppresets/app.bsky.feed.post/c00460-05660d1c6219",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00460-05660d1c6219",
+    "cid": "bafyc00460-05660d1c6219",
+    "record": {
+      "text": "[pulso:vivo/high] plugin_ox_mcppresets → plugin_ox_mcppresets: 🚀 Arrancar DevOps Server (mesh:3003)",
+      "createdAt": "2026-07-01T07:40:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "plugin_ox_mcppresets"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "plugin_ox_mcppresets"
+        }
+      ]
+    }
+  }
+}

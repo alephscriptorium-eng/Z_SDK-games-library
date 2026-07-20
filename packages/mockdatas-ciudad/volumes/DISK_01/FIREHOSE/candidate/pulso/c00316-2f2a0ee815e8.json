@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-mcp-presets",
+  "kind": "commit",
+  "handle": "mcp-presets.ciudad.local",
+  "uri": "at://did:plc:ciudad-mcp-presets/app.bsky.feed.post/c00316-2f2a0ee815e8",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00316-2f2a0ee815e8",
+    "cid": "bafyc00316-2f2a0ee815e8",
+    "record": {
+      "text": "[pulso:vivo/high] mcp-presets → McpPresets: Ver catálogo de la mesh",
+      "createdAt": "2026-07-01T05:16:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "mcp-presets"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "McpPresets"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-plugin_ox_network",
+  "kind": "commit",
+  "handle": "plugin_ox_network.ciudad.local",
+  "uri": "at://did:plc:ciudad-plugin_ox_network/app.bsky.feed.post/c00466-9281df56735d",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00466-9281df56735d",
+    "cid": "bafyc00466-9281df56735d",
+    "record": {
+      "text": "[pulso:vivo/high] plugin_ox_network → .github/plugins/network/agents/network.agent.md: Publicar BOE a Oasis",
+      "createdAt": "2026-07-01T07:46:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "plugin_ox_network"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": ".github/plugins/network/agents/network.agent.md"
+        }
+      ]
+    }
+  }
+}

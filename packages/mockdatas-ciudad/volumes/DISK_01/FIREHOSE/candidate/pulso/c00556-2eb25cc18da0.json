@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-revisor",
+  "kind": "commit",
+  "handle": "revisor.ciudad.local",
+  "uri": "at://did:plc:ciudad-revisor/app.bsky.feed.post/c00556-2eb25cc18da0",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00556-2eb25cc18da0",
+    "cid": "bafyc00556-2eb25cc18da0",
+    "record": {
+      "text": "[pulso:vivo/high] revisor → .github/plugins/arg-board/agents/Decoherence: [ARG] Auditar coherencia de obra [nombre]",
+      "createdAt": "2026-07-01T09:16:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "revisor"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": ".github/plugins/arg-board/agents/Decoherence"
+        }
+      ]
+    }
+  }
+}

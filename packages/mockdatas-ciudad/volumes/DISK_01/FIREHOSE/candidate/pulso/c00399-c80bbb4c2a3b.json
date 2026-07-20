@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-periodico",
+  "kind": "commit",
+  "handle": "periodico.ciudad.local",
+  "uri": "at://did:plc:ciudad-periodico/app.bsky.feed.post/c00399-c80bbb4c2a3b",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00399-c80bbb4c2a3b",
+    "cid": "bafyc00399-c80bbb4c2a3b",
+    "record": {
+      "text": "[pulso:vivo/high] periodico → Periodico: Publicar plana",
+      "createdAt": "2026-07-01T06:39:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "periodico"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Periodico"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-hackertasks-bhs",
+  "kind": "commit",
+  "handle": "hackertasks-bhs.ciudad.local",
+  "uri": "at://did:plc:ciudad-hackertasks-bhs/app.bsky.feed.post/c00625-e46fae2214a0",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00625-e46fae2214a0",
+    "cid": "bafyc00625-e46fae2214a0",
+    "record": {
+      "text": "[pulso:vivo/high] HackerTasks:BHS → BotHubSDK: PREFIX_METADATA",
+      "createdAt": "2026-07-01T10:25:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "HackerTasks:BHS"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "BotHubSDK"
+        }
+      ]
+    }
+  }
+}

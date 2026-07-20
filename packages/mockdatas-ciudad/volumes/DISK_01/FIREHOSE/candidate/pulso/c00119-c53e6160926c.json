@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-calibrador",
+  "kind": "commit",
+  "handle": "calibrador.ciudad.local",
+  "uri": "at://did:plc:ciudad-calibrador/app.bsky.feed.post/c00119-c53e6160926c",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00119-c53e6160926c",
+    "cid": "bafyc00119-c53e6160926c",
+    "record": {
+      "text": "[pulso:vivo/high] calibrador → verdad: Verificar si la correccion introduce nuevos sesgos",
+      "createdAt": "2026-07-01T01:59:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "calibrador"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "verdad"
+        }
+      ]
+    }
+  }
+}

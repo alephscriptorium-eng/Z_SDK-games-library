@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-aleph",
+  "kind": "commit",
+  "handle": "aleph.ciudad.local",
+  "uri": "at://did:plc:ciudad-aleph/app.bsky.feed.post/c00224-236f6a2aa04b",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00224-236f6a2aa04b",
+    "cid": "bafyc00224-236f6a2aa04b",
+    "record": {
+      "text": "[pulso:vivo/high] aleph → Blueflag: Solicitar auditoría de verdad",
+      "createdAt": "2026-07-01T03:44:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "aleph"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Blueflag"
+        }
+      ]
+    }
+  }
+}

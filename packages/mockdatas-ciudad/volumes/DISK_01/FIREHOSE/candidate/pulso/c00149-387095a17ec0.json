@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-penitente",
+  "kind": "commit",
+  "handle": "penitente.ciudad.local",
+  "uri": "at://did:plc:ciudad-penitente/app.bsky.feed.post/c00149-387095a17ec0",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00149-387095a17ec0",
+    "cid": "bafyc00149-387095a17ec0",
+    "record": {
+      "text": "[pulso:vivo/high] penitente → Optimista: Debate con Optimista (Pinker)",
+      "createdAt": "2026-07-01T02:29:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "penitente"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Optimista"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-openasyncapi-editor",
+  "kind": "commit",
+  "handle": "openasyncapi-editor.ciudad.local",
+  "uri": "at://did:plc:ciudad-openasyncapi-editor/app.bsky.feed.post/c00345-ed92b7dd062e",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00345-ed92b7dd062e",
+    "cid": "bafyc00345-ed92b7dd062e",
+    "record": {
+      "text": "[pulso:vivo/high] openasyncapi-editor → OpenAsyncApiEditor: Generar stub Node.js",
+      "createdAt": "2026-07-01T05:45:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "openasyncapi-editor"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "OpenAsyncApiEditor"
+        }
+      ]
+    }
+  }
+}

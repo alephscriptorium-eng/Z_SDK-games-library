@@ -1,0 +1,6 @@
+# src	dst	label
+aleph	Ox	Consultar oráculo
+plugin_ox_blocklyeditor	BlocklyEditor	Abrir editor
+plugin_ox_n8neditor	WorkflowEditor	Abrir flujo
+plugin_ox_wireeditor	WiringEditor	Abrir wiring
+ox	MCPGallery	Lanzar demo

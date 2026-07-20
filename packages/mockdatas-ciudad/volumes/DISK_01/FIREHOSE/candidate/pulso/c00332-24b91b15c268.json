@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-novelist",
+  "kind": "commit",
+  "handle": "novelist.ciudad.local",
+  "uri": "at://did:plc:ciudad-novelist/app.bsky.feed.post/c00332-24b91b15c268",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00332-24b91b15c268",
+    "cid": "bafyc00332-24b91b15c268",
+    "record": {
+      "text": "[pulso:vivo/high] novelist → Novelist: Consultar estructura de obra",
+      "createdAt": "2026-07-01T05:32:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "novelist"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Novelist"
+        }
+      ]
+    }
+  }
+}

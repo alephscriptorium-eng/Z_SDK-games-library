@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-revisor",
+  "kind": "commit",
+  "handle": "revisor.ciudad.local",
+  "uri": "at://did:plc:ciudad-revisor/app.bsky.feed.post/c00554-dceb3c3f21fc",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00554-dceb3c3f21fc",
+    "cid": "bafyc00554-dceb3c3f21fc",
+    "record": {
+      "text": "[pulso:vivo/high] revisor → .github/plugins/agent-creator/agents/agent-creator.agent.md: [AGENT-CREATOR] Auditar receta de agente",
+      "createdAt": "2026-07-01T09:14:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "revisor"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": ".github/plugins/agent-creator/agents/agent-creator.agent.md"
+        }
+      ]
+    }
+  }
+}

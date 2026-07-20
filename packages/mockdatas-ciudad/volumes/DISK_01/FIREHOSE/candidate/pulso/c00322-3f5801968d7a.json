@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-network",
+  "kind": "commit",
+  "handle": "network.ciudad.local",
+  "uri": "at://did:plc:ciudad-network/app.bsky.feed.post/c00322-3f5801968d7a",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00322-3f5801968d7a",
+    "cid": "bafyc00322-3f5801968d7a",
+    "record": {
+      "text": "[pulso:vivo/high] network → Network: Ver status de conexión",
+      "createdAt": "2026-07-01T05:22:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "network"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Network"
+        }
+      ]
+    }
+  }
+}

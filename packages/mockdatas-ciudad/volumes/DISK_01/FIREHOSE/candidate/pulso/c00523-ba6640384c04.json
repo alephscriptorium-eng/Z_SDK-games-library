@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-plugin_ox_vectormachine",
+  "kind": "commit",
+  "handle": "plugin_ox_vectormachine.ciudad.local",
+  "uri": "at://did:plc:ciudad-plugin_ox_vectormachine/app.bsky.feed.post/c00523-ba6640384c04",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00523-ba6640384c04",
+    "cid": "bafyc00523-ba6640384c04",
+    "record": {
+      "text": "[pulso:vivo/high] plugin_ox_vectormachine → plugin_ox_vectormachine: Listar capacidades de VectorMachine",
+      "createdAt": "2026-07-01T08:43:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "plugin_ox_vectormachine"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "plugin_ox_vectormachine"
+        }
+      ]
+    }
+  }
+}

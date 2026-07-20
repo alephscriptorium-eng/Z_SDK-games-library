@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-observatorio",
+  "kind": "commit",
+  "handle": "observatorio.ciudad.local",
+  "uri": "at://did:plc:ciudad-observatorio/app.bsky.feed.post/c00140-b41a18eebc2c",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00140-b41a18eebc2c",
+    "cid": "bafyc00140-b41a18eebc2c",
+    "record": {
+      "text": "[pulso:vivo/high] observatorio → verdad: Verificar afirmacion del collage",
+      "createdAt": "2026-07-01T02:20:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "observatorio"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "verdad"
+        }
+      ]
+    }
+  }
+}

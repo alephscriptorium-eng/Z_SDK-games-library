@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-scrum",
+  "kind": "commit",
+  "handle": "scrum.ciudad.local",
+  "uri": "at://did:plc:ciudad-scrum/app.bsky.feed.post/c00583-6935fcadd527",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00583-6935fcadd527",
+    "cid": "bafyc00583-6935fcadd527",
+    "record": {
+      "text": "[pulso:vivo/high] scrum → Scrum: Planificar sprint (crear referencia)",
+      "createdAt": "2026-07-01T09:43:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "scrum"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Scrum"
+        }
+      ]
+    }
+  }
+}

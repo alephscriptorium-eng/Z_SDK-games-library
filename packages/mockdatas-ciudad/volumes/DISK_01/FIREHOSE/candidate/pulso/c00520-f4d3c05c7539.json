@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-plugin_ox_typedprompting",
+  "kind": "commit",
+  "handle": "plugin_ox_typedprompting.ciudad.local",
+  "uri": "at://did:plc:ciudad-plugin_ox_typedprompting/app.bsky.feed.post/c00520-f4d3c05c7539",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00520-f4d3c05c7539",
+    "cid": "bafyc00520-f4d3c05c7539",
+    "record": {
+      "text": "[pulso:latente/low] plugin_ox_typedprompting → .github/plugins/typed-prompting/agents/typed-prompting.agent.md: Abrir editor web",
+      "createdAt": "2026-07-01T08:40:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "latente"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "low"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "plugin_ox_typedprompting"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": ".github/plugins/typed-prompting/agents/typed-prompting.agent.md"
+        }
+      ]
+    }
+  }
+}

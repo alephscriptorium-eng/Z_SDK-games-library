@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-plugin_ox_mcppresets",
+  "kind": "commit",
+  "handle": "plugin_ox_mcppresets.ciudad.local",
+  "uri": "at://did:plc:ciudad-plugin_ox_mcppresets/app.bsky.feed.post/c00449-2ddf763908fb",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00449-2ddf763908fb",
+    "cid": "bafyc00449-2ddf763908fb",
+    "record": {
+      "text": "[pulso:vivo/high] plugin_ox_mcppresets → plugin_ox_mcppresets: ➕ Crear nuevo preset",
+      "createdAt": "2026-07-01T07:29:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "plugin_ox_mcppresets"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "plugin_ox_mcppresets"
+        }
+      ]
+    }
+  }
+}

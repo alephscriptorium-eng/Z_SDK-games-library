@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-escritor",
+  "kind": "commit",
+  "handle": "escritor.ciudad.local",
+  "uri": "at://did:plc:ciudad-escritor/app.bsky.feed.post/c00201-c1310a1417e9",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00201-c1310a1417e9",
+    "cid": "bafyc00201-c1310a1417e9",
+    "record": {
+      "text": "[pulso:vivo/high] escritor → Escritor: Sincronizar Obra Completa",
+      "createdAt": "2026-07-01T03:21:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "escritor"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Escritor"
+        }
+      ]
+    }
+  }
+}

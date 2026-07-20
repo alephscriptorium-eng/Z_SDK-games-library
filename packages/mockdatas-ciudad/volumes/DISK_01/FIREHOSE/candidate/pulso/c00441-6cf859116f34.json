@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-plugin_ox_hypergraphedit",
+  "kind": "commit",
+  "handle": "plugin_ox_hypergrapheditor.ciudad.local",
+  "uri": "at://did:plc:ciudad-plugin_ox_hypergraphedit/app.bsky.feed.post/c00441-6cf859116f34",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00441-6cf859116f34",
+    "cid": "bafyc00441-6cf859116f34",
+    "record": {
+      "text": "[pulso:latente/low] plugin_ox_hypergrapheditor → .github/plugins/hypergraph-editor/agents/hypergraph-editor.agent.md: Crear fuente de datos",
+      "createdAt": "2026-07-01T07:21:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "latente"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "low"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "plugin_ox_hypergrapheditor"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": ".github/plugins/hypergraph-editor/agents/hypergraph-editor.agent.md"
+        }
+      ]
+    }
+  }
+}

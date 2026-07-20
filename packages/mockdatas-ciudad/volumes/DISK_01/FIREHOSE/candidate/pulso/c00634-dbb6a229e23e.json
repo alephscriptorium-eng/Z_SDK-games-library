@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-hackertasks-oae",
+  "kind": "commit",
+  "handle": "hackertasks-oae.ciudad.local",
+  "uri": "at://did:plc:ciudad-hackertasks-oae/app.bsky.feed.post/c00634-dbb6a229e23e",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00634-dbb6a229e23e",
+    "cid": "bafyc00634-dbb6a229e23e",
+    "record": {
+      "text": "[pulso:vivo/high] HackerTasks:OAE → openasyncapi-editor (plugin): PREFIX_METADATA",
+      "createdAt": "2026-07-01T10:34:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "HackerTasks:OAE"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "openasyncapi-editor (plugin)"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-aaia-editor",
+  "kind": "commit",
+  "handle": "aaia-editor.ciudad.local",
+  "uri": "at://did:plc:ciudad-aaia-editor/app.bsky.feed.post/c00208-7ac225397152",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00208-7ac225397152",
+    "cid": "bafyc00208-7ac225397152",
+    "record": {
+      "text": "[pulso:latente/low] aaia-editor → AAIAEditor: [Usuario] Crear sesión AAIA",
+      "createdAt": "2026-07-01T03:28:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "latente"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "low"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "aaia-editor"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "AAIAEditor"
+        }
+      ]
+    }
+  }
+}

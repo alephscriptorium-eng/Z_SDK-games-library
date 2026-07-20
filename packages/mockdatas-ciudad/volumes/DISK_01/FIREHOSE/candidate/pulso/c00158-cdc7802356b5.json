@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-protagonista",
+  "kind": "commit",
+  "handle": "protagonista.ciudad.local",
+  "uri": "at://did:plc:ciudad-protagonista/app.bsky.feed.post/c00158-cdc7802356b5",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00158-cdc7802356b5",
+    "cid": "bafyc00158-cdc7802356b5",
+    "record": {
+      "text": "[pulso:vivo/high] protagonista → integralista: Debate con Integralista",
+      "createdAt": "2026-07-01T02:38:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "protagonista"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "integralista"
+        }
+      ]
+    }
+  }
+}

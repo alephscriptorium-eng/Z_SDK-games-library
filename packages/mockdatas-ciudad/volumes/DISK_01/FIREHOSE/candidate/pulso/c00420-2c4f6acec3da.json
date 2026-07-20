@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-plugin_ox_consejoasesor",
+  "kind": "commit",
+  "handle": "plugin_ox_consejoasesor.ciudad.local",
+  "uri": "at://did:plc:ciudad-plugin_ox_consejoasesor/app.bsky.feed.post/c00420-2c4f6acec3da",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00420-2c4f6acec3da",
+    "cid": "bafyc00420-2c4f6acec3da",
+    "record": {
+      "text": "[pulso:vivo/high] plugin_ox_consejoasesor → .github/plugins/consejo-asesor/agents/consejo-asesor.agent.md: Crear proyecto ONFALO",
+      "createdAt": "2026-07-01T07:00:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "plugin_ox_consejoasesor"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": ".github/plugins/consejo-asesor/agents/consejo-asesor.agent.md"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-mcp-presets",
+  "kind": "commit",
+  "handle": "mcp-presets.ciudad.local",
+  "uri": "at://did:plc:ciudad-mcp-presets/app.bsky.feed.post/c00312-de5caf095f8a",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00312-de5caf095f8a",
+    "cid": "bafyc00312-de5caf095f8a",
+    "record": {
+      "text": "[pulso:vivo/high] mcp-presets → McpPresets: Exportar preset a JSON",
+      "createdAt": "2026-07-01T05:12:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "mcp-presets"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "McpPresets"
+        }
+      ]
+    }
+  }
+}

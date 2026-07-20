@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-plugin_ox_typedprompting",
+  "kind": "commit",
+  "handle": "plugin_ox_typedprompting.ciudad.local",
+  "uri": "at://did:plc:ciudad-plugin_ox_typedprompting/app.bsky.feed.post/c00519-5789befb1d0f",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00519-5789befb1d0f",
+    "cid": "bafyc00519-5789befb1d0f",
+    "record": {
+      "text": "[pulso:latente/low] plugin_ox_typedprompting → .github/plugins/typed-prompting/agents/typed-prompting.agent.md: [Asistente] Sugerir ontología existente",
+      "createdAt": "2026-07-01T08:39:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "latente"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "low"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "plugin_ox_typedprompting"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": ".github/plugins/typed-prompting/agents/typed-prompting.agent.md"
+        }
+      ]
+    }
+  }
+}

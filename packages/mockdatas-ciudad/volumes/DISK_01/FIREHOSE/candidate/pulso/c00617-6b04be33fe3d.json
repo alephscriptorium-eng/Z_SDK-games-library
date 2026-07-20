@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-wiring-app",
+  "kind": "commit",
+  "handle": "wiring-app.ciudad.local",
+  "uri": "at://did:plc:ciudad-wiring-app/app.bsky.feed.post/c00617-6b04be33fe3d",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00617-6b04be33fe3d",
+    "cid": "bafyc00617-6b04be33fe3d",
+    "record": {
+      "text": "[pulso:latente/low] wiring-app → WiringApp: Exportar a Node-RED",
+      "createdAt": "2026-07-01T10:17:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "latente"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "low"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "wiring-app"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "WiringApp"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-portal-editorial",
+  "kind": "commit",
+  "handle": "portal-editorial.ciudad.local",
+  "uri": "at://did:plc:ciudad-portal-editorial/app.bsky.feed.post/c00154-8b3c097efe90",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00154-8b3c097efe90",
+    "cid": "bafyc00154-8b3c097efe90",
+    "record": {
+      "text": "[pulso:vivo/high] portal-editorial → bartleby: Analizar nueva editorial",
+      "createdAt": "2026-07-01T02:34:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "portal-editorial"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "bartleby"
+        }
+      ]
+    }
+  }
+}

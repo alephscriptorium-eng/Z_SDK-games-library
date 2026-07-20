@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-escribiente",
+  "kind": "commit",
+  "handle": "escribiente.ciudad.local",
+  "uri": "at://did:plc:ciudad-escribiente/app.bsky.feed.post/c00265-c0e885aed3cd",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00265-c0e885aed3cd",
+    "cid": "bafyc00265-c0e885aed3cd",
+    "record": {
+      "text": "[pulso:vivo/high] escribiente → WireEditor: Revisar cierre documental",
+      "createdAt": "2026-07-01T04:25:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "escribiente"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "WireEditor"
+        }
+      ]
+    }
+  }
+}

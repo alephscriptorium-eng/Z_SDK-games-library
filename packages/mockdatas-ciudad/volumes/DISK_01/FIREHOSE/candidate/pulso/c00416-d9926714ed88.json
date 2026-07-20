@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-plugin_ox_blocklyeditor",
+  "kind": "commit",
+  "handle": "plugin_ox_blocklyeditor.ciudad.local",
+  "uri": "at://did:plc:ciudad-plugin_ox_blocklyeditor/app.bsky.feed.post/c00416-d9926714ed88",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00416-d9926714ed88",
+    "cid": "bafyc00416-d9926714ed88",
+    "record": {
+      "text": "[pulso:latente/low] plugin_ox_blocklyeditor → .github/plugins/blockly-editor/agents/blockly-editor.agent.md: Asignar paleta de paradigma",
+      "createdAt": "2026-07-01T06:56:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "latente"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "low"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "plugin_ox_blocklyeditor"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": ".github/plugins/blockly-editor/agents/blockly-editor.agent.md"
+        }
+      ]
+    }
+  }
+}

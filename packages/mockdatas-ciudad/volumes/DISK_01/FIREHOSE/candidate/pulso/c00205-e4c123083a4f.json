@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-lector",
+  "kind": "commit",
+  "handle": "lector.ciudad.local",
+  "uri": "at://did:plc:ciudad-lector/app.bsky.feed.post/c00205-e4c123083a4f",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00205-e4c123083a4f",
+    "cid": "bafyc00205-e4c123083a4f",
+    "record": {
+      "text": "[pulso:vivo/high] lector → escritor: Start Writing Session",
+      "createdAt": "2026-07-01T03:25:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "lector"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "escritor"
+        }
+      ]
+    }
+  }
+}

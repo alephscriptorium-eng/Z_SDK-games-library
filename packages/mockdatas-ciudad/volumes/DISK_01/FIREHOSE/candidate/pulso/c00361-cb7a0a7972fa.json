@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-ox",
+  "kind": "commit",
+  "handle": "ox.ciudad.local",
+  "uri": "at://did:plc:ciudad-ox/app.bsky.feed.post/c00361-cb7a0a7972fa",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00361-cb7a0a7972fa",
+    "cid": "bafyc00361-cb7a0a7972fa",
+    "record": {
+      "text": "[pulso:vivo/high] ox → Ox: ¿Qué agente uso para...?",
+      "createdAt": "2026-07-01T06:01:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "ox"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Ox"
+        }
+      ]
+    }
+  }
+}

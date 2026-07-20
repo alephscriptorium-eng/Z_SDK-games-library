@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-scrum",
+  "kind": "commit",
+  "handle": "scrum.ciudad.local",
+  "uri": "at://did:plc:ciudad-scrum/app.bsky.feed.post/c00566-6166017c27ff",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00566-6166017c27ff",
+    "cid": "bafyc00566-6166017c27ff",
+    "record": {
+      "text": "[pulso:vivo/high] scrum → Aleph: Delegar a Aleph (DevOps)",
+      "createdAt": "2026-07-01T09:26:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "scrum"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Aleph"
+        }
+      ]
+    }
+  }
+}

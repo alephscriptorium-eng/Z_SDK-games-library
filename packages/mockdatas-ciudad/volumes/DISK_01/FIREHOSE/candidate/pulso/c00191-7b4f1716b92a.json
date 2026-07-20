@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-albacea",
+  "kind": "commit",
+  "handle": "albacea.ciudad.local",
+  "uri": "at://did:plc:ciudad-albacea/app.bsky.feed.post/c00191-7b4f1716b92a",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00191-7b4f1716b92a",
+    "cid": "bafyc00191-7b4f1716b92a",
+    "record": {
+      "text": "[pulso:vivo/high] albacea → editor: Initialize Memory Container",
+      "createdAt": "2026-07-01T03:11:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "albacea"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "editor"
+        }
+      ]
+    }
+  }
+}

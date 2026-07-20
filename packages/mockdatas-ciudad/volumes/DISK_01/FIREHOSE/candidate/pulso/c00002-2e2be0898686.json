@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-bot-biblioteca",
+  "kind": "commit",
+  "handle": "bot-biblioteca.ciudad.local",
+  "uri": "at://did:plc:ciudad-bot-biblioteca/app.bsky.feed.post/c00002-2e2be0898686",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00002-2e2be0898686",
+    "cid": "bafyc00002-2e2be0898686",
+    "record": {
+      "text": "[pulso:vivo/high] bot-biblioteca → bot-hilbert: Volver al orquestador (Bot Hilbert)",
+      "createdAt": "2026-07-01T00:02:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "bot-biblioteca"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "bot-hilbert"
+        }
+      ]
+    }
+  }
+}

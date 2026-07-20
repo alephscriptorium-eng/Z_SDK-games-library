@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-plugin_ox_ghpages",
+  "kind": "commit",
+  "handle": "plugin_ox_ghpages.ciudad.local",
+  "uri": "at://did:plc:ciudad-plugin_ox_ghpages/app.bsky.feed.post/c00439-25f920da151b",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00439-25f920da151b",
+    "cid": "bafyc00439-25f920da151b",
+    "record": {
+      "text": "[pulso:vivo/high] plugin_ox_ghpages → .github/plugins/gh-pages/agents/ghpages.agent.md: Publicar contenido (modo reemplazar)",
+      "createdAt": "2026-07-01T07:19:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "plugin_ox_ghpages"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": ".github/plugins/gh-pages/agents/ghpages.agent.md"
+        }
+      ]
+    }
+  }
+}

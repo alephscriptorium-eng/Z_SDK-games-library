@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-archivero-lore",
+  "kind": "commit",
+  "handle": "archivero-lore.ciudad.local",
+  "uri": "at://did:plc:ciudad-archivero-lore/app.bsky.feed.post/c00034-9ee8725bd02c",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00034-9ee8725bd02c",
+    "cid": "bafyc00034-9ee8725bd02c",
+    "record": {
+      "text": "[pulso:vivo/high] archivero-lore → Pipeline: Refrescar pipeline",
+      "createdAt": "2026-07-01T00:34:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "archivero-lore"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Pipeline"
+        }
+      ]
+    }
+  }
+}

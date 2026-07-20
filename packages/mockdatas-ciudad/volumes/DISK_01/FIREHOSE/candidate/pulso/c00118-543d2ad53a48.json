@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-calibrador",
+  "kind": "commit",
+  "handle": "calibrador.ciudad.local",
+  "uri": "at://did:plc:ciudad-calibrador/app.bsky.feed.post/c00118-543d2ad53a48",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00118-543d2ad53a48",
+    "cid": "bafyc00118-543d2ad53a48",
+    "record": {
+      "text": "[pulso:vivo/high] calibrador → sombra: Analizar el poder detras del sesgo",
+      "createdAt": "2026-07-01T01:58:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "calibrador"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "sombra"
+        }
+      ]
+    }
+  }
+}

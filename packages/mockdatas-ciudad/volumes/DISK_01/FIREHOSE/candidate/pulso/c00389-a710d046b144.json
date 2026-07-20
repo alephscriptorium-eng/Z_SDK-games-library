@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-periodico",
+  "kind": "commit",
+  "handle": "periodico.ciudad.local",
+  "uri": "at://did:plc:ciudad-periodico/app.bsky.feed.post/c00389-a710d046b144",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00389-a710d046b144",
+    "cid": "bafyc00389-a710d046b144",
+    "record": {
+      "text": "[pulso:vivo/high] periodico → ForoScraper: Scraping de foro como fuente",
+      "createdAt": "2026-07-01T06:29:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "periodico"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "ForoScraper"
+        }
+      ]
+    }
+  }
+}

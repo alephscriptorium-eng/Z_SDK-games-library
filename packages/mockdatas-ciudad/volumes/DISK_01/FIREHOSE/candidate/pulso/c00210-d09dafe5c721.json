@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-aaia-editor",
+  "kind": "commit",
+  "handle": "aaia-editor.ciudad.local",
+  "uri": "at://did:plc:ciudad-aaia-editor/app.bsky.feed.post/c00210-d09dafe5c721",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00210-d09dafe5c721",
+    "cid": "bafyc00210-d09dafe5c721",
+    "record": {
+      "text": "[pulso:latente/low] aaia-editor → Ox: Consultar oráculo",
+      "createdAt": "2026-07-01T03:30:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "latente"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "low"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "aaia-editor"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Ox"
+        }
+      ]
+    }
+  }
+}

@@ -2,13 +2,14 @@
   "name": "z-sdk-games-library",
   "version": "0.0.0",
   "private": true,
-  "description": "Z_SDK-games-library — juegos Zeus (delta, pozo, solve-coagula), start packs y CARPETA DRAMATURGO",
+  "description": "Z_SDK-games-library \u2014 juegos Zeus (delta, pozo, solve-coagula), start packs y CARPETA DRAMATURGO",
   "type": "module",
   "workspaces": [
     "packages/delta/*",
     "packages/pozo",
     "packages/solve-coagula",
-    "packages/startpack-*"
+    "packages/startpack-*",
+    "packages/mockdatas-ciudad"
   ],
   "engines": {
     "node": ">=18.0.0"
@@ -38,7 +39,8 @@
     "release:startpack": "node scripts/notario-release.mjs",
     "build:zeus-overrides": "node scripts/build-zeus-overrides.mjs",
     "docs:dev": "vitepress dev docs",
-    "docs:build": "vitepress build docs"
+    "docs:build": "vitepress build docs",
+    "test:mockdatas-ciudad": "npm test -w @zeus/mockdatas-ciudad"
   },
   "license": "AIPLv1",
   "dependencies": {

@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-openasyncapi-editor",
+  "kind": "commit",
+  "handle": "openasyncapi-editor.ciudad.local",
+  "uri": "at://did:plc:ciudad-openasyncapi-editor/app.bsky.feed.post/c00341-4d361033cba1",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00341-4d361033cba1",
+    "cid": "bafyc00341-4d361033cba1",
+    "record": {
+      "text": "[pulso:vivo/high] openasyncapi-editor → OpenAsyncApiEditor: Catalogar nueva spec",
+      "createdAt": "2026-07-01T05:41:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "openasyncapi-editor"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "OpenAsyncApiEditor"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-ghpages",
+  "kind": "commit",
+  "handle": "ghpages.ciudad.local",
+  "uri": "at://did:plc:ciudad-ghpages/app.bsky.feed.post/c00272-b9216a4021c4",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00272-b9216a4021c4",
+    "cid": "bafyc00272-b9216a4021c4",
+    "record": {
+      "text": "[pulso:vivo/high] ghpages → Aleph: Volver a Aleph",
+      "createdAt": "2026-07-01T04:32:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "ghpages"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Aleph"
+        }
+      ]
+    }
+  }
+}

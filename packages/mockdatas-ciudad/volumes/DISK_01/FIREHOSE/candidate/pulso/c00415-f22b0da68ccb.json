@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-plugin_ox_argboardapp",
+  "kind": "commit",
+  "handle": "plugin_ox_argboardapp.ciudad.local",
+  "uri": "at://did:plc:ciudad-plugin_ox_argboardapp/app.bsky.feed.post/c00415-f22b0da68ccb",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00415-f22b0da68ccb",
+    "cid": "bafyc00415-f22b0da68ccb",
+    "record": {
+      "text": "[pulso:latente/low] plugin_ox_argboardapp → plugin_ox_argboardapp: Listar capacidades de ArgBoardApp",
+      "createdAt": "2026-07-01T06:55:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "latente"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "low"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "plugin_ox_argboardapp"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "plugin_ox_argboardapp"
+        }
+      ]
+    }
+  }
+}

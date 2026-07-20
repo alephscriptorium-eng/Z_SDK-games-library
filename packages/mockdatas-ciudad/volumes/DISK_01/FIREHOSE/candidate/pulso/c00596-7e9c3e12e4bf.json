@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-typed-prompting",
+  "kind": "commit",
+  "handle": "typed-prompting.ciudad.local",
+  "uri": "at://did:plc:ciudad-typed-prompting/app.bsky.feed.post/c00596-7e9c3e12e4bf",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00596-7e9c3e12e4bf",
+    "cid": "bafyc00596-7e9c3e12e4bf",
+    "record": {
+      "text": "[pulso:latente/low] typed-prompting → TypedPrompting: Sugerir ontología existente",
+      "createdAt": "2026-07-01T09:56:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "latente"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "low"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "typed-prompting"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "TypedPrompting"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-plugin_ox_nodejsnotebook",
+  "kind": "commit",
+  "handle": "plugin_ox_nodejsnotebooks.ciudad.local",
+  "uri": "at://did:plc:ciudad-plugin_ox_nodejsnotebook/app.bsky.feed.post/c00472-da81a1f3c739",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00472-da81a1f3c739",
+    "cid": "bafyc00472-da81a1f3c739",
+    "record": {
+      "text": "[pulso:vivo/high] plugin_ox_nodejsnotebooks → NodejsNotebooks: 📓 Crear Notebook",
+      "createdAt": "2026-07-01T07:52:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "plugin_ox_nodejsnotebooks"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "NodejsNotebooks"
+        }
+      ]
+    }
+  }
+}

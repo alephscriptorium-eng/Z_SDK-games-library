@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-novelist",
+  "kind": "commit",
+  "handle": "novelist.ciudad.local",
+  "uri": "at://did:plc:ciudad-novelist/app.bsky.feed.post/c00337-64fd5e7ef61a",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00337-64fd5e7ef61a",
+    "cid": "bafyc00337-64fd5e7ef61a",
+    "record": {
+      "text": "[pulso:vivo/high] novelist → Novelist: Importar del TALLER",
+      "createdAt": "2026-07-01T05:37:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "novelist"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Novelist"
+        }
+      ]
+    }
+  }
+}

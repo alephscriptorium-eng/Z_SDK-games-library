@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-turin",
+  "kind": "commit",
+  "handle": "turin.ciudad.local",
+  "uri": "at://did:plc:ciudad-turin/app.bsky.feed.post/c00182-8f0bda955d81",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00182-8f0bda955d81",
+    "cid": "bafyc00182-8f0bda955d81",
+    "record": {
+      "text": "[pulso:vivo/high] turin → nexo: Evaluar viabilidad tecnica de etiquetado automatico",
+      "createdAt": "2026-07-01T03:02:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "turin"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "nexo"
+        }
+      ]
+    }
+  }
+}

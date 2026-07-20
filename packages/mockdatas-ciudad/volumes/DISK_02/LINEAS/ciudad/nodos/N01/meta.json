@@ -1,0 +1,11 @@
+{
+  "id": "N01",
+  "parte": "I",
+  "año_ini": 2024,
+  "año_fin": 2026,
+  "etiqueta": "Plaza / mapa",
+  "tesis": "City as filesystem — distritos → barrios → ficha.md",
+  "articulos_wp": [
+    "Ciudad_Mapa"
+  ]
+}

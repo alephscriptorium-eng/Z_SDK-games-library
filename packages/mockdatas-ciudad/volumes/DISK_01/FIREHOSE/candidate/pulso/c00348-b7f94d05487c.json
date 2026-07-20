@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-openasyncapi-editor",
+  "kind": "commit",
+  "handle": "openasyncapi-editor.ciudad.local",
+  "uri": "at://did:plc:ciudad-openasyncapi-editor/app.bsky.feed.post/c00348-b7f94d05487c",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00348-b7f94d05487c",
+    "cid": "bafyc00348-b7f94d05487c",
+    "record": {
+      "text": "[pulso:vivo/high] openasyncapi-editor → OpenAsyncApiEditor: Setup Swagger UI",
+      "createdAt": "2026-07-01T05:48:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "openasyncapi-editor"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "OpenAsyncApiEditor"
+        }
+      ]
+    }
+  }
+}

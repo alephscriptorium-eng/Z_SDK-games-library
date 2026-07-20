@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-grafista",
+  "kind": "commit",
+  "handle": "grafista.ciudad.local",
+  "uri": "at://did:plc:ciudad-grafista/app.bsky.feed.post/c00049-966067c626bc",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00049-966067c626bc",
+    "cid": "bafyc00049-966067c626bc",
+    "record": {
+      "text": "[pulso:vivo/high] grafista → Pipeline: Refrescar pipeline",
+      "createdAt": "2026-07-01T00:49:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "grafista"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Pipeline"
+        }
+      ]
+    }
+  }
+}

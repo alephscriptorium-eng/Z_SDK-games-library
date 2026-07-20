@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-plugin_ox_mcppresets",
+  "kind": "commit",
+  "handle": "plugin_ox_mcppresets.ciudad.local",
+  "uri": "at://did:plc:ciudad-plugin_ox_mcppresets/app.bsky.feed.post/c00464-fef08b9b325e",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00464-fef08b9b325e",
+    "cid": "bafyc00464-fef08b9b325e",
+    "record": {
+      "text": "[pulso:vivo/high] plugin_ox_mcppresets → plugin_ox_mcppresets: 🚀 Arrancar Zeus UI (zeus:3012)",
+      "createdAt": "2026-07-01T07:44:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "plugin_ox_mcppresets"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "plugin_ox_mcppresets"
+        }
+      ]
+    }
+  }
+}

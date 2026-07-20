@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-integralista",
+  "kind": "commit",
+  "handle": "integralista.ciudad.local",
+  "uri": "at://did:plc:ciudad-integralista/app.bsky.feed.post/c00135-e0f735418770",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00135-e0f735418770",
+    "cid": "bafyc00135-e0f735418770",
+    "record": {
+      "text": "[pulso:vivo/high] integralista → protagonista: Turno del Protagonista",
+      "createdAt": "2026-07-01T02:15:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "integralista"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "protagonista"
+        }
+      ]
+    }
+  }
+}

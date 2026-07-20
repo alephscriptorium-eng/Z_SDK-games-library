@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-plugin_ox_typedprompting",
+  "kind": "commit",
+  "handle": "plugin_ox_typedprompting.ciudad.local",
+  "uri": "at://did:plc:ciudad-plugin_ox_typedprompting/app.bsky.feed.post/c00522-3c835a47ea6e",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00522-3c835a47ea6e",
+    "cid": "bafyc00522-3c835a47ea6e",
+    "record": {
+      "text": "[pulso:latente/low] plugin_ox_typedprompting → plugin_ox_typedprompting: [DevOps] Arrancar servidor TPE",
+      "createdAt": "2026-07-01T08:42:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "latente"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "low"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "plugin_ox_typedprompting"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "plugin_ox_typedprompting"
+        }
+      ]
+    }
+  }
+}

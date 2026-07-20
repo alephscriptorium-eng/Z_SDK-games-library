@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-ghpages",
+  "kind": "commit",
+  "handle": "ghpages.ciudad.local",
+  "uri": "at://did:plc:ciudad-ghpages/app.bsky.feed.post/c00279-56f66b59b17e",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00279-56f66b59b17e",
+    "cid": "bafyc00279-56f66b59b17e",
+    "record": {
+      "text": "[pulso:vivo/high] ghpages → plugin_ox_ghpages: Destacar obra en escena",
+      "createdAt": "2026-07-01T04:39:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "ghpages"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "plugin_ox_ghpages"
+        }
+      ]
+    }
+  }
+}

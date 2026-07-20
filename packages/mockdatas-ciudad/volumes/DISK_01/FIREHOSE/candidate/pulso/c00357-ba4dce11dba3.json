@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-orangeflag",
+  "kind": "commit",
+  "handle": "orangeflag.ciudad.local",
+  "uri": "at://did:plc:ciudad-orangeflag/app.bsky.feed.post/c00357-ba4dce11dba3",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00357-ba4dce11dba3",
+    "cid": "bafyc00357-ba4dce11dba3",
+    "record": {
+      "text": "[pulso:vivo/high] orangeflag → yellowflag: Escalar a test de límites",
+      "createdAt": "2026-07-01T05:57:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "orangeflag"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "yellowflag"
+        }
+      ]
+    }
+  }
+}

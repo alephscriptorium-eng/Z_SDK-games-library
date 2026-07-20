@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-archivero",
+  "kind": "commit",
+  "handle": "archivero.ciudad.local",
+  "uri": "at://did:plc:ciudad-archivero/app.bsky.feed.post/c00094-0d83fc2f9955",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00094-0d83fc2f9955",
+    "cid": "bafyc00094-0d83fc2f9955",
+    "record": {
+      "text": "[pulso:vivo/high] archivero → bartleby: Re-analizar con Bartleby",
+      "createdAt": "2026-07-01T01:34:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "archivero"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "bartleby"
+        }
+      ]
+    }
+  }
+}

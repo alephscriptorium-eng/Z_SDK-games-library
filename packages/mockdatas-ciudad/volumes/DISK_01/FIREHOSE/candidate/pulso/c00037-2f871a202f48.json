@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-bartleby",
+  "kind": "commit",
+  "handle": "bartleby.ciudad.local",
+  "uri": "at://did:plc:ciudad-bartleby/app.bsky.feed.post/c00037-2f871a202f48",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00037-2f871a202f48",
+    "cid": "bafyc00037-2f871a202f48",
+    "record": {
+      "text": "[pulso:vivo/high] bartleby → Cristalizador: Proponer cristalización agéntica",
+      "createdAt": "2026-07-01T00:37:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "bartleby"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Cristalizador"
+        }
+      ]
+    }
+  }
+}

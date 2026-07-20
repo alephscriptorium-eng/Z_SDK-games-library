@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-zigurat",
+  "kind": "commit",
+  "handle": "zigurat.ciudad.local",
+  "uri": "at://did:plc:ciudad-zigurat/app.bsky.feed.post/c00642-c1a124bb3066",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00642-c1a124bb3066",
+    "cid": "bafyc00642-c1a124bb3066",
+    "record": {
+      "text": "[pulso:vivo/high] Zigurat → alephscript.agents.*: 5 commands",
+      "createdAt": "2026-07-01T10:42:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "Zigurat"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "alephscript.agents.*"
+        }
+      ]
+    }
+  }
+}

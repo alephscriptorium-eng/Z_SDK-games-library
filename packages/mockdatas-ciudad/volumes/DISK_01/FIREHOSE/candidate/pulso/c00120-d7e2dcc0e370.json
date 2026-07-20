@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-campo",
+  "kind": "commit",
+  "handle": "campo.ciudad.local",
+  "uri": "at://did:plc:ciudad-campo/app.bsky.feed.post/c00120-d7e2dcc0e370",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00120-d7e2dcc0e370",
+    "cid": "bafyc00120-d7e2dcc0e370",
+    "record": {
+      "text": "[pulso:vivo/high] campo → articulador: Devolver a Articulador",
+      "createdAt": "2026-07-01T02:00:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "campo"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "articulador"
+        }
+      ]
+    }
+  }
+}

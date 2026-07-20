@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-novelist",
+  "kind": "commit",
+  "handle": "novelist.ciudad.local",
+  "uri": "at://did:plc:ciudad-novelist/app.bsky.feed.post/c00336-33b18c9b9d82",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00336-33b18c9b9d82",
+    "cid": "bafyc00336-33b18c9b9d82",
+    "record": {
+      "text": "[pulso:vivo/high] novelist → Novelist: Exportar a Teatro",
+      "createdAt": "2026-07-01T05:36:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "novelist"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Novelist"
+        }
+      ]
+    }
+  }
+}

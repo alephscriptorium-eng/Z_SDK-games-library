@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-portal",
+  "kind": "commit",
+  "handle": "portal.ciudad.local",
+  "uri": "at://did:plc:ciudad-portal/app.bsky.feed.post/c00058-78332a340e6f",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00058-78332a340e6f",
+    "cid": "bafyc00058-78332a340e6f",
+    "record": {
+      "text": "[pulso:vivo/high] portal → Bartleby: 🔬 Analizar un documento",
+      "createdAt": "2026-07-01T00:58:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "portal"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Bartleby"
+        }
+      ]
+    }
+  }
+}

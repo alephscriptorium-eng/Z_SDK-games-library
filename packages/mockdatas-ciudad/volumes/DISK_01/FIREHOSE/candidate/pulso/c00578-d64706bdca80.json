@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-scrum",
+  "kind": "commit",
+  "handle": "scrum.ciudad.local",
+  "uri": "at://did:plc:ciudad-scrum/app.bsky.feed.post/c00578-d64706bdca80",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00578-d64706bdca80",
+    "cid": "bafyc00578-d64706bdca80",
+    "record": {
+      "text": "[pulso:vivo/high] scrum → Scrum: Aprobar épica (cambiar estado)",
+      "createdAt": "2026-07-01T09:38:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "scrum"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Scrum"
+        }
+      ]
+    }
+  }
+}

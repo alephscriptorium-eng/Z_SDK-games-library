@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-wire-editor",
+  "kind": "commit",
+  "handle": "wire-editor.ciudad.local",
+  "uri": "at://did:plc:ciudad-wire-editor/app.bsky.feed.post/c00609-e8a19b506166",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00609-e8a19b506166",
+    "cid": "bafyc00609-e8a19b506166",
+    "record": {
+      "text": "[pulso:vivo/high] wire-editor → WireEditor: Configurar feed asíncrono",
+      "createdAt": "2026-07-01T10:09:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "wire-editor"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "WireEditor"
+        }
+      ]
+    }
+  }
+}

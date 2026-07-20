@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-plugin_ox_consejoasesor",
+  "kind": "commit",
+  "handle": "plugin_ox_consejoasesor.ciudad.local",
+  "uri": "at://did:plc:ciudad-plugin_ox_consejoasesor/app.bsky.feed.post/c00424-977970b18142",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00424-977970b18142",
+    "cid": "bafyc00424-977970b18142",
+    "record": {
+      "text": "[pulso:vivo/high] plugin_ox_consejoasesor → .github/plugins/consejo-asesor/agents/consejo-asesor.agent.md: Producir articulo",
+      "createdAt": "2026-07-01T07:04:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "plugin_ox_consejoasesor"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": ".github/plugins/consejo-asesor/agents/consejo-asesor.agent.md"
+        }
+      ]
+    }
+  }
+}

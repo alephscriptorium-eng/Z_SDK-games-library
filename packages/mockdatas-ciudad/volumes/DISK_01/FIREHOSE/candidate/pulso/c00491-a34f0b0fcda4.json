@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-plugin_ox_openasyncapied",
+  "kind": "commit",
+  "handle": "plugin_ox_openasyncapieditor.ciudad.local",
+  "uri": "at://did:plc:ciudad-plugin_ox_openasyncapied/app.bsky.feed.post/c00491-a34f0b0fcda4",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00491-a34f0b0fcda4",
+    "cid": "bafyc00491-a34f0b0fcda4",
+    "record": {
+      "text": "[pulso:vivo/high] plugin_ox_openasyncapieditor → .github/plugins/openasyncapi-editor/agents/openasyncapi-editor.agent.md: Sincronizar specs",
+      "createdAt": "2026-07-01T08:11:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "plugin_ox_openasyncapieditor"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": ".github/plugins/openasyncapi-editor/agents/openasyncapi-editor.agent.md"
+        }
+      ]
+    }
+  }
+}

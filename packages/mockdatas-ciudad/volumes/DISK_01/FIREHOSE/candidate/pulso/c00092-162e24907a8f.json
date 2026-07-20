@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-aceleracionista",
+  "kind": "commit",
+  "handle": "aceleracionista.ciudad.local",
+  "uri": "at://did:plc:ciudad-aceleracionista/app.bsky.feed.post/c00092-162e24907a8f",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00092-162e24907a8f",
+    "cid": "bafyc00092-162e24907a8f",
+    "record": {
+      "text": "[pulso:vivo/high] aceleracionista → Penitente: Turno del Penitente",
+      "createdAt": "2026-07-01T01:32:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "aceleracionista"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Penitente"
+        }
+      ]
+    }
+  }
+}

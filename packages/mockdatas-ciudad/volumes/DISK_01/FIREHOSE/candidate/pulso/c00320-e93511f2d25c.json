@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-network",
+  "kind": "commit",
+  "handle": "network.ciudad.local",
+  "uri": "at://did:plc:ciudad-network/app.bsky.feed.post/c00320-e93511f2d25c",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00320-e93511f2d25c",
+    "cid": "bafyc00320-e93511f2d25c",
+    "record": {
+      "text": "[pulso:vivo/high] network → Network: Recibir BOE de Oasis",
+      "createdAt": "2026-07-01T05:20:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "network"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Network"
+        }
+      ]
+    }
+  }
+}

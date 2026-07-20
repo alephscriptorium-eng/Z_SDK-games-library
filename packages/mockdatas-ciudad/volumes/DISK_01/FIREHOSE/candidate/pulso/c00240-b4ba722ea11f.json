@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-bibliotecario",
+  "kind": "commit",
+  "handle": "bibliotecario.ciudad.local",
+  "uri": "at://did:plc:ciudad-bibliotecario/app.bsky.feed.post/c00240-b4ba722ea11f",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00240-b4ba722ea11f",
+    "cid": "bafyc00240-b4ba722ea11f",
+    "record": {
+      "text": "[pulso:vivo/high] bibliotecario → HDF-ErnestoCastro: Consultar Historia de la Filosofía",
+      "createdAt": "2026-07-01T04:00:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "bibliotecario"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "HDF-ErnestoCastro"
+        }
+      ]
+    }
+  }
+}

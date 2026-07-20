@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-scrum",
+  "kind": "commit",
+  "handle": "scrum.ciudad.local",
+  "uri": "at://did:plc:ciudad-scrum/app.bsky.feed.post/c00579-6e92b2c1c17a",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00579-6e92b2c1c17a",
+    "cid": "bafyc00579-6e92b2c1c17a",
+    "record": {
+      "text": "[pulso:vivo/high] scrum → Scrum: Cerrar sprint (archivar)",
+      "createdAt": "2026-07-01T09:39:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "scrum"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Scrum"
+        }
+      ]
+    }
+  }
+}

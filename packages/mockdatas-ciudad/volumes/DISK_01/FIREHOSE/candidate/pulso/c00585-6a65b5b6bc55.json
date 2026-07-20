@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-teatro",
+  "kind": "commit",
+  "handle": "teatro.ciudad.local",
+  "uri": "at://did:plc:ciudad-teatro/app.bsky.feed.post/c00585-6a65b5b6bc55",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00585-6a65b5b6bc55",
+    "cid": "bafyc00585-6a65b5b6bc55",
+    "record": {
+      "text": "[pulso:vivo/high] teatro → plugin_ox_agentcreator: Delegar a AGENT_CREATOR (personajes)",
+      "createdAt": "2026-07-01T09:45:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "teatro"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "plugin_ox_agentcreator"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-plugin_ox_ghpages",
+  "kind": "commit",
+  "handle": "plugin_ox_ghpages.ciudad.local",
+  "uri": "at://did:plc:ciudad-plugin_ox_ghpages/app.bsky.feed.post/c00440-1f0f985a33b0",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00440-1f0f985a33b0",
+    "cid": "bafyc00440-1f0f985a33b0",
+    "record": {
+      "text": "[pulso:vivo/high] plugin_ox_ghpages → plugin_ox_ghpages: Listar agentes de GH-Pages",
+      "createdAt": "2026-07-01T07:20:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "plugin_ox_ghpages"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "plugin_ox_ghpages"
+        }
+      ]
+    }
+  }
+}

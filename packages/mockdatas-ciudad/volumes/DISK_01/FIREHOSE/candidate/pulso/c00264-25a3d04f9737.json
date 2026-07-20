@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-escribiente",
+  "kind": "commit",
+  "handle": "escribiente.ciudad.local",
+  "uri": "at://did:plc:ciudad-escribiente/app.bsky.feed.post/c00264-25a3d04f9737",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00264-25a3d04f9737",
+    "cid": "bafyc00264-25a3d04f9737",
+    "record": {
+      "text": "[pulso:vivo/high] escribiente → WireEditor: Diseñar flow en WireEditor",
+      "createdAt": "2026-07-01T04:24:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "escribiente"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "WireEditor"
+        }
+      ]
+    }
+  }
+}

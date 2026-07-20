@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-wiring-app",
+  "kind": "commit",
+  "handle": "wiring-app.ciudad.local",
+  "uri": "at://did:plc:ciudad-wiring-app/app.bsky.feed.post/c00616-384983b716fa",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00616-384983b716fa",
+    "cid": "bafyc00616-384983b716fa",
+    "record": {
+      "text": "[pulso:latente/low] wiring-app → plugin_ox_wireeditor: Delegar a WireEditor",
+      "createdAt": "2026-07-01T10:16:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "latente"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "low"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "wiring-app"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "plugin_ox_wireeditor"
+        }
+      ]
+    }
+  }
+}

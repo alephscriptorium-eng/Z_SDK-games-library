@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-agent-creator",
+  "kind": "commit",
+  "handle": "agent-creator.ciudad.local",
+  "uri": "at://did:plc:ciudad-agent-creator/app.bsky.feed.post/c00213-1ef354eef14f",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00213-1ef354eef14f",
+    "cid": "bafyc00213-1ef354eef14f",
+    "record": {
+      "text": "[pulso:vivo/high] agent-creator → AgentCreator: Editar agente creado",
+      "createdAt": "2026-07-01T03:33:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "agent-creator"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "AgentCreator"
+        }
+      ]
+    }
+  }
+}

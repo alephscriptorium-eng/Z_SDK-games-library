@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-integrador",
+  "kind": "commit",
+  "handle": "integrador.ciudad.local",
+  "uri": "at://did:plc:ciudad-integrador/app.bsky.feed.post/c00132-ac7c7a022500",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00132-ac7c7a022500",
+    "cid": "bafyc00132-ac7c7a022500",
+    "record": {
+      "text": "[pulso:vivo/high] integrador → registro: Auditoria de Registro",
+      "createdAt": "2026-07-01T02:12:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "integrador"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "registro"
+        }
+      ]
+    }
+  }
+}

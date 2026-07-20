@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-aceleracionista",
+  "kind": "commit",
+  "handle": "aceleracionista.ciudad.local",
+  "uri": "at://did:plc:ciudad-aceleracionista/app.bsky.feed.post/c00093-3d93a39184d7",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00093-3d93a39184d7",
+    "cid": "bafyc00093-3d93a39184d7",
+    "record": {
+      "text": "[pulso:vivo/high] aceleracionista → protagonista: Turno del Protagonista",
+      "createdAt": "2026-07-01T01:33:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "aceleracionista"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "protagonista"
+        }
+      ]
+    }
+  }
+}

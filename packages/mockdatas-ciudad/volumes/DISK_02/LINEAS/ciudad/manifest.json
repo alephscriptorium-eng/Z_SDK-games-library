@@ -1,0 +1,30 @@
+{
+  "meta": {
+    "corpus": "LINEAS/ciudad",
+    "version": "0.1.0",
+    "generated_at": "2026-07-01T00:00:00.000Z",
+    "source": "ciudad-mockdatas",
+    "autor_tronco": "mockdatas",
+    "referencia_wp_cima": "Ciudad_Mapa",
+    "nodo_count": 1,
+    "partes": [
+      {
+        "id": "I",
+        "titulo": "Ciudad",
+        "año_ini": 2024,
+        "año_fin": 2026,
+        "nodos": [
+          "N01"
+        ]
+      }
+    ]
+  },
+  "nodos": [
+    {
+      "id": "N01",
+      "paths": {
+        "meta": "nodos/N01/meta.json"
+      }
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-hackertasks-jkl",
+  "kind": "commit",
+  "handle": "hackertasks-jkl.ciudad.local",
+  "uri": "at://did:plc:ciudad-hackertasks-jkl/app.bsky.feed.post/c00630-9426ffefbd28",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00630-9426ffefbd28",
+    "cid": "bafyc00630-9426ffefbd28",
+    "record": {
+      "text": "[pulso:vivo/high] HackerTasks:JKL → docs/Jekyll: PREFIX_METADATA",
+      "createdAt": "2026-07-01T10:30:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "HackerTasks:JKL"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "docs/Jekyll"
+        }
+      ]
+    }
+  }
+}

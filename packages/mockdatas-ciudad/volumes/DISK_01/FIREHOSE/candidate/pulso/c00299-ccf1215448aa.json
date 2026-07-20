@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-indice",
+  "kind": "commit",
+  "handle": "indice.ciudad.local",
+  "uri": "at://did:plc:ciudad-indice/app.bsky.feed.post/c00299-ccf1215448aa",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00299-ccf1215448aa",
+    "cid": "bafyc00299-ccf1215448aa",
+    "record": {
+      "text": "[pulso:vivo/high] indice → Indice: Validar coherencia pre-commit",
+      "createdAt": "2026-07-01T04:59:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "indice"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Indice"
+        }
+      ]
+    }
+  }
+}

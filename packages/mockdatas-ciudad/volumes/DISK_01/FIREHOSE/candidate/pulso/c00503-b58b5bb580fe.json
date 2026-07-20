@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-plugin_ox_scrum",
+  "kind": "commit",
+  "handle": "plugin_ox_scrum.ciudad.local",
+  "uri": "at://did:plc:ciudad-plugin_ox_scrum/app.bsky.feed.post/c00503-b58b5bb580fe",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00503-b58b5bb580fe",
+    "cid": "bafyc00503-b58b5bb580fe",
+    "record": {
+      "text": "[pulso:vivo/high] plugin_ox_scrum → .github/plugins/scrum/agents/scrum.agent.md: Aprobar épica",
+      "createdAt": "2026-07-01T08:23:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "plugin_ox_scrum"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": ".github/plugins/scrum/agents/scrum.agent.md"
+        }
+      ]
+    }
+  }
+}

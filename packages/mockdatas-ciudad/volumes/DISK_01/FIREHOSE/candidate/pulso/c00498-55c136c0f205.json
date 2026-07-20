@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-plugin_ox_prologeditor",
+  "kind": "commit",
+  "handle": "plugin_ox_prologeditor.ciudad.local",
+  "uri": "at://did:plc:ciudad-plugin_ox_prologeditor/app.bsky.feed.post/c00498-55c136c0f205",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00498-55c136c0f205",
+    "cid": "bafyc00498-55c136c0f205",
+    "record": {
+      "text": "[pulso:latente/low] plugin_ox_prologeditor → plugin_ox_prologeditor: 🧠 Razonamiento SBR",
+      "createdAt": "2026-07-01T08:18:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "latente"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "low"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "plugin_ox_prologeditor"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "plugin_ox_prologeditor"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-panoptico",
+  "kind": "commit",
+  "handle": "panoptico.ciudad.local",
+  "uri": "at://did:plc:ciudad-panoptico/app.bsky.feed.post/c00147-69cf8f378c69",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00147-69cf8f378c69",
+    "cid": "bafyc00147-69cf8f378c69",
+    "record": {
+      "text": "[pulso:vivo/high] panoptico → Penitente: Turno del Penitente",
+      "createdAt": "2026-07-01T02:27:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "panoptico"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Penitente"
+        }
+      ]
+    }
+  }
+}

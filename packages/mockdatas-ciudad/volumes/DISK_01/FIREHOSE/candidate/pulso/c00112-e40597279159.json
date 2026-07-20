@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-blueflag",
+  "kind": "commit",
+  "handle": "blueflag.ciudad.local",
+  "uri": "at://did:plc:ciudad-blueflag/app.bsky.feed.post/c00112-e40597279159",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00112-e40597279159",
+    "cid": "bafyc00112-e40597279159",
+    "record": {
+      "text": "[pulso:vivo/high] blueflag → Revisor: Verificar coherencia doctrinal",
+      "createdAt": "2026-07-01T01:52:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "blueflag"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Revisor"
+        }
+      ]
+    }
+  }
+}

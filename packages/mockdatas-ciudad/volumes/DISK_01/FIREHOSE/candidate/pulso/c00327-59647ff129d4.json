@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-nodejs-notebooks",
+  "kind": "commit",
+  "handle": "nodejs-notebooks.ciudad.local",
+  "uri": "at://did:plc:ciudad-nodejs-notebooks/app.bsky.feed.post/c00327-59647ff129d4",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00327-59647ff129d4",
+    "cid": "bafyc00327-59647ff129d4",
+    "record": {
+      "text": "[pulso:vivo/high] nodejs-notebooks → NodejsNotebooks: Demo MCPGallery",
+      "createdAt": "2026-07-01T05:27:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "nodejs-notebooks"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "NodejsNotebooks"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-aleph",
+  "kind": "commit",
+  "handle": "aleph.ciudad.local",
+  "uri": "at://did:plc:ciudad-aleph/app.bsky.feed.post/c00233-c9b34f60344e",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00233-c9b34f60344e",
+    "cid": "bafyc00233-c9b34f60344e",
+    "record": {
+      "text": "[pulso:vivo/high] aleph → plugin_ox_vectormachine: [VECTOR] Preparar integración VectorMachine",
+      "createdAt": "2026-07-01T03:53:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "aleph"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "plugin_ox_vectormachine"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-consejo-asesor",
+  "kind": "commit",
+  "handle": "consejo-asesor.ciudad.local",
+  "uri": "at://did:plc:ciudad-consejo-asesor/app.bsky.feed.post/c00262-9de61edc9ee8",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00262-9de61edc9ee8",
+    "cid": "bafyc00262-9de61edc9ee8",
+    "record": {
+      "text": "[pulso:vivo/high] consejo-asesor → periodico: Publicar como noticia",
+      "createdAt": "2026-07-01T04:22:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "consejo-asesor"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "periodico"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-ox",
+  "kind": "commit",
+  "handle": "ox.ciudad.local",
+  "uri": "at://did:plc:ciudad-ox/app.bsky.feed.post/c00366-5ce2e7dfbebc",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00366-5ce2e7dfbebc",
+    "cid": "bafyc00366-5ce2e7dfbebc",
+    "record": {
+      "text": "[pulso:vivo/high] ox → Ox: 🩺 Check de salud periódico",
+      "createdAt": "2026-07-01T06:06:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "ox"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Ox"
+        }
+      ]
+    }
+  }
+}

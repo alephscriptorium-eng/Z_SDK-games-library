@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-aleph",
+  "kind": "commit",
+  "handle": "aleph.ciudad.local",
+  "uri": "at://did:plc:ciudad-aleph/app.bsky.feed.post/c00226-b7a8c2592eb1",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00226-b7a8c2592eb1",
+    "cid": "bafyc00226-b7a8c2592eb1",
+    "record": {
+      "text": "[pulso:vivo/high] aleph → Orangeflag: Solicitar auditoría de registro",
+      "createdAt": "2026-07-01T03:46:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "aleph"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Orangeflag"
+        }
+      ]
+    }
+  }
+}

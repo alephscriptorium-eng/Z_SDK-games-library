@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-teatro",
+  "kind": "commit",
+  "handle": "teatro.ciudad.local",
+  "uri": "at://did:plc:ciudad-teatro/app.bsky.feed.post/c00586-597267c3029b",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00586-597267c3029b",
+    "cid": "bafyc00586-597267c3029b",
+    "record": {
+      "text": "[pulso:vivo/high] teatro → plugin_ox_argboard: Delegar a ARG_BOARD (obras)",
+      "createdAt": "2026-07-01T09:46:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "teatro"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "plugin_ox_argboard"
+        }
+      ]
+    }
+  }
+}

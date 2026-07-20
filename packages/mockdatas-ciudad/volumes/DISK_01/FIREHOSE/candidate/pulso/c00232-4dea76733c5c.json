@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-aleph",
+  "kind": "commit",
+  "handle": "aleph.ciudad.local",
+  "uri": "at://did:plc:ciudad-aleph/app.bsky.feed.post/c00232-4dea76733c5c",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00232-4dea76733c5c",
+    "cid": "bafyc00232-4dea76733c5c",
+    "record": {
+      "text": "[pulso:vivo/high] aleph → plugin_ox_loresdk: [LORE] Crear o alimentar una Voz editorial",
+      "createdAt": "2026-07-01T03:52:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "aleph"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "plugin_ox_loresdk"
+        }
+      ]
+    }
+  }
+}

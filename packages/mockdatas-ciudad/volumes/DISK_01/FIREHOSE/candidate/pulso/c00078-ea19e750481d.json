@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-albacea",
+  "kind": "commit",
+  "handle": "albacea.ciudad.local",
+  "uri": "at://did:plc:ciudad-albacea/app.bsky.feed.post/c00078-ea19e750481d",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00078-ea19e750481d",
+    "cid": "bafyc00078-ea19e750481d",
+    "record": {
+      "text": "[pulso:vivo/high] albacea → escritor: Start Writing Session",
+      "createdAt": "2026-07-01T01:18:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "albacea"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "escritor"
+        }
+      ]
+    }
+  }
+}

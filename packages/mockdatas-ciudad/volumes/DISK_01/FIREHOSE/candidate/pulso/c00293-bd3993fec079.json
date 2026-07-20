@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-indice",
+  "kind": "commit",
+  "handle": "indice.ciudad.local",
+  "uri": "at://did:plc:ciudad-indice/app.bsky.feed.post/c00293-bd3993fec079",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00293-bd3993fec079",
+    "cid": "bafyc00293-bd3993fec079",
+    "record": {
+      "text": "[pulso:vivo/high] indice → Indice: Consultar índice archivados",
+      "createdAt": "2026-07-01T04:53:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "indice"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Indice"
+        }
+      ]
+    }
+  }
+}

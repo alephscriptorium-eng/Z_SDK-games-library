@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-nodered-curator",
+  "kind": "commit",
+  "handle": "nodered-curator.ciudad.local",
+  "uri": "at://did:plc:ciudad-nodered-curator/app.bsky.feed.post/c00330-1c6d7a69958a",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00330-1c6d7a69958a",
+    "cid": "bafyc00330-1c6d7a69958a",
+    "record": {
+      "text": "[pulso:vivo/high] nodered-curator → Indice: Consultar Indice",
+      "createdAt": "2026-07-01T05:30:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "nodered-curator"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Indice"
+        }
+      ]
+    }
+  }
+}

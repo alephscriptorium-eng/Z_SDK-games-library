@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-ox",
+  "kind": "commit",
+  "handle": "ox.ciudad.local",
+  "uri": "at://did:plc:ciudad-ox/app.bsky.feed.post/c00640-66bc5df902c9",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00640-66bc5df902c9",
+    "cid": "bafyc00640-66bc5df902c9",
+    "record": {
+      "text": "[pulso:vivo/high] ox → alephscript.demo.runAll: run_vscode_command",
+      "createdAt": "2026-07-01T10:40:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "ox"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "alephscript.demo.runAll"
+        }
+      ]
+    }
+  }
+}

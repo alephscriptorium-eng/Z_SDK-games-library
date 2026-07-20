@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-foro-scraper",
+  "kind": "commit",
+  "handle": "foro-scraper.ciudad.local",
+  "uri": "at://did:plc:ciudad-foro-scraper/app.bsky.feed.post/c00269-22d194dab7fd",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00269-22d194dab7fd",
+    "cid": "bafyc00269-22d194dab7fd",
+    "record": {
+      "text": "[pulso:vivo/high] foro-scraper → ForoScraper: Pausar trabajo activo",
+      "createdAt": "2026-07-01T04:29:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "foro-scraper"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "ForoScraper"
+        }
+      ]
+    }
+  }
+}

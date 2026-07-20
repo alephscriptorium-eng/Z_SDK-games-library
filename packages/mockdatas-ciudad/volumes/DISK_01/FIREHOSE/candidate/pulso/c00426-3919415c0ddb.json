@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-plugin_ox_enciclopedia",
+  "kind": "commit",
+  "handle": "plugin_ox_enciclopedia.ciudad.local",
+  "uri": "at://did:plc:ciudad-plugin_ox_enciclopedia/app.bsky.feed.post/c00426-3919415c0ddb",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00426-3919415c0ddb",
+    "cid": "bafyc00426-3919415c0ddb",
+    "record": {
+      "text": "[pulso:vivo/high] plugin_ox_enciclopedia → .github/plugins/enciclopedia/agents/bibliotecario.agent.md: Invocar Bibliotecario",
+      "createdAt": "2026-07-01T07:06:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "plugin_ox_enciclopedia"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": ".github/plugins/enciclopedia/agents/bibliotecario.agent.md"
+        }
+      ]
+    }
+  }
+}

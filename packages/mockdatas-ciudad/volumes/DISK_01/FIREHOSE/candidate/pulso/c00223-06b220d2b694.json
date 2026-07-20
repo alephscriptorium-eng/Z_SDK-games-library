@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-aleph",
+  "kind": "commit",
+  "handle": "aleph.ciudad.local",
+  "uri": "at://did:plc:ciudad-aleph/app.bsky.feed.post/c00223-06b220d2b694",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00223-06b220d2b694",
+    "cid": "bafyc00223-06b220d2b694",
+    "record": {
+      "text": "[pulso:vivo/high] aleph → Blackflag: Solicitar auditoría de sombras",
+      "createdAt": "2026-07-01T03:43:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "aleph"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Blackflag"
+        }
+      ]
+    }
+  }
+}

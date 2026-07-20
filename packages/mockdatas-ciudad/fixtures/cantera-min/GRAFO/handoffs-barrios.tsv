@@ -1,0 +1,6 @@
+# scope	path	src	dst	label
+WiringEditor	WiringEditor/.github/agents/a.agent.md	wire	Node	Ping
+BlocklyEditor	BlocklyEditor/.github/agents/b.agent.md	block	Canvas	Draw
+WorkflowEditor	WorkflowEditor/.github/agents/c.agent.md	flow	Run	Execute
+MCPGallery	MCPGallery/.github/agents/d.agent.md	mcp	List	List servers
+VsCodeExtension	VsCodeExtension/.github/agents/e.agent.md	host	Task	Run task

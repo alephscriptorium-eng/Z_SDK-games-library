@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-ox",
+  "kind": "commit",
+  "handle": "ox.ciudad.local",
+  "uri": "at://did:plc:ciudad-ox/app.bsky.feed.post/c00371-883aa1170d2b",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00371-883aa1170d2b",
+    "cid": "bafyc00371-883aa1170d2b",
+    "record": {
+      "text": "[pulso:vivo/high] ox → Ox: Crear release",
+      "createdAt": "2026-07-01T06:11:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "ox"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Ox"
+        }
+      ]
+    }
+  }
+}

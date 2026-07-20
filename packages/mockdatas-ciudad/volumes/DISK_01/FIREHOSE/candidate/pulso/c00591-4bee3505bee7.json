@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-teatro",
+  "kind": "commit",
+  "handle": "teatro.ciudad.local",
+  "uri": "at://did:plc:ciudad-teatro/app.bsky.feed.post/c00591-4bee3505bee7",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00591-4bee3505bee7",
+    "cid": "bafyc00591-4bee3505bee7",
+    "record": {
+      "text": "[pulso:vivo/high] teatro → Teatro: Instalar obra en cartelera",
+      "createdAt": "2026-07-01T09:51:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "teatro"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Teatro"
+        }
+      ]
+    }
+  }
+}

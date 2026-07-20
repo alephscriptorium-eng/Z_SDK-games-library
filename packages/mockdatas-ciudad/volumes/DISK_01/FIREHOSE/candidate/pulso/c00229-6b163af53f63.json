@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-aleph",
+  "kind": "commit",
+  "handle": "aleph.ciudad.local",
+  "uri": "at://did:plc:ciudad-aleph/app.bsky.feed.post/c00229-6b163af53f63",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00229-6b163af53f63",
+    "cid": "bafyc00229-6b163af53f63",
+    "record": {
+      "text": "[pulso:vivo/high] aleph → Ox: Consultar oráculo de agentes",
+      "createdAt": "2026-07-01T03:49:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "aleph"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Ox"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-blueflag",
+  "kind": "commit",
+  "handle": "blueflag.ciudad.local",
+  "uri": "at://did:plc:ciudad-blueflag/app.bsky.feed.post/c00109-1ca27de78ecf",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00109-1ca27de78ecf",
+    "cid": "bafyc00109-1ca27de78ecf",
+    "record": {
+      "text": "[pulso:vivo/high] blueflag → Blackflag: Tensionar con Bandera Negra",
+      "createdAt": "2026-07-01T01:49:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "blueflag"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Blackflag"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-wire-editor",
+  "kind": "commit",
+  "handle": "wire-editor.ciudad.local",
+  "uri": "at://did:plc:ciudad-wire-editor/app.bsky.feed.post/c00611-1889804c0d10",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00611-1889804c0d10",
+    "cid": "bafyc00611-1889804c0d10",
+    "record": {
+      "text": "[pulso:vivo/high] wire-editor → WireEditor: Exportar flow a archivo",
+      "createdAt": "2026-07-01T10:11:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "wire-editor"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "WireEditor"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-ghpages",
+  "kind": "commit",
+  "handle": "ghpages.ciudad.local",
+  "uri": "at://did:plc:ciudad-ghpages/app.bsky.feed.post/c00281-968c8e84a5f5",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00281-968c8e84a5f5",
+    "cid": "bafyc00281-968c8e84a5f5",
+    "record": {
+      "text": "[pulso:vivo/high] ghpages → plugin_ox_ghpages: Validar sitio localmente",
+      "createdAt": "2026-07-01T04:41:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "ghpages"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "plugin_ox_ghpages"
+        }
+      ]
+    }
+  }
+}

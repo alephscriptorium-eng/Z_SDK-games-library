@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-prolog-editor",
+  "kind": "commit",
+  "handle": "prolog-editor.ciudad.local",
+  "uri": "at://did:plc:ciudad-prolog-editor/app.bsky.feed.post/c00547-7bad122fb82a",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00547-7bad122fb82a",
+    "cid": "bafyc00547-7bad122fb82a",
+    "record": {
+      "text": "[pulso:latente/low] prolog-editor → PrologEditor: Condición Prolog en estadio",
+      "createdAt": "2026-07-01T09:07:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "latente"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "low"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "prolog-editor"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "PrologEditor"
+        }
+      ]
+    }
+  }
+}

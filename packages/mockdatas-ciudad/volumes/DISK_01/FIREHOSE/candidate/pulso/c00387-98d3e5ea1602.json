@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-periodico",
+  "kind": "commit",
+  "handle": "periodico.ciudad.local",
+  "uri": "at://did:plc:ciudad-periodico/app.bsky.feed.post/c00387-98d3e5ea1602",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00387-98d3e5ea1602",
+    "cid": "bafyc00387-98d3e5ea1602",
+    "record": {
+      "text": "[pulso:vivo/high] periodico → Blueflag: Invocar Blueflag",
+      "createdAt": "2026-07-01T06:27:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "periodico"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Blueflag"
+        }
+      ]
+    }
+  }
+}

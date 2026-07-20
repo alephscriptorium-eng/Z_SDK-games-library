@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-plugin_ox_typedprompting",
+  "kind": "commit",
+  "handle": "plugin_ox_typedprompting.ciudad.local",
+  "uri": "at://did:plc:ciudad-plugin_ox_typedprompting/app.bsky.feed.post/c00521-9da3f8300646",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00521-9da3f8300646",
+    "cid": "bafyc00521-9da3f8300646",
+    "record": {
+      "text": "[pulso:latente/low] plugin_ox_typedprompting → Ox: Investigar System Message subyacente",
+      "createdAt": "2026-07-01T08:41:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "latente"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "low"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "plugin_ox_typedprompting"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Ox"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-agent-creator",
+  "kind": "commit",
+  "handle": "agent-creator.ciudad.local",
+  "uri": "at://did:plc:ciudad-agent-creator/app.bsky.feed.post/c00222-3085954c350f",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00222-3085954c350f",
+    "cid": "bafyc00222-3085954c350f",
+    "record": {
+      "text": "[pulso:vivo/high] agent-creator → PluginManager: Instalar agente en Scriptorium",
+      "createdAt": "2026-07-01T03:42:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "agent-creator"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "PluginManager"
+        }
+      ]
+    }
+  }
+}

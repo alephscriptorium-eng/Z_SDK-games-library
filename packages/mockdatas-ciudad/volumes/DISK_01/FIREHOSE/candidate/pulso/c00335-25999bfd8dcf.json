@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-novelist",
+  "kind": "commit",
+  "handle": "novelist.ciudad.local",
+  "uri": "at://did:plc:ciudad-novelist/app.bsky.feed.post/c00335-25999bfd8dcf",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00335-25999bfd8dcf",
+    "cid": "bafyc00335-25999bfd8dcf",
+    "record": {
+      "text": "[pulso:vivo/high] novelist → Novelist: Crear personaje",
+      "createdAt": "2026-07-01T05:35:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "novelist"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Novelist"
+        }
+      ]
+    }
+  }
+}

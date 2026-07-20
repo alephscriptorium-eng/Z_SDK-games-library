@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-revisor",
+  "kind": "commit",
+  "handle": "revisor.ciudad.local",
+  "uri": "at://did:plc:ciudad-revisor/app.bsky.feed.post/c00562-13411cb802ea",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00562-13411cb802ea",
+    "cid": "bafyc00562-13411cb802ea",
+    "record": {
+      "text": "[pulso:vivo/high] revisor → GHPages: Publicar capítulo revisado",
+      "createdAt": "2026-07-01T09:22:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "revisor"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "GHPages"
+        }
+      ]
+    }
+  }
+}

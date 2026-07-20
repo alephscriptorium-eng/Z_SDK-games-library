@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-lector",
+  "kind": "commit",
+  "handle": "lector.ciudad.local",
+  "uri": "at://did:plc:ciudad-lector/app.bsky.feed.post/c00090-c8c7ffc081e3",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00090-c8c7ffc081e3",
+    "cid": "bafyc00090-c8c7ffc081e3",
+    "record": {
+      "text": "[pulso:vivo/high] lector → editor: Initialize Container",
+      "createdAt": "2026-07-01T01:30:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "lector"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "editor"
+        }
+      ]
+    }
+  }
+}

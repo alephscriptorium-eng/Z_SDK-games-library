@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-ox",
+  "kind": "commit",
+  "handle": "ox.ciudad.local",
+  "uri": "at://did:plc:ciudad-ox/app.bsky.feed.post/c00380-4837af23a7ea",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00380-4837af23a7ea",
+    "cid": "bafyc00380-4837af23a7ea",
+    "record": {
+      "text": "[pulso:vivo/high] ox → plugin_ox_loresdk: Invocar bridge LoreSDK",
+      "createdAt": "2026-07-01T06:20:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "ox"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "plugin_ox_loresdk"
+        }
+      ]
+    }
+  }
+}

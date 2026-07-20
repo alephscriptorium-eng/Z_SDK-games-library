@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-plugin_ox_nodejsnotebook",
+  "kind": "commit",
+  "handle": "plugin_ox_nodejsnotebooks.ciudad.local",
+  "uri": "at://did:plc:ciudad-plugin_ox_nodejsnotebook/app.bsky.feed.post/c00471-e648d2e8dcb7",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00471-e648d2e8dcb7",
+    "cid": "bafyc00471-e648d2e8dcb7",
+    "record": {
+      "text": "[pulso:vivo/high] plugin_ox_nodejsnotebooks → NodejsNotebooks: 🎛️ Panel de Control (Tasks)",
+      "createdAt": "2026-07-01T07:51:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "plugin_ox_nodejsnotebooks"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "NodejsNotebooks"
+        }
+      ]
+    }
+  }
+}

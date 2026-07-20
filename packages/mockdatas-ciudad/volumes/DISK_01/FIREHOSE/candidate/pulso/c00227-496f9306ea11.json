@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-aleph",
+  "kind": "commit",
+  "handle": "aleph.ciudad.local",
+  "uri": "at://did:plc:ciudad-aleph/app.bsky.feed.post/c00227-496f9306ea11",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00227-496f9306ea11",
+    "cid": "bafyc00227-496f9306ea11",
+    "record": {
+      "text": "[pulso:vivo/high] aleph → Ox: 🎬 Lanzar servidores demo",
+      "createdAt": "2026-07-01T03:47:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "aleph"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Ox"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-foro-scraper",
+  "kind": "commit",
+  "handle": "foro-scraper.ciudad.local",
+  "uri": "at://did:plc:ciudad-foro-scraper/app.bsky.feed.post/c00270-6fdb8b0dc3a4",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00270-6fdb8b0dc3a4",
+    "cid": "bafyc00270-6fdb8b0dc3a4",
+    "record": {
+      "text": "[pulso:vivo/high] foro-scraper → ForoScraper: Reanudar trabajo pausado",
+      "createdAt": "2026-07-01T04:30:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "foro-scraper"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "ForoScraper"
+        }
+      ]
+    }
+  }
+}

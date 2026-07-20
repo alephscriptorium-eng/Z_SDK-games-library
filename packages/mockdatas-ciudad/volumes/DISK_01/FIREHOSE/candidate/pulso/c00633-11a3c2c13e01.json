@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-hackertasks-nre",
+  "kind": "commit",
+  "handle": "hackertasks-nre.ciudad.local",
+  "uri": "at://did:plc:ciudad-hackertasks-nre/app.bsky.feed.post/c00633-11a3c2c13e01",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00633-11a3c2c13e01",
+    "cid": "bafyc00633-11a3c2c13e01",
+    "record": {
+      "text": "[pulso:vivo/high] HackerTasks:NRE → WiringEditor: PREFIX_METADATA",
+      "createdAt": "2026-07-01T10:33:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "HackerTasks:NRE"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "WiringEditor"
+        }
+      ]
+    }
+  }
+}

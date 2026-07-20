@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-teatro",
+  "kind": "commit",
+  "handle": "teatro.ciudad.local",
+  "uri": "at://did:plc:ciudad-teatro/app.bsky.feed.post/c00587-a50a0a93a260",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00587-a50a0a93a260",
+    "cid": "bafyc00587-a50a0a93a260",
+    "record": {
+      "text": "[pulso:vivo/high] teatro → plugin_ox_ghpages: Delegar a GH-PAGES (publicación)",
+      "createdAt": "2026-07-01T09:47:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "teatro"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "plugin_ox_ghpages"
+        }
+      ]
+    }
+  }
+}

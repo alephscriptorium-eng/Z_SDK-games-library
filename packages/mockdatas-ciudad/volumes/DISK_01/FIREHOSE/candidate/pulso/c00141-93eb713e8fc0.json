@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-optimista",
+  "kind": "commit",
+  "handle": "optimista.ciudad.local",
+  "uri": "at://did:plc:ciudad-optimista/app.bsky.feed.post/c00141-93eb713e8fc0",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00141-93eb713e8fc0",
+    "cid": "bafyc00141-93eb713e8fc0",
+    "record": {
+      "text": "[pulso:vivo/high] optimista → Penitente: Turno del Penitente",
+      "createdAt": "2026-07-01T02:21:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "optimista"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Penitente"
+        }
+      ]
+    }
+  }
+}

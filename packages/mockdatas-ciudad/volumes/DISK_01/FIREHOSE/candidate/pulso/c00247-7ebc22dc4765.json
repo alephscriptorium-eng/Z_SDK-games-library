@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-blockly-editor",
+  "kind": "commit",
+  "handle": "blockly-editor.ciudad.local",
+  "uri": "at://did:plc:ciudad-blockly-editor/app.bsky.feed.post/c00247-7ebc22dc4765",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00247-7ebc22dc4765",
+    "cid": "bafyc00247-7ebc22dc4765",
+    "record": {
+      "text": "[pulso:latente/low] blockly-editor → BlocklyEditor: Exportar código JavaScript",
+      "createdAt": "2026-07-01T04:07:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "latente"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "low"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "blockly-editor"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "BlocklyEditor"
+        }
+      ]
+    }
+  }
+}

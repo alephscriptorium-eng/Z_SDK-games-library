@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-redflag",
+  "kind": "commit",
+  "handle": "redflag.ciudad.local",
+  "uri": "at://did:plc:ciudad-redflag/app.bsky.feed.post/c00166-5cc818452811",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00166-5cc818452811",
+    "cid": "bafyc00166-5cc818452811",
+    "record": {
+      "text": "[pulso:vivo/high] redflag → yellowflag: Tensionar con Bandera Amarilla",
+      "createdAt": "2026-07-01T02:46:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "redflag"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "yellowflag"
+        }
+      ]
+    }
+  }
+}

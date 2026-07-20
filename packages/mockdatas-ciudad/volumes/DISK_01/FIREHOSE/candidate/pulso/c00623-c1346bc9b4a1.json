@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-alephscript.demo.stopall",
+  "kind": "commit",
+  "handle": "alephscript.demo.stopall.ciudad.local",
+  "uri": "at://did:plc:ciudad-alephscript.demo.stopall/app.bsky.feed.post/c00623-c1346bc9b4a1",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00623-c1346bc9b4a1",
+    "cid": "bafyc00623-c1346bc9b4a1",
+    "record": {
+      "text": "[pulso:vivo/high] alephscript.demo.stopAll → MCPGallery+NovelistEditor: dispose demo terminals",
+      "createdAt": "2026-07-01T10:23:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "alephscript.demo.stopAll"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "MCPGallery+NovelistEditor"
+        }
+      ]
+    }
+  }
+}

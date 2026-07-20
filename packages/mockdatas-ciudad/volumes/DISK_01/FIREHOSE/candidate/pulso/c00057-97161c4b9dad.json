@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-portal",
+  "kind": "commit",
+  "handle": "portal.ciudad.local",
+  "uri": "at://did:plc:ciudad-portal/app.bsky.feed.post/c00057-97161c4b9dad",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00057-97161c4b9dad",
+    "cid": "bafyc00057-97161c4b9dad",
+    "record": {
+      "text": "[pulso:vivo/high] portal → Archivero Lore: 📥 Ingestar piezas de lore",
+      "createdAt": "2026-07-01T00:57:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "portal"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Archivero Lore"
+        }
+      ]
+    }
+  }
+}

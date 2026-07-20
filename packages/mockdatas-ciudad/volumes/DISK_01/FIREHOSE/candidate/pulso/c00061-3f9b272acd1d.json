@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-portal",
+  "kind": "commit",
+  "handle": "portal.ciudad.local",
+  "uri": "at://did:plc:ciudad-portal/app.bsky.feed.post/c00061-3f9b272acd1d",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00061-3f9b272acd1d",
+    "cid": "bafyc00061-3f9b272acd1d",
+    "record": {
+      "text": "[pulso:vivo/high] portal → Cristalizador: Diseñar mejoras agénticas",
+      "createdAt": "2026-07-01T01:01:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "portal"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Cristalizador"
+        }
+      ]
+    }
+  }
+}

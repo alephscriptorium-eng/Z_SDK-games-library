@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-campo",
+  "kind": "commit",
+  "handle": "campo.ciudad.local",
+  "uri": "at://did:plc:ciudad-campo/app.bsky.feed.post/c00124-8a90ae3ba407",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00124-8a90ae3ba407",
+    "cid": "bafyc00124-8a90ae3ba407",
+    "record": {
+      "text": "[pulso:vivo/high] campo → verdad: Escalar a Verdad",
+      "createdAt": "2026-07-01T02:04:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "campo"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "verdad"
+        }
+      ]
+    }
+  }
+}

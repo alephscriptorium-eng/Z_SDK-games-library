@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-typed-prompting",
+  "kind": "commit",
+  "handle": "typed-prompting.ciudad.local",
+  "uri": "at://did:plc:ciudad-typed-prompting/app.bsky.feed.post/c00594-bad6ecdb9729",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00594-bad6ecdb9729",
+    "cid": "bafyc00594-bad6ecdb9729",
+    "record": {
+      "text": "[pulso:latente/low] typed-prompting → TypedPrompting: Abrir editor web",
+      "createdAt": "2026-07-01T09:54:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "latente"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "low"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "typed-prompting"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "TypedPrompting"
+        }
+      ]
+    }
+  }
+}

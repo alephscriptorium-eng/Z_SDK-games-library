@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-aleph",
+  "kind": "commit",
+  "handle": "aleph.ciudad.local",
+  "uri": "at://did:plc:ciudad-aleph/app.bsky.feed.post/c00230-037321b5d0a4",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00230-037321b5d0a4",
+    "cid": "bafyc00230-037321b5d0a4",
+    "record": {
+      "text": "[pulso:vivo/high] aleph → plugin_ox_consejoasesor: [CONSEJO-ASESOR] Debatir con el consejo",
+      "createdAt": "2026-07-01T03:50:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "aleph"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "plugin_ox_consejoasesor"
+        }
+      ]
+    }
+  }
+}

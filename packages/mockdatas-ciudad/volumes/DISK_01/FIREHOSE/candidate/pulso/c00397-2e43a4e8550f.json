@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-periodico",
+  "kind": "commit",
+  "handle": "periodico.ciudad.local",
+  "uri": "at://did:plc:ciudad-periodico/app.bsky.feed.post/c00397-2e43a4e8550f",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00397-2e43a4e8550f",
+    "cid": "bafyc00397-2e43a4e8550f",
+    "record": {
+      "text": "[pulso:vivo/high] periodico → Periodico: Crear noticia desde scraping",
+      "createdAt": "2026-07-01T06:37:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "periodico"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Periodico"
+        }
+      ]
+    }
+  }
+}

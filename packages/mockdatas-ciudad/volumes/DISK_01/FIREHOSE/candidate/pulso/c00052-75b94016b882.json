@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-pipeline",
+  "kind": "commit",
+  "handle": "pipeline.ciudad.local",
+  "uri": "at://did:plc:ciudad-pipeline/app.bsky.feed.post/c00052-75b94016b882",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00052-75b94016b882",
+    "cid": "bafyc00052-75b94016b882",
+    "record": {
+      "text": "[pulso:vivo/high] pipeline → Demiurgo: Diseñar universo",
+      "createdAt": "2026-07-01T00:52:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "pipeline"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Demiurgo"
+        }
+      ]
+    }
+  }
+}

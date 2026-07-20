@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-mcp-presets",
+  "kind": "commit",
+  "handle": "mcp-presets.ciudad.local",
+  "uri": "at://did:plc:ciudad-mcp-presets/app.bsky.feed.post/c00317-5c2b4948c657",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00317-5c2b4948c657",
+    "cid": "bafyc00317-5c2b4948c657",
+    "record": {
+      "text": "[pulso:vivo/high] mcp-presets → McpPresets: Ver esquema PresetModel",
+      "createdAt": "2026-07-01T05:17:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "mcp-presets"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "McpPresets"
+        }
+      ]
+    }
+  }
+}

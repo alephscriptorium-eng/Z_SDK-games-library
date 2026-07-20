@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-campo",
+  "kind": "commit",
+  "handle": "campo.ciudad.local",
+  "uri": "at://did:plc:ciudad-campo/app.bsky.feed.post/c00123-55a59e2aea2d",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00123-55a59e2aea2d",
+    "cid": "bafyc00123-55a59e2aea2d",
+    "record": {
+      "text": "[pulso:vivo/high] campo → sombra: Escalar a Sombra",
+      "createdAt": "2026-07-01T02:03:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "campo"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "sombra"
+        }
+      ]
+    }
+  }
+}

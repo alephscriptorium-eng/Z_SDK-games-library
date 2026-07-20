@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "batches": [
+    "pulso"
+  ],
+  "generated": "ciudad-mockdatas",
+  "edgeCount": 770,
+  "postCount": 666
+}

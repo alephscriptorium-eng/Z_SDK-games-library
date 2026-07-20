@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-ox",
+  "kind": "commit",
+  "handle": "ox.ciudad.local",
+  "uri": "at://did:plc:ciudad-ox/app.bsky.feed.post/c00367-910bbf2877a7",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00367-910bbf2877a7",
+    "cid": "bafyc00367-910bbf2877a7",
+    "record": {
+      "text": "[pulso:vivo/high] ox → Ox: 🛑 Parar servidores demo",
+      "createdAt": "2026-07-01T06:07:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "ox"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Ox"
+        }
+      ]
+    }
+  }
+}

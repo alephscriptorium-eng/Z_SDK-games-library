@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-archivero-lore",
+  "kind": "commit",
+  "handle": "archivero-lore.ciudad.local",
+  "uri": "at://did:plc:ciudad-archivero-lore/app.bsky.feed.post/c00035-f05b19128bbe",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00035-f05b19128bbe",
+    "cid": "bafyc00035-f05b19128bbe",
+    "record": {
+      "text": "[pulso:vivo/high] archivero-lore → Puzzle: Pedir validación de piezas",
+      "createdAt": "2026-07-01T00:35:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "archivero-lore"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Puzzle"
+        }
+      ]
+    }
+  }
+}

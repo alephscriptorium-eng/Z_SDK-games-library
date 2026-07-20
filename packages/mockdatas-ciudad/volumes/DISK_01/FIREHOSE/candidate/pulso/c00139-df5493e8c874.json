@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-observatorio",
+  "kind": "commit",
+  "handle": "observatorio.ciudad.local",
+  "uri": "at://did:plc:ciudad-observatorio/app.bsky.feed.post/c00139-df5493e8c874",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00139-df5493e8c874",
+    "cid": "bafyc00139-df5493e8c874",
+    "record": {
+      "text": "[pulso:vivo/high] observatorio → sombra: Analizar quien controla la narrativa",
+      "createdAt": "2026-07-01T02:19:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "observatorio"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "sombra"
+        }
+      ]
+    }
+  }
+}

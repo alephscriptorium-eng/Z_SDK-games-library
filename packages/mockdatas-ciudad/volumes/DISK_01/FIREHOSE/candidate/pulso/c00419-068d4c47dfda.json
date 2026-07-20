@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-plugin_ox_consejoasesor",
+  "kind": "commit",
+  "handle": "plugin_ox_consejoasesor.ciudad.local",
+  "uri": "at://did:plc:ciudad-plugin_ox_consejoasesor/app.bsky.feed.post/c00419-068d4c47dfda",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00419-068d4c47dfda",
+    "cid": "bafyc00419-068d4c47dfda",
+    "record": {
+      "text": "[pulso:vivo/high] plugin_ox_consejoasesor → .github/plugins/consejo-asesor/agents/consejo-asesor.agent.md: Corresponsalia",
+      "createdAt": "2026-07-01T06:59:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "plugin_ox_consejoasesor"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": ".github/plugins/consejo-asesor/agents/consejo-asesor.agent.md"
+        }
+      ]
+    }
+  }
+}

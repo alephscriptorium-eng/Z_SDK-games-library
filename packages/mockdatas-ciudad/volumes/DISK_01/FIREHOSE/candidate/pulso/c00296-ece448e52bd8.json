@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-indice",
+  "kind": "commit",
+  "handle": "indice.ciudad.local",
+  "uri": "at://did:plc:ciudad-indice/app.bsky.feed.post/c00296-ece448e52bd8",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00296-ece448e52bd8",
+    "cid": "bafyc00296-ece448e52bd8",
+    "record": {
+      "text": "[pulso:vivo/high] indice → Indice: Diagnosticar índice desactualizado",
+      "createdAt": "2026-07-01T04:56:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "indice"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Indice"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-ox",
+  "kind": "commit",
+  "handle": "ox.ciudad.local",
+  "uri": "at://did:plc:ciudad-ox/app.bsky.feed.post/c00375-67639d457f9c",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00375-67639d457f9c",
+    "cid": "bafyc00375-67639d457f9c",
+    "record": {
+      "text": "[pulso:vivo/high] ox → Ox: Inicializar setup del workspace",
+      "createdAt": "2026-07-01T06:15:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "ox"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Ox"
+        }
+      ]
+    }
+  }
+}

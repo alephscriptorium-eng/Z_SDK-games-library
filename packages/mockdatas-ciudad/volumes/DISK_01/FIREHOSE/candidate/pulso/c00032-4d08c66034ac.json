@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-archivero-lore",
+  "kind": "commit",
+  "handle": "archivero-lore.ciudad.local",
+  "uri": "at://did:plc:ciudad-archivero-lore/app.bsky.feed.post/c00032-4d08c66034ac",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00032-4d08c66034ac",
+    "cid": "bafyc00032-4d08c66034ac",
+    "record": {
+      "text": "[pulso:vivo/high] archivero-lore → Bartleby: Analizar pieza con Bartleby",
+      "createdAt": "2026-07-01T00:32:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "archivero-lore"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Bartleby"
+        }
+      ]
+    }
+  }
+}

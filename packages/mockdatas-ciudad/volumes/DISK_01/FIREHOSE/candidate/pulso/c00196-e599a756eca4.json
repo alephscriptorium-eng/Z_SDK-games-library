@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-editor",
+  "kind": "commit",
+  "handle": "editor.ciudad.local",
+  "uri": "at://did:plc:ciudad-editor/app.bsky.feed.post/c00196-e599a756eca4",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00196-e599a756eca4",
+    "cid": "bafyc00196-e599a756eca4",
+    "record": {
+      "text": "[pulso:vivo/high] editor → lector: Query Memory Structures",
+      "createdAt": "2026-07-01T03:16:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "editor"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "lector"
+        }
+      ]
+    }
+  }
+}

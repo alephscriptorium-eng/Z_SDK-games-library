@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-plugin_ox_teatro",
+  "kind": "commit",
+  "handle": "plugin_ox_teatro.ciudad.local",
+  "uri": "at://did:plc:ciudad-plugin_ox_teatro/app.bsky.feed.post/c00513-97ebe803ade8",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00513-97ebe803ade8",
+    "cid": "bafyc00513-97ebe803ade8",
+    "record": {
+      "text": "[pulso:vivo/high] plugin_ox_teatro → plugin_ox_ghpages: Coordinar con GH-PAGES",
+      "createdAt": "2026-07-01T08:33:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "plugin_ox_teatro"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "plugin_ox_ghpages"
+        }
+      ]
+    }
+  }
+}

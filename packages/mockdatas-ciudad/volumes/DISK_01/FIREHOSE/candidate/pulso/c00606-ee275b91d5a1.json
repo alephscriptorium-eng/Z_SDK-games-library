@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-vps-ops",
+  "kind": "commit",
+  "handle": "vps-ops.ciudad.local",
+  "uri": "at://did:plc:ciudad-vps-ops/app.bsky.feed.post/c00606-ee275b91d5a1",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00606-ee275b91d5a1",
+    "cid": "bafyc00606-ee275b91d5a1",
+    "record": {
+      "text": "[pulso:vivo/high] vps-ops → NodeRedCurator: Curar Node-RED",
+      "createdAt": "2026-07-01T10:06:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "vps-ops"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "NodeRedCurator"
+        }
+      ]
+    }
+  }
+}

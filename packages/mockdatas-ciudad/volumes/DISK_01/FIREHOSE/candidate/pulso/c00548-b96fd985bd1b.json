@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-prolog-editor",
+  "kind": "commit",
+  "handle": "prolog-editor.ciudad.local",
+  "uri": "at://did:plc:ciudad-prolog-editor/app.bsky.feed.post/c00548-b96fd985bd1b",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00548-b96fd985bd1b",
+    "cid": "bafyc00548-b96fd985bd1b",
+    "record": {
+      "text": "[pulso:latente/low] prolog-editor → PrologEditor: Exportar Blockly a Prolog",
+      "createdAt": "2026-07-01T09:08:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "latente"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "low"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "prolog-editor"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "PrologEditor"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-hdf-ernesto-castro",
+  "kind": "commit",
+  "handle": "hdf-ernesto-castro.ciudad.local",
+  "uri": "at://did:plc:ciudad-hdf-ernesto-castro/app.bsky.feed.post/c00283-0981d23ccd95",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00283-0981d23ccd95",
+    "cid": "bafyc00283-0981d23ccd95",
+    "record": {
+      "text": "[pulso:vivo/high] hdf-ernesto-castro → Bibliotecario: Volver al Bibliotecario",
+      "createdAt": "2026-07-01T04:43:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "hdf-ernesto-castro"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Bibliotecario"
+        }
+      ]
+    }
+  }
+}

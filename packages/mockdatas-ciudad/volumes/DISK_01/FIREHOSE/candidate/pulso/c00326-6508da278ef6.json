@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-nodejs-notebooks",
+  "kind": "commit",
+  "handle": "nodejs-notebooks.ciudad.local",
+  "uri": "at://did:plc:ciudad-nodejs-notebooks/app.bsky.feed.post/c00326-6508da278ef6",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00326-6508da278ef6",
+    "cid": "bafyc00326-6508da278ef6",
+    "record": {
+      "text": "[pulso:vivo/high] nodejs-notebooks → NodejsNotebooks: Demo BotHubSDK",
+      "createdAt": "2026-07-01T05:26:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "nodejs-notebooks"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "NodejsNotebooks"
+        }
+      ]
+    }
+  }
+}

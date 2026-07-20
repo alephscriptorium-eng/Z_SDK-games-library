@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-plugin_ox_wiringapp",
+  "kind": "commit",
+  "handle": "plugin_ox_wiringapp.ciudad.local",
+  "uri": "at://did:plc:ciudad-plugin_ox_wiringapp/app.bsky.feed.post/c00536-7127bdf48563",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00536-7127bdf48563",
+    "cid": "bafyc00536-7127bdf48563",
+    "record": {
+      "text": "[pulso:latente/low] plugin_ox_wiringapp → .github/plugins/wiring-app/agents/wiring-app.agent.md: Crear flow de juego",
+      "createdAt": "2026-07-01T08:56:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "latente"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "low"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "plugin_ox_wiringapp"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": ".github/plugins/wiring-app/agents/wiring-app.agent.md"
+        }
+      ]
+    }
+  }
+}

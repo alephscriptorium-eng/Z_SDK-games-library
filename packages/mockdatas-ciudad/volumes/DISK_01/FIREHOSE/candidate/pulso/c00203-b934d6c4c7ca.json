@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-lector",
+  "kind": "commit",
+  "handle": "lector.ciudad.local",
+  "uri": "at://did:plc:ciudad-lector/app.bsky.feed.post/c00203-b934d6c4c7ca",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00203-b934d6c4c7ca",
+    "cid": "bafyc00203-b934d6c4c7ca",
+    "record": {
+      "text": "[pulso:vivo/high] lector → albacea: Create Memory Content",
+      "createdAt": "2026-07-01T03:23:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "lector"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "albacea"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-arg-board-app",
+  "kind": "commit",
+  "handle": "arg-board-app.ciudad.local",
+  "uri": "at://did:plc:ciudad-arg-board-app/app.bsky.feed.post/c00239-634bc90ea209",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00239-634bc90ea209",
+    "cid": "bafyc00239-634bc90ea209",
+    "record": {
+      "text": "[pulso:latente/low] arg-board-app → ArgBoardApp: Registrar en BOE",
+      "createdAt": "2026-07-01T03:59:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "latente"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "low"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "arg-board-app"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "ArgBoardApp"
+        }
+      ]
+    }
+  }
+}

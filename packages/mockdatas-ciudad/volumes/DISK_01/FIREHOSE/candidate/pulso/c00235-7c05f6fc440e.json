@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-aleph",
+  "kind": "commit",
+  "handle": "aleph.ciudad.local",
+  "uri": "at://did:plc:ciudad-aleph/app.bsky.feed.post/c00235-7c05f6fc440e",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00235-7c05f6fc440e",
+    "cid": "bafyc00235-7c05f6fc440e",
+    "record": {
+      "text": "[pulso:vivo/high] aleph → Redflag: Solicitar auditoría de estructura",
+      "createdAt": "2026-07-01T03:55:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "aleph"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Redflag"
+        }
+      ]
+    }
+  }
+}

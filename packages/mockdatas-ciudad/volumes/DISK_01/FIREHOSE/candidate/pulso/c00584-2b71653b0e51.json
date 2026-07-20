@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-teatro",
+  "kind": "commit",
+  "handle": "teatro.ciudad.local",
+  "uri": "at://did:plc:ciudad-teatro/app.bsky.feed.post/c00584-2b71653b0e51",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00584-2b71653b0e51",
+    "cid": "bafyc00584-2b71653b0e51",
+    "record": {
+      "text": "[pulso:vivo/high] teatro → Ox: Consultar Ox (oráculo)",
+      "createdAt": "2026-07-01T09:44:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "teatro"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Ox"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-plugin_ox_aaiaeditor",
+  "kind": "commit",
+  "handle": "plugin_ox_aaiaeditor.ciudad.local",
+  "uri": "at://did:plc:ciudad-plugin_ox_aaiaeditor/app.bsky.feed.post/c00402-3dcecde3797d",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00402-3dcecde3797d",
+    "cid": "bafyc00402-3dcecde3797d",
+    "record": {
+      "text": "[pulso:latente/low] plugin_ox_aaiaeditor → AAIAEditor: Crear sesión AAIA",
+      "createdAt": "2026-07-01T06:42:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "latente"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "low"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "plugin_ox_aaiaeditor"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "AAIAEditor"
+        }
+      ]
+    }
+  }
+}

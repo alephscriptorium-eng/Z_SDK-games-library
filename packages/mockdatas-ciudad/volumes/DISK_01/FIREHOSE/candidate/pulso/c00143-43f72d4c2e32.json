@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-orangeflag",
+  "kind": "commit",
+  "handle": "orangeflag.ciudad.local",
+  "uri": "at://did:plc:ciudad-orangeflag/app.bsky.feed.post/c00143-43f72d4c2e32",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00143-43f72d4c2e32",
+    "cid": "bafyc00143-43f72d4c2e32",
+    "record": {
+      "text": "[pulso:vivo/high] orangeflag → Blackflag: Escalar a test de poder",
+      "createdAt": "2026-07-01T02:23:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "orangeflag"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Blackflag"
+        }
+      ]
+    }
+  }
+}

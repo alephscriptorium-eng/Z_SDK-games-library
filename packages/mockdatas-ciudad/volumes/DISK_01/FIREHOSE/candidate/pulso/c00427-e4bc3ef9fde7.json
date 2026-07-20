@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-plugin_ox_enciclopedia",
+  "kind": "commit",
+  "handle": "plugin_ox_enciclopedia.ciudad.local",
+  "uri": "at://did:plc:ciudad-plugin_ox_enciclopedia/app.bsky.feed.post/c00427-e4bc3ef9fde7",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00427-e4bc3ef9fde7",
+    "cid": "bafyc00427-e4bc3ef9fde7",
+    "record": {
+      "text": "[pulso:vivo/high] plugin_ox_enciclopedia → .github/plugins/enciclopedia/agents/tomos/hdf-ernesto-castro.agent.md: Buscar en Historia de la Filosofía",
+      "createdAt": "2026-07-01T07:07:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "plugin_ox_enciclopedia"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": ".github/plugins/enciclopedia/agents/tomos/hdf-ernesto-castro.agent.md"
+        }
+      ]
+    }
+  }
+}

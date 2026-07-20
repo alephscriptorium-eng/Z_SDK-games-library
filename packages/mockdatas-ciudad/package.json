@@ -1,0 +1,35 @@
+{
+  "name": "@zeus/mockdatas-ciudad",
+  "version": "0.1.0",
+  "description": "City mockdatas pack: DISK_01 firehose pulse + DISK_02/LINEAS city tree for mesh browsers.",
+  "type": "module",
+  "main": "index.mjs",
+  "exports": {
+    ".": "./index.mjs",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.mjs",
+    "data/",
+    "tools/",
+    "scripts/",
+    "fixtures/",
+    "volumes/",
+    "README.md"
+  ],
+  "scripts": {
+    "generate": "node tools/generate-ciudad-volumes.mjs",
+    "test": "node --test test/*.test.mjs",
+    "start:firehose": "node scripts/start-firehose.mjs",
+    "start:cache": "node scripts/start-cache.mjs"
+  },
+  "zeus": {
+    "role": "mockdatas",
+    "game": "ciudad"
+  },
+  "license": "AIPLv1",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://npm.scriptorium.escrivivir.co"
+  }
+}

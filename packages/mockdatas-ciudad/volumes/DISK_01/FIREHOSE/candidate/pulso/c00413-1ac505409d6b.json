@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-plugin_ox_argboard",
+  "kind": "commit",
+  "handle": "plugin_ox_argboard.ciudad.local",
+  "uri": "at://did:plc:ciudad-plugin_ox_argboard/app.bsky.feed.post/c00413-1ac505409d6b",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00413-1ac505409d6b",
+    "cid": "bafyc00413-1ac505409d6b",
+    "record": {
+      "text": "[pulso:latente/low] plugin_ox_argboard → .github/plugins/arg-board/agents/platform-com.agent.md: Invocar PlatformCom (Multi-plataforma)",
+      "createdAt": "2026-07-01T06:53:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "latente"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "low"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "plugin_ox_argboard"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": ".github/plugins/arg-board/agents/platform-com.agent.md"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-scrum",
+  "kind": "commit",
+  "handle": "scrum.ciudad.local",
+  "uri": "at://did:plc:ciudad-scrum/app.bsky.feed.post/c00581-ab90f4c73591",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00581-ab90f4c73591",
+    "cid": "bafyc00581-ab90f4c73591",
+    "record": {
+      "text": "[pulso:vivo/high] scrum → Scrum: Mostrar status (incluye sesiones)",
+      "createdAt": "2026-07-01T09:41:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "scrum"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Scrum"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-periodico",
+  "kind": "commit",
+  "handle": "periodico.ciudad.local",
+  "uri": "at://did:plc:ciudad-periodico/app.bsky.feed.post/c00401-3f4dc1f80c1b",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00401-3f4dc1f80c1b",
+    "cid": "bafyc00401-3f4dc1f80c1b",
+    "record": {
+      "text": "[pulso:vivo/high] periodico → yellowflag: Invocar Yellowflag",
+      "createdAt": "2026-07-01T06:41:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "periodico"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "yellowflag"
+        }
+      ]
+    }
+  }
+}

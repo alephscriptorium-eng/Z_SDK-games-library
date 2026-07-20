@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-protagonista",
+  "kind": "commit",
+  "handle": "protagonista.ciudad.local",
+  "uri": "at://did:plc:ciudad-protagonista/app.bsky.feed.post/c00156-6a100becfdff",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00156-6a100becfdff",
+    "cid": "bafyc00156-6a100becfdff",
+    "record": {
+      "text": "[pulso:vivo/high] protagonista → aceleracionista: Debate con Aceleracionista",
+      "createdAt": "2026-07-01T02:36:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "protagonista"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "aceleracionista"
+        }
+      ]
+    }
+  }
+}

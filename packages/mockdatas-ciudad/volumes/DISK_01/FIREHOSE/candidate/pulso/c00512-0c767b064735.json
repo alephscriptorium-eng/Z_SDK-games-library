@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-plugin_ox_teatro",
+  "kind": "commit",
+  "handle": "plugin_ox_teatro.ciudad.local",
+  "uri": "at://did:plc:ciudad-plugin_ox_teatro/app.bsky.feed.post/c00512-0c767b064735",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00512-0c767b064735",
+    "cid": "bafyc00512-0c767b064735",
+    "record": {
+      "text": "[pulso:vivo/high] plugin_ox_teatro → plugin_ox_argboard: Coordinar con ARG_BOARD",
+      "createdAt": "2026-07-01T08:32:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "plugin_ox_teatro"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "plugin_ox_argboard"
+        }
+      ]
+    }
+  }
+}

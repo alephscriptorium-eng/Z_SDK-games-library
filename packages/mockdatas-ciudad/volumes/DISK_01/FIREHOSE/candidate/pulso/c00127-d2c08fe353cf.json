@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-capitulista",
+  "kind": "commit",
+  "handle": "capitulista.ciudad.local",
+  "uri": "at://did:plc:ciudad-capitulista/app.bsky.feed.post/c00127-d2c08fe353cf",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00127-d2c08fe353cf",
+    "cid": "bafyc00127-d2c08fe353cf",
+    "record": {
+      "text": "[pulso:vivo/high] capitulista → Santome: Revision literaria",
+      "createdAt": "2026-07-01T02:07:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "capitulista"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Santome"
+        }
+      ]
+    }
+  }
+}

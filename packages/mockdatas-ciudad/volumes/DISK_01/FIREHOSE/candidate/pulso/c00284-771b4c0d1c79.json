@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-hypergraph-editor",
+  "kind": "commit",
+  "handle": "hypergraph-editor.ciudad.local",
+  "uri": "at://did:plc:ciudad-hypergraph-editor/app.bsky.feed.post/c00284-771b4c0d1c79",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00284-771b4c0d1c79",
+    "cid": "bafyc00284-771b4c0d1c79",
+    "record": {
+      "text": "[pulso:latente/low] hypergraph-editor → HyperGraphEditor: Cargar preset MediaWiki",
+      "createdAt": "2026-07-01T04:44:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "latente"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "low"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "hypergraph-editor"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "HyperGraphEditor"
+        }
+      ]
+    }
+  }
+}

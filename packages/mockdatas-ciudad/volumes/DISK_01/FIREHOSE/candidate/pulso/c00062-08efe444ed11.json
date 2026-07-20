@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-portal",
+  "kind": "commit",
+  "handle": "portal.ciudad.local",
+  "uri": "at://did:plc:ciudad-portal/app.bsky.feed.post/c00062-08efe444ed11",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00062-08efe444ed11",
+    "cid": "bafyc00062-08efe444ed11",
+    "record": {
+      "text": "[pulso:vivo/high] portal → Demiurgo: 🌍 Diseñar un universo",
+      "createdAt": "2026-07-01T01:02:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "portal"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Demiurgo"
+        }
+      ]
+    }
+  }
+}

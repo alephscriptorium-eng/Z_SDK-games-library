@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-plugin_ox_nodejsnotebook",
+  "kind": "commit",
+  "handle": "plugin_ox_nodejsnotebooks.ciudad.local",
+  "uri": "at://did:plc:ciudad-plugin_ox_nodejsnotebook/app.bsky.feed.post/c00474-3a533c92d9d1",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00474-3a533c92d9d1",
+    "cid": "bafyc00474-3a533c92d9d1",
+    "record": {
+      "text": "[pulso:vivo/high] plugin_ox_nodejsnotebooks → NodejsNotebooks: 🤖 Demo BotHubSDK",
+      "createdAt": "2026-07-01T07:54:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "plugin_ox_nodejsnotebooks"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "NodejsNotebooks"
+        }
+      ]
+    }
+  }
+}

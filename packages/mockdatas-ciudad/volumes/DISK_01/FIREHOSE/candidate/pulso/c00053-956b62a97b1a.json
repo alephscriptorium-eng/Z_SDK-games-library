@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-pipeline",
+  "kind": "commit",
+  "handle": "pipeline.ciudad.local",
+  "uri": "at://did:plc:ciudad-pipeline/app.bsky.feed.post/c00053-956b62a97b1a",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00053-956b62a97b1a",
+    "cid": "bafyc00053-956b62a97b1a",
+    "record": {
+      "text": "[pulso:vivo/high] pipeline → Dramaturgo Cortos: Generar corto desde universo-1",
+      "createdAt": "2026-07-01T00:53:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "pipeline"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Dramaturgo Cortos"
+        }
+      ]
+    }
+  }
+}

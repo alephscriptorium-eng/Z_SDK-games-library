@@ -1,0 +1,7 @@
+- id: ciudad
+  path: ciudad
+  etiqueta: "Ciudad (mockdatas)"
+  autor_tronco: mockdatas
+  nodo_prefix: N
+  nodo_count: 1
+  referencia_wp_cima: Ciudad_Mapa

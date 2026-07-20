@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-aleph",
+  "kind": "commit",
+  "handle": "aleph.ciudad.local",
+  "uri": "at://did:plc:ciudad-aleph/app.bsky.feed.post/c00237-a57b01f2c270",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00237-a57b01f2c270",
+    "cid": "bafyc00237-a57b01f2c270",
+    "record": {
+      "text": "[pulso:vivo/high] aleph → yellowflag: Solicitar auditoría de límites",
+      "createdAt": "2026-07-01T03:57:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "aleph"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "yellowflag"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-protagonista",
+  "kind": "commit",
+  "handle": "protagonista.ciudad.local",
+  "uri": "at://did:plc:ciudad-protagonista/app.bsky.feed.post/c00157-63a07fab6b96",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00157-63a07fab6b96",
+    "cid": "bafyc00157-63a07fab6b96",
+    "record": {
+      "text": "[pulso:vivo/high] protagonista → estructuralista: Debate con Estructuralista",
+      "createdAt": "2026-07-01T02:37:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "protagonista"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "estructuralista"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-novelist",
+  "kind": "commit",
+  "handle": "novelist.ciudad.local",
+  "uri": "at://did:plc:ciudad-novelist/app.bsky.feed.post/c00338-e9a309be586d",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00338-e9a309be586d",
+    "cid": "bafyc00338-e9a309be586d",
+    "record": {
+      "text": "[pulso:vivo/high] novelist → Novelist: Listar obras",
+      "createdAt": "2026-07-01T05:38:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "novelist"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Novelist"
+        }
+      ]
+    }
+  }
+}

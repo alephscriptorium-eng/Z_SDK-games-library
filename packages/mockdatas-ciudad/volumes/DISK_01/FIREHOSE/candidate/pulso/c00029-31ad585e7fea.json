@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-plan",
+  "kind": "commit",
+  "handle": "plan.ciudad.local",
+  "uri": "at://did:plc:ciudad-plan/app.bsky.feed.post/c00029-31ad585e7fea",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00029-31ad585e7fea",
+    "cid": "bafyc00029-31ad585e7fea",
+    "record": {
+      "text": "[pulso:vivo/high] Plan → agent: Start Implementation",
+      "createdAt": "2026-07-01T00:29:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "Plan"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "agent"
+        }
+      ]
+    }
+  }
+}

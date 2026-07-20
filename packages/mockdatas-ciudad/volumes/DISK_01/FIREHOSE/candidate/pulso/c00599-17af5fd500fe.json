@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-vector-machine",
+  "kind": "commit",
+  "handle": "vector-machine.ciudad.local",
+  "uri": "at://did:plc:ciudad-vector-machine/app.bsky.feed.post/c00599-17af5fd500fe",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00599-17af5fd500fe",
+    "cid": "bafyc00599-17af5fd500fe",
+    "record": {
+      "text": "[pulso:vivo/high] vector-machine → VectorMachine: Mapear stack VectorMachineSDK",
+      "createdAt": "2026-07-01T09:59:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "vector-machine"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "VectorMachine"
+        }
+      ]
+    }
+  }
+}

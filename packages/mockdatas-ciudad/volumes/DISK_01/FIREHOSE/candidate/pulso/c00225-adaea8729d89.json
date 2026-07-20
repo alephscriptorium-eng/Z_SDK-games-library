@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-aleph",
+  "kind": "commit",
+  "handle": "aleph.ciudad.local",
+  "uri": "at://did:plc:ciudad-aleph/app.bsky.feed.post/c00225-adaea8729d89",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00225-adaea8729d89",
+    "cid": "bafyc00225-adaea8729d89",
+    "record": {
+      "text": "[pulso:vivo/high] aleph → Indice: Consultar índice DRY",
+      "createdAt": "2026-07-01T03:45:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "aleph"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Indice"
+        }
+      ]
+    }
+  }
+}

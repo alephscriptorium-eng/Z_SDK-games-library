@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-periodico",
+  "kind": "commit",
+  "handle": "periodico.ciudad.local",
+  "uri": "at://did:plc:ciudad-periodico/app.bsky.feed.post/c00385-f4da22005bdb",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00385-f4da22005bdb",
+    "cid": "bafyc00385-f4da22005bdb",
+    "record": {
+      "text": "[pulso:vivo/high] periodico → .github/plugins/arg-board/agents/Arrakis: [ARG] Invocar personaje para análisis [nombre]",
+      "createdAt": "2026-07-01T06:25:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "periodico"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": ".github/plugins/arg-board/agents/Arrakis"
+        }
+      ]
+    }
+  }
+}

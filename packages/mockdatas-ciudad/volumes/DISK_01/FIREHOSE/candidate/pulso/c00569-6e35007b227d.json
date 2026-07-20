@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-scrum",
+  "kind": "commit",
+  "handle": "scrum.ciudad.local",
+  "uri": "at://did:plc:ciudad-scrum/app.bsky.feed.post/c00569-6e35007b227d",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00569-6e35007b227d",
+    "cid": "bafyc00569-6e35007b227d",
+    "record": {
+      "text": "[pulso:vivo/high] scrum → Scrum: ✅ Cerrar sesión y generar borrador",
+      "createdAt": "2026-07-01T09:29:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "scrum"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Scrum"
+        }
+      ]
+    }
+  }
+}

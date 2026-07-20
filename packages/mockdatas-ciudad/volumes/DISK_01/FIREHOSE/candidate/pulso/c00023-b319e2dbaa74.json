@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-bot-taller",
+  "kind": "commit",
+  "handle": "bot-taller.ciudad.local",
+  "uri": "at://did:plc:ciudad-bot-taller/app.bsky.feed.post/c00023-b319e2dbaa74",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00023-b319e2dbaa74",
+    "cid": "bafyc00023-b319e2dbaa74",
+    "record": {
+      "text": "[pulso:vivo/high] bot-taller → bot-volatil: Orador · snapshot volátil (sin disco)",
+      "createdAt": "2026-07-01T00:23:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "bot-taller"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "bot-volatil"
+        }
+      ]
+    }
+  }
+}

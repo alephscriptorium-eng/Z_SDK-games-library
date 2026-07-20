@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-demiurgo",
+  "kind": "commit",
+  "handle": "demiurgo.ciudad.local",
+  "uri": "at://did:plc:ciudad-demiurgo/app.bsky.feed.post/c00041-bd60a47c7127",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00041-bd60a47c7127",
+    "cid": "bafyc00041-bd60a47c7127",
+    "record": {
+      "text": "[pulso:vivo/high] demiurgo → Pipeline: Refrescar pipeline",
+      "createdAt": "2026-07-01T00:41:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "demiurgo"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Pipeline"
+        }
+      ]
+    }
+  }
+}

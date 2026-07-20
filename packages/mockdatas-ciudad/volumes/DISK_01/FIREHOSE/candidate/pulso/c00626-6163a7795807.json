@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-hackertasks-chs",
+  "kind": "commit",
+  "handle": "hackertasks-chs.ciudad.local",
+  "uri": "at://did:plc:ciudad-hackertasks-chs/app.bsky.feed.post/c00626-6163a7795807",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00626-6163a7795807",
+    "cid": "bafyc00626-6163a7795807",
+    "record": {
+      "text": "[pulso:vivo/high] HackerTasks:CHS → sockets/mesh: PREFIX_METADATA",
+      "createdAt": "2026-07-01T10:26:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "HackerTasks:CHS"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "sockets/mesh"
+        }
+      ]
+    }
+  }
+}

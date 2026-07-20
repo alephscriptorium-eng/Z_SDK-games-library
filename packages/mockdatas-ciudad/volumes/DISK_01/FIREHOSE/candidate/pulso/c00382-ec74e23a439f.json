@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-ox",
+  "kind": "commit",
+  "handle": "ox.ciudad.local",
+  "uri": "at://did:plc:ciudad-ox/app.bsky.feed.post/c00382-ec74e23a439f",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00382-ec74e23a439f",
+    "cid": "bafyc00382-ec74e23a439f",
+    "record": {
+      "text": "[pulso:vivo/high] ox → plugin-manager: Invocar PluginManager",
+      "createdAt": "2026-07-01T06:22:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "ox"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "plugin-manager"
+        }
+      ]
+    }
+  }
+}

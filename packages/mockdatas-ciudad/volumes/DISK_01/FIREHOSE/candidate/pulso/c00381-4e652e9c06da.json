@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-ox",
+  "kind": "commit",
+  "handle": "ox.ciudad.local",
+  "uri": "at://did:plc:ciudad-ox/app.bsky.feed.post/c00381-4e652e9c06da",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00381-4e652e9c06da",
+    "cid": "bafyc00381-4e652e9c06da",
+    "record": {
+      "text": "[pulso:vivo/high] ox → plugin_ox_vectormachine: Invocar bridge VectorMachine",
+      "createdAt": "2026-07-01T06:21:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "ox"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "plugin_ox_vectormachine"
+        }
+      ]
+    }
+  }
+}

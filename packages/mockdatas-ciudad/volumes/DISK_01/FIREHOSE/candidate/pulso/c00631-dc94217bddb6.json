@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-hackertasks-mcp",
+  "kind": "commit",
+  "handle": "hackertasks-mcp.ciudad.local",
+  "uri": "at://did:plc:ciudad-hackertasks-mcp/app.bsky.feed.post/c00631-dc94217bddb6",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00631-dc94217bddb6",
+    "cid": "bafyc00631-dc94217bddb6",
+    "record": {
+      "text": "[pulso:vivo/high] HackerTasks:MCP → MCPGallery: PREFIX_METADATA",
+      "createdAt": "2026-07-01T10:31:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "HackerTasks:MCP"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "MCPGallery"
+        }
+      ]
+    }
+  }
+}

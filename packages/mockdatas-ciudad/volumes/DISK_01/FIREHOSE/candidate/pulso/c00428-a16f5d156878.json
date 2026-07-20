@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-plugin_ox_enciclopedia",
+  "kind": "commit",
+  "handle": "plugin_ox_enciclopedia.ciudad.local",
+  "uri": "at://did:plc:ciudad-plugin_ox_enciclopedia/app.bsky.feed.post/c00428-a16f5d156878",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00428-a16f5d156878",
+    "cid": "bafyc00428-a16f5d156878",
+    "record": {
+      "text": "[pulso:vivo/high] plugin_ox_enciclopedia → plugin_ox_enciclopedia: Listar agentes de Enciclopedia",
+      "createdAt": "2026-07-01T07:08:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "plugin_ox_enciclopedia"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "plugin_ox_enciclopedia"
+        }
+      ]
+    }
+  }
+}

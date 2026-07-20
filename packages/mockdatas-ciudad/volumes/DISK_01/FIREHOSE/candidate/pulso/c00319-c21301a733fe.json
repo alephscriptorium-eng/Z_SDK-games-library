@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-network",
+  "kind": "commit",
+  "handle": "network.ciudad.local",
+  "uri": "at://did:plc:ciudad-network/app.bsky.feed.post/c00319-c21301a733fe",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00319-c21301a733fe",
+    "cid": "bafyc00319-c21301a733fe",
+    "record": {
+      "text": "[pulso:vivo/high] network → Network: Publicar BOE a Oasis",
+      "createdAt": "2026-07-01T05:19:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "network"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Network"
+        }
+      ]
+    }
+  }
+}

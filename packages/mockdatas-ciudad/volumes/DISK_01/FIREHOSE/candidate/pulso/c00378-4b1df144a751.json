@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-ox",
+  "kind": "commit",
+  "handle": "ox.ciudad.local",
+  "uri": "at://did:plc:ciudad-ox/app.bsky.feed.post/c00378-4b1df144a751",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00378-4b1df144a751",
+    "cid": "bafyc00378-4b1df144a751",
+    "record": {
+      "text": "[pulso:vivo/high] ox → Ox: Listar Context Packs disponibles",
+      "createdAt": "2026-07-01T06:18:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "ox"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Ox"
+        }
+      ]
+    }
+  }
+}

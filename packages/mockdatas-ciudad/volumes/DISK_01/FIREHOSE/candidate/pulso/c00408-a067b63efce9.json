@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-plugin_ox_agentcreator",
+  "kind": "commit",
+  "handle": "plugin_ox_agentcreator.ciudad.local",
+  "uri": "at://did:plc:ciudad-plugin_ox_agentcreator/app.bsky.feed.post/c00408-a067b63efce9",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00408-a067b63efce9",
+    "cid": "bafyc00408-a067b63efce9",
+    "record": {
+      "text": "[pulso:vivo/high] plugin_ox_agentcreator → plugin_ox_agentcreator: [AgentLoreSDK] Añadir plantillas a agente",
+      "createdAt": "2026-07-01T06:48:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "plugin_ox_agentcreator"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "plugin_ox_agentcreator"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-plugin_ox_ghpages",
+  "kind": "commit",
+  "handle": "plugin_ox_ghpages.ciudad.local",
+  "uri": "at://did:plc:ciudad-plugin_ox_ghpages/app.bsky.feed.post/c00437-f10c122d54bf",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00437-f10c122d54bf",
+    "cid": "bafyc00437-f10c122d54bf",
+    "record": {
+      "text": "[pulso:vivo/high] plugin_ox_ghpages → .github/plugins/gh-pages/agents/ghpages.agent.md: Invocar GHPages (Publicador)",
+      "createdAt": "2026-07-01T07:17:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "plugin_ox_ghpages"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": ".github/plugins/gh-pages/agents/ghpages.agent.md"
+        }
+      ]
+    }
+  }
+}

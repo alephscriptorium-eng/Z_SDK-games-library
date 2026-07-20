@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-bot-volatil",
+  "kind": "commit",
+  "handle": "bot-volatil.ciudad.local",
+  "uri": "at://did:plc:ciudad-bot-volatil/app.bsky.feed.post/c00024-d15b307fb35f",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00024-d15b307fb35f",
+    "cid": "bafyc00024-d15b307fb35f",
+    "record": {
+      "text": "[pulso:vivo/high] bot-volatil → bot-biblioteca: Cartógrafo · persistir snapshot (biblioteca)",
+      "createdAt": "2026-07-01T00:24:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "bot-volatil"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "bot-biblioteca"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-indice",
+  "kind": "commit",
+  "handle": "indice.ciudad.local",
+  "uri": "at://did:plc:ciudad-indice/app.bsky.feed.post/c00300-9aa44714149a",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00300-9aa44714149a",
+    "cid": "bafyc00300-9aa44714149a",
+    "record": {
+      "text": "[pulso:vivo/high] indice → Indice: Verificar si spike ya fue investigado",
+      "createdAt": "2026-07-01T05:00:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "indice"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Indice"
+        }
+      ]
+    }
+  }
+}

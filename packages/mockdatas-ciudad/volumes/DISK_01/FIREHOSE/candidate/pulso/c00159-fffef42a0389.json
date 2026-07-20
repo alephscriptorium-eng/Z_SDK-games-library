@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-protagonista",
+  "kind": "commit",
+  "handle": "protagonista.ciudad.local",
+  "uri": "at://did:plc:ciudad-protagonista/app.bsky.feed.post/c00159-fffef42a0389",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00159-fffef42a0389",
+    "cid": "bafyc00159-fffef42a0389",
+    "record": {
+      "text": "[pulso:vivo/high] protagonista → pesimista: Debate con Pesimista",
+      "createdAt": "2026-07-01T02:39:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "protagonista"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "pesimista"
+        }
+      ]
+    }
+  }
+}

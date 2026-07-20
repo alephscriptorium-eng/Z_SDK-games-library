@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-plugin_ox_foroscraper",
+  "kind": "commit",
+  "handle": "plugin_ox_foroscraper.ciudad.local",
+  "uri": "at://did:plc:ciudad-plugin_ox_foroscraper/app.bsky.feed.post/c00435-43db29d1ba99",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00435-43db29d1ba99",
+    "cid": "bafyc00435-43db29d1ba99",
+    "record": {
+      "text": "[pulso:vivo/high] plugin_ox_foroscraper → plugin_ox_foroscraper: Listar agentes de Foro Scraper",
+      "createdAt": "2026-07-01T07:15:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "plugin_ox_foroscraper"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "plugin_ox_foroscraper"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-plugin_ox_teatro",
+  "kind": "commit",
+  "handle": "plugin_ox_teatro.ciudad.local",
+  "uri": "at://did:plc:ciudad-plugin_ox_teatro/app.bsky.feed.post/c00510-410761abc73b",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00510-410761abc73b",
+    "cid": "bafyc00510-410761abc73b",
+    "record": {
+      "text": "[pulso:vivo/high] plugin_ox_teatro → Ox: Consultar Ox",
+      "createdAt": "2026-07-01T08:30:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "plugin_ox_teatro"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Ox"
+        }
+      ]
+    }
+  }
+}

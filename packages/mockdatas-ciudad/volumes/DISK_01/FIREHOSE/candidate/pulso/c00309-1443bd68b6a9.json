@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-lore-sdk",
+  "kind": "commit",
+  "handle": "lore-sdk.ciudad.local",
+  "uri": "at://did:plc:ciudad-lore-sdk/app.bsky.feed.post/c00309-1443bd68b6a9",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00309-1443bd68b6a9",
+    "cid": "bafyc00309-1443bd68b6a9",
+    "record": {
+      "text": "[pulso:vivo/high] lore-sdk → Ox: Consultar @ox",
+      "createdAt": "2026-07-01T05:09:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "lore-sdk"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Ox"
+        }
+      ]
+    }
+  }
+}

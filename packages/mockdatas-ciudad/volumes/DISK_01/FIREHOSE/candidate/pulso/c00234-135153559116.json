@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-aleph",
+  "kind": "commit",
+  "handle": "aleph.ciudad.local",
+  "uri": "at://did:plc:ciudad-aleph/app.bsky.feed.post/c00234-135153559116",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00234-135153559116",
+    "cid": "bafyc00234-135153559116",
+    "record": {
+      "text": "[pulso:vivo/high] aleph → plugin-manager: Gestionar plugins",
+      "createdAt": "2026-07-01T03:54:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "aleph"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "plugin-manager"
+        }
+      ]
+    }
+  }
+}

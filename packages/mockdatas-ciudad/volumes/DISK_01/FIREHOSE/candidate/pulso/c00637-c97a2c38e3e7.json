@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-hackertasks-zeus",
+  "kind": "commit",
+  "handle": "hackertasks-zeus.ciudad.local",
+  "uri": "at://did:plc:ciudad-hackertasks-zeus/app.bsky.feed.post/c00637-c97a2c38e3e7",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00637-c97a2c38e3e7",
+    "cid": "bafyc00637-c97a2c38e3e7",
+    "record": {
+      "text": "[pulso:vivo/high] HackerTasks:ZEUS → MCPGallery: PREFIX_METADATA",
+      "createdAt": "2026-07-01T10:37:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "HackerTasks:ZEUS"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "MCPGallery"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-capitulista",
+  "kind": "commit",
+  "handle": "capitulista.ciudad.local",
+  "uri": "at://did:plc:ciudad-capitulista/app.bsky.feed.post/c00126-b5e391e46089",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00126-b5e391e46089",
+    "cid": "bafyc00126-b5e391e46089",
+    "record": {
+      "text": "[pulso:vivo/high] capitulista → Revisor: Revision doctrinal",
+      "createdAt": "2026-07-01T02:06:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "capitulista"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Revisor"
+        }
+      ]
+    }
+  }
+}

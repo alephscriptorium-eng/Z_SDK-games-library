@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-prolog-editor",
+  "kind": "commit",
+  "handle": "prolog-editor.ciudad.local",
+  "uri": "at://did:plc:ciudad-prolog-editor/app.bsky.feed.post/c00546-501209968a07",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00546-501209968a07",
+    "cid": "bafyc00546-501209968a07",
+    "record": {
+      "text": "[pulso:latente/low] prolog-editor → PrologEditor: 🩺 Health Check",
+      "createdAt": "2026-07-01T09:06:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "latente"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "low"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "prolog-editor"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "PrologEditor"
+        }
+      ]
+    }
+  }
+}

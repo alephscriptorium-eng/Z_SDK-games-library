@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-articulista",
+  "kind": "commit",
+  "handle": "articulista.ciudad.local",
+  "uri": "at://did:plc:ciudad-articulista/app.bsky.feed.post/c00099-4dddcf97f271",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00099-4dddcf97f271",
+    "cid": "bafyc00099-4dddcf97f271",
+    "record": {
+      "text": "[pulso:vivo/high] articulista → Revisor: Revision doctrinal",
+      "createdAt": "2026-07-01T01:39:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "articulista"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Revisor"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "did": "did:plc:ciudad-teatro",
+  "kind": "commit",
+  "handle": "teatro.ciudad.local",
+  "uri": "at://did:plc:ciudad-teatro/app.bsky.feed.post/c00592-e64b40da66d5",
+  "commit": {
+    "collection": "app.bsky.feed.post",
+    "rkey": "c00592-e64b40da66d5",
+    "cid": "bafyc00592-e64b40da66d5",
+    "record": {
+      "text": "[pulso:vivo/high] teatro → Teatro: Razonar con personaje (Prolog)",
+      "createdAt": "2026-07-01T09:52:00.000Z",
+      "facets": [
+        {
+          "typ": "ciudad.estado",
+          "value": "vivo"
+        },
+        {
+          "typ": "ciudad.intensity",
+          "value": "high"
+        },
+        {
+          "typ": "ciudad.src",
+          "value": "teatro"
+        },
+        {
+          "typ": "ciudad.dst",
+          "value": "Teatro"
+        }
+      ]
+    }
+  }
+}
