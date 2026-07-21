@@ -28,11 +28,17 @@ npm run start:mcp -w @zeus/ciudad
 Overrides: `ZEUS_CIUDAD_ROOM`, `ZEUS_MCP_CIUDAD` (default `:4133`),
 `ZEUS_STARTPACK_CIUDAD`, `ZEUS_PORT_SCRIPTORIUM`.
 
-## Gap horse / Z06
+## Gap horse / Z06 / Z04
 
 `wake` asienta el offer (`horseMode: stub`) en ledger. La contraparte física
-`tools/call` por horse depende de `@zeus/mcp-launcher` (WP-Z06) — no se
-parchea el engine desde el juego.
+`tools/call` por horse depende de `@zeus/mcp-launcher` (WP-Z06). Z04 aporta el
+**segundo cliente** (peer externo r/s/h): mock control-plane + `barrio-horse` +
+caso C-03 en `spec/CASOS.md`.
+
+```bash
+npm run federation-smoke -w @zeus/ciudad   # in-process, sin aleph
+npm run e2e:ciudad-federation              # socket+authority (vivo; A1 deferible)
+```
 
 ## Roles
 

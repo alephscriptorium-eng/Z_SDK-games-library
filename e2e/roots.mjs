@@ -29,5 +29,17 @@ export const paths = {
   solveAuthority: join(libraryRoot, 'packages/solve-coagula/src/authority.mjs'),
   solveMcp: join(libraryRoot, 'packages/solve-coagula/src/player-mcp/start.mjs'),
   solveRoot: join(libraryRoot, 'packages/solve-coagula'),
-  solveCasos: join(libraryRoot, 'packages/solve-coagula/spec/CASOS.md')
+  solveCasos: join(libraryRoot, 'packages/solve-coagula/spec/CASOS.md'),
+  ciudadAuthority: join(libraryRoot, 'packages/ciudad/src/authority.mjs'),
+  ciudadMcp: join(libraryRoot, 'packages/ciudad/src/player-mcp/start.mjs'),
+  ciudadRoot: join(libraryRoot, 'packages/ciudad'),
+  ciudadCasos: join(libraryRoot, 'packages/ciudad/spec/CASOS.md'),
+  ciudadFederationSmoke: join(
+    libraryRoot,
+    'packages/ciudad/fixtures/federation-smoke.mjs'
+  ),
+  ciudadBarrioHorse: join(
+    libraryRoot,
+    'packages/ciudad/fixtures/federation/barrio-horse.mjs'
+  )
 };

@@ -37,6 +37,7 @@
     "e2e:arg-horse": "node e2e/arg-horse-demo.mjs",
     "e2e:arg-track": "node e2e/arg-track-demo.mjs",
     "e2e:playbook-kit": "node e2e/playbook-kit-demo.mjs",
+    "e2e:ciudad-federation": "node e2e/ciudad-federation-demo.mjs",
     "e2e:startpack": "node e2e/startpack-round.mjs",
     "release:startpack": "node scripts/notario-release.mjs",
     "build:zeus-overrides": "node scripts/build-zeus-overrides.mjs",
