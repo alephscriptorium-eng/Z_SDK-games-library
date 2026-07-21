@@ -20,7 +20,8 @@
     "zone-subscription-smoke": "node fixtures/zone-subscription-smoke.mjs",
     "federation-smoke": "node fixtures/federation-smoke.mjs",
     "federation-peer": "node fixtures/federation/demo-peer.mjs",
-    "tablero-jugadores": "node fixtures/tablero-jugadores.mjs"
+    "tablero-jugadores": "node fixtures/tablero-jugadores.mjs",
+    "linea-editor-slice-smoke": "node fixtures/linea-editor-slice-smoke.mjs"
   },
   "zeus": {
     "role": "game"
