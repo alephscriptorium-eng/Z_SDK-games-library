@@ -165,6 +165,7 @@ export const BARRIOS = [
     edificios: [{ id: 'prolog-editor', tipo: 'local' }],
     maquinarias: {
       'prolog-ui': {
+        catalogId: 'prolog-ui',
         cmd: 'npm run start:ui',
         puerto: 5001,
         health: '/',
@@ -174,6 +175,7 @@ export const BARRIOS = [
         edificio: 'prolog-editor'
       },
       'prolog-backend': {
+        catalogId: 'prolog-backend',
         cmd: 'npm run start:backend',
         puerto: 8000,
         health: '/health',
@@ -183,6 +185,7 @@ export const BARRIOS = [
         edificio: 'prolog-editor'
       },
       'prolog-mcp': {
+        catalogId: 'prolog-mcp',
         cmd: 'npm run start:mcp',
         puerto: 3006,
         health: '/health',
@@ -320,8 +323,19 @@ export const BARRIOS = [
     edificios: [{ id: 'aaia-editor', tipo: 'local' }],
     maquinarias: {
       'aaia-mcp-server': {
+        catalogId: 'aaia-mcp-server',
         cmd: 'npm run start:mcp',
         puerto: 3007,
+        health: '/health',
+        autoRestart: true,
+        deps: ['aaia-backend'],
+        barrio: 'aaia-gallery',
+        edificio: 'aaia-editor'
+      },
+      'aaia-backend': {
+        catalogId: 'aaia-backend',
+        cmd: 'npm run start:backend',
+        puerto: 8007,
         health: '/health',
         autoRestart: true,
         deps: [],
@@ -365,9 +379,10 @@ export const BARRIOS = [
     edificios: [{ id: 'state-machine-server', tipo: 'local' }],
     maquinarias: {
       'state-machine-server': {
+        catalogId: 'state-machine-server',
         cmd: 'npm run start',
         puerto: 3004,
-        health: '/health',
+        health: '/mcp/health',
         autoRestart: true,
         deps: [],
         barrio: 'state-machine',

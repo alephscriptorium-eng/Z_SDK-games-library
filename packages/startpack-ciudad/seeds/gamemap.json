@@ -889,7 +889,8 @@
               "prolog-backend"
             ],
             "barrio": "prolog-editor",
-            "edificio": "prolog-editor"
+            "edificio": "prolog-editor",
+            "catalogId": "prolog-ui"
           },
           "prolog-backend": {
             "cmd": "npm run start:backend",
@@ -898,7 +899,8 @@
             "autoRestart": true,
             "deps": [],
             "barrio": "prolog-editor",
-            "edificio": "prolog-editor"
+            "edificio": "prolog-editor",
+            "catalogId": "prolog-backend"
           },
           "prolog-mcp": {
             "cmd": "npm run start:mcp",
@@ -909,7 +911,8 @@
               "prolog-backend"
             ],
             "barrio": "prolog-editor",
-            "edificio": "prolog-editor"
+            "edificio": "prolog-editor",
+            "catalogId": "prolog-mcp"
           }
         }
       },
@@ -1062,6 +1065,19 @@
             "puerto": 3007,
             "health": "/health",
             "autoRestart": true,
+            "deps": [
+              "aaia-backend"
+            ],
+            "barrio": "aaia-gallery",
+            "edificio": "aaia-editor",
+            "catalogId": "aaia-mcp-server"
+          },
+          "aaia-backend": {
+            "catalogId": "aaia-backend",
+            "cmd": "npm run start:backend",
+            "puerto": 8007,
+            "health": "/health",
+            "autoRestart": true,
             "deps": [],
             "barrio": "aaia-gallery",
             "edificio": "aaia-editor"
@@ -1111,11 +1127,12 @@
           "state-machine-server": {
             "cmd": "npm run start",
             "puerto": 3004,
-            "health": "/health",
+            "health": "/mcp/health",
             "autoRestart": true,
             "deps": [],
             "barrio": "state-machine",
-            "edificio": "state-machine-server"
+            "edificio": "state-machine-server",
+            "catalogId": "state-machine-server"
           }
         }
       },
