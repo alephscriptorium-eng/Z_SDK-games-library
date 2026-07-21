@@ -1,11 +1,12 @@
 /**
  * ciudad — dominio puro (sin red, sin fs, sin Date.now escondido).
  * Intents: join · walk · announce · wake · sleep.
- * Estado de barrio (vivo/latente/muerto/roto) cambia solo por intents confirmados.
+ * Loop: decay por tick, energía por actor, objetivo colectivo en snapshot.
+ * Reloj inyectable (`now` / tick); sin Date.now escondido en el loop.
  * Residente ≡ edificio en vivo (una fuente de verdad).
  */
 
-import { INTENTS, SPAWN_NODE_ID, validateIntent } from './contract.mjs';
+import { INTENTS, LOOP_DEFAULTS, SPAWN_NODE_ID, validateIntent } from './contract.mjs';
 import {
   catalogRoleFor,
   featuresForPlayerType,
@@ -18,11 +19,37 @@ import { nodesReachable, sceneFromGamemap } from './scene.mjs';
  * @param {{
  *   now?: () => number,
  *   gamemap?: object,
- *   scene?: ReturnType<typeof sceneFromGamemap>
+ *   scene?: ReturnType<typeof sceneFromGamemap>,
+ *   decayVivoMs?: number,
+ *   decayLatenteMs?: number,
+ *   aliveTargetK?: number,
+ *   wakeCost?: number,
+ *   announceGain?: number,
+ *   initialEnergy?: number,
+ *   maxEnergy?: number
  * }} [opts]
  */
 export function createCiudadDomainState(opts = {}) {
   const clock = typeof opts.now === 'function' ? opts.now : () => Date.now();
+
+  const loop = {
+    decayVivoMs:
+      typeof opts.decayVivoMs === 'number' ? opts.decayVivoMs : LOOP_DEFAULTS.decayVivoMs,
+    decayLatenteMs:
+      typeof opts.decayLatenteMs === 'number'
+        ? opts.decayLatenteMs
+        : LOOP_DEFAULTS.decayLatenteMs,
+    aliveTargetK:
+      typeof opts.aliveTargetK === 'number' ? opts.aliveTargetK : LOOP_DEFAULTS.aliveTargetK,
+    wakeCost: typeof opts.wakeCost === 'number' ? opts.wakeCost : LOOP_DEFAULTS.wakeCost,
+    announceGain:
+      typeof opts.announceGain === 'number' ? opts.announceGain : LOOP_DEFAULTS.announceGain,
+    initialEnergy:
+      typeof opts.initialEnergy === 'number'
+        ? opts.initialEnergy
+        : LOOP_DEFAULTS.initialEnergy,
+    maxEnergy: typeof opts.maxEnergy === 'number' ? opts.maxEnergy : LOOP_DEFAULTS.maxEnergy
+  };
 
   const scene = opts.scene
     ? opts.scene
@@ -33,10 +60,15 @@ export function createCiudadDomainState(opts = {}) {
     throw new Error('createCiudadDomainState: gamemap or scene required (from startpack)');
   }
 
+  const bornAt = clock();
+
   /** Mutable barrio estados (seed → runtime). */
-  /** @type {Record<string, { id: string, estado: string, anchorId: string, parent: string, displayName?: string }>} */
+  /** @type {Record<string, { id: string, estado: string, anchorId: string, parent: string, displayName?: string, lastVisitAt: number }>} */
   const barrios = Object.fromEntries(
-    Object.entries(scene.barrios).map(([id, b]) => [id, { ...b }])
+    Object.entries(scene.barrios).map(([id, b]) => [
+      id,
+      { ...b, lastVisitAt: bornAt }
+    ])
   );
 
   /**
@@ -50,13 +82,15 @@ export function createCiudadDomainState(opts = {}) {
    *   anchorId: string|null,
    *   joinedAt: number,
    *   announced: boolean,
-   *   wakes: number
+   *   wakes: number,
+   *   energy: number
    * }} Actor
    */
   /** @type {Record<string, Actor>} */
   const actors = {};
   let ledgerSeq = 0;
   let contentRev = 0;
+  let currentTick = 0;
   /** @type {object[]} */
   const ledgerOut = [];
   /** @type {object[]} */
@@ -67,6 +101,8 @@ export function createCiudadDomainState(opts = {}) {
   let lastWake = null;
   /** @type {{ barrioId: string, actorId: string, ts: number, residenteId?: string }|null} */
   let lastSleep = null;
+  /** @type {{ barrioId: string, from: string, to: string, ts: number, tick: number }|null} */
+  let lastDecay = null;
 
   function actorPos(actor) {
     return { nodeId: actor.nodeId, anchorId: actor.anchorId };
@@ -82,8 +118,74 @@ export function createCiudadDomainState(opts = {}) {
       nodeId: a.nodeId,
       anchorId: a.anchorId,
       announced: a.announced,
-      wakes: a.wakes
+      wakes: a.wakes,
+      energy: a.energy
     };
+  }
+
+  function countVivos() {
+    let n = 0;
+    for (const b of Object.values(barrios)) {
+      if (b.estado === 'vivo') n += 1;
+    }
+    return n;
+  }
+
+  function objetivoPublic() {
+    const vivos = countVivos();
+    return {
+      vivos,
+      umbral: loop.aliveTargetK,
+      cumplido: vivos >= loop.aliveTargetK
+    };
+  }
+
+  function markVisit(barrioId) {
+    const barrio = barrios[barrioId];
+    if (!barrio) return;
+    barrio.lastVisitAt = clock();
+  }
+
+  function setBarrioEstado(barrio, estado) {
+    barrio.estado = estado;
+    if (scene.anclas[barrio.anchorId]) {
+      scene.anclas[barrio.anchorId] = {
+        ...scene.anclas[barrio.anchorId],
+        estado
+      };
+    }
+  }
+
+  function recordDecay(barrioId, from, to) {
+    const ts = clock();
+    lastDecay = { barrioId, from, to, ts, tick: currentTick };
+    ledgerSeq += 1;
+    ledgerOut.push({
+      kind: 'decay',
+      seq: ledgerSeq,
+      actorId: 'ciudad-loop',
+      ts,
+      detail: { barrioId, from, to, tick: currentTick }
+    });
+    contentRev += 1;
+  }
+
+  function applyDecay() {
+    const now = clock();
+    for (const barrio of Object.values(barrios)) {
+      if (barrio.estado === 'roto' || barrio.estado === 'muerto') continue;
+      const idle = now - barrio.lastVisitAt;
+      if (barrio.estado === 'vivo' && idle >= loop.decayVivoMs) {
+        setBarrioEstado(barrio, 'latente');
+        retireResidente(barrio.id);
+        recordDecay(barrio.id, 'vivo', 'latente');
+        barrio.lastVisitAt = now;
+      } else if (barrio.estado === 'latente' && idle >= loop.decayLatenteMs) {
+        setBarrioEstado(barrio, 'muerto');
+        recordDecay(barrio.id, 'latente', 'muerto');
+        barrio.lastVisitAt = now;
+      }
+    }
   }
 
   function spawnResidente(barrioId, tool, ts) {
@@ -103,7 +205,8 @@ export function createCiudadDomainState(opts = {}) {
       anchorId: barrio.anchorId,
       joinedAt: ts,
       announced: false,
-      wakes: 0
+      wakes: 0,
+      energy: 0
     };
     return id;
   }
@@ -136,6 +239,45 @@ export function createCiudadDomainState(opts = {}) {
     return { error: 'destino_requerido' };
   }
 
+  function wakeGate(actor, payload) {
+    const tool =
+      typeof payload.tool === 'string' && payload.tool.trim()
+        ? payload.tool.trim().slice(0, 96)
+        : null;
+    if (!tool) return { error: 'tool_requerido' };
+
+    let barrioId = payload.barrioId || null;
+    if (!barrioId && actor.anchorId) {
+      const a = scene.anclas[actor.anchorId];
+      barrioId = a?.barrioId || a?.slug || null;
+    }
+    if (!barrioId) return { error: 'barrio_requerido' };
+
+    const barrio = barrios[barrioId];
+    if (!barrio) return { error: 'barrio_desconocido' };
+
+    if (actor.anchorId !== barrio.anchorId) {
+      return { error: 'fuera_de_barrio' };
+    }
+
+    if (barrio.estado === 'muerto') {
+      return { error: 'barrio_muerto' };
+    }
+    if (barrio.estado === 'roto') {
+      return { error: 'barrio_roto' };
+    }
+    if (barrio.estado === 'vivo') {
+      return { error: 'barrio_ya_vivo' };
+    }
+    if (barrio.estado !== 'latente') {
+      return { error: 'barrio_no_latente' };
+    }
+    if (actor.energy < loop.wakeCost) {
+      return { error: 'energia_insuficiente' };
+    }
+    return { tool, barrioId, barrio };
+  }
+
   const handlers = {
     join(payload) {
       const { actorId } = payload;
@@ -161,7 +303,8 @@ export function createCiudadDomainState(opts = {}) {
           anchorId: null,
           joinedAt: clock(),
           announced: false,
-          wakes: 0
+          wakes: 0,
+          energy: loop.initialEnergy
         };
         contentRev += 1;
       }
@@ -182,6 +325,7 @@ export function createCiudadDomainState(opts = {}) {
       }
       actor.nodeId = target.nodeId;
       actor.anchorId = target.anchorId;
+      if (target.barrioId) markVisit(target.barrioId);
       contentRev += 1;
       const ts = clock();
       trackOut.push({
@@ -212,6 +356,7 @@ export function createCiudadDomainState(opts = {}) {
           ? payload.message.trim().slice(0, 128)
           : 'presente';
       actor.announced = true;
+      actor.energy = Math.min(loop.maxEnergy, actor.energy + loop.announceGain);
       ledgerSeq += 1;
       const ts = clock();
       lastAnnounce = { actorId, message, ts, jugador: actor.playerType };
@@ -224,6 +369,7 @@ export function createCiudadDomainState(opts = {}) {
           message,
           jugador: actor.playerType,
           features: [...actor.features],
+          energy: actor.energy,
           ...actorPos(actor)
         }
       });
@@ -234,55 +380,23 @@ export function createCiudadDomainState(opts = {}) {
     /**
      * Despertar barrio latente.
      * Ofrece tool vía horse; nace el residente del edificio (mismo tick).
+     * Gasta energía del actor.
      */
     wake(payload) {
       const { actorId } = payload;
       const actor = actors[actorId];
       if (!actor) return { ok: false, error: 'actor_desconocido' };
 
-      const tool =
-        typeof payload.tool === 'string' && payload.tool.trim()
-          ? payload.tool.trim().slice(0, 96)
-          : null;
-      if (!tool) return { ok: false, error: 'tool_requerido' };
+      const gate = wakeGate(actor, payload);
+      if (gate.error) return { ok: false, error: gate.error };
 
-      let barrioId = payload.barrioId || null;
-      if (!barrioId && actor.anchorId) {
-        const a = scene.anclas[actor.anchorId];
-        barrioId = a?.barrioId || a?.slug || null;
-      }
-      if (!barrioId) return { ok: false, error: 'barrio_requerido' };
-
-      const barrio = barrios[barrioId];
-      if (!barrio) return { ok: false, error: 'barrio_desconocido' };
-
-      if (actor.anchorId !== barrio.anchorId) {
-        return { ok: false, error: 'fuera_de_barrio' };
-      }
-
-      if (barrio.estado === 'muerto') {
-        return { ok: false, error: 'barrio_muerto' };
-      }
-      if (barrio.estado === 'roto') {
-        return { ok: false, error: 'barrio_roto' };
-      }
-      if (barrio.estado === 'vivo') {
-        return { ok: false, error: 'barrio_ya_vivo' };
-      }
-      if (barrio.estado !== 'latente') {
-        return { ok: false, error: 'barrio_no_latente' };
-      }
-
+      const { tool, barrioId, barrio } = gate;
       const horseMode =
         payload.horseMode === 'horse' || payload.horseOffer === true ? 'horse' : 'stub';
 
-      barrio.estado = 'vivo';
-      if (scene.anclas[barrio.anchorId]) {
-        scene.anclas[barrio.anchorId] = {
-          ...scene.anclas[barrio.anchorId],
-          estado: 'vivo'
-        };
-      }
+      actor.energy -= loop.wakeCost;
+      setBarrioEstado(barrio, 'vivo');
+      markVisit(barrioId);
       actor.wakes = (actor.wakes || 0) + 1;
       const ts = clock();
       const residenteId = spawnResidente(barrioId, tool, ts);
@@ -301,6 +415,7 @@ export function createCiudadDomainState(opts = {}) {
           jugador: actor.playerType,
           residenteId,
           residenteFeatures: [...actors[residenteId].features],
+          energy: actor.energy,
           horseGap: horseMode === 'stub' ? 'awaiting_z06_mcp_launcher' : null
         }
       });
@@ -346,13 +461,8 @@ export function createCiudadDomainState(opts = {}) {
         return { ok: false, error: 'barrio_no_vivo' };
       }
 
-      barrio.estado = 'latente';
-      if (scene.anclas[barrio.anchorId]) {
-        scene.anclas[barrio.anchorId] = {
-          ...scene.anclas[barrio.anchorId],
-          estado: 'latente'
-        };
-      }
+      setBarrioEstado(barrio, 'latente');
+      markVisit(barrioId);
       const residenteId = retireResidente(barrioId);
       ledgerSeq += 1;
       const ts = clock();
@@ -384,8 +494,14 @@ export function createCiudadDomainState(opts = {}) {
       return handler(payload);
     },
 
-    tick(_deltaSec, _now) {
-      // MVP sin tick de animación (walk es snap).
+    /**
+     * Aplica decay según reloj inyectable (`now` del constructor).
+     * Sin Date.now escondido en el loop: tests inyectan `now` y avanzan el
+     * tiempo antes de llamar tick.
+     */
+    tick(_deltaSec, _nowMs) {
+      currentTick += 1;
+      applyDecay();
     },
 
     snapshot(reason, _opts = {}) {
@@ -394,6 +510,7 @@ export function createCiudadDomainState(opts = {}) {
         reason,
         sceneId: scene.sceneId,
         spawnNodeId: scene.spawnNodeId,
+        tick: currentTick,
         actors: Object.fromEntries(
           Object.entries(actors).map(([id, a]) => [id, actorPublic(a)])
         ),
@@ -403,9 +520,11 @@ export function createCiudadDomainState(opts = {}) {
             { id: b.id, estado: b.estado, anchorId: b.anchorId, parent: b.parent }
           ])
         ),
+        objetivo: objetivoPublic(),
         lastAnnounce: lastAnnounce ? { ...lastAnnounce } : null,
         lastWake: lastWake ? { ...lastWake } : null,
         lastSleep: lastSleep ? { ...lastSleep } : null,
+        lastDecay: lastDecay ? { ...lastDecay } : null,
         nodos: scene.nodos,
         enlaces: scene.enlaces,
         anclas: scene.anclas
@@ -450,25 +569,10 @@ export function createCiudadDomainState(opts = {}) {
         return { ok: true, error: null };
       }
       if (payload.intent === 'wake') {
-        const dry = { ...payload };
-        const actor = actors[dry.actorId];
+        const actor = actors[payload.actorId];
         if (!actor) return { ok: false, error: 'actor_desconocido' };
-        if (typeof dry.tool !== 'string' || !dry.tool.trim()) {
-          return { ok: false, error: 'tool_requerido' };
-        }
-        let barrioId = dry.barrioId || null;
-        if (!barrioId && actor.anchorId) {
-          const a = scene.anclas[actor.anchorId];
-          barrioId = a?.barrioId || a?.slug || null;
-        }
-        if (!barrioId) return { ok: false, error: 'barrio_requerido' };
-        const barrio = barrios[barrioId];
-        if (!barrio) return { ok: false, error: 'barrio_desconocido' };
-        if (actor.anchorId !== barrio.anchorId) return { ok: false, error: 'fuera_de_barrio' };
-        if (barrio.estado === 'muerto') return { ok: false, error: 'barrio_muerto' };
-        if (barrio.estado === 'roto') return { ok: false, error: 'barrio_roto' };
-        if (barrio.estado === 'vivo') return { ok: false, error: 'barrio_ya_vivo' };
-        if (barrio.estado !== 'latente') return { ok: false, error: 'barrio_no_latente' };
+        const dry = wakeGate(actor, payload);
+        if (dry.error) return { ok: false, error: dry.error };
         return { ok: true, error: null };
       }
       if (payload.intent === 'sleep') {
@@ -492,6 +596,12 @@ export function createCiudadDomainState(opts = {}) {
     },
 
     /** Acceso read-only a la escena sembrada (tests). */
-    getScene: () => scene
+    getScene: () => scene,
+
+    /** Contador de ticks del loop (tests). */
+    getTick: () => currentTick,
+
+    /** Parámetros de loop efectivos (tests / contrato). */
+    getLoopConfig: () => ({ ...loop })
   };
 }

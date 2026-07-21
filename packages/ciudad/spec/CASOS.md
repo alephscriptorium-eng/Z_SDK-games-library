@@ -102,3 +102,60 @@ La contraparte física `tools/call` por horse llega con `@zeus/mcp-launcher`
   corriente + `residente:prolog-editor`; paso 8 sin residente y barrio
   `latente` (misma fuente de verdad).
 - **Errores esperados**: `residente_solo_por_wake`, `barrio_no_vivo`.
+
+## C-05 — loop: decay vivo → latente → muerto
+
+- **Precondición**: autoridad con escena startpack; reloj/decay configurables
+  (`decayVivoMs` / `decayLatenteMs`); barrio `blockly-editor` despertado y
+  **sin visita** durante el umbral vivo (la autoridad aplica decay en `tick`).
+- **Pasos del agente (rabbit)**:
+  1. `player_join {}`
+  2. `player_walk {"nodeId":"zigurat"}`
+  3. `player_walk {"anchorId":"ancla-blockly-editor"}`
+  4. `player_wake {"tool":"barrio.ping","barrioId":"blockly-editor"}`
+  5. `player_state {}`
+- **Qué observa el humano**: tras el wake el barrio está `vivo`; si nadie
+  visita y pasan los umbrales de decay, pasa a `latente` y luego `muerto`
+  (más lento). Snapshot expone `lastDecay` y ledger `kind:"decay"`.
+- **Criterio de éxito**: paso 4 `ok:true`; paso 5 (o snapshot posterior al
+  tick de autoridad) muestra la transición de estado sin visita.
+- **Errores esperados**: `barrio_muerto` si se intenta wake tras decay a muerto.
+
+## C-06 — loop: energía wake / announce
+
+- **Precondición**: actor con presupuesto de energía (`initialEnergy`);
+  `wake` cuesta; `announce` en plaza recarga (tope `maxEnergy`).
+- **Pasos del agente (rabbit)**:
+  1. `player_join {}`
+  2. `player_walk {"nodeId":"zigurat"}`
+  3. `player_walk {"anchorId":"ancla-blockly-editor"}`
+  4. `player_wake {"tool":"barrio.ping","barrioId":"blockly-editor"}`
+  5. `player_state {}`
+  6. `player_walk {"nodeId":"plaza"}`
+  7. `player_announce {"message":"reposo"}`
+  8. `player_state {}`
+- **Qué observa el humano**: tras wake baja `actors.*.energy`; announce en
+  plaza la sube. Sin energía, un wake extra falla.
+- **Criterio de éxito**: paso 5 con energy menor que al join; paso 7
+  `ok:true`; paso 8 energy mayor que en paso 5. Error `energia_insuficiente`
+  si se wake sin presupuesto.
+- **Errores esperados**: `energia_insuficiente`, `fuera_de_plaza`.
+
+## C-07 — loop: objetivo colectivo (≥K vivos)
+
+- **Precondición**: umbral `aliveTargetK` (default 15; el seed ya trae varios
+  `vivo`); snapshot legible para tablero / operator-ui (contrato `objetivo`,
+  sin ganador individual).
+- **Pasos del agente (rabbit)**:
+  1. `player_join {}`
+  2. `player_state {}`
+  3. `player_walk {"nodeId":"zigurat"}`
+  4. `player_walk {"anchorId":"ancla-blockly-editor"}`
+  5. `player_wake {"tool":"barrio.ping","barrioId":"blockly-editor"}`
+  6. `player_state {}`
+- **Qué observa el humano**: el bien/mal común aparece en snapshot como
+  `objetivo.vivos`, `objetivo.umbral`, `objetivo.cumplido`.
+- **Criterio de éxito**: con umbral = vivos_seed+1, paso 2
+  `objetivo.cumplido:false`; paso 6 `objetivo.vivos >= umbral` y
+  `cumplido:true` tras el wake.
+- **Errores esperados**: ninguno en el camino feliz.

@@ -129,4 +129,147 @@ describe('ciudad domain', () => {
     assert.equal(r.ok, false);
     assert.equal(r.error, 'rol_no_autorizado');
   });
+
+  it('decay: vivo sin visita → latente → muerto (reloj inyectable)', () => {
+    let t = 1000;
+    const d = createCiudadDomainState({
+      now: () => t,
+      gamemap: loadGamemap(),
+      decayVivoMs: 100,
+      decayLatenteMs: 200,
+      initialEnergy: 5
+    });
+    d.applyIntent(makeIntent('rabbit', 'join', {}));
+    d.applyIntent(makeIntent('rabbit', 'walk', { nodeId: 'zigurat' }));
+    d.applyIntent(
+      makeIntent('rabbit', 'walk', { anchorId: 'ancla-blockly-editor' })
+    );
+    assert.equal(
+      d.applyIntent(
+        makeIntent('rabbit', 'wake', {
+          tool: 'barrio.ping',
+          barrioId: 'blockly-editor'
+        })
+      ).ok,
+      true
+    );
+    assert.equal(d.snapshot('t').barrios['blockly-editor'].estado, 'vivo');
+    assert.ok(d.snapshot('t').actors['residente:blockly-editor']);
+
+    t = 1100;
+    d.tick(0.1, t);
+    assert.equal(d.snapshot('t').barrios['blockly-editor'].estado, 'latente');
+    assert.equal(d.snapshot('t').actors['residente:blockly-editor'], undefined);
+    assert.equal(d.snapshot('t').lastDecay.from, 'vivo');
+    assert.equal(d.snapshot('t').lastDecay.to, 'latente');
+
+    t = 1300;
+    d.tick(0.1, t);
+    assert.equal(d.snapshot('t').barrios['blockly-editor'].estado, 'muerto');
+    assert.equal(d.snapshot('t').lastDecay.from, 'latente');
+    assert.equal(d.snapshot('t').lastDecay.to, 'muerto');
+
+    const out = d.drainOutbox();
+    assert.ok(out.ledger.some((e) => e.kind === 'decay'));
+  });
+
+  it('energía: wake gasta; announce recarga; sin energía falla', () => {
+    let t = 1;
+    const d = createCiudadDomainState({
+      now: () => t,
+      gamemap: loadGamemap(),
+      initialEnergy: 1,
+      wakeCost: 1,
+      announceGain: 1,
+      maxEnergy: 2
+    });
+    d.applyIntent(makeIntent('rabbit', 'join', {}));
+    assert.equal(d.snapshot('t').actors.rabbit.energy, 1);
+
+    d.applyIntent(makeIntent('rabbit', 'walk', { nodeId: 'zigurat' }));
+    d.applyIntent(
+      makeIntent('rabbit', 'walk', { anchorId: 'ancla-blockly-editor' })
+    );
+    assert.equal(
+      d.applyIntent(
+        makeIntent('rabbit', 'wake', {
+          tool: 'barrio.ping',
+          barrioId: 'blockly-editor'
+        })
+      ).ok,
+      true
+    );
+    assert.equal(d.snapshot('t').actors.rabbit.energy, 0);
+
+    d.applyIntent(makeIntent('rabbit', 'sleep', { barrioId: 'blockly-editor' }));
+    const noEnergy = d.applyIntent(
+      makeIntent('rabbit', 'wake', {
+        tool: 'barrio.ping',
+        barrioId: 'blockly-editor'
+      })
+    );
+    assert.equal(noEnergy.ok, false);
+    assert.equal(noEnergy.error, 'energia_insuficiente');
+
+    d.applyIntent(makeIntent('rabbit', 'walk', { nodeId: 'plaza' }));
+    assert.equal(
+      d.applyIntent(makeIntent('rabbit', 'announce', { message: 'reposo' })).ok,
+      true
+    );
+    assert.equal(d.snapshot('t').actors.rabbit.energy, 1);
+
+    d.applyIntent(
+      makeIntent('rabbit', 'walk', { anchorId: 'ancla-blockly-editor' })
+    );
+    assert.equal(
+      d.applyIntent(
+        makeIntent('rabbit', 'wake', {
+          tool: 'barrio.ping',
+          barrioId: 'blockly-editor'
+        })
+      ).ok,
+      true
+    );
+  });
+
+  it('objetivo colectivo: snapshot.objetivo vivos/umbral/cumplido', () => {
+    const d = createCiudadDomainState({
+      now: () => 1,
+      gamemap: loadGamemap(),
+      aliveTargetK: 999,
+      initialEnergy: 3
+    });
+    d.applyIntent(makeIntent('rabbit', 'join', {}));
+    let snap = d.snapshot('pre');
+    const vivosSeed = snap.objetivo.vivos;
+    assert.equal(snap.objetivo.umbral, 999);
+    assert.equal(snap.objetivo.cumplido, false);
+    assert.ok(vivosSeed >= 0);
+
+    // Umbral = vivos actuales + 1 → hace falta un wake para cumplir.
+    const d2 = createCiudadDomainState({
+      now: () => 1,
+      gamemap: loadGamemap(),
+      aliveTargetK: vivosSeed + 1,
+      initialEnergy: 3
+    });
+    d2.applyIntent(makeIntent('rabbit', 'join', {}));
+    snap = d2.snapshot('pre');
+    assert.equal(snap.objetivo.cumplido, false);
+
+    d2.applyIntent(makeIntent('rabbit', 'walk', { nodeId: 'zigurat' }));
+    d2.applyIntent(
+      makeIntent('rabbit', 'walk', { anchorId: 'ancla-blockly-editor' })
+    );
+    d2.applyIntent(
+      makeIntent('rabbit', 'wake', {
+        tool: 'barrio.ping',
+        barrioId: 'blockly-editor'
+      })
+    );
+    snap = d2.snapshot('post');
+    assert.equal(snap.objetivo.vivos, vivosSeed + 1);
+    assert.equal(snap.objetivo.umbral, vivosSeed + 1);
+    assert.equal(snap.objetivo.cumplido, true);
+  });
 });

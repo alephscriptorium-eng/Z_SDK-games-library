@@ -63,11 +63,12 @@ export const INTENTS = createIntentCatalog({
   },
   announce: {
     roles: ['player', 'operator'],
-    description: 'Anunciar presencia en la plaza'
+    description: 'Anunciar presencia en la plaza (recarga energía del actor)'
   },
   wake: {
     roles: ['player'],
-    description: 'Despertar barrio latente ofreciendo un tool (horse / stub); nace residente'
+    description:
+      'Despertar barrio latente ofreciendo un tool (horse / stub); nace residente; gasta energía'
   },
   sleep: {
     roles: ['player', 'operator'],
@@ -99,3 +100,22 @@ export const BARRIO_ESTADOS = Object.freeze(['vivo', 'latente', 'muerto', 'roto'
 
 /** Nodo de spawn por defecto (gobierno plaza). */
 export const SPAWN_NODE_ID = 'plaza';
+
+/**
+ * Defaults del loop (decay · energía · objetivo colectivo).
+ * Decay en ms vía reloj inyectable (`now`); se aplica en `tick`.
+ * El snapshot expone `objetivo`; segundo cliente (tablero / operator-ui)
+ * puede leer sin conocer el reducer.
+ */
+export const LOOP_DEFAULTS = Object.freeze({
+  /** Ms sin visita: vivo → latente. */
+  decayVivoMs: 60_000,
+  /** Ms sin visita: latente → muerto (más lento). */
+  decayLatenteMs: 180_000,
+  /** Bien común: mantener vivos ≥ K barrios (seed ciudad-v0 ya trae varios vivos). */
+  aliveTargetK: 15,
+  wakeCost: 1,
+  announceGain: 1,
+  initialEnergy: 3,
+  maxEnergy: 5
+});

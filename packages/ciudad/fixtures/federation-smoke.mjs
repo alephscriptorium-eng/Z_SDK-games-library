@@ -304,7 +304,7 @@ async function main() {
       source:
         'packages/ciudad/fixtures/federation-smoke.mjs (Z04 peer e2e · horseMode horse)',
       generated_by:
-        'WP-Z07 D1 — CIUDAD_LEDGER_OUT post federation-smoke OK (coreografía limpia)',
+        'CIUDAD_LEDGER_OUT post federation-smoke OK (coreografía limpia)',
       note:
         'Gate: federation-smoke in-process OK. Fixture = applyIntent 1× por paso (evita doble INTENT del bus smoke).',
       clock: FIXED_CLOCK,

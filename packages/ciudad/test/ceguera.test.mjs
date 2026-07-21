@@ -17,7 +17,8 @@ const FORBIDDEN = new RegExp(
     ['S_', 'SDK'].join('') +
     '|hol[oó]n|holarqu[ií]a|juntura|' +
     ['HOL', 'ONES'].join('') +
-    '|swarm-orquestacion',
+    '|swarm-orquestacion|' +
+    'WP-Z\\d+',
   'i'
 );
 

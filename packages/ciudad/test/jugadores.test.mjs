@@ -1,5 +1,5 @@
 /**
- * Contrato de mapeo + tres jugadores en un snapshot (WP-Z13).
+ * Contrato de mapeo + tres jugadores en un snapshot.
  */
 
 import { describe, it } from 'node:test';
