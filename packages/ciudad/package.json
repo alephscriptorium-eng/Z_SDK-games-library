@@ -17,6 +17,7 @@
     "start:mcp": "node src/player-mcp/start.mjs",
     "test": "node --test test/*.test.mjs",
     "smoke": "node fixtures/mvp-smoke.mjs",
+    "zone-subscription-smoke": "node fixtures/zone-subscription-smoke.mjs",
     "federation-smoke": "node fixtures/federation-smoke.mjs",
     "federation-peer": "node fixtures/federation/demo-peer.mjs",
     "tablero-jugadores": "node fixtures/tablero-jugadores.mjs"
