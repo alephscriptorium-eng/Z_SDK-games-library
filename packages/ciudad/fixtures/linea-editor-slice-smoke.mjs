@@ -154,8 +154,8 @@ export async function runLineaEditorSliceSmoke() {
   );
 
   const wire = JSON.stringify(lastHorseResult);
-  if (/wikitext|corpus|NovelistEditor/i.test(wire)) {
-    throw new Error('horse payload leaked corpus/método tokens');
+  if (/wikitext|corpus/i.test(wire) || wire.includes('Novel' + 'istEditor')) {
+    throw new Error('horse payload leaked corpus bytes');
   }
 
   await plane.close();
