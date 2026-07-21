@@ -12,7 +12,8 @@
     "./presencia": "./src/presencia.mjs",
     "./acta": "./src/acta.mjs",
     "./jugadores": "./src/jugadores.mjs",
-    "./scene": "./src/scene.mjs"
+    "./scene": "./src/scene.mjs",
+    "./misiones": "./src/misiones.mjs"
   },
   "scripts": {
     "authority": "node src/authority.mjs",
@@ -25,13 +26,15 @@
     "federation-smoke": "node fixtures/federation-smoke.mjs",
     "federation-peer": "node fixtures/federation/demo-peer.mjs",
     "tablero-jugadores": "node fixtures/tablero-jugadores.mjs",
-    "linea-editor-slice-smoke": "node fixtures/linea-editor-slice-smoke.mjs"
+    "linea-editor-slice-smoke": "node fixtures/linea-editor-slice-smoke.mjs",
+    "misiones-smoke": "node fixtures/misiones-smoke.mjs"
   },
   "zeus": {
     "role": "game"
   },
   "dependencies": {
     "@zeus/authority-kit": "^0.2.0",
+    "@zeus/linea-kit": "^0.3.0",
     "@zeus/playbook-kit": "^0.1.2",
     "@zeus/player-mcp-kit": "^0.1.2",
     "@zeus/presets-sdk": "^0.1.2",
