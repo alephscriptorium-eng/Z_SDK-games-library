@@ -25,7 +25,7 @@ process.env.ZEUS_SCRIPTORIUM_SECRET = SECRET;
 process.env.ZEUS_CIUDAD_ROOM = ROOM;
 
 const { spawn } = await import('node:child_process');
-const { libraryRoot as root, paths } = await import('./roots.mjs');
+const { libraryRoot: root, paths } = await import('./roots.mjs');
 const { createMockControlPlane } = await import(
   '../packages/ciudad/fixtures/federation/mock-control-plane.mjs'
 );
@@ -103,7 +103,8 @@ try {
   gate('G-FED.1 socket', true, `:${SOCKET_PORT}`);
 
   startApp('authority', paths.ciudadAuthority);
-  await sleep(3000);
+  // Authority must CLIENT_SUSCRIBE before peer join intents land.
+  await sleep(6000);
 
   horse = await startBarrioHorse({ horseId: HORSE_ID, room: ROOM });
   peer = createFederationPeer({
