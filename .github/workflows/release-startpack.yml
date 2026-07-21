@@ -82,3 +82,7 @@ jobs:
         with:
           name: startpack-${{ steps.game.outputs.game }}
           path: .release-startpack/
+          # OUT_DIR is dot-prefixed (.release-startpack); v4 hides those by default.
+          include-hidden-files: true
+          # Soft-miss was masking a broken upload while the job stayed green.
+          if-no-files-found: error
