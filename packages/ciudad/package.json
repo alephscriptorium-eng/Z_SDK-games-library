@@ -9,6 +9,7 @@
     ".": "./src/contract.mjs",
     "./domain": "./src/domain.mjs",
     "./contract": "./src/contract.mjs",
+    "./jugadores": "./src/jugadores.mjs",
     "./scene": "./src/scene.mjs"
   },
   "scripts": {
@@ -17,7 +18,8 @@
     "test": "node --test test/*.test.mjs",
     "smoke": "node fixtures/mvp-smoke.mjs",
     "federation-smoke": "node fixtures/federation-smoke.mjs",
-    "federation-peer": "node fixtures/federation/demo-peer.mjs"
+    "federation-peer": "node fixtures/federation/demo-peer.mjs",
+    "tablero-jugadores": "node fixtures/tablero-jugadores.mjs"
   },
   "zeus": {
     "role": "game"

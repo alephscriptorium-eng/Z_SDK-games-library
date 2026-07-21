@@ -82,3 +82,23 @@ La contraparte física `tools/call` por horse llega con `@zeus/mcp-launcher`
   el cruce antes del rito; `barrio_muerto` si el destino no es latente.
 - **Comando**: `npm run federation-smoke -w @zeus/ciudad` (in-process) ·
   `npm run e2e:ciudad-federation` (socket+authority vivos; deferible si A1).
+
+## C-04 — tres jugadores: visitante + corriente + residente oráculo
+
+- **Precondición**: autoridad con escena startpack; barrio `prolog-editor`
+  `latente`. Contrato de mapeo (`jugador:*` / `residente:<edificio>`).
+- **Pasos del agente (corriente peer + visitante tipado)**:
+  1. `rooms_intent {"intent":"join","playerType":"visitante"}`
+  2. `rooms_intent {"intent":"join","playerType":"corriente"}`
+  3. `rooms_intent {"intent":"walk","nodeId":"zigurat"}`
+  4. `rooms_intent {"intent":"walk","anchorId":"ancla-prolog-editor"}`
+  5. `rooms_intent {"intent":"wake","tool":"oraculo.consultar","barrioId":"prolog-editor"}`
+  6. `rooms_state {}`
+  7. `rooms_intent {"intent":"sleep","barrioId":"prolog-editor"}`
+  8. `rooms_state {}`
+- **Qué observa el humano**: tres tipos distinguibles tras el wake; tras
+  sleep el residente desaparece y el barrio vuelve a `latente`.
+- **Criterio de éxito**: paso 6 snapshot con `playerType` visitante +
+  corriente + `residente:prolog-editor`; paso 8 sin residente y barrio
+  `latente` (misma fuente de verdad).
+- **Errores esperados**: `residente_solo_por_wake`, `barrio_no_vivo`.

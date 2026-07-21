@@ -1,8 +1,11 @@
 #!/usr/bin/env node
 /**
- * Proyección mínima ledger/track → story-board (WP-Z07).
+ * Proyección mínima ledger/track → story-board (WP-Z07 + tipología Z13).
  * Solo lectura del fixture; escribe readerapp/story-board.json de esta instancia.
  * No toca el kit ni produce gamemap.
+ *
+ * Cliente cronista (eje IV): etiqueta actos con player_origin desde el
+ * contrato de mapeo `@zeus/ciudad/jugadores` (independiente del tablero).
  *
  *   node kits/carpeta-dramaturgo/instances/ciudad/scripts/project-ledger-to-story-board.mjs
  *   node …/project-ledger-to-story-board.mjs --fixture path/to/ledger.json
@@ -10,12 +13,16 @@
 
 import { readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join, relative, resolve } from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const INSTANCE = resolve(__dirname, '..');
-const DEFAULT_FIXTURE = join(INSTANCE, 'ledger', 'fixture-z04-federation.json');
+const GL_ROOT = resolve(INSTANCE, '..', '..', '..', '..');
+const DEFAULT_FIXTURE = join(INSTANCE, 'ledger', 'fixture-z13-tres-jugadores.json');
 const STORY_BOARD = join(INSTANCE, 'readerapp', 'story-board.json');
+const JUGADORES = join(GL_ROOT, 'packages', 'ciudad', 'src', 'jugadores.mjs');
+
+const { playerOriginFromLedgerEntry } = await import(pathToFileURL(JUGADORES).href);
 
 function parseArgs(argv) {
   /** @type {{ fixture: string }} */
@@ -27,11 +34,12 @@ function parseArgs(argv) {
 }
 
 /**
- * @param {{ ledger?: object[], tracks?: object[], gap?: string|null, source?: string }} fixture
+ * @param {{ ledger?: object[], tracks?: object[], gap?: string|null, source?: string, actors?: object }} fixture
  */
 function projectActs(fixture) {
   const ledger = Array.isArray(fixture.ledger) ? fixture.ledger : [];
   const tracks = Array.isArray(fixture.tracks) ? fixture.tracks : [];
+  const actorsIndex = fixture.actors && typeof fixture.actors === 'object' ? fixture.actors : null;
   const gap = fixture.gap || null;
 
   /** @type {object[]} */
@@ -62,7 +70,7 @@ function projectActs(fixture) {
         ledger_seq: entry.seq,
         actorId: entry.actorId,
         detail: entry.detail ?? null,
-        player_origin: 'rabbit'
+        player_origin: playerOriginFromLedgerEntry(entry, actorsIndex)
       });
       next += 1;
     }
@@ -81,7 +89,7 @@ function projectActs(fixture) {
         track_hint: 'walk',
         actorId: tr.actorId,
         detail: tr.ref,
-        player_origin: 'rabbit'
+        player_origin: playerOriginFromLedgerEntry(tr, actorsIndex)
       });
       next += 1;
     }
@@ -101,10 +109,31 @@ function projectActs(fixture) {
         ledger_seq: entry.seq,
         actorId: entry.actorId,
         detail: entry.detail ?? null,
-        player_origin: 'rabbit'
+        player_origin: playerOriginFromLedgerEntry(entry, actorsIndex),
+        residente_id: entry.detail?.residenteId ?? null
       };
       if (gap) act.gap_z04 = gap;
       acts.push(act);
+      next += 1;
+    }
+  }
+
+  for (const entry of ledger) {
+    if (entry.kind === 'sleep') {
+      acts.push({
+        id: `act-${next}`,
+        blockchain: next,
+        title: 'Un barrio se apagó',
+        widgets: ['panel-wake'],
+        agentchain: `agentchain/<modelo-slug>/block-${next}.md`,
+        status: 'ready',
+        ledger_kind: 'sleep',
+        ledger_seq: entry.seq,
+        actorId: entry.actorId,
+        detail: entry.detail ?? null,
+        player_origin: playerOriginFromLedgerEntry(entry, actorsIndex),
+        residente_id: entry.detail?.residenteId ?? null
+      });
       next += 1;
     }
   }
@@ -129,7 +158,8 @@ function main(argv) {
       fixture: fixtureRel,
       source: fixture.source ?? null,
       gap,
-      mapeo: 'ledger/MAPEO.md'
+      mapeo: 'ledger/MAPEO.md',
+      jugadores: 'packages/ciudad/src/jugadores.mjs'
     },
     acts,
     uichain_specs: 'uichain/*.prompt.md',
@@ -139,10 +169,10 @@ function main(argv) {
   writeFileSync(STORY_BOARD, `${JSON.stringify(board, null, 2)}\n`, 'utf8');
   console.log(`wrote ${STORY_BOARD}`);
   console.log(
-    `acts=${acts.map((a) => `${a.id}:${a.title}`).join(' · ')}`
+    `acts=${acts.map((a) => `${a.id}:${a.title}/${a.player_origin ?? '—'}`).join(' · ')}`
   );
   if (gap) console.log(`gap: ${gap}`);
-  else console.log('gap: (closed — Z04 federation ledger)');
+  else console.log('gap: (none)');
 }
 
 main(process.argv.slice(2));

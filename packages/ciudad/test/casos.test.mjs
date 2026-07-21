@@ -17,15 +17,15 @@ const CASOS = path.join(
 );
 
 describe('ciudad CASOS.md', () => {
-  it('pasa coherencia playbook-kit con C-01..C-03', () => {
+  it('pasa coherencia playbook-kit con C-01..C-04', () => {
     const markdown = fs.readFileSync(CASOS, 'utf8');
     const result = checkPlaybookCoherence(markdown, {
-      expectedIds: ['C-01', 'C-02', 'C-03'],
-      // C-01/C-02 = player_*; C-03 = peer rooms/cp/horse (mismo formato `tool {json}`)
+      expectedIds: ['C-01', 'C-02', 'C-03', 'C-04'],
+      // C-01/C-02 = player_*; C-03/C-04 = peer rooms/cp/horse
       toolPattern: /`(player_\w+|cp_start_bot|rooms_intent|rnfp_activate|horse_tools_call|rooms_state)\s*\{/
     });
     assert.equal(result.ok, true, result.errors.join('; '));
-    assert.deepEqual(result.ids, ['C-01', 'C-02', 'C-03']);
+    assert.deepEqual(result.ids, ['C-01', 'C-02', 'C-03', 'C-04']);
     assert.ok(result.cases.every((c) => c.mcpStepCount >= 1));
   });
 });

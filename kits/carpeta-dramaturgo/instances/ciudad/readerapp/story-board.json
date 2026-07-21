@@ -5,10 +5,11 @@
   "slug": "ciudad",
   "projection": {
     "from": "ledger+tracks",
-    "fixture": "ledger/fixture-z04-federation.json",
-    "source": "packages/ciudad/fixtures/federation-smoke.mjs (Z04 peer e2e · horseMode horse)",
+    "fixture": "ledger/fixture-z13-tres-jugadores.json",
+    "source": "packages/ciudad/fixtures/z13-ledger-dump.mjs",
     "gap": null,
-    "mapeo": "ledger/MAPEO.md"
+    "mapeo": "ledger/MAPEO.md",
+    "jugadores": "packages/ciudad/src/jugadores.mjs"
   },
   "acts": [
     {
@@ -34,13 +35,17 @@
       "status": "ready",
       "ledger_kind": "announce",
       "ledger_seq": 1,
-      "actorId": "ext-rabbit",
+      "actorId": "visitante-ui",
       "detail": {
-        "message": "federación smoke",
+        "message": "plaza abierta",
+        "jugador": "visitante",
+        "features": [
+          "jugador:visitante"
+        ],
         "nodeId": "plaza",
         "anchorId": null
       },
-      "player_origin": "rabbit"
+      "player_origin": "visitante"
     },
     {
       "id": "act-2",
@@ -53,14 +58,15 @@
       "status": "ready",
       "ledger_kind": "walk",
       "track_hint": "walk",
-      "actorId": "ext-rabbit",
+      "actorId": "corriente-peer",
       "detail": {
         "kind": "walk",
         "nodeId": "editores",
-        "anchorId": "ancla-blockly-editor",
-        "barrioId": "blockly-editor"
+        "anchorId": "ancla-prolog-editor",
+        "barrioId": "prolog-editor",
+        "jugador": "corriente"
       },
-      "player_origin": "rabbit"
+      "player_origin": "corriente"
     },
     {
       "id": "act-3",
@@ -73,15 +79,23 @@
       "status": "ready",
       "ledger_kind": "wake",
       "ledger_seq": 2,
-      "actorId": "ext-rabbit",
+      "actorId": "corriente-peer",
       "detail": {
-        "barrioId": "blockly-editor",
-        "tool": "barrio.ping",
-        "horseMode": "horse",
-        "anchorId": "ancla-blockly-editor",
-        "horseGap": null
+        "barrioId": "prolog-editor",
+        "tool": "oraculo.consultar",
+        "horseMode": "stub",
+        "anchorId": "ancla-prolog-editor",
+        "jugador": "corriente",
+        "residenteId": "residente:prolog-editor",
+        "residenteFeatures": [
+          "jugador:residente",
+          "residente:prolog-editor",
+          "capability:oraculo.consultar"
+        ],
+        "horseGap": "awaiting_z06_mcp_launcher"
       },
-      "player_origin": "rabbit"
+      "player_origin": "corriente",
+      "residente_id": "residente:prolog-editor"
     }
   ],
   "uichain_specs": "uichain/*.prompt.md",

@@ -1,10 +1,17 @@
 /**
  * ciudad — dominio puro (sin red, sin fs, sin Date.now escondido).
- * Intents: join · walk · announce · wake.
+ * Intents: join · walk · announce · wake · sleep.
  * Estado de barrio (vivo/latente/muerto/roto) cambia solo por intents confirmados.
+ * Residente ≡ edificio en vivo (una fuente de verdad).
  */
 
 import { INTENTS, SPAWN_NODE_ID, validateIntent } from './contract.mjs';
+import {
+  catalogRoleFor,
+  featuresForPlayerType,
+  residenteActorId,
+  resolvePlayerType
+} from './jugadores.mjs';
 import { nodesReachable, sceneFromGamemap } from './scene.mjs';
 
 /**
@@ -32,7 +39,21 @@ export function createCiudadDomainState(opts = {}) {
     Object.entries(scene.barrios).map(([id, b]) => [id, { ...b }])
   );
 
-  /** @type {Record<string, { id: string, kind: string, nodeId: string, anchorId: string|null, joinedAt: number, announced: boolean, wakes: number }>} */
+  /**
+   * @typedef {{
+   *   id: string,
+   *   kind: string,
+   *   playerType: string,
+   *   features: string[],
+   *   edificioId: string|null,
+   *   nodeId: string,
+   *   anchorId: string|null,
+   *   joinedAt: number,
+   *   announced: boolean,
+   *   wakes: number
+   * }} Actor
+   */
+  /** @type {Record<string, Actor>} */
   const actors = {};
   let ledgerSeq = 0;
   let contentRev = 0;
@@ -40,13 +61,60 @@ export function createCiudadDomainState(opts = {}) {
   const ledgerOut = [];
   /** @type {object[]} */
   const trackOut = [];
-  /** @type {{ actorId: string, message: string, ts: number }|null} */
+  /** @type {{ actorId: string, message: string, ts: number, jugador?: string }|null} */
   let lastAnnounce = null;
-  /** @type {{ barrioId: string, tool: string, actorId: string, ts: number, horseMode: string }|null} */
+  /** @type {{ barrioId: string, tool: string, actorId: string, ts: number, horseMode: string, residenteId?: string }|null} */
   let lastWake = null;
+  /** @type {{ barrioId: string, actorId: string, ts: number, residenteId?: string }|null} */
+  let lastSleep = null;
 
   function actorPos(actor) {
     return { nodeId: actor.nodeId, anchorId: actor.anchorId };
+  }
+
+  function actorPublic(a) {
+    return {
+      id: a.id,
+      kind: a.kind,
+      playerType: a.playerType,
+      features: [...a.features],
+      edificioId: a.edificioId,
+      nodeId: a.nodeId,
+      anchorId: a.anchorId,
+      announced: a.announced,
+      wakes: a.wakes
+    };
+  }
+
+  function spawnResidente(barrioId, tool, ts) {
+    const id = residenteActorId(barrioId);
+    const barrio = barrios[barrioId];
+    const features = featuresForPlayerType('residente', {
+      edificioId: barrioId,
+      extra: tool ? [`capability:${tool}`] : []
+    });
+    actors[id] = {
+      id,
+      kind: catalogRoleFor('residente'),
+      playerType: 'residente',
+      features,
+      edificioId: barrioId,
+      nodeId: barrio.parent,
+      anchorId: barrio.anchorId,
+      joinedAt: ts,
+      announced: false,
+      wakes: 0
+    };
+    return id;
+  }
+
+  function retireResidente(barrioId) {
+    const id = residenteActorId(barrioId);
+    if (actors[id]) {
+      delete actors[id];
+      return id;
+    }
+    return null;
   }
 
   function resolveWalkTarget(payload) {
@@ -74,11 +142,21 @@ export function createCiudadDomainState(opts = {}) {
       if (!actorId || typeof actorId !== 'string') {
         return { ok: false, error: 'actor_requerido' };
       }
+      const playerType = resolvePlayerType(payload);
+      if (playerType === 'residente') {
+        return { ok: false, error: 'residente_solo_por_wake' };
+      }
       if (!actors[actorId]) {
         const spawn = scene.spawnNodeId || SPAWN_NODE_ID;
+        const features = featuresForPlayerType(playerType, {
+          extra: Array.isArray(payload.features) ? payload.features : []
+        });
         actors[actorId] = {
           id: actorId,
-          kind: payload.kind === 'operator' ? 'operator' : 'player',
+          kind: catalogRoleFor(playerType),
+          playerType,
+          features,
+          edificioId: null,
           nodeId: spawn,
           anchorId: null,
           joinedAt: clock(),
@@ -94,6 +172,9 @@ export function createCiudadDomainState(opts = {}) {
       const { actorId } = payload;
       const actor = actors[actorId];
       if (!actor) return { ok: false, error: 'actor_desconocido' };
+      if (actor.playerType === 'residente') {
+        return { ok: false, error: 'residente_no_camina' };
+      }
       const target = resolveWalkTarget(payload);
       if (target.error) return { ok: false, error: target.error };
       if (!nodesReachable(scene.enlaces, actor.nodeId, target.nodeId)) {
@@ -110,9 +191,11 @@ export function createCiudadDomainState(opts = {}) {
           kind: 'walk',
           nodeId: target.nodeId,
           anchorId: target.anchorId,
-          barrioId: target.barrioId
+          barrioId: target.barrioId,
+          jugador: actor.playerType
         },
-        ts
+        ts,
+        jugador: actor.playerType
       });
       return { ok: true, error: null };
     },
@@ -131,13 +214,18 @@ export function createCiudadDomainState(opts = {}) {
       actor.announced = true;
       ledgerSeq += 1;
       const ts = clock();
-      lastAnnounce = { actorId, message, ts };
+      lastAnnounce = { actorId, message, ts, jugador: actor.playerType };
       ledgerOut.push({
         kind: 'announce',
         seq: ledgerSeq,
         actorId,
         ts,
-        detail: { message, ...actorPos(actor) }
+        detail: {
+          message,
+          jugador: actor.playerType,
+          features: [...actor.features],
+          ...actorPos(actor)
+        }
       });
       contentRev += 1;
       return { ok: true, error: null };
@@ -145,8 +233,7 @@ export function createCiudadDomainState(opts = {}) {
 
     /**
      * Despertar barrio latente.
-     * Ofrece tool vía horse: hasta Z06 la contraparte física puede faltar;
-     * el dominio asienta el offer en ledger (horseMode: stub|horse).
+     * Ofrece tool vía horse; nace el residente del edificio (mismo tick).
      */
     wake(payload) {
       const { actorId } = payload;
@@ -190,7 +277,6 @@ export function createCiudadDomainState(opts = {}) {
         payload.horseMode === 'horse' || payload.horseOffer === true ? 'horse' : 'stub';
 
       barrio.estado = 'vivo';
-      // mirror onto scene ancla for snapshot clarity
       if (scene.anclas[barrio.anchorId]) {
         scene.anclas[barrio.anchorId] = {
           ...scene.anclas[barrio.anchorId],
@@ -198,9 +284,10 @@ export function createCiudadDomainState(opts = {}) {
         };
       }
       actor.wakes = (actor.wakes || 0) + 1;
-      ledgerSeq += 1;
       const ts = clock();
-      lastWake = { barrioId, tool, actorId, ts, horseMode };
+      const residenteId = spawnResidente(barrioId, tool, ts);
+      ledgerSeq += 1;
+      lastWake = { barrioId, tool, actorId, ts, horseMode, residenteId };
       ledgerOut.push({
         kind: 'wake',
         seq: ledgerSeq,
@@ -211,10 +298,9 @@ export function createCiudadDomainState(opts = {}) {
           tool,
           horseMode,
           anchorId: barrio.anchorId,
-          /**
-           * Gap Z06: tools/call físico por horse vive en mcp-launcher.
-           * Aquí el asiento prueba el contrato de juego.
-           */
+          jugador: actor.playerType,
+          residenteId,
+          residenteFeatures: [...actors[residenteId].features],
           horseGap: horseMode === 'stub' ? 'awaiting_z06_mcp_launcher' : null
         }
       });
@@ -225,9 +311,64 @@ export function createCiudadDomainState(opts = {}) {
           kind: 'wake-tool',
           barrioId,
           tool,
-          horseMode
+          horseMode,
+          residenteId,
+          jugador: actor.playerType
         },
-        ts
+        ts,
+        jugador: actor.playerType
+      });
+      contentRev += 1;
+      return { ok: true, error: null };
+    },
+
+    /**
+     * Apagar edificio vivo: barrio → latente y retira residente el mismo tick.
+     */
+    sleep(payload) {
+      const { actorId } = payload;
+      const actor = actors[actorId];
+      if (!actor) return { ok: false, error: 'actor_desconocido' };
+      if (actor.playerType === 'residente') {
+        return { ok: false, error: 'residente_no_duerme_a_si' };
+      }
+
+      let barrioId = payload.barrioId || null;
+      if (!barrioId && actor.anchorId) {
+        const a = scene.anclas[actor.anchorId];
+        barrioId = a?.barrioId || a?.slug || null;
+      }
+      if (!barrioId) return { ok: false, error: 'barrio_requerido' };
+
+      const barrio = barrios[barrioId];
+      if (!barrio) return { ok: false, error: 'barrio_desconocido' };
+      if (barrio.estado !== 'vivo') {
+        return { ok: false, error: 'barrio_no_vivo' };
+      }
+
+      barrio.estado = 'latente';
+      if (scene.anclas[barrio.anchorId]) {
+        scene.anclas[barrio.anchorId] = {
+          ...scene.anclas[barrio.anchorId],
+          estado: 'latente'
+        };
+      }
+      const residenteId = retireResidente(barrioId);
+      ledgerSeq += 1;
+      const ts = clock();
+      lastSleep = { barrioId, actorId, ts, residenteId: residenteId || undefined };
+      ledgerOut.push({
+        kind: 'sleep',
+        seq: ledgerSeq,
+        actorId,
+        ts,
+        detail: {
+          barrioId,
+          anchorId: barrio.anchorId,
+          jugador: actor.playerType,
+          residenteId,
+          retirado: Boolean(residenteId)
+        }
       });
       contentRev += 1;
       return { ok: true, error: null };
@@ -254,17 +395,7 @@ export function createCiudadDomainState(opts = {}) {
         sceneId: scene.sceneId,
         spawnNodeId: scene.spawnNodeId,
         actors: Object.fromEntries(
-          Object.entries(actors).map(([id, a]) => [
-            id,
-            {
-              id: a.id,
-              kind: a.kind,
-              nodeId: a.nodeId,
-              anchorId: a.anchorId,
-              announced: a.announced,
-              wakes: a.wakes
-            }
-          ])
+          Object.entries(actors).map(([id, a]) => [id, actorPublic(a)])
         ),
         barrios: Object.fromEntries(
           Object.entries(barrios).map(([id, b]) => [
@@ -274,6 +405,7 @@ export function createCiudadDomainState(opts = {}) {
         ),
         lastAnnounce: lastAnnounce ? { ...lastAnnounce } : null,
         lastWake: lastWake ? { ...lastWake } : null,
+        lastSleep: lastSleep ? { ...lastSleep } : null,
         nodos: scene.nodos,
         enlaces: scene.enlaces,
         anclas: scene.anclas
@@ -292,9 +424,17 @@ export function createCiudadDomainState(opts = {}) {
     explainIntent(payload) {
       const gate = validateIntent(payload, INTENTS);
       if (!gate.ok) return gate;
-      if (payload.intent === 'join') return { ok: true, error: null };
+      if (payload.intent === 'join') {
+        if (resolvePlayerType(payload) === 'residente') {
+          return { ok: false, error: 'residente_solo_por_wake' };
+        }
+        return { ok: true, error: null };
+      }
       if (payload.intent === 'walk') {
         if (!actors[payload.actorId]) return { ok: false, error: 'actor_desconocido' };
+        if (actors[payload.actorId].playerType === 'residente') {
+          return { ok: false, error: 'residente_no_camina' };
+        }
         const target = resolveWalkTarget(payload);
         if (target.error) return { ok: false, error: target.error };
         if (!nodesReachable(scene.enlaces, actors[payload.actorId].nodeId, target.nodeId)) {
@@ -310,7 +450,6 @@ export function createCiudadDomainState(opts = {}) {
         return { ok: true, error: null };
       }
       if (payload.intent === 'wake') {
-        // dry-run: mirror handler gates without mutate
         const dry = { ...payload };
         const actor = actors[dry.actorId];
         if (!actor) return { ok: false, error: 'actor_desconocido' };
@@ -330,6 +469,23 @@ export function createCiudadDomainState(opts = {}) {
         if (barrio.estado === 'roto') return { ok: false, error: 'barrio_roto' };
         if (barrio.estado === 'vivo') return { ok: false, error: 'barrio_ya_vivo' };
         if (barrio.estado !== 'latente') return { ok: false, error: 'barrio_no_latente' };
+        return { ok: true, error: null };
+      }
+      if (payload.intent === 'sleep') {
+        const actor = actors[payload.actorId];
+        if (!actor) return { ok: false, error: 'actor_desconocido' };
+        if (actor.playerType === 'residente') {
+          return { ok: false, error: 'residente_no_duerme_a_si' };
+        }
+        let barrioId = payload.barrioId || null;
+        if (!barrioId && actor.anchorId) {
+          const a = scene.anclas[actor.anchorId];
+          barrioId = a?.barrioId || a?.slug || null;
+        }
+        if (!barrioId) return { ok: false, error: 'barrio_requerido' };
+        const barrio = barrios[barrioId];
+        if (!barrio) return { ok: false, error: 'barrio_desconocido' };
+        if (barrio.estado !== 'vivo') return { ok: false, error: 'barrio_no_vivo' };
         return { ok: true, error: null };
       }
       return { ok: false, error: 'intent_desconocido' };

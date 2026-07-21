@@ -1,0 +1,135 @@
+{
+  "source": "packages/ciudad/fixtures/z13-ledger-dump.mjs",
+  "gap": null,
+  "sceneId": "ciudad-v0",
+  "actors": {
+    "visitante-ui": {
+      "id": "visitante-ui",
+      "kind": "player",
+      "playerType": "visitante",
+      "features": [
+        "jugador:visitante"
+      ],
+      "edificioId": null,
+      "nodeId": "plaza",
+      "anchorId": null,
+      "announced": true,
+      "wakes": 0
+    },
+    "corriente-peer": {
+      "id": "corriente-peer",
+      "kind": "player",
+      "playerType": "corriente",
+      "features": [
+        "jugador:corriente"
+      ],
+      "edificioId": null,
+      "nodeId": "editores",
+      "anchorId": "ancla-prolog-editor",
+      "announced": false,
+      "wakes": 1
+    },
+    "residente:prolog-editor": {
+      "id": "residente:prolog-editor",
+      "kind": "operator",
+      "playerType": "residente",
+      "features": [
+        "jugador:residente",
+        "residente:prolog-editor",
+        "capability:oraculo.consultar"
+      ],
+      "edificioId": "prolog-editor",
+      "nodeId": "editores",
+      "anchorId": "ancla-prolog-editor",
+      "announced": false,
+      "wakes": 0
+    }
+  },
+  "barrios": {
+    "prolog-editor": {
+      "id": "prolog-editor",
+      "estado": "vivo",
+      "anchorId": "ancla-prolog-editor",
+      "parent": "editores"
+    }
+  },
+  "ledger": [
+    {
+      "kind": "announce",
+      "seq": 1,
+      "actorId": "visitante-ui",
+      "ts": 1000,
+      "detail": {
+        "message": "plaza abierta",
+        "jugador": "visitante",
+        "features": [
+          "jugador:visitante"
+        ],
+        "nodeId": "plaza",
+        "anchorId": null
+      }
+    },
+    {
+      "kind": "wake",
+      "seq": 2,
+      "actorId": "corriente-peer",
+      "ts": 2000,
+      "detail": {
+        "barrioId": "prolog-editor",
+        "tool": "oraculo.consultar",
+        "horseMode": "stub",
+        "anchorId": "ancla-prolog-editor",
+        "jugador": "corriente",
+        "residenteId": "residente:prolog-editor",
+        "residenteFeatures": [
+          "jugador:residente",
+          "residente:prolog-editor",
+          "capability:oraculo.consultar"
+        ],
+        "horseGap": "awaiting_z06_mcp_launcher"
+      }
+    }
+  ],
+  "tracks": [
+    {
+      "actorId": "corriente-peer",
+      "hint": "walk",
+      "ref": {
+        "kind": "walk",
+        "nodeId": "zigurat",
+        "anchorId": null,
+        "barrioId": null,
+        "jugador": "corriente"
+      },
+      "ts": 1000,
+      "jugador": "corriente"
+    },
+    {
+      "actorId": "corriente-peer",
+      "hint": "walk",
+      "ref": {
+        "kind": "walk",
+        "nodeId": "editores",
+        "anchorId": "ancla-prolog-editor",
+        "barrioId": "prolog-editor",
+        "jugador": "corriente"
+      },
+      "ts": 1000,
+      "jugador": "corriente"
+    },
+    {
+      "actorId": "corriente-peer",
+      "hint": "horse-offer",
+      "ref": {
+        "kind": "wake-tool",
+        "barrioId": "prolog-editor",
+        "tool": "oraculo.consultar",
+        "horseMode": "stub",
+        "residenteId": "residente:prolog-editor",
+        "jugador": "corriente"
+      },
+      "ts": 2000,
+      "jugador": "corriente"
+    }
+  ]
+}

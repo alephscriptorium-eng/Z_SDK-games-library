@@ -2,6 +2,7 @@
  * ciudad — contrato del juego (browser-safe).
  * Identidad, eventos canónicos, catálogo de intents y fábrica de intents.
  * La escena NO se hardcodea aquí: viene de @zeus/startpack-ciudad (Z02).
+ * Tipos de jugador (residente/visitante/corriente): ver `./jugadores.mjs`.
  */
 
 import {
@@ -10,6 +11,19 @@ import {
   createIntentCatalog,
   validateIntent
 } from '@zeus/protocol';
+
+export {
+  PLAYER_TYPES,
+  PLAYER_TYPE_MAP,
+  residenteActorId,
+  featuresForPlayerType,
+  playerTypeFromFeatures,
+  resolvePlayerType,
+  catalogRoleFor,
+  playerOriginLabel,
+  classifySnapshotPlayers,
+  playerOriginFromLedgerEntry
+} from './jugadores.mjs';
 
 export const GAME_ID = 'ciudad';
 export const PROTOCOL_VERSION = 1;
@@ -33,16 +47,15 @@ export const EVENTS = Object.freeze({
 });
 
 /**
- * Catálogo mínimo MVP:
- * - join: rabbit entra (plaza)
- * - walk: entre nodos/anchors por calles (sin pathfinding animado)
- * - announce: presencia en plaza (operator = plaza)
- * - wake: despertar barrio latente ofreciendo tool (horse stub hasta Z06)
+ * Catálogo mínimo:
+ * - join: visitante o corriente entra (plaza); residente nace con wake
+ * - walk / announce / wake: como MVP
+ * - sleep: apagar edificio vivo (= retirar residente el mismo tick)
  */
 export const INTENTS = createIntentCatalog({
   join: {
     roles: ['player'],
-    description: 'Entrar a la ciudad (spawn en plaza)'
+    description: 'Entrar a la ciudad (spawn en plaza); tipar con playerType/features'
   },
   walk: {
     roles: ['player'],
@@ -54,7 +67,11 @@ export const INTENTS = createIntentCatalog({
   },
   wake: {
     roles: ['player'],
-    description: 'Despertar barrio latente ofreciendo un tool (horse / stub)'
+    description: 'Despertar barrio latente ofreciendo un tool (horse / stub); nace residente'
+  },
+  sleep: {
+    roles: ['player', 'operator'],
+    description: 'Apagar edificio vivo: barrio→latente y retira residente el mismo tick'
   }
 });
 
