@@ -1,0 +1,90 @@
+{
+  "version": 1,
+  "generated_at": "2026-07-21",
+  "title": "Ciudad — story-board",
+  "slug": "ciudad",
+  "projection": {
+    "from": "ledger+tracks",
+    "fixture": "ledger/fixture-z03-mvp.json",
+    "source": "packages/ciudad domain fixture (Z03 MVP + announce)",
+    "gap": "pendiente Z04 e2e — acto «un barrio despertó» vía rabbits r/s/h aún no verificado en peer externo; este fixture usa ledger Z03 (horseMode stub)",
+    "mapeo": "ledger/MAPEO.md"
+  },
+  "acts": [
+    {
+      "id": "act-0",
+      "blockchain": 0,
+      "title": "Semilla",
+      "widgets": [
+        "panel-seed",
+        "panel-reic"
+      ],
+      "agentchain": "agentchain/<modelo-slug>/block-0.md",
+      "status": "ready",
+      "ledger_kind": null
+    },
+    {
+      "id": "act-1",
+      "blockchain": 1,
+      "title": "Presencia en plaza",
+      "widgets": [
+        "panel-announce"
+      ],
+      "agentchain": "agentchain/<modelo-slug>/block-1.md",
+      "status": "ready",
+      "ledger_kind": "announce",
+      "ledger_seq": 1,
+      "actorId": "rabbit",
+      "detail": {
+        "message": "presente en plaza",
+        "nodeId": "plaza",
+        "anchorId": null
+      },
+      "player_origin": "rabbit"
+    },
+    {
+      "id": "act-2",
+      "blockchain": 2,
+      "title": "Cruce de distrito",
+      "widgets": [
+        "panel-cruce"
+      ],
+      "agentchain": "agentchain/<modelo-slug>/block-2.md",
+      "status": "ready",
+      "ledger_kind": "walk",
+      "track_hint": "walk",
+      "actorId": "rabbit",
+      "detail": {
+        "kind": "walk",
+        "nodeId": "editores",
+        "anchorId": "ancla-blockly-editor",
+        "barrioId": "blockly-editor"
+      },
+      "player_origin": "rabbit"
+    },
+    {
+      "id": "act-3",
+      "blockchain": 3,
+      "title": "Un barrio despertó",
+      "widgets": [
+        "panel-wake"
+      ],
+      "agentchain": "agentchain/<modelo-slug>/block-3.md",
+      "status": "ready",
+      "ledger_kind": "wake",
+      "ledger_seq": 2,
+      "actorId": "rabbit",
+      "detail": {
+        "barrioId": "blockly-editor",
+        "tool": "barrio.ping",
+        "horseMode": "stub",
+        "anchorId": "ancla-blockly-editor",
+        "horseGap": "awaiting_z06_mcp_launcher"
+      },
+      "player_origin": "rabbit",
+      "gap_z04": "pendiente Z04 e2e — acto «un barrio despertó» vía rabbits r/s/h aún no verificado en peer externo; este fixture usa ledger Z03 (horseMode stub)"
+    }
+  ],
+  "uichain_specs": "uichain/*.prompt.md",
+  "ayuda": "readerapp/AYUDA.md"
+}

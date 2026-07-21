@@ -1,0 +1,80 @@
+{
+  "source": "packages/ciudad domain fixture (Z03 MVP + announce)",
+  "generated_by": "WP-Z07 — domain applyIntent join→announce→walk→walk→wake",
+  "clock": 1700000000000,
+  "gap": "pendiente Z04 e2e — acto «un barrio despertó» vía rabbits r/s/h aún no verificado en peer externo; este fixture usa ledger Z03 (horseMode stub)",
+  "ledger": [
+    {
+      "kind": "announce",
+      "seq": 1,
+      "actorId": "rabbit",
+      "ts": 1700000000000,
+      "detail": {
+        "message": "presente en plaza",
+        "nodeId": "plaza",
+        "anchorId": null
+      }
+    },
+    {
+      "kind": "wake",
+      "seq": 2,
+      "actorId": "rabbit",
+      "ts": 1700000000000,
+      "detail": {
+        "barrioId": "blockly-editor",
+        "tool": "barrio.ping",
+        "horseMode": "stub",
+        "anchorId": "ancla-blockly-editor",
+        "horseGap": "awaiting_z06_mcp_launcher"
+      }
+    }
+  ],
+  "tracks": [
+    {
+      "actorId": "rabbit",
+      "hint": "walk",
+      "ref": {
+        "kind": "walk",
+        "nodeId": "zigurat",
+        "anchorId": null,
+        "barrioId": null
+      },
+      "ts": 1700000000000
+    },
+    {
+      "actorId": "rabbit",
+      "hint": "walk",
+      "ref": {
+        "kind": "walk",
+        "nodeId": "editores",
+        "anchorId": "ancla-blockly-editor",
+        "barrioId": "blockly-editor"
+      },
+      "ts": 1700000000000
+    },
+    {
+      "actorId": "rabbit",
+      "hint": "horse-offer",
+      "ref": {
+        "kind": "wake-tool",
+        "barrioId": "blockly-editor",
+        "tool": "barrio.ping",
+        "horseMode": "stub"
+      },
+      "ts": 1700000000000
+    }
+  ],
+  "lastWake": {
+    "barrioId": "blockly-editor",
+    "tool": "barrio.ping",
+    "actorId": "rabbit",
+    "ts": 1700000000000,
+    "horseMode": "stub"
+  },
+  "barrio": {
+    "id": "blockly-editor",
+    "estado": "vivo",
+    "anchorId": "ancla-blockly-editor",
+    "parent": "editores"
+  }
+}
