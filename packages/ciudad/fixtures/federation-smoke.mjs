@@ -5,14 +5,21 @@
  *   node packages/ciudad/fixtures/federation-smoke.mjs
  */
 
-import { readFileSync } from 'node:fs';
-import { dirname, join } from 'node:path';
+import { readFileSync, writeFileSync } from 'node:fs';
+import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { startAuthority, PROTOCOL_EVENTS } from '@zeus/authority-kit';
 import { createCiudadDomainState } from '../src/domain.mjs';
 import { makeIntent, GAME_ID, EVENTS } from '../src/contract.mjs';
 import { sceneFromGamemap } from '../src/scene.mjs';
 import { createMockControlPlane } from './federation/mock-control-plane.mjs';
+
+/** Si se setea, vuelca ledger+tracks al path (D1 Z07 proyección post-Z04). */
+const LEDGER_OUT = process.env.CIUDAD_LEDGER_OUT
+  ? resolve(process.env.CIUDAD_LEDGER_OUT)
+  : null;
+/** Reloj fijo al volcar fixture (determinismo). */
+const FIXED_CLOCK = LEDGER_OUT ? 1_700_000_000_000 : null;
 
 const seed = join(
   dirname(fileURLToPath(import.meta.url)),
@@ -103,13 +110,20 @@ async function main() {
 
   const gamemap = JSON.parse(readFileSync(seed, 'utf8'));
   const state = createCiudadDomainState({
-    now: () => Date.now(),
+    now: () => (FIXED_CLOCK != null ? FIXED_CLOCK : Date.now()),
     scene: sceneFromGamemap(gamemap)
   });
+  /** Espejo del outbox: authority drena; necesitamos acumulado para fixture. */
+  const ledgerMirror = { ledger: [], tracks: [] };
   const domain = {
     applyIntent: (p) => state.applyIntent(p),
     tick: () => {},
-    drainOutbox: () => state.drainOutbox(),
+    drainOutbox: () => {
+      const out = state.drainOutbox();
+      ledgerMirror.ledger.push(...out.ledger);
+      ledgerMirror.tracks.push(...out.tracks);
+      return out;
+    },
     contentRev: () => state.contentRev(),
     snapshot: (reason, opts) => state.snapshot(reason, opts)
   };
@@ -261,6 +275,55 @@ async function main() {
     peerCount: peers.data.peers.length,
     controlPlane: url
   });
+
+  if (LEDGER_OUT) {
+    // Fixture limpio: misma coreografía peer→horse, un apply por intent.
+    // El bus in-process del smoke entrega INTENT dos veces a authority
+    // (broadcast + loop), lo que duplicaría announce/walk en ledgerMirror.
+    const clean = createCiudadDomainState({
+      now: () => FIXED_CLOCK,
+      scene: sceneFromGamemap(gamemap)
+    });
+    const steps = [
+      ['join', { kind: 'player' }],
+      ['announce', { message: 'federación smoke' }],
+      ['walk', { nodeId: 'zigurat' }],
+      ['walk', { anchorId: 'ancla-blockly-editor' }],
+      ['wake', { tool: 'barrio.ping', barrioId: 'blockly-editor', horseMode: 'horse' }]
+    ];
+    for (const [intent, args] of steps) {
+      const r = clean.applyIntent(makeIntent(ACTOR, intent, args, `peer-${ACTOR}`));
+      if (!r.ok) throw new Error(`ledger capture fail ${intent}: ${r.error}`);
+    }
+    const out = clean.drainOutbox();
+    const snap = clean.snapshot('federation-smoke-ledger');
+    if (snap.lastWake?.horseMode !== 'horse') {
+      throw new Error('ledger capture expected horseMode horse');
+    }
+    const fixture = {
+      source:
+        'packages/ciudad/fixtures/federation-smoke.mjs (Z04 peer e2e · horseMode horse)',
+      generated_by:
+        'WP-Z07 D1 — CIUDAD_LEDGER_OUT post federation-smoke OK (coreografía limpia)',
+      note:
+        'Gate: federation-smoke in-process OK. Fixture = applyIntent 1× por paso (evita doble INTENT del bus smoke).',
+      clock: FIXED_CLOCK,
+      ledger: out.ledger,
+      tracks: out.tracks,
+      lastWake: snap.lastWake,
+      barrio: snap.barrios?.['blockly-editor'] ?? null,
+      smoke_mirror_counts: {
+        ledger: ledgerMirror.ledger.length,
+        tracks: ledgerMirror.tracks.length
+      }
+    };
+    writeFileSync(LEDGER_OUT, `${JSON.stringify(fixture, null, 2)}\n`, 'utf8');
+    console.log('CIUDAD_LEDGER_OUT', LEDGER_OUT, {
+      ledger: fixture.ledger.length,
+      tracks: fixture.tracks.length,
+      horseMode: fixture.lastWake?.horseMode
+    });
+  }
 
   await auth.stop(null);
   await plane.close();

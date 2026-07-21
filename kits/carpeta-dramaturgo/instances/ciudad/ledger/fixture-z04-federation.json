@@ -1,16 +1,16 @@
 {
-  "source": "packages/ciudad domain fixture (Z03 MVP + announce)",
-  "generated_by": "WP-Z07 — domain applyIntent join→announce→walk→walk→wake",
+  "source": "packages/ciudad/fixtures/federation-smoke.mjs (Z04 peer e2e · horseMode horse)",
+  "generated_by": "WP-Z07 D1 — CIUDAD_LEDGER_OUT post federation-smoke OK (coreografía limpia)",
+  "note": "Gate: federation-smoke in-process OK. Fixture = applyIntent 1× por paso (evita doble INTENT del bus smoke).",
   "clock": 1700000000000,
-  "gap": "histórico Z03 — supersedido por ledger/fixture-z04-federation.json (D1 Z07 post-Z04 ✅ · horseMode horse)",
   "ledger": [
     {
       "kind": "announce",
       "seq": 1,
-      "actorId": "rabbit",
+      "actorId": "ext-rabbit",
       "ts": 1700000000000,
       "detail": {
-        "message": "presente en plaza",
+        "message": "federación smoke",
         "nodeId": "plaza",
         "anchorId": null
       }
@@ -18,20 +18,20 @@
     {
       "kind": "wake",
       "seq": 2,
-      "actorId": "rabbit",
+      "actorId": "ext-rabbit",
       "ts": 1700000000000,
       "detail": {
         "barrioId": "blockly-editor",
         "tool": "barrio.ping",
-        "horseMode": "stub",
+        "horseMode": "horse",
         "anchorId": "ancla-blockly-editor",
-        "horseGap": "awaiting_z06_mcp_launcher"
+        "horseGap": null
       }
     }
   ],
   "tracks": [
     {
-      "actorId": "rabbit",
+      "actorId": "ext-rabbit",
       "hint": "walk",
       "ref": {
         "kind": "walk",
@@ -42,7 +42,7 @@
       "ts": 1700000000000
     },
     {
-      "actorId": "rabbit",
+      "actorId": "ext-rabbit",
       "hint": "walk",
       "ref": {
         "kind": "walk",
@@ -53,13 +53,13 @@
       "ts": 1700000000000
     },
     {
-      "actorId": "rabbit",
+      "actorId": "ext-rabbit",
       "hint": "horse-offer",
       "ref": {
         "kind": "wake-tool",
         "barrioId": "blockly-editor",
         "tool": "barrio.ping",
-        "horseMode": "stub"
+        "horseMode": "horse"
       },
       "ts": 1700000000000
     }
@@ -67,14 +67,18 @@
   "lastWake": {
     "barrioId": "blockly-editor",
     "tool": "barrio.ping",
-    "actorId": "rabbit",
+    "actorId": "ext-rabbit",
     "ts": 1700000000000,
-    "horseMode": "stub"
+    "horseMode": "horse"
   },
   "barrio": {
     "id": "blockly-editor",
     "estado": "vivo",
     "anchorId": "ancla-blockly-editor",
     "parent": "editores"
+  },
+  "smoke_mirror_counts": {
+    "ledger": 3,
+    "tracks": 5
   }
 }

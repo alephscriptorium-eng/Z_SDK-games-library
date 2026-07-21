@@ -9,12 +9,12 @@
  */
 
 import { readFileSync, writeFileSync } from 'node:fs';
-import { dirname, join, resolve } from 'node:path';
+import { dirname, join, relative, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const INSTANCE = resolve(__dirname, '..');
-const DEFAULT_FIXTURE = join(INSTANCE, 'ledger', 'fixture-z03-mvp.json');
+const DEFAULT_FIXTURE = join(INSTANCE, 'ledger', 'fixture-z04-federation.json');
 const STORY_BOARD = join(INSTANCE, 'readerapp', 'story-board.json');
 
 function parseArgs(argv) {
@@ -27,11 +27,12 @@ function parseArgs(argv) {
 }
 
 /**
- * @param {{ ledger?: object[], tracks?: object[], gap?: string, source?: string }} fixture
+ * @param {{ ledger?: object[], tracks?: object[], gap?: string|null, source?: string }} fixture
  */
 function projectActs(fixture) {
   const ledger = Array.isArray(fixture.ledger) ? fixture.ledger : [];
   const tracks = Array.isArray(fixture.tracks) ? fixture.tracks : [];
+  const gap = fixture.gap || null;
 
   /** @type {object[]} */
   const acts = [
@@ -88,7 +89,8 @@ function projectActs(fixture) {
 
   for (const entry of ledger) {
     if (entry.kind === 'wake') {
-      acts.push({
+      /** @type {object} */
+      const act = {
         id: `act-${next}`,
         blockchain: next,
         title: 'Un barrio despertó',
@@ -99,11 +101,10 @@ function projectActs(fixture) {
         ledger_seq: entry.seq,
         actorId: entry.actorId,
         detail: entry.detail ?? null,
-        player_origin: 'rabbit',
-        gap_z04:
-          fixture.gap ||
-          'pendiente Z04 e2e — regenerar desde ledger rabbits r/s/h cuando Z04 ✅'
-      });
+        player_origin: 'rabbit'
+      };
+      if (gap) act.gap_z04 = gap;
+      acts.push(act);
       next += 1;
     }
   }
@@ -115,6 +116,8 @@ function main(argv) {
   const { fixture: fixturePath } = parseArgs(argv);
   const fixture = JSON.parse(readFileSync(fixturePath, 'utf8'));
   const acts = projectActs(fixture);
+  const fixtureRel = relative(INSTANCE, fixturePath).replace(/\\/g, '/');
+  const gap = fixture.gap || null;
 
   const board = {
     version: 1,
@@ -123,9 +126,9 @@ function main(argv) {
     slug: 'ciudad',
     projection: {
       from: 'ledger+tracks',
-      fixture: 'ledger/fixture-z03-mvp.json',
+      fixture: fixtureRel,
       source: fixture.source ?? null,
-      gap: fixture.gap ?? 'pendiente Z04 e2e',
+      gap,
       mapeo: 'ledger/MAPEO.md'
     },
     acts,
@@ -138,7 +141,8 @@ function main(argv) {
   console.log(
     `acts=${acts.map((a) => `${a.id}:${a.title}`).join(' · ')}`
   );
-  if (fixture.gap) console.log(`gap: ${fixture.gap}`);
+  if (gap) console.log(`gap: ${gap}`);
+  else console.log('gap: (closed — Z04 federation ledger)');
 }
 
 main(process.argv.slice(2));
