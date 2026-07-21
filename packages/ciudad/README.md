@@ -9,9 +9,10 @@ corriente) se distinguen por contrato de mapeo — sin canal nuevo.
 
 | pieza | ruta |
 | ----- | ---- |
-| Dominio puro | `src/domain.mjs` — join / walk / announce / wake / sleep + loop (decay / energía / objetivo / presencia) |
+| Dominio puro | `src/domain.mjs` — join / walk / announce / wake / sleep + loop (decay / energía / objetivo / presencia / acta) |
 | Contrato | `src/contract.mjs` — `game: 'ciudad'` · `LOOP_DEFAULTS` · snapshot `objetivo` |
 | Presencia | `src/presencia.mjs` — SeñalDePresencia v1 · FuentePresencia · adapter mock |
+| Acta | `src/acta.mjs` — ActaDeBarrio v1 · plaza ledger · wake sin acta → `roto` · `completarReparacion` |
 | Mapeo jugadores | `src/jugadores.mjs` — tipo → rol + `features[]` |
 | Lore | `spec/LORE.md` · `spec/FLUJO-RESIDENTE.md` |
 | Escena | `src/scene.mjs` — proyección desde gamemap del startpack |
@@ -45,6 +46,14 @@ energía; `announce` en plaza recarga; snapshot expone
 `ticksPresencia` (`TICKS_PRESENCIA` en `LOOP_DEFAULTS`) no degrada. Clase
 `flujo` cuenta presencia y **no** recarga energía (solo `announce`). Adapter
 mock en `presencia.mjs`; health/paradas/zona = solo interfaz.
+
+## Acta de barrio + `roto` (§A3)
+
+Ventanas terminan; solo plaza/ledger sobrevive. `sleep` emite **ActaDeBarrio
+v1** al ledger (`kind: acta`). Wake sin acta persistida → barrio `roto`
+(drift). Misión reparar: adapter `completarReparacion(barrioId, viaje)` tras
+viaje Z10 de juguete (`@zeus/linea-kit/viaje` · `runViajeReparacionJuguete`);
+sale de `roto` → `latente` y reescribe acta. Seeds traen acta fundacional.
 
 ## Tres jugadores (mapeo)
 

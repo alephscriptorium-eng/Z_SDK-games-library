@@ -3,6 +3,7 @@
  * Intents: join · walk · announce · wake · sleep.
  * Loop: decay por tick, energía por actor, objetivo colectivo en snapshot.
  * Presencia: señales por tick (TICKS_PRESENCIA); clase `flujo` no recarga energía.
+ * Acta: plaza/ledger (§A3); wake sin acta → `roto`; reparar cierra drift.
  * Reloj inyectable (`now` / tick); sin Date.now escondido en el loop.
  * Residente ≡ edificio en vivo (una fuente de verdad).
  */
@@ -15,6 +16,13 @@ import {
   resolvePlayerType
 } from './jugadores.mjs';
 import { validateSeñalDePresencia } from './presencia.mjs';
+import {
+  adoptarActaDesdePlaza,
+  emitirActa,
+  huellaLedger,
+  isActaDeBarrioShaped,
+  LEDGER_ACTA
+} from './acta.mjs';
 import { nodesReachable, sceneFromGamemap } from './scene.mjs';
 
 /**
@@ -120,6 +128,40 @@ export function createCiudadDomainState(opts = {}) {
   let fuenteUnsub = null;
   /** @type {import('./presencia.mjs').SeñalDePresencia|null} */
   let lastPresencia = null;
+  /** Actas persistidas en plaza/ledger (sobreviven ventanas). */
+  /** @type {Record<string, import('./acta.mjs').ActaDeBarrio>} */
+  const actasByBarrio = {};
+  /** @type {import('./acta.mjs').ActaDeBarrio|null} */
+  let lastActa = null;
+  /** @type {{ barrioId: string, actorId: string, ts: number, tick: number }|null} */
+  let lastReparacion = null;
+
+  // Actas fundacionales (plaza): seeds sobreviven; drift solo si se pierde la acta.
+  for (const b of Object.values(barrios)) {
+    const huella = huellaLedger({
+      kind: 'seed',
+      barrioId: b.id,
+      estado: b.estado,
+      tick: 0
+    });
+    const acta = emitirActa({
+      barrioId: b.id,
+      estado: /** @type {import('./acta.mjs').ActaDeBarrio['estado']} */ (
+        ACTA_ESTADOS_SAFE(b.estado)
+      ),
+      resumen: `Acta fundacional ${b.id}`,
+      pendientes: [],
+      ultimaClase: 'flujo',
+      tickEmision: 0,
+      huellaLedger: huella
+    });
+    actasByBarrio[b.id] = acta;
+  }
+
+  function ACTA_ESTADOS_SAFE(v) {
+    if (v === 'vivo' || v === 'latente' || v === 'muerto' || v === 'roto') return v;
+    return 'latente';
+  }
 
   function actorPos(actor) {
     return { nodeId: actor.nodeId, anchorId: actor.anchorId };
@@ -264,6 +306,75 @@ export function createCiudadDomainState(opts = {}) {
     if (actors[id]) {
       delete actors[id];
       return id;
+    }
+    return null;
+  }
+
+  /**
+   * Persiste acta del barrio en plaza (ledger + mapa local).
+   * @param {string} barrioId
+   * @param {{ ultimaClase?: string, resumen?: string, pendientes?: string[] }} [opts]
+   */
+  function persistirActaBarrio(barrioId, opts = {}) {
+    const barrio = barrios[barrioId];
+    if (!barrio) return { ok: false, error: 'barrio_desconocido' };
+    const lastEvt =
+      ledgerOut.length > 0
+        ? ledgerOut[ledgerOut.length - 1]
+        : { kind: 'acta-seed', barrioId, tick: currentTick };
+    const huella = huellaLedger(lastEvt);
+    const ultimaClase = /** @type {import('./acta.mjs').ActaDeBarrio['ultimaClase']} */ (
+      ACTA_CLASES_SAFE(opts.ultimaClase)
+    );
+    const resumen =
+      typeof opts.resumen === 'string' && opts.resumen.trim()
+        ? opts.resumen.trim().slice(0, 400)
+        : `Acta ${barrioId} estado=${barrio.estado} tick=${currentTick}`;
+    const acta = emitirActa({
+      barrioId,
+      estado: /** @type {import('./acta.mjs').ActaDeBarrio['estado']} */ (barrio.estado),
+      resumen,
+      pendientes: Array.isArray(opts.pendientes) ? opts.pendientes : [],
+      ultimaClase,
+      tickEmision: currentTick,
+      huellaLedger: huella
+    });
+    actasByBarrio[barrioId] = acta;
+    lastActa = acta;
+    ledgerSeq += 1;
+    const ts = clock();
+    ledgerOut.push({
+      kind: LEDGER_ACTA,
+      seq: ledgerSeq,
+      actorId: 'ciudad-plaza',
+      ts,
+      detail: { acta }
+    });
+    contentRev += 1;
+    return { ok: true, error: null, acta };
+  }
+
+  function ACTA_CLASES_SAFE(v) {
+    if (v === 'residente' || v === 'visitante' || v === 'flujo') return v;
+    return 'residente';
+  }
+
+  /**
+   * Resuelve acta persistida: mapa local, payload.plazaEntries, o null.
+   * @param {string} barrioId
+   * @param {object} payload
+   */
+  function resolverActaAdopcion(barrioId, payload) {
+    if (actasByBarrio[barrioId] && isActaDeBarrioShaped(actasByBarrio[barrioId])) {
+      return actasByBarrio[barrioId];
+    }
+    if (Array.isArray(payload.plazaEntries)) {
+      const adopt = adoptarActaDesdePlaza(payload.plazaEntries, barrioId);
+      if (adopt.ok && adopt.acta) {
+        actasByBarrio[barrioId] = adopt.acta;
+        lastActa = adopt.acta;
+        return adopt.acta;
+      }
     }
     return null;
   }
@@ -426,9 +537,10 @@ export function createCiudadDomainState(opts = {}) {
     },
 
     /**
-     * Despertar barrio latente.
-     * Ofrece tool vía horse; nace el residente del edificio (mismo tick).
-     * Gasta energía del actor.
+     * Despertar / adoptar barrio latente.
+     * Con acta en plaza → vivo + residente.
+     * Sin acta persistida → `roto` (drift); no nace residente.
+     * Ofrece tool vía horse cuando hay acta. Gasta energía del actor.
      */
     wake(payload) {
       const { actorId } = payload;
@@ -443,13 +555,59 @@ export function createCiudadDomainState(opts = {}) {
         payload.horseMode === 'horse' || payload.horseOffer === true ? 'horse' : 'stub';
 
       actor.energy -= loop.wakeCost;
+      const acta = resolverActaAdopcion(barrioId, payload);
+      const ts = clock();
+
+      if (!acta) {
+        // Regla §A3: sin acta en plaza → despierta roto (drift).
+        setBarrioEstado(barrio, 'roto');
+        markVisit(barrioId);
+        actor.wakes = (actor.wakes || 0) + 1;
+        ledgerSeq += 1;
+        lastWake = {
+          barrioId,
+          tool,
+          actorId,
+          ts,
+          horseMode,
+          estado: 'roto',
+          sinActa: true
+        };
+        ledgerOut.push({
+          kind: 'wake',
+          seq: ledgerSeq,
+          actorId,
+          ts,
+          detail: {
+            barrioId,
+            tool,
+            horseMode,
+            anchorId: barrio.anchorId,
+            jugador: actor.playerType,
+            estado: 'roto',
+            sinActa: true,
+            energy: actor.energy
+          }
+        });
+        contentRev += 1;
+        return { ok: true, error: null, estado: 'roto' };
+      }
+
       setBarrioEstado(barrio, 'vivo');
       markVisit(barrioId);
       actor.wakes = (actor.wakes || 0) + 1;
-      const ts = clock();
       const residenteId = spawnResidente(barrioId, tool, ts);
       ledgerSeq += 1;
-      lastWake = { barrioId, tool, actorId, ts, horseMode, residenteId };
+      lastWake = {
+        barrioId,
+        tool,
+        actorId,
+        ts,
+        horseMode,
+        residenteId,
+        estado: 'vivo',
+        actaTick: acta.tickEmision
+      };
       ledgerOut.push({
         kind: 'wake',
         seq: ledgerSeq,
@@ -464,6 +622,8 @@ export function createCiudadDomainState(opts = {}) {
           residenteId,
           residenteFeatures: [...actors[residenteId].features],
           energy: actor.energy,
+          estado: 'vivo',
+          actaTick: acta.tickEmision,
           horseGap: horseMode === 'stub' ? 'awaiting_z06_mcp_launcher' : null
         }
       });
@@ -482,11 +642,12 @@ export function createCiudadDomainState(opts = {}) {
         jugador: actor.playerType
       });
       contentRev += 1;
-      return { ok: true, error: null };
+      return { ok: true, error: null, estado: 'vivo' };
     },
 
     /**
-     * Apagar edificio vivo: barrio → latente y retira residente el mismo tick.
+     * Apagar edificio vivo: barrio → latente, retira residente y persiste acta
+     * en la plaza (única supervivencia de ventana).
      */
     sleep(payload) {
       const { actorId } = payload;
@@ -529,7 +690,17 @@ export function createCiudadDomainState(opts = {}) {
         }
       });
       contentRev += 1;
-      return { ok: true, error: null };
+      // Persistencia §A3: el sleep deja acta en plaza.
+      const persist = persistirActaBarrio(barrioId, {
+        ultimaClase: actor.playerType === 'flujo' ? 'flujo' : 'visitante',
+        resumen:
+          typeof payload.resumen === 'string'
+            ? payload.resumen
+            : `Relevo ${barrioId} tras sleep`,
+        pendientes: Array.isArray(payload.pendientes) ? payload.pendientes : []
+      });
+      if (!persist.ok) return { ok: false, error: persist.error };
+      return { ok: true, error: null, acta: persist.acta };
     }
   };
 
@@ -621,6 +792,11 @@ export function createCiudadDomainState(opts = {}) {
         lastSleep: lastSleep ? { ...lastSleep } : null,
         lastDecay: lastDecay ? { ...lastDecay } : null,
         lastPresencia: lastPresencia ? { ...lastPresencia } : null,
+        lastActa: lastActa ? { ...lastActa } : null,
+        lastReparacion: lastReparacion ? { ...lastReparacion } : null,
+        actas: Object.fromEntries(
+          Object.entries(actasByBarrio).map(([id, a]) => [id, { ...a }])
+        ),
         nodos: scene.nodos,
         enlaces: scene.enlaces,
         anclas: scene.anclas
@@ -698,6 +874,91 @@ export function createCiudadDomainState(opts = {}) {
     getTick: () => currentTick,
 
     /** Parámetros de loop efectivos (tests / contrato). */
-    getLoopConfig: () => ({ ...loop })
+    getLoopConfig: () => ({ ...loop }),
+
+    /**
+     * Persiste acta explícita en plaza (además del sleep automático).
+     * @param {string} barrioId
+     * @param {object} [opts]
+     */
+    persistirActa(barrioId, opts = {}) {
+      return persistirActaBarrio(barrioId, opts);
+    },
+
+    /**
+     * Olvida acta local (simula residente que no persistió). Tests §A3.
+     * @param {string} barrioId
+     */
+    olvidarActa(barrioId) {
+      if (!barrios[barrioId]) return { ok: false, error: 'barrio_desconocido' };
+      delete actasByBarrio[barrioId];
+      contentRev += 1;
+      return { ok: true, error: null };
+    },
+
+    /**
+     * Recarga actas desde entries de plaza (ledger).
+     * @param {unknown[]} entries
+     */
+    ingestPlazaActas(entries) {
+      if (!Array.isArray(entries)) return { ok: false, error: 'entries_requeridas' };
+      let n = 0;
+      for (const id of Object.keys(barrios)) {
+        const adopt = adoptarActaDesdePlaza(entries, id);
+        if (adopt.ok && adopt.acta) {
+          actasByBarrio[id] = adopt.acta;
+          lastActa = adopt.acta;
+          n += 1;
+        }
+      }
+      contentRev += 1;
+      return { ok: true, error: null, count: n };
+    },
+
+    /**
+     * Cierra drift tras viaje de reparación Z10 (adapter; no reopen viaje).
+     * `roto` → `latente`. Caller pasa resultado de `runViajeReparacionJuguete`.
+     * @param {string} barrioId
+     * @param {{ ok?: boolean, reparacion?: boolean, actorId?: string }} [viaje]
+     */
+    completarReparacion(barrioId, viaje = { ok: true, reparacion: true }) {
+      const barrio = barrios[barrioId];
+      if (!barrio) return { ok: false, error: 'barrio_desconocido' };
+      if (barrio.estado !== 'roto') return { ok: false, error: 'barrio_no_roto' };
+      if (!viaje || viaje.ok !== true || viaje.reparacion !== true) {
+        return { ok: false, error: 'viaje_reparacion_incompleto' };
+      }
+      setBarrioEstado(barrio, 'latente');
+      markVisit(barrioId);
+      // Nueva acta post-reparación (drift cerrado queda en plaza).
+      const persist = persistirActaBarrio(barrioId, {
+        ultimaClase: 'visitante',
+        resumen: `Reparacion ${barrioId} via viaje`,
+        pendientes: []
+      });
+      if (!persist.ok) return persist;
+      const ts = clock();
+      lastReparacion = {
+        barrioId,
+        actorId: viaje.actorId || 'reparador',
+        ts,
+        tick: currentTick
+      };
+      ledgerSeq += 1;
+      ledgerOut.push({
+        kind: 'reparar',
+        seq: ledgerSeq,
+        actorId: lastReparacion.actorId,
+        ts,
+        detail: { barrioId, from: 'roto', to: 'latente', tick: currentTick }
+      });
+      contentRev += 1;
+      return { ok: true, error: null, estado: 'latente', acta: persist.acta };
+    },
+
+    /** Acta local de un barrio (tests). */
+    getActa(barrioId) {
+      return actasByBarrio[barrioId] ? { ...actasByBarrio[barrioId] } : null;
+    }
   };
 }

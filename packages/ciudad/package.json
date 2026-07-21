@@ -10,6 +10,7 @@
     "./domain": "./src/domain.mjs",
     "./contract": "./src/contract.mjs",
     "./presencia": "./src/presencia.mjs",
+    "./acta": "./src/acta.mjs",
     "./jugadores": "./src/jugadores.mjs",
     "./scene": "./src/scene.mjs"
   },
