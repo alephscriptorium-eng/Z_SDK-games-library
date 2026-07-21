@@ -9,15 +9,16 @@ corriente) se distinguen por contrato de mapeo — sin canal nuevo.
 
 | pieza | ruta |
 | ----- | ---- |
-| Dominio puro | `src/domain.mjs` — join / walk / announce / wake / sleep + loop (decay / energía / objetivo) |
+| Dominio puro | `src/domain.mjs` — join / walk / announce / wake / sleep + loop (decay / energía / objetivo / presencia) |
 | Contrato | `src/contract.mjs` — `game: 'ciudad'` · `LOOP_DEFAULTS` · snapshot `objetivo` |
+| Presencia | `src/presencia.mjs` — SeñalDePresencia v1 · FuentePresencia · adapter mock |
 | Mapeo jugadores | `src/jugadores.mjs` — tipo → rol + `features[]` |
 | Lore | `spec/LORE.md` · `spec/FLUJO-RESIDENTE.md` |
 | Escena | `src/scene.mjs` — proyección desde gamemap del startpack |
 | Autoridad | `src/authority.mjs` — una room, una autoridad |
 | MCP jugador | `src/player-mcp/` — tools player_* |
 | Playbook | `spec/CASOS.md` — C-01..C-07 |
-| Smoke | `fixtures/mvp-smoke.mjs` · `fixtures/loop-smoke.mjs` · `fixtures/tablero-jugadores.mjs` |
+| Smoke | `fixtures/mvp-smoke.mjs` · `fixtures/loop-smoke.mjs` · `fixtures/presencia-smoke.mjs` · `fixtures/tablero-jugadores.mjs` |
 
 ## Arranque
 
@@ -25,6 +26,7 @@ corriente) se distinguen por contrato de mapeo — sin canal nuevo.
 npm test -w @zeus/ciudad
 npm run smoke -w @zeus/ciudad
 npm run loop-smoke -w @zeus/ciudad
+npm run presencia-smoke -w @zeus/ciudad
 npm run tablero-jugadores -w @zeus/ciudad
 npm run authority -w @zeus/ciudad   # requiere scriptorium + startpack
 npm run start:mcp -w @zeus/ciudad
@@ -33,13 +35,16 @@ npm run start:mcp -w @zeus/ciudad
 Overrides: `ZEUS_CIUDAD_ROOM`, `ZEUS_MCP_CIUDAD` (default `:4133`),
 `ZEUS_STARTPACK_CIUDAD`, `ZEUS_PORT_SCRIPTORIUM`.
 
-## Loop (decay · energía · objetivo)
+## Loop (decay · energía · objetivo · presencia)
 
 Reducer puro: `tick` aplica decay con reloj inyectable (`now`); `wake` gasta
 energía; `announce` en plaza recarga; snapshot expone
 `objetivo: { vivos, umbral, cumplido }` (bien común, sin ganador individual).
-Defaults en `LOOP_DEFAULTS` (`contract.mjs`). Segundo cliente del snapshot
-(tablero / operator-ui) lee el contrato sin tocar el dominio.
+**Presencia:** señales `SeñalDePresencia` vía `tick(..., { señales })` o
+`FuentePresencia` (`attachFuentePresencia`); barrio con señal en los últimos
+`ticksPresencia` (`TICKS_PRESENCIA` en `LOOP_DEFAULTS`) no degrada. Clase
+`flujo` cuenta presencia y **no** recarga energía (solo `announce`). Adapter
+mock en `presencia.mjs`; health/paradas/zona = solo interfaz.
 
 ## Tres jugadores (mapeo)
 

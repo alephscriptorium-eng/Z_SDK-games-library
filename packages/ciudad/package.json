@@ -9,6 +9,7 @@
     ".": "./src/contract.mjs",
     "./domain": "./src/domain.mjs",
     "./contract": "./src/contract.mjs",
+    "./presencia": "./src/presencia.mjs",
     "./jugadores": "./src/jugadores.mjs",
     "./scene": "./src/scene.mjs"
   },
@@ -18,6 +19,7 @@
     "test": "node --test test/*.test.mjs",
     "smoke": "node fixtures/mvp-smoke.mjs",
     "loop-smoke": "node fixtures/loop-smoke.mjs",
+    "presencia-smoke": "node fixtures/presencia-smoke.mjs",
     "zone-subscription-smoke": "node fixtures/zone-subscription-smoke.mjs",
     "federation-smoke": "node fixtures/federation-smoke.mjs",
     "federation-peer": "node fixtures/federation/demo-peer.mjs",

@@ -102,8 +102,9 @@ export const BARRIO_ESTADOS = Object.freeze(['vivo', 'latente', 'muerto', 'roto'
 export const SPAWN_NODE_ID = 'plaza';
 
 /**
- * Defaults del loop (decay · energía · objetivo colectivo).
+ * Defaults del loop (decay · energía · objetivo colectivo · presencia).
  * Decay en ms vía reloj inyectable (`now`); se aplica en `tick`.
+ * Presencia: ≥1 señal en los últimos `ticksPresencia` ticks → no degrada.
  * El snapshot expone `objetivo`; segundo cliente (tablero / operator-ui)
  * puede leer sin conocer el reducer.
  */
@@ -117,5 +118,10 @@ export const LOOP_DEFAULTS = Object.freeze({
   wakeCost: 1,
   announceGain: 1,
   initialEnergy: 3,
-  maxEnergy: 5
+  maxEnergy: 5,
+  /**
+   * Ventana de presencia en ticks (TICKS_PRESENCIA).
+   * Barrio con señal reciente no degrada; sin señal, tabla ms de Z16.
+   */
+  ticksPresencia: 3
 });

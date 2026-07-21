@@ -2,6 +2,7 @@
  * ciudad — dominio puro (sin red, sin fs, sin Date.now escondido).
  * Intents: join · walk · announce · wake · sleep.
  * Loop: decay por tick, energía por actor, objetivo colectivo en snapshot.
+ * Presencia: señales por tick (TICKS_PRESENCIA); clase `flujo` no recarga energía.
  * Reloj inyectable (`now` / tick); sin Date.now escondido en el loop.
  * Residente ≡ edificio en vivo (una fuente de verdad).
  */
@@ -13,6 +14,7 @@ import {
   residenteActorId,
   resolvePlayerType
 } from './jugadores.mjs';
+import { validateSeñalDePresencia } from './presencia.mjs';
 import { nodesReachable, sceneFromGamemap } from './scene.mjs';
 
 /**
@@ -26,7 +28,8 @@ import { nodesReachable, sceneFromGamemap } from './scene.mjs';
  *   wakeCost?: number,
  *   announceGain?: number,
  *   initialEnergy?: number,
- *   maxEnergy?: number
+ *   maxEnergy?: number,
+ *   ticksPresencia?: number
  * }} [opts]
  */
 export function createCiudadDomainState(opts = {}) {
@@ -48,7 +51,11 @@ export function createCiudadDomainState(opts = {}) {
       typeof opts.initialEnergy === 'number'
         ? opts.initialEnergy
         : LOOP_DEFAULTS.initialEnergy,
-    maxEnergy: typeof opts.maxEnergy === 'number' ? opts.maxEnergy : LOOP_DEFAULTS.maxEnergy
+    maxEnergy: typeof opts.maxEnergy === 'number' ? opts.maxEnergy : LOOP_DEFAULTS.maxEnergy,
+    ticksPresencia:
+      typeof opts.ticksPresencia === 'number'
+        ? opts.ticksPresencia
+        : LOOP_DEFAULTS.ticksPresencia
   };
 
   const scene = opts.scene
@@ -103,6 +110,16 @@ export function createCiudadDomainState(opts = {}) {
   let lastSleep = null;
   /** @type {{ barrioId: string, from: string, to: string, ts: number, tick: number }|null} */
   let lastDecay = null;
+  /** Último tick con ≥1 señal válida por barrio (`TICKS_PRESENCIA`). */
+  /** @type {Record<string, number>} */
+  const lastPresenciaTick = {};
+  /** Buffer de señales pendientes (fuente suscrita o ingest directo). */
+  /** @type {import('./presencia.mjs').SeñalDePresencia[]} */
+  const presenciaPending = [];
+  /** @type {(() => void)|null} */
+  let fuenteUnsub = null;
+  /** @type {import('./presencia.mjs').SeñalDePresencia|null} */
+  let lastPresencia = null;
 
   function actorPos(actor) {
     return { nodeId: actor.nodeId, anchorId: actor.anchorId };
@@ -170,10 +187,41 @@ export function createCiudadDomainState(opts = {}) {
     contentRev += 1;
   }
 
+  /**
+   * Aplica una señal de presencia validada.
+   * Sostiene el barrio (ventana TICKS_PRESENCIA). Nunca recarga energía
+   * (tampoco clase `flujo`; solo `announce` recarga).
+   * @param {import('./presencia.mjs').SeñalDePresencia} señal
+   */
+  function applyPresenciaSeñal(señal) {
+    if (!barrios[señal.barrioId]) return { ok: false, error: 'barrio_desconocido' };
+    lastPresenciaTick[señal.barrioId] = currentTick;
+    lastPresencia = { ...señal, tick: currentTick };
+    // Presencia ≠ announce: cero ganancia de energía en cualquier clase.
+    return { ok: true, error: null };
+  }
+
+  function drainPresencia() {
+    while (presenciaPending.length > 0) {
+      const raw = presenciaPending.shift();
+      const gate = validateSeñalDePresencia(raw);
+      if (!gate.ok) continue;
+      applyPresenciaSeñal(gate.señal);
+    }
+  }
+
+  function hasPresenciaReciente(barrioId) {
+    const last = lastPresenciaTick[barrioId];
+    if (typeof last !== 'number') return false;
+    return currentTick - last <= loop.ticksPresencia;
+  }
+
   function applyDecay() {
     const now = clock();
     for (const barrio of Object.values(barrios)) {
       if (barrio.estado === 'roto' || barrio.estado === 'muerto') continue;
+      // Señal en ventana TICKS_PRESENCIA → no degrada (regla §A2).
+      if (hasPresenciaReciente(barrio.id)) continue;
       const idle = now - barrio.lastVisitAt;
       if (barrio.estado === 'vivo' && idle >= loop.decayVivoMs) {
         setBarrioEstado(barrio, 'latente');
@@ -496,12 +544,59 @@ export function createCiudadDomainState(opts = {}) {
 
     /**
      * Aplica decay según reloj inyectable (`now` del constructor).
+     * Antes del decay drena señales de presencia (input del tick).
      * Sin Date.now escondido en el loop: tests inyectan `now` y avanzan el
      * tiempo antes de llamar tick.
+     * @param {number} [_deltaSec]
+     * @param {number} [_nowMs]
+     * @param {{ señales?: object[] }} [input] presencia opcional junto al tick
      */
-    tick(_deltaSec, _nowMs) {
+    tick(_deltaSec, _nowMs, input = {}) {
       currentTick += 1;
+      if (Array.isArray(input.señales)) {
+        for (const s of input.señales) presenciaPending.push(s);
+      }
+      drainPresencia();
       applyDecay();
+    },
+
+    /**
+     * Ingesta directa de SeñalDePresencia (tests / sin adapter).
+     * Queda en buffer y se aplica en el próximo `tick`.
+     * @param {object} raw
+     */
+    ingestPresencia(raw) {
+      const gate = validateSeñalDePresencia(raw);
+      if (!gate.ok) return gate;
+      presenciaPending.push(gate.señal);
+      return { ok: true, error: null };
+    },
+
+    /**
+     * Engancha una FuentePresencia (interfaz); el reducer no conoce el adapter.
+     * Swap = detach + attach de otra fuente sin tocar applyDecay.
+     * @param {{ suscribir: (cb: (s: object) => void) => () => void }} fuente
+     */
+    attachFuentePresencia(fuente) {
+      if (!fuente || typeof fuente.suscribir !== 'function') {
+        return { ok: false, error: 'fuente_invalida' };
+      }
+      if (fuenteUnsub) {
+        fuenteUnsub();
+        fuenteUnsub = null;
+      }
+      fuenteUnsub = fuente.suscribir((señal) => {
+        presenciaPending.push(señal);
+      });
+      return { ok: true, error: null };
+    },
+
+    detachFuentePresencia() {
+      if (fuenteUnsub) {
+        fuenteUnsub();
+        fuenteUnsub = null;
+      }
+      return { ok: true, error: null };
     },
 
     snapshot(reason, _opts = {}) {
@@ -525,6 +620,7 @@ export function createCiudadDomainState(opts = {}) {
         lastWake: lastWake ? { ...lastWake } : null,
         lastSleep: lastSleep ? { ...lastSleep } : null,
         lastDecay: lastDecay ? { ...lastDecay } : null,
+        lastPresencia: lastPresencia ? { ...lastPresencia } : null,
         nodos: scene.nodos,
         enlaces: scene.enlaces,
         anclas: scene.anclas
