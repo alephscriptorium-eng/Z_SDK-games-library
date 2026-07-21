@@ -17,6 +17,7 @@ loader por juego.
 | `sketch` | `@zeus/startpack-sketch` | `npm run release:startpack -- --game sketch` |
 | `solve-coagula` | `@zeus/startpack-solve-coagula` | `npm run release:startpack -- --game solve-coagula` |
 | `plaza` | `@zeus/startpack-plaza` | `npm run release:startpack -- --game plaza` |
+| `ciudad` | [`@zeus/startpack-ciudad`](https://github.com/alephscriptorium-eng/Z_SDK-games-library/tree/main/packages/startpack-ciudad) · juego [`@zeus/ciudad`](https://github.com/alephscriptorium-eng/Z_SDK-games-library/tree/main/packages/ciudad) | `npm run release:startpack -- --game ciudad` |
 
 Pipeline **parametrizado** (misma forma; no hay camino especial hardcodeado
 por juego).
