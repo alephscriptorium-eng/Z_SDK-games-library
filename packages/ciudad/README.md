@@ -86,4 +86,7 @@ peer externo: `npm run federation-smoke -w @zeus/ciudad`.
 ## Roles
 
 `player` = visitante o corriente · `operator` = residente (edificio) ·
-`dj` = cronista (solo narrar).
+`dj` = cronista (solo narrar). Lectura del story-board canónico y re-emisión
+como `announce` en plaza: `src/cronista.mjs` · smoke
+`npm run cronista-smoke -w @zeus/ciudad` · 2º lector
+`npm run story-board-reader -w @zeus/ciudad`.

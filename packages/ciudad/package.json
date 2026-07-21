@@ -13,7 +13,8 @@
     "./acta": "./src/acta.mjs",
     "./jugadores": "./src/jugadores.mjs",
     "./scene": "./src/scene.mjs",
-    "./misiones": "./src/misiones.mjs"
+    "./misiones": "./src/misiones.mjs",
+    "./cronista": "./src/cronista.mjs"
   },
   "scripts": {
     "authority": "node src/authority.mjs",
@@ -27,7 +28,9 @@
     "federation-peer": "node fixtures/federation/demo-peer.mjs",
     "tablero-jugadores": "node fixtures/tablero-jugadores.mjs",
     "linea-editor-slice-smoke": "node fixtures/linea-editor-slice-smoke.mjs",
-    "misiones-smoke": "node fixtures/misiones-smoke.mjs"
+    "misiones-smoke": "node fixtures/misiones-smoke.mjs",
+    "cronista-smoke": "node fixtures/cronista-smoke.mjs",
+    "story-board-reader": "node fixtures/story-board-reader.mjs"
   },
   "zeus": {
     "role": "game"

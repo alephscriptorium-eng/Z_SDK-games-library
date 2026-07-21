@@ -54,16 +54,18 @@ export const EVENTS = Object.freeze({
  */
 export const INTENTS = createIntentCatalog({
   join: {
-    roles: ['player'],
-    description: 'Entrar a la ciudad (spawn en plaza); tipar con playerType/features'
+    roles: ['player', 'dj'],
+    description:
+      'Entrar a la ciudad (spawn en plaza); tipar con playerType/features; dj = cronista'
   },
   walk: {
     roles: ['player'],
     description: 'Caminar por calles hasta un nodo o ancla de barrio'
   },
   announce: {
-    roles: ['player', 'operator'],
-    description: 'Anunciar presencia en la plaza (recarga energía del actor)'
+    roles: ['player', 'operator', 'dj'],
+    description:
+      'Anunciar presencia en la plaza (recarga energía); dj re-emite actos del story-board'
   },
   wake: {
     roles: ['player'],

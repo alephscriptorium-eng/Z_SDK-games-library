@@ -9,6 +9,8 @@ engine. Aquí solo se proyecta lo que el ledger/track ya asentó.
 | ----- | ---- |
 | Instancia | `kits/carpeta-dramaturgo/instances/ciudad/` |
 | Story-board | `…/ciudad/readerapp/story-board.json` |
+| Contrato lectura multi-agente | `…/ciudad/readerapp/CONTRATO-LECTURA.md` |
+| Cronista (pack) | `packages/ciudad/src/cronista.mjs` |
 | Fixture ledger Z13 (canónico acto V) | `…/ciudad/ledger/fixture-z13-tres-jugadores.json` |
 | Fixture ledger Z04 (federación) | `…/ciudad/ledger/fixture-z04-federation.json` |
 | Fixture ledger Z03 (histórico) | `…/ciudad/ledger/fixture-z03-mvp.json` |
