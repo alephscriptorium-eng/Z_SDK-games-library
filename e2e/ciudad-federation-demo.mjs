@@ -4,14 +4,11 @@
  *
  *   npm run e2e:ciudad-federation
  *
+ * Env ZEUS_* must be set BEFORE importing @zeus/rooms consumers (config freezes
+ * at import-time). Static imports would bind to default :3017.
+ *
  * Si A1/npm-ci o socket fallan → documentar defer; el smoke in-process cubre CA local.
  */
-
-import { spawn } from 'node:child_process';
-import { libraryRoot as root, paths } from './roots.mjs';
-import { createMockControlPlane } from '../packages/ciudad/fixtures/federation/mock-control-plane.mjs';
-import { createFederationPeer } from '../packages/ciudad/fixtures/federation/peer-external.mjs';
-import { startBarrioHorse } from '../packages/ciudad/fixtures/federation/barrio-horse.mjs';
 
 const HOST = 'localhost';
 const SOCKET_PORT = 13057;
@@ -20,6 +17,24 @@ const ROOM = 'CIUDAD_FED_E2E';
 const SECRET = 'dev-secret';
 const ACTOR = 'ext-rabbit';
 const HORSE_ID = 'barrio-horse';
+
+process.env.ZEUS_HOST = HOST;
+process.env.ZEUS_PORT_SCRIPTORIUM = String(SOCKET_PORT);
+process.env.ZEUS_SCRIPTORIUM_URL = `http://${HOST}:${SOCKET_PORT}`;
+process.env.ZEUS_SCRIPTORIUM_SECRET = SECRET;
+process.env.ZEUS_CIUDAD_ROOM = ROOM;
+
+const { spawn } = await import('node:child_process');
+const { libraryRoot as root, paths } = await import('./roots.mjs');
+const { createMockControlPlane } = await import(
+  '../packages/ciudad/fixtures/federation/mock-control-plane.mjs'
+);
+const { createFederationPeer } = await import(
+  '../packages/ciudad/fixtures/federation/peer-external.mjs'
+);
+const { startBarrioHorse } = await import(
+  '../packages/ciudad/fixtures/federation/barrio-horse.mjs'
+);
 
 const children = [];
 let failures = 0;
