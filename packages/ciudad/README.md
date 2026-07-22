@@ -115,6 +115,11 @@ peer externo: `npm run federation-smoke -w @zeus/ciudad`.
 `fixtures/federation/peer-external.mjs`). 2º cliente de la puerta junto a
 operator-ui.
 
+**MCP jugador:** un proceso = un actor; bootstrap firma peercard
+(peer-card-seat) y la reenvía en `CLIENT_REGISTER` — mismo carril que la
+puerta (`src/player-mcp/`). Tools: join / walk / announce / wake / state /
+leer_parte. Resources: `ciudad://player/state` · `scene` · `casos`.
+
 ## Roles
 
 `player` = visitante o corriente · `operator` = residente (edificio) ·

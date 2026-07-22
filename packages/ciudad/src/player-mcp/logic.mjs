@@ -215,6 +215,68 @@ export function buildMcp(server, bridge, cfg) {
       );
     }
   );
+
+  server.registerTool(
+    'player_leer_parte',
+    {
+      title: 'Leer último parte del ledger',
+      description:
+        'Solo lectura: última entrada kind=parte del ledger (titulares + clases de campana). ' +
+        'Si hay campanas, el operator-ui del humano las toca al recibir el mismo ledger.',
+      inputSchema: {
+        n: z.number().int().min(1).max(50).optional()
+      }
+    },
+    async ({ n }) => jsonContent(readLatestParte(bridge, n))
+  );
+}
+
+/** Marcas de campana (espejo parte-kit; sin dep dura en el pack). */
+const CAMPANA_MARCAS = Object.freeze([
+  { clase: 'roto', marca: 'queda roto' },
+  { clase: 'despertar', marca: 'gana pulso' },
+  { clase: 'degradar', marca: 'pierde pulso' },
+  { clase: 'degradar', marca: 'espera relevo' },
+  { clase: 'degradar', marca: 'sin pulso' }
+]);
+
+/**
+ * @param {object} bridge
+ * @param {number} [n]
+ */
+export function readLatestParte(bridge, n = 20) {
+  const tail = typeof bridge.ledgerTail === 'function' ? bridge.ledgerTail(n) : [];
+  for (let i = tail.length - 1; i >= 0; i--) {
+    const entry = tail[i];
+    const kind = entry?.kind ?? entry?.entryKind;
+    if (kind !== 'parte') continue;
+    const parte = entry.detail?.parte ?? null;
+    const titulares = Array.isArray(parte?.titulares) ? parte.titulares : [];
+    const campanas = [];
+    const seen = new Set();
+    for (const t of titulares) {
+      if (typeof t !== 'string') continue;
+      for (const { clase, marca } of CAMPANA_MARCAS) {
+        if (t.includes(marca) && !seen.has(clase)) {
+          seen.add(clase);
+          campanas.push({ clase, titular: t });
+        }
+      }
+    }
+    return {
+      ok: true,
+      evidencia: {
+        seq: entry.seq ?? null,
+        parte,
+        campanas,
+        nota:
+          campanas.length > 0
+            ? 'campanas listas — operator-ui toca al consumir este ledger'
+            : 'parte sin clase de campana (silencio)'
+      }
+    };
+  }
+  return { ok: false, error: 'sin_parte', nota: 'ledger sin kind=parte aún' };
 }
 
 /**
@@ -249,6 +311,15 @@ export function getPromptRegistry() {
 export function buildCardExamples(bridge) {
   return {
     actor: bridge.actor,
-    tools: ['player_join', 'player_walk', 'player_announce', 'player_wake', 'player_state']
+    ssbId: bridge.ssbId ?? null,
+    peercard: Boolean(bridge.peerCard?.seatSignature),
+    tools: [
+      'player_join',
+      'player_walk',
+      'player_announce',
+      'player_wake',
+      'player_state',
+      'player_leer_parte'
+    ]
   };
 }

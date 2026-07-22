@@ -25,7 +25,7 @@ export async function startCiudadPlayerMcp(configOverride = {}) {
     ...getServerConfig(process.env, { actor: actorFromArgv() }),
     ...configOverride
   };
-  const bridge = createRoomBridge({ actor: config.actor, room: config.room });
+  const bridge = await createRoomBridge({ actor: config.actor, room: config.room });
   const factory = createServer(config, bridge);
   const handle = await factory.start();
   console.log(

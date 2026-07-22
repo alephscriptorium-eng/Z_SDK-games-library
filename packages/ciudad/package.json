@@ -45,7 +45,7 @@
     "@zeus/playbook-kit": "^0.1.2",
     "@zeus/player-mcp-kit": "^0.1.2",
     "@zeus/presets-sdk": "^0.1.2",
-    "@zeus/protocol": "^0.2.0",
+    "@zeus/protocol": "^0.3.0",
     "@zeus/rooms": "^0.1.0",
     "@zeus/startpack-ciudad": "0.1.0",
     "zod": "^4.4.3"
