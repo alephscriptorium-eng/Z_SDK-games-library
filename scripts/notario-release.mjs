@@ -3,7 +3,8 @@
  * Notario — pipeline de release de start packs (WP-U62 / ARG WP-20/23 spirit).
  *
  * Una ronda → paquete `@zeus/startpack-<game>` + acta + tarball.
- * Canal primario: registry propio (si NPM_TOKEN). Espejo: GitHub Release.
+ * Canal primario: registry propio (NPM_USERNAME+PASSWORD D-24 (a), o NPM_TOKEN).
+ * Espejo: GitHub Release.
  *
  * Uso:
  *   node scripts/notario-release.mjs --game delta
@@ -195,27 +196,31 @@ function publishGithubRelease(entry, { version, tarball, actaPath, dryRun }) {
 }
 
 function publishNpm(entry, { dryRun }) {
+  // D-24 (a): NPM_USERNAME + NPM_PASSWORD → .npmrc username/_password.
+  // Legacy: NPM_TOKEN bearer. Cualquiera basta para no skippear.
   const token = process.env.NPM_TOKEN;
-  if (!token) {
-    console.log('⏳ npm publish skipped: NPM_TOKEN absent (ops gated)');
-    return { skipped: true, reason: 'NPM_TOKEN absent' };
+  const hasBasic =
+    Boolean(process.env.NPM_USERNAME) && Boolean(process.env.NPM_PASSWORD);
+  if (!token && !hasBasic) {
+    console.log(
+      '⏳ npm publish skipped: NPM_TOKEN / NPM_USERNAME+PASSWORD absent (ops gated)'
+    );
+    return { skipped: true, reason: 'auth absent' };
   }
   const pkgRoot = join(LIBRARY_ROOT, entry.dir);
   if (dryRun) {
     console.log(`[dry-run] npm publish -w ${entry.packageName}`);
     return { skipped: true, reason: 'dry-run' };
   }
-  run(
-    'npm',
-    ['publish', '--access', 'public'],
-    {
-      cwd: pkgRoot,
-      env: {
-        // npmrc usually maps //registry/:_authToken=${NPM_TOKEN}
-        NPM_TOKEN: token
-      }
-    }
-  );
+  const env = {};
+  if (token) {
+    // npmrc may map //registry/:_authToken=${NPM_TOKEN}
+    env.NPM_TOKEN = token;
+  }
+  run('npm', ['publish', '--access', 'public'], {
+    cwd: pkgRoot,
+    env
+  });
   return { skipped: false };
 }
 

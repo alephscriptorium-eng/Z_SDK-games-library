@@ -1,8 +1,9 @@
 # Release start packs (WP-U62)
 #
 # Notario → tarball + acta → GitHub Release espejo.
-# Publish npm opcional si existe secret `NPM_TOKEN` (registry D-7).
-# Vía canónica de pack: scripts/notario-release.mjs (este workflow lo invoca).
+# Publish npm opcional con D-24 (a): secrets NPM_USERNAME + NPM_PASSWORD
+# (_password base64). Vía canónica: scripts/notario-release.mjs.
+# Lote mesh ciudad (kit + startpack + game): ver publish-mesh-ciudad.yml.
 
 name: Release startpack
 
@@ -22,7 +23,7 @@ on:
           - solve-coagula
           - ciudad
       publish_npm:
-        description: 'Also npm publish (needs NPM_TOKEN)'
+        description: 'Also npm publish (needs NPM_USERNAME/PASSWORD)'
         required: false
         default: false
         type: boolean
@@ -42,12 +43,37 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
+      # Sin registry-url: evita bearer JWT; auth write = basic-auth abajo.
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
           cache: npm
-          registry-url: https://npm.scriptorium.escrivivir.co
-          scope: '@zeus'
+      - name: Detect publish credentials
+        id: creds
+        env:
+          NPM_USERNAME: ${{ secrets.NPM_USERNAME }}
+          NPM_PASSWORD: ${{ secrets.NPM_PASSWORD }}
+        run: |
+          if [ -n "${NPM_USERNAME}" ] && [ -n "${NPM_PASSWORD}" ]; then
+            echo "has_npm=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_npm=false" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Configure registry basic-auth (_password)
+        if: steps.creds.outputs.has_npm == 'true'
+        env:
+          NPM_USERNAME: ${{ secrets.NPM_USERNAME }}
+          NPM_PASSWORD: ${{ secrets.NPM_PASSWORD }}
+        run: |
+          HOST='npm.scriptorium.escrivivir.co'
+          {
+            echo "@zeus:registry=https://${HOST}"
+            echo "@alephscript:registry=https://${HOST}"
+            echo "//${HOST}/:username=${NPM_USERNAME}"
+            echo "//${HOST}/:_password=${NPM_PASSWORD}"
+            echo "//${HOST}/:email=ci@scriptorium.escrivivir.co"
+            echo "//${HOST}/:always-auth=true"
+          } >> .npmrc
       - name: Install (@zeus desde registry)
         run: npm install
       - name: Link Z_SDK (fallback DEV si el notario lo necesita)
@@ -69,11 +95,12 @@ jobs:
       - name: Notario pack + GitHub Release
         env:
           GH_TOKEN: ${{ github.token }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_USERNAME: ${{ secrets.NPM_USERNAME }}
+          NPM_PASSWORD: ${{ secrets.NPM_PASSWORD }}
         run: |
           EXTRA=()
           EXTRA+=(--publish-github)
-          if [[ "${{ inputs.publish_npm }}" == "true" ]] || [[ -n "${NPM_TOKEN:-}" && "${{ github.event_name }}" == "push" ]]; then
+          if [[ "${{ inputs.publish_npm }}" == "true" ]] || [[ "${{ steps.creds.outputs.has_npm }}" == "true" && "${{ github.event_name }}" == "push" ]]; then
             EXTRA+=(--publish-npm)
           fi
           node scripts/notario-release.mjs --game "${{ steps.game.outputs.game }}" "${EXTRA[@]}"
