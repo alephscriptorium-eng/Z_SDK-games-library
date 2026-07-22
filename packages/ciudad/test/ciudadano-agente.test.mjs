@@ -6,25 +6,24 @@
 
 import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
-import { existsSync } from 'node:fs';
+import { createRequire } from 'node:module';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { EventEmitter } from 'node:events';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const require = createRequire(import.meta.url);
 const sdkRootEnv = ['ZEUS', '_SDK', '_ROOT'].join('');
 
-const zeusWt = path.resolve(
-  __dirname,
-  '../../../../../zeus-sdk/.worktrees/wp-cr-c05-ciudadano-agente'
-);
-const zeusSibling = path.resolve(__dirname, '../../../../../zeus-sdk');
+/** resolveZeusSdkRoot / sibling — no forzar path fantasma en CI (b54a2d2). */
 if (!process.env[sdkRootEnv]) {
-  process.env[sdkRootEnv] = existsSync(
-    path.join(zeusWt, 'packages/engine/player-mcp-kit/src/room-bridge.mjs')
-  )
-    ? zeusWt
-    : zeusSibling;
+  try {
+    const { resolveZeusSdkRoot } = require('../../../scripts/zeus-sdk-root.cjs');
+    const sdk = resolveZeusSdkRoot({ required: false });
+    if (sdk) process.env[sdkRootEnv] = sdk;
+  } catch {
+    /* CI: sin sibling → kit vía paquete instalado */
+  }
 }
 
 const { createRoomBridge } = await import('../src/player-mcp/room-bridge.mjs');
@@ -41,11 +40,37 @@ const { getServerConfig } = await import('../src/player-mcp/config.mjs');
 const { GAME_ID } = await import('../src/contract.mjs');
 
 async function loadKitBridge() {
-  const cand = path.join(
-    process.env[sdkRootEnv],
-    'packages/engine/player-mcp-kit/src/room-bridge.mjs'
-  );
-  const mod = await import(pathToFileURL(cand).href);
+  const candidates = [];
+  if (process.env[sdkRootEnv]) {
+    candidates.push(
+      path.join(
+        process.env[sdkRootEnv],
+        'packages/engine/player-mcp-kit/src/room-bridge.mjs'
+      )
+    );
+  }
+  try {
+    const { resolveZeusSdkRoot } = require('../../../scripts/zeus-sdk-root.cjs');
+    const sdk = resolveZeusSdkRoot({ required: false });
+    if (sdk) {
+      candidates.push(
+        path.join(sdk, 'packages/engine/player-mcp-kit/src/room-bridge.mjs')
+      );
+    }
+  } catch {
+    /* optional */
+  }
+  for (const cand of candidates) {
+    try {
+      const mod = await import(pathToFileURL(cand).href);
+      if (typeof mod.createPlayerRoomBridge === 'function') {
+        return mod.createPlayerRoomBridge;
+      }
+    } catch {
+      /* next */
+    }
+  }
+  const mod = await import('@zeus/player-mcp-kit');
   return mod.createPlayerRoomBridge;
 }
 
