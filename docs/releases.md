@@ -47,6 +47,13 @@ Buscá en Releases el tag `startpack-delta-v*` y sus assets (acta + tarball).
 
 Buscá en Releases el tag `startpack-pozo-v*` y sus assets.
 
+### ciudad {#ciudad}
+
+Tag publicado:
+[`startpack-ciudad-v0.1.0`](https://github.com/alephscriptorium-eng/Z_SDK-games-library/releases/tag/startpack-ciudad-v0.1.0)
+(acta + tarball). Ficha del juego: [ciudad](/games/ciudad). Catálogo:
+[Start packs](/startpacks). Default de puerta federada.
+
 ### sketch {#sketch}
 
 El paquete vive en `packages/startpack-sketch/`. Aparece en Releases solo
@@ -55,7 +62,8 @@ cuando Notario publica tag `startpack-sketch-v*` + assets.
 ### Otros títulos
 
 Sin start packs publicados hasta que exista tag/Release. Estado y candidatos
-en [Futuros](/games/futuros).
+en [Futuros](/games/futuros). **ciudad** ya tiene Release — ver ancla
+arriba.
 
 ---
 

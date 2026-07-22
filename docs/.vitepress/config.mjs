@@ -33,6 +33,7 @@ export default defineConfig({
       {
         text: 'Juegos',
         items: [
+          { text: 'ciudad', link: '/games/ciudad' },
           { text: 'delta', link: '/games/delta' },
           { text: 'pozo', link: '/games/pozo' },
           { text: 'SOLVE ET COAGULA', link: '/games/solve-coagula' },
@@ -53,6 +54,7 @@ export default defineConfig({
       {
         text: 'Juegos',
         items: [
+          { text: 'ciudad', link: '/games/ciudad' },
           { text: 'delta (ARG)', link: '/games/delta' },
           { text: 'pozo', link: '/games/pozo' },
           { text: 'SOLVE ET COAGULA', link: '/games/solve-coagula' },

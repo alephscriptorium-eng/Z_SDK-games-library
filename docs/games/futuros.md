@@ -4,6 +4,11 @@
 > curso o sin Release publicado. Las páginas doctrinales apuntan a
 > [GitHub Releases](https://github.com/alephscriptorium-eng/Z_SDK-games-library/releases)
 > como verdad viva; no inventan start packs ni versiones a mano.
+>
+> **ciudad** ya no es futuro: ficha
+> [`/games/ciudad`](/games/ciudad) · start pack publicado
+> [`startpack-ciudad-v0.1.0`](https://github.com/alephscriptorium-eng/Z_SDK-games-library/releases/tag/startpack-ciudad-v0.1.0)
+> · fila en [Start packs](/startpacks) · ancla [Releases · ciudad](/releases#ciudad).
 
 | Título | Estado | Notas |
 | ------ | ------ | ----- |
