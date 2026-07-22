@@ -83,6 +83,11 @@ mismo tick. Clientes eje IV: **tablero** (`tablero-jugadores`) y
 `wake` asienta el offer (`horseMode: stub|horse`) en ledger. Federación
 peer externo: `npm run federation-smoke -w @zeus/ciudad`.
 
+**Puerta:** el peer entra con peercard firmada (E02 seat) y resuelve
+`startpack-ciudad-v0.1.0` como base default (`enterWithPuerta` en
+`fixtures/federation/peer-external.mjs`). 2º cliente de la puerta junto a
+operator-ui.
+
 ## Roles
 
 `player` = visitante o corriente · `operator` = residente (edificio) ·

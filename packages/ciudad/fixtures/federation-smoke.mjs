@@ -13,6 +13,11 @@ import { createCiudadDomainState } from '../src/domain.mjs';
 import { makeIntent, GAME_ID, EVENTS } from '../src/contract.mjs';
 import { sceneFromGamemap } from '../src/scene.mjs';
 import { createMockControlPlane } from './federation/mock-control-plane.mjs';
+import {
+  emitirCredencialFederada,
+  entrarPorPuertaFederada,
+  PUERTA_DEFAULT_STARTPACK
+} from './federation/peer-external.mjs';
 
 /** Si se setea, vuelca ledger+tracks al path (D1 Z07 proyección post-Z04). */
 const LEDGER_OUT = process.env.CIUDAD_LEDGER_OUT
@@ -199,6 +204,18 @@ async function main() {
     throw new Error(`timeout ${label}`);
   }
 
+  // --- puerta externos (2º cliente): peercard firmada → startpack default ---
+  const issued = await emitirCredencialFederada({
+    roomId: ROOM,
+    displayName: ACTOR
+  });
+  const puerta = await entrarPorPuertaFederada(issued.credencial);
+  if (!puerta.ok) throw new Error(`puerta fail: ${puerta.errors.join('; ')}`);
+  if (puerta.startpack.ref !== PUERTA_DEFAULT_STARTPACK.ref) {
+    throw new Error(`puerta startpack ${puerta.startpack.ref}`);
+  }
+  if (!puerta.seat.ok) throw new Error('puerta seat not ok');
+
   // --- coreografía ---
   const rabbitBot = await cp.startBot('rabbit', ROOM, ACTOR);
   const spiderBot = await cp.startBot('spider', ROOM, `spider-${ACTOR}`);
@@ -273,7 +290,13 @@ async function main() {
     horseMode: lastState.lastWake.horseMode,
     rnfp: rnfp.data.rnfp,
     peerCount: peers.data.peers.length,
-    controlPlane: url
+    controlPlane: url,
+    puerta: {
+      startpack: puerta.startpack.ref,
+      seatOk: puerta.seat.ok,
+      via: issued.via,
+      kit: puerta.kit
+    }
   });
 
   if (LEDGER_OUT) {

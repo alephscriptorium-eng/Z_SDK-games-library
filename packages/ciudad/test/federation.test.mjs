@@ -9,6 +9,11 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createMockControlPlane } from '../fixtures/federation/mock-control-plane.mjs';
+import {
+  emitirCredencialFederada,
+  entrarPorPuertaFederada,
+  PUERTA_DEFAULT_STARTPACK
+} from '../fixtures/federation/peer-external.mjs';
 
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
 const CASOS = path.join(ROOT, 'spec', 'CASOS.md');
@@ -51,11 +56,29 @@ describe('ciudad federación r/s/h (Z04)', () => {
     assert.ok(url.startsWith('http://'));
   });
 
+  it('puerta externos: peercard firmada → startpack-ciudad-v0.1.0 (eje IV)', async () => {
+    assert.equal(PUERTA_DEFAULT_STARTPACK.ref, 'startpack-ciudad-v0.1.0');
+    const issued = await emitirCredencialFederada({ displayName: 'ext-rabbit' });
+    assert.ok(issued.credencial.peerCard.ssbId);
+    assert.ok(issued.credencial.peerCard.seatSignature);
+    assert.notEqual(issued.credencial.signature?.alg, 'stub');
+    const entry = await entrarPorPuertaFederada(issued.credencial);
+    assert.equal(entry.ok, true, entry.errors.join('; '));
+    assert.equal(entry.startpack.ref, 'startpack-ciudad-v0.1.0');
+    assert.equal(entry.defaultStartpack, true);
+    assert.equal(entry.seat.ok, true);
+  });
+
   it('federation-smoke in-process (eje IV, sin aleph)', async () => {
     const result = await new Promise((resolve) => {
       const child = spawn(process.execPath, [SMOKE], {
         cwd: ROOT,
-        env: process.env,
+        env: {
+          ...process.env,
+          ZEUS_SDK_ROOT:
+            process.env.ZEUS_SDK_ROOT ||
+            path.resolve(ROOT, '../../../../zeus-sdk')
+        },
         stdio: ['ignore', 'pipe', 'pipe']
       });
       let out = '';
@@ -71,5 +94,6 @@ describe('ciudad federación r/s/h (Z04)', () => {
     assert.equal(result.code, 0, result.err || result.out);
     assert.match(result.out, /FEDERATION_SMOKE_OK/);
     assert.match(result.out, /horseMode: 'horse'|horseMode":"horse"/);
+    assert.match(result.out, /startpack-ciudad-v0\.1\.0/);
   });
 });

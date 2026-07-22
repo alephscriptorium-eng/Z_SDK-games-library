@@ -4,10 +4,230 @@
  *
  * Coreografía Z04:
  *   rabbit announce plaza → spider RNFP active → walk distrito → horse tools/call → wake
+ *
+ * Puerta externos (2º cliente): peercard firmada (E02 seat) + startpack-ciudad-v0.1.0
+ * como base default. Consume @zeus/embajador-kit si ZEUS_SDK_ROOT / sibling lo
+ * resuelve; si no, protocol + mismo ref default.
  */
 
+import { createRequire } from 'node:module';
+import path from 'node:path';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 import { createClient, connectAndJoin } from '@zeus/rooms';
+import {
+  makePeerCard,
+  isPeerCardFresh,
+  roleFromPeerCard
+} from '@zeus/protocol';
 import { EVENTS, makeIntent, DEFAULT_CIUDAD_ROOM } from '../../src/contract.mjs';
+
+/** Norte CA: mismo ref que @zeus/embajador-kit DEFAULT_STARTPACK. */
+export const PUERTA_DEFAULT_STARTPACK = Object.freeze({
+  id: 'startpack-ciudad',
+  version: '0.1.0',
+  ref: 'startpack-ciudad-v0.1.0',
+  packageName: '@zeus/startpack-ciudad'
+});
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+function zeusSdkCandidates() {
+  const roots = [];
+  if (process.env.ZEUS_SDK_ROOT) roots.push(process.env.ZEUS_SDK_ROOT);
+  roots.push(path.resolve(__dirname, '../../../../../../../zeus-sdk'));
+  return roots;
+}
+
+async function loadPeerCardSeat() {
+  for (const root of zeusSdkCandidates()) {
+    const candidate = path.join(root, 'packages/engine/protocol/src/peer-card-seat.mjs');
+    try {
+      return await import(pathToFileURL(candidate).href);
+    } catch {
+      /* next */
+    }
+  }
+  try {
+    return await import('@zeus/protocol/peer-card-seat');
+  } catch (err) {
+    throw new Error(
+      `peer-card-seat unavailable (set ZEUS_SDK_ROOT to zeus tip post-E02): ${err.message}`
+    );
+  }
+}
+
+async function tryLoadEmbajadorKit() {
+  const candidates = [];
+  for (const root of zeusSdkCandidates()) {
+    candidates.push(path.join(root, 'packages/engine/embajador-kit/src/index.mjs'));
+  }
+  for (const candidate of candidates) {
+    try {
+      const mod = await import(pathToFileURL(candidate).href);
+      if (mod?.emitirCredencial && mod?.consumirCredencial && mod?.DEFAULT_STARTPACK) {
+        return mod;
+      }
+    } catch {
+      /* next */
+    }
+  }
+  try {
+    const req = createRequire(import.meta.url);
+    return await import(pathToFileURL(req.resolve('@zeus/embajador-kit')).href);
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * Emite peercard firmada (E02) + startpack default para entrada federada.
+ * @param {object} [input]
+ */
+export async function emitirCredencialFederada(input = {}) {
+  const kit = await tryLoadEmbajadorKit();
+  const { generateSeatKeyPair, signTravelingPeerCard } = await loadPeerCardSeat();
+  const keys = generateSeatKeyPair();
+  const expiresAt =
+    input.expiresAt ?? new Date(Date.now() + 60 * 60 * 1000).toISOString();
+
+  if (kit) {
+    const unsigned = kit.emitirCredencial({
+      roomId: input.roomId ?? DEFAULT_CIUDAD_ROOM,
+      endpoint: input.endpoint ?? 'wss://rooms.example/runtime',
+      token: input.token ?? 'fed-puerta',
+      role: input.role ?? 'player',
+      displayName: input.displayName ?? 'ext-rabbit',
+      expiresAt,
+      signature: null
+    });
+    const signedCard = signTravelingPeerCard(
+      unsigned.peerCard,
+      keys.privateKey,
+      keys.ssbId
+    );
+    return {
+      credencial: {
+        ...unsigned,
+        peerCard: signedCard,
+        signature: {
+          alg: 'ed25519-seat',
+          value: signedCard.seatSignature,
+          ssbId: keys.ssbId,
+          pending: false
+        }
+      },
+      keys: { ssbId: keys.ssbId },
+      via: 'embajador-kit'
+    };
+  }
+
+  const peerCard = makePeerCard({
+    roomId: input.roomId ?? DEFAULT_CIUDAD_ROOM,
+    endpoint: input.endpoint ?? 'wss://rooms.example/runtime',
+    token: input.token ?? 'fed-puerta',
+    scopes: ['role:player', 'presence:join', 'webrtc:signal'],
+    expiresAt,
+    displayName: input.displayName ?? 'ext-rabbit'
+  });
+  const signedCard = signTravelingPeerCard(peerCard, keys.privateKey, keys.ssbId);
+  return {
+    credencial: {
+      version: 'embajador/1',
+      peerCard: signedCard,
+      startpack: { ...PUERTA_DEFAULT_STARTPACK },
+      signature: {
+        alg: 'ed25519-seat',
+        value: signedCard.seatSignature,
+        ssbId: keys.ssbId,
+        pending: false
+      }
+    },
+    keys: { ssbId: keys.ssbId },
+    via: 'protocol-fallback'
+  };
+}
+
+/**
+ * Consume peercard por la puerta (2º cliente eje IV).
+ * @param {unknown} raw
+ * @param {object} [opts]
+ */
+export async function entrarPorPuertaFederada(raw, opts = {}) {
+  const kit = await tryLoadEmbajadorKit();
+  const { verifyTravelingPeerCard } = await loadPeerCardSeat();
+  /** @type {string[]} */
+  const errors = [];
+  let peerCard = null;
+  let startpack = null;
+  let defaultStartpack = false;
+  let role = null;
+
+  if (kit) {
+    const c = kit.consumirCredencial(raw, {
+      now: opts.now,
+      requireFresh: opts.requireFresh !== false
+    });
+    errors.push(...c.errors);
+    peerCard = c.peerCard;
+    startpack = c.startpack;
+    defaultStartpack = c.defaultStartpack;
+    role = c.role;
+  } else {
+    const envelope =
+      raw && typeof raw === 'object' ? /** @type {Record<string, unknown>} */ (raw) : null;
+    peerCard =
+      envelope?.peerCard && typeof envelope.peerCard === 'object'
+        ? envelope.peerCard
+        : envelope;
+    if (!peerCard || typeof peerCard !== 'object') {
+      errors.push('credencial: missing peerCard');
+    } else if (
+      opts.requireFresh !== false &&
+      !isPeerCardFresh(peerCard, opts.now ?? Date.now())
+    ) {
+      errors.push('peerCard: expirado');
+    } else {
+      role = roleFromPeerCard(peerCard);
+    }
+    const sp = envelope?.startpack;
+    if (sp == null) {
+      startpack = { ...PUERTA_DEFAULT_STARTPACK };
+      defaultStartpack = true;
+    } else if (typeof sp === 'object' && /** @type {any} */ (sp).ref) {
+      startpack = /** @type {any} */ (sp);
+      defaultStartpack = startpack.ref === PUERTA_DEFAULT_STARTPACK.ref;
+    } else {
+      errors.push('startpack: shape inválido');
+    }
+  }
+
+  const seat = peerCard
+    ? verifyTravelingPeerCard(peerCard)
+    : { ok: false, error: 'peer-card missing' };
+  if (!seat.ok) errors.push(`seat: ${seat.error ?? 'verify failed'}`);
+  if (
+    startpack &&
+    startpack.ref !== PUERTA_DEFAULT_STARTPACK.ref &&
+    opts.requireDefault !== false
+  ) {
+    errors.push(
+      `startpack: expected ${PUERTA_DEFAULT_STARTPACK.ref}, got ${startpack.ref}`
+    );
+  }
+
+  return {
+    ok: errors.length === 0,
+    errors,
+    peerCard,
+    startpack,
+    defaultStartpack:
+      defaultStartpack || startpack?.ref === PUERTA_DEFAULT_STARTPACK.ref,
+    role,
+    seat: seat.ok ? { ok: true } : { ok: false, error: seat.error },
+    ssbId: peerCard?.ssbId ?? null,
+    kit: kit ? 'embajador-kit' : 'protocol-fallback'
+  };
+}
 
 /**
  * @param {{
@@ -128,11 +348,33 @@ export function createFederationPeer(opts) {
     async connect() {
       await connectAndJoin(client, user, {
         type: 'CiudadExternalPeer',
-        features: ['ciudad-0.1', 'intent', 'rsh-federation', 'horse'],
+        features: ['ciudad-0.1', 'intent', 'rsh-federation', 'horse', 'puerta'],
         room
       });
       connected = true;
       logger.log(`[peer] conectado room=${room} user=${user}`);
+    },
+
+    /**
+     * Puerta externos: entra con peercard firmada → startpack-ciudad-v0.1.0.
+     * @param {object} [credencial] — omit → emite una firmada (E02 + kit)
+     */
+    async enterWithPuerta(credencial) {
+      const issued =
+        credencial == null
+          ? await emitirCredencialFederada({
+              roomId: room,
+              displayName: actor
+            })
+          : { credencial, via: 'provided' };
+      const entry = await entrarPorPuertaFederada(issued.credencial);
+      if (!entry.ok) {
+        throw new Error(`puerta: ${entry.errors.join('; ')}`);
+      }
+      logger.log(
+        `[peer] puerta ok · startpack=${entry.startpack.ref} · seat · via=${issued.via ?? entry.kit}`
+      );
+      return { ...entry, credencial: issued.credencial, via: issued.via ?? entry.kit };
     },
 
     /** Rabbit: presencia — join + announce en plaza. */

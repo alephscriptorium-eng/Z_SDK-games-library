@@ -8,7 +8,10 @@
  */
 
 import { createMockControlPlane } from './mock-control-plane.mjs';
-import { createFederationPeer } from './peer-external.mjs';
+import {
+  createFederationPeer,
+  PUERTA_DEFAULT_STARTPACK
+} from './peer-external.mjs';
 import { startBarrioHorse } from './barrio-horse.mjs';
 import { DEFAULT_CIUDAD_ROOM } from '../../src/contract.mjs';
 
@@ -39,8 +42,14 @@ async function main() {
   });
 
   await peer.registerBots();
+  // Puerta: peercard firmada → startpack-ciudad-v0.1.0 (antes de join/RNFP)
+  const puerta = await peer.enterWithPuerta();
+  if (puerta.startpack.ref !== PUERTA_DEFAULT_STARTPACK.ref) {
+    console.error('FAIL puerta startpack', puerta.startpack);
+    process.exit(1);
+  }
   await peer.connect();
-  await peer.announcePresence('federación Z04');
+  await peer.announcePresence('federación Z04 · puerta externos');
   await peer.federateRnfp('rnfp.distrito');
   const district = await peer.enterDistrict();
   if (!district.ok) {
@@ -62,7 +71,12 @@ async function main() {
     rnfp: 'active',
     barrio: wake.barrio?.estado,
     horseMode: wake.wake?.horseMode,
-    bots: peer.bots
+    bots: peer.bots,
+    puerta: {
+      startpack: puerta.startpack.ref,
+      seatOk: puerta.seat.ok,
+      via: puerta.via
+    }
   });
 
   peer.close();

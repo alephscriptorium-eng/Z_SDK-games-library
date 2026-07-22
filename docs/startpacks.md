@@ -17,7 +17,7 @@ loader por juego.
 | `sketch` | `@zeus/startpack-sketch` | `npm run release:startpack -- --game sketch` |
 | `solve-coagula` | `@zeus/startpack-solve-coagula` | `npm run release:startpack -- --game solve-coagula` |
 | `plaza` | `@zeus/startpack-plaza` | `npm run release:startpack -- --game plaza` |
-| `ciudad` | [`@zeus/startpack-ciudad`](https://github.com/alephscriptorium-eng/Z_SDK-games-library/tree/main/packages/startpack-ciudad) · juego [`@zeus/ciudad`](https://github.com/alephscriptorium-eng/Z_SDK-games-library/tree/main/packages/ciudad) | `npm run release:startpack -- --game ciudad` |
+| `ciudad` | [`@zeus/startpack-ciudad`](https://github.com/alephscriptorium-eng/Z_SDK-games-library/tree/main/packages/startpack-ciudad) · juego [`@zeus/ciudad`](https://github.com/alephscriptorium-eng/Z_SDK-games-library/tree/main/packages/ciudad) · **default de puerta** tag/ref [`startpack-ciudad-v0.1.0`](https://github.com/alephscriptorium-eng/Z_SDK-games-library/releases/tag/startpack-ciudad-v0.1.0) | `npm run release:startpack -- --game ciudad` |
 
 Pipeline **parametrizado** (misma forma; no hay camino especial hardcodeado
 por juego).
@@ -78,6 +78,13 @@ Crea tag `startpack-delta-v<version>` con assets: tarball + acta.
 El espejo GitHub Release cubre el consumo público. El publish al registry
 npm es un paso aparte del pipeline (credencial ops); no forma parte de la
 doctrina de este documento. Estado del publish: [Futuros](/games/futuros).
+
+## Default de puerta (entrante externo)
+
+La puerta de externos (peercard → arranque) usa como base default el tag/ref
+**`startpack-ciudad-v0.1.0`** (paquete `@zeus/startpack-ciudad`). Visible en
+federación ciudad (`enterWithPuerta`) y en operator-ui
+(`window.__ZEUS__.puerta` / `POST /api/puerta/enter`).
 
 ## Tests
 
