@@ -24,6 +24,14 @@ Playable barrio `estado` is authored in the sprint city cantera file
 (optional `--censo <md|json>`) and writes `seeds/gamemap.json`. Runtime never
 opens cantera paths.
 
+## Health fields (`arbol.maquinarias`)
+
+Each maquinaria may declare `puerto` + `health` (path or token). Consumers
+such as `@zeus/ciudad` (`salud` probes) may derive read-only
+`http-status` URLs (`http://127.0.0.1:<puerto><health>`). The startpack
+does not probe; it only ships the catalog fields. Package↔edificio catalog
+ids remain optional (`catalogId`) for lifecycle — not rewritten here.
+
 ## Solape with `@zeus/startpack-plaza`
 
 | | plaza | ciudad |

@@ -18,7 +18,8 @@ const FORBIDDEN = new RegExp(
     '|hol[oó]n|holarqu[ií]a|juntura|' +
     ['HOL', 'ONES'].join('') +
     '|swarm-orquestacion|' +
-    'WP-Z\\d+',
+    // ids de tracking en obra (frontera mundos)
+    'WP-[A-Z]{1,2}\\d',
   'i'
 );
 

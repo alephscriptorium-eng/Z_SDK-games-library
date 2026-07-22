@@ -4,11 +4,12 @@
  * Loop: decay por tick, energía por actor, objetivo colectivo en snapshot.
  * Presencia: señales por tick (TICKS_PRESENCIA); clase `flujo` no recarga energía.
  * Acta: plaza/ledger (§A3); wake sin acta → `roto`; reparar cierra drift.
+ * Salud: applySalud aplica señal real (I/O fuera); dominio solo estado.
  * Reloj inyectable (`now` / tick); sin Date.now escondido en el loop.
  * Residente ≡ edificio en vivo (una fuente de verdad).
  */
 
-import { INTENTS, LOOP_DEFAULTS, SPAWN_NODE_ID, validateIntent } from './contract.mjs';
+import { INTENTS, LOOP_DEFAULTS, SPAWN_NODE_ID, BARRIO_ESTADOS, validateIntent } from './contract.mjs';
 import {
   catalogRoleFor,
   featuresForPlayerType,
@@ -135,6 +136,20 @@ export function createCiudadDomainState(opts = {}) {
   let lastActa = null;
   /** @type {{ barrioId: string, actorId: string, ts: number, tick: number }|null} */
   let lastReparacion = null;
+  /** Última señal de salud real por barrio (I/O fuera; aquí solo registro). */
+  /** @type {Record<string, {
+   *   barrioId: string,
+   *   kind: string,
+   *   ok: boolean,
+   *   detail: Record<string, unknown>,
+   *   checkedAt: number,
+   *   estadoSugerido: string,
+   *   appliedAt: number,
+   *   tick: number
+   * }>} */
+  const saludByBarrio = {};
+  /** @type {(typeof saludByBarrio)[string]|null} */
+  let lastSalud = null;
 
   // Actas fundacionales (plaza): seeds sobreviven; drift solo si se pierde la acta.
   for (const b of Object.values(barrios)) {
@@ -794,6 +809,10 @@ export function createCiudadDomainState(opts = {}) {
         lastPresencia: lastPresencia ? { ...lastPresencia } : null,
         lastActa: lastActa ? { ...lastActa } : null,
         lastReparacion: lastReparacion ? { ...lastReparacion } : null,
+        lastSalud: lastSalud ? { ...lastSalud } : null,
+        salud: Object.fromEntries(
+          Object.entries(saludByBarrio).map(([id, s]) => [id, { ...s }])
+        ),
         actas: Object.fromEntries(
           Object.entries(actasByBarrio).map(([id, a]) => [id, { ...a }])
         ),
@@ -956,9 +975,123 @@ export function createCiudadDomainState(opts = {}) {
       return { ok: true, error: null, estado: 'latente', acta: persist.acta };
     },
 
+    /**
+     * Aplica señal de salud real (probe fuera del reducer).
+     * Default: sincroniza estado del barrio al `estadoSugerido`.
+     * `syncEstado:false` solo registra (p. ej. tras wake que ya puso vivo).
+     * No lanza procesos ni exige capability (eso es C02 / launcher).
+     *
+     * @param {{
+     *   barrioId: string,
+     *   kind: string,
+     *   ok: boolean,
+     *   detail?: Record<string, unknown>,
+     *   checkedAt?: number,
+     *   estadoSugerido?: string
+     * }} raw
+     * @param {{ syncEstado?: boolean }} [opts]
+     */
+    applySalud(raw, opts = {}) {
+      if (!raw || typeof raw !== 'object') {
+        return { ok: false, error: 'señal_salud_requerida' };
+      }
+      const barrioId = typeof raw.barrioId === 'string' ? raw.barrioId.trim() : '';
+      if (!barrioId || !barrios[barrioId]) {
+        return { ok: false, error: 'barrio_desconocido' };
+      }
+      if (typeof raw.kind !== 'string' || !raw.kind.trim()) {
+        return { ok: false, error: 'kind_requerido' };
+      }
+      if (typeof raw.ok !== 'boolean') {
+        return { ok: false, error: 'ok_requerido' };
+      }
+      let estadoSugerido =
+        typeof raw.estadoSugerido === 'string' ? raw.estadoSugerido : null;
+      if (!estadoSugerido || !BARRIO_ESTADOS.includes(estadoSugerido)) {
+        estadoSugerido = raw.ok ? 'vivo' : 'roto';
+      }
+      const checkedAt =
+        typeof raw.checkedAt === 'number' && Number.isFinite(raw.checkedAt)
+          ? raw.checkedAt
+          : clock();
+      const entry = {
+        barrioId,
+        kind: raw.kind.trim(),
+        ok: raw.ok,
+        detail:
+          raw.detail && typeof raw.detail === 'object'
+            ? { ...raw.detail }
+            : {},
+        checkedAt,
+        estadoSugerido,
+        appliedAt: clock(),
+        tick: currentTick
+      };
+      saludByBarrio[barrioId] = entry;
+      lastSalud = entry;
+
+      const syncEstado = opts.syncEstado !== false;
+      const barrio = barrios[barrioId];
+      const from = barrio.estado;
+      if (syncEstado && from !== estadoSugerido) {
+        // Salud no spawnea residente (eso es wake); si baja de vivo, retira.
+        if (from === 'vivo' && estadoSugerido !== 'vivo') {
+          retireResidente(barrioId);
+        }
+        setBarrioEstado(barrio, estadoSugerido);
+        if (estadoSugerido === 'vivo') {
+          markVisit(barrioId);
+        }
+        ledgerSeq += 1;
+        ledgerOut.push({
+          kind: 'salud',
+          seq: ledgerSeq,
+          actorId: 'ciudad-salud',
+          ts: entry.appliedAt,
+          detail: {
+            barrioId,
+            kind: entry.kind,
+            ok: entry.ok,
+            from,
+            to: estadoSugerido,
+            probe: entry.detail
+          }
+        });
+      } else {
+        ledgerSeq += 1;
+        ledgerOut.push({
+          kind: 'salud',
+          seq: ledgerSeq,
+          actorId: 'ciudad-salud',
+          ts: entry.appliedAt,
+          detail: {
+            barrioId,
+            kind: entry.kind,
+            ok: entry.ok,
+            recorded: true,
+            estado: barrio.estado,
+            probe: entry.detail
+          }
+        });
+        if (entry.ok) markVisit(barrioId);
+      }
+      contentRev += 1;
+      return {
+        ok: true,
+        error: null,
+        estado: barrio.estado,
+        salud: { ...entry }
+      };
+    },
+
     /** Acta local de un barrio (tests). */
     getActa(barrioId) {
       return actasByBarrio[barrioId] ? { ...actasByBarrio[barrioId] } : null;
+    },
+
+    /** Última salud registrada de un barrio (tests). */
+    getSalud(barrioId) {
+      return saludByBarrio[barrioId] ? { ...saludByBarrio[barrioId] } : null;
     }
   };
 }

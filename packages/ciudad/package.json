@@ -14,7 +14,8 @@
     "./jugadores": "./src/jugadores.mjs",
     "./scene": "./src/scene.mjs",
     "./misiones": "./src/misiones.mjs",
-    "./cronista": "./src/cronista.mjs"
+    "./cronista": "./src/cronista.mjs",
+    "./salud": "./src/salud.mjs"
   },
   "scripts": {
     "authority": "node src/authority.mjs",
@@ -23,6 +24,7 @@
     "smoke": "node fixtures/mvp-smoke.mjs",
     "loop-smoke": "node fixtures/loop-smoke.mjs",
     "presencia-smoke": "node fixtures/presencia-smoke.mjs",
+    "salud-smoke": "node fixtures/salud-smoke.mjs",
     "zone-subscription-smoke": "node fixtures/zone-subscription-smoke.mjs",
     "federation-smoke": "node fixtures/federation-smoke.mjs",
     "federation-peer": "node fixtures/federation/demo-peer.mjs",

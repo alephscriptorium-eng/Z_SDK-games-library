@@ -12,6 +12,7 @@ corriente) se distinguen por contrato de mapeo — sin canal nuevo.
 | Dominio puro | `src/domain.mjs` — join / walk / announce / wake / sleep + loop (decay / energía / objetivo / presencia / acta) |
 | Contrato | `src/contract.mjs` — `game: 'ciudad'` · `LOOP_DEFAULTS` · snapshot `objetivo` |
 | Presencia | `src/presencia.mjs` — SeñalDePresencia v1 · FuentePresencia · adapter mock |
+| Salud | `src/salud.mjs` — probes `npm-view` / `http-status` / `smoke` → `applySalud` · shape ACL |
 | Acta | `src/acta.mjs` — ActaDeBarrio v1 · plaza ledger · wake sin acta → `roto` · `completarReparacion` |
 | Misiones | `src/misiones.mjs` — selección censo (zona + decay) · viaje A→B · idle = random-walk |
 | Mapeo jugadores | `src/jugadores.mjs` — tipo → rol + `features[]` |
@@ -29,6 +30,7 @@ npm test -w @zeus/ciudad
 npm run smoke -w @zeus/ciudad
 npm run loop-smoke -w @zeus/ciudad
 npm run presencia-smoke -w @zeus/ciudad
+npm run salud-smoke -w @zeus/ciudad
 npm run tablero-jugadores -w @zeus/ciudad
 npm run misiones-smoke -w @zeus/ciudad
 npm run authority -w @zeus/ciudad   # requiere scriptorium + startpack
@@ -57,6 +59,20 @@ energía; `announce` en plaza recarga; snapshot expone
 `ticksPresencia` (`TICKS_PRESENCIA` en `LOOP_DEFAULTS`) no degrada. Clase
 `flujo` cuenta presencia y **no** recarga energía (solo `announce`). Adapter
 mock en `presencia.mjs`; health/paradas/zona = solo interfaz.
+
+## Salud real ↔ mapa
+
+Probes read-only/idempotentes (`@zeus/ciudad/salud`): `npm-view`,
+`http-status`, `smoke`. `domain.applySalud` sincroniza el estado del barrio;
+`wakeConSalud` hace del wake la acción real (probe → wake `salud.<kind>`).
+Smoke: `npm run salud-smoke -w @zeus/ciudad` (npm view canal
+`npm.scriptorium.escrivivir.co` → `@zeus/protocol`).
+
+**Default sin capability:** solo probes. **Exigen capability** (ACL /
+ownership, fuera de este pack): `maq.launch|stop|restart`, `npm.publish`,
+`git.force-push`, `acl.write`, `process.kill` — ver
+`SALUD_SHAPE_FOR_ACL` / `CAPABILITY_REQUIRED`. Mapping edificio↔paquete de
+catálogo = otro corte; aquí solo bindings de probe.
 
 ## Acta de barrio + `roto` (§A3)
 
