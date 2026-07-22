@@ -1,0 +1,82 @@
+# One-shot: publish lote mesh ciudad a C8 (F5a-GL).
+# Orden duro: startpack-kit → startpack-ciudad → ciudad.
+# Auth: NPM_USERNAME + NPM_PASSWORD (_password base64) — D-24 (a), mismo
+# modelo que Z_SDK release.yml. Sin secret → fail (no skip silencioso).
+name: Publish mesh ciudad
+
+on:
+  workflow_dispatch:
+
+jobs:
+  publish:
+    name: publish kit → startpack → ciudad
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Require publish credentials
+        env:
+          NPM_USERNAME: ${{ secrets.NPM_USERNAME }}
+          NPM_PASSWORD: ${{ secrets.NPM_PASSWORD }}
+        run: |
+          if [ -z "${NPM_USERNAME}" ] || [ -z "${NPM_PASSWORD}" ]; then
+            echo "::error::NPM_USERNAME/NPM_PASSWORD required (D-24 a)"
+            exit 1
+          fi
+      - name: Configure registry basic-auth (_password)
+        env:
+          NPM_USERNAME: ${{ secrets.NPM_USERNAME }}
+          NPM_PASSWORD: ${{ secrets.NPM_PASSWORD }}
+        run: |
+          HOST='npm.scriptorium.escrivivir.co'
+          {
+            echo "@zeus:registry=https://${HOST}"
+            echo "@alephscript:registry=https://${HOST}"
+            echo "//${HOST}/:username=${NPM_USERNAME}"
+            echo "//${HOST}/:_password=${NPM_PASSWORD}"
+            echo "//${HOST}/:email=ci@scriptorium.escrivivir.co"
+            echo "//${HOST}/:always-auth=true"
+          } >> .npmrc
+      - name: Install
+        run: npm install
+      - name: Publish @zeus/startpack-kit
+        working-directory: packages/startpack-kit
+        run: |
+          REG=https://npm.scriptorium.escrivivir.co
+          if npm view @zeus/startpack-kit version --registry "$REG" >/dev/null 2>&1; then
+            echo "Already on registry — skip"
+            npm view @zeus/startpack-kit version --registry "$REG"
+          else
+            npm publish --access public --registry "$REG"
+          fi
+      - name: Publish @zeus/startpack-ciudad
+        working-directory: packages/startpack-ciudad
+        run: |
+          REG=https://npm.scriptorium.escrivivir.co
+          if npm view @zeus/startpack-ciudad version --registry "$REG" >/dev/null 2>&1; then
+            echo "Already on registry — skip"
+            npm view @zeus/startpack-ciudad version --registry "$REG"
+          else
+            npm publish --access public --registry "$REG"
+          fi
+      - name: Publish @zeus/ciudad
+        working-directory: packages/ciudad
+        run: |
+          REG=https://npm.scriptorium.escrivivir.co
+          if npm view @zeus/ciudad version --registry "$REG" >/dev/null 2>&1; then
+            echo "Already on registry — skip"
+            npm view @zeus/ciudad version --registry "$REG"
+          else
+            npm publish --access public --registry "$REG"
+          fi
+      - name: Verify npm view ×3
+        run: |
+          REG=https://npm.scriptorium.escrivivir.co
+          for p in @zeus/startpack-kit @zeus/startpack-ciudad @zeus/ciudad; do
+            v=$(npm view "$p" version --registry "$REG")
+            echo "$p@$v"
+            test -n "$v"
+          done
