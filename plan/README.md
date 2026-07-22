@@ -16,3 +16,6 @@ cuerpo sin copiarlo.
 
 Cuando el swarm abra WPs propios de la library (post-U61), los reportes
 pueden vivir en `plan/REPORTES/` de este repo usando la plantilla enlazada.
+
+**Estación skills (SEM-g):** calibración local en [`ESTACION.md`](ESTACION.md)
+— `@alephscript/skills-scriptorium@0.7.0`, espejo `.claude/skills/`.

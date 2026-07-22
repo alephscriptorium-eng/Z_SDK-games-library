@@ -1,0 +1,13 @@
+/* Procedencia: plantilla skill site-web (custom.css.tpl)
+   Fecha: 2026-07-22 · mundo=nexo-atlas
+   ⚠ VARIABLES ≠ PIEL: tokens opcionales. La piel real es fanzine.css + Layout.vue. */
+
+:root {
+  --zine-ink: #000000;
+  --zine-paper: #ffffff;
+  --vp-font-family-base: 'Courier New', Courier, ui-monospace, monospace;
+  --vp-font-family-mono: 'Courier New', Courier, ui-monospace, monospace;
+  --vp-c-bg: var(--zine-paper);
+  --vp-c-text-1: var(--zine-ink);
+  --vp-c-brand-1: var(--zine-ink);
+}
