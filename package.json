@@ -2,7 +2,7 @@
   "name": "z-sdk-games-library",
   "version": "0.0.0",
   "private": true,
-  "description": "Z_SDK-games-library \u2014 juegos Zeus (delta, pozo, solve-coagula), start packs y CARPETA DRAMATURGO",
+  "description": "Z_SDK-games-library — juegos Zeus (delta, pozo, solve-coagula), start packs y CARPETA DRAMATURGO",
   "type": "module",
   "workspaces": [
     "packages/delta/*",
@@ -43,13 +43,15 @@
     "build:zeus-overrides": "node scripts/build-zeus-overrides.mjs",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
-    "test:mockdatas-ciudad": "npm test -w @zeus/mockdatas-ciudad"
+    "test:mockdatas-ciudad": "npm test -w @zeus/mockdatas-ciudad",
+    "skills:sync": "alephscript-skills-sync --runtime claude"
   },
   "license": "AIPLv1",
   "dependencies": {
     "@zeus/story-board-schema": "^0.2.0"
   },
   "devDependencies": {
+    "@alephscript/skills-scriptorium": "0.7.0",
     "vitepress": "^1.6.4"
   }
 }

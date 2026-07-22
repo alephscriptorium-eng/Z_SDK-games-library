@@ -1,0 +1,4 @@
+# bitácora de estación (líneas) — fixture tick-cero
+2026-07-22T10:00:00Z | editor-mcp | estacion.cargar | tick=0
+2026-07-22T10:00:05Z | editor-mcp | estado.semilla | modo=tick-cero
+2026-07-22T10:00:10Z | editor-mcp | juego.listo | endpoint=mcp://fixture-tick-cero

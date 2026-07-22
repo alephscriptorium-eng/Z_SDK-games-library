@@ -1,0 +1,6 @@
+{
+  "id": "peer-fixture-tick-cero",
+  "sig": "sig-fixture-demo-not-for-prod",
+  "issuedAt": "2026-07-22T10:00:00Z",
+  "features": ["juego", "peercard"]
+}

@@ -1,3 +1,6 @@
+# Espejo auditable de skills:sync (scriptorium pattern)
+!.claude/skills/**
+
 node_modules/
 *.log
 .DS_Store
