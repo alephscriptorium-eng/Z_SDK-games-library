@@ -6,8 +6,8 @@
  *   rabbit announce plaza → spider RNFP active → walk distrito → horse tools/call → wake
  *
  * Puerta externos (2º cliente): peercard firmada (E02 seat) + startpack-ciudad-v0.1.0
- * como base default. Consume @zeus/embajador-kit si ZEUS_SDK_ROOT / sibling lo
- * resuelve; si no, protocol + mismo ref default.
+ * como base default. Consume @zeus/embajador-kit vía resolveZeusSdkRoot /
+ * sibling / registry; si no, protocol + mismo ref default.
  */
 
 import { createRequire } from 'node:module';
@@ -30,12 +30,19 @@ export const PUERTA_DEFAULT_STARTPACK = Object.freeze({
 });
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const require = createRequire(import.meta.url);
 
 function zeusSdkCandidates() {
   const roots = [];
-  if (process.env.ZEUS_SDK_ROOT) roots.push(process.env.ZEUS_SDK_ROOT);
-  roots.push(path.resolve(__dirname, '../../../../../../../zeus-sdk'));
-  return roots;
+  try {
+    const { resolveZeusSdkRoot } = require('../../../../scripts/zeus-sdk-root.cjs');
+    const sdk = resolveZeusSdkRoot({ required: false });
+    if (sdk) roots.push(sdk);
+  } catch {
+    /* resolver no disponible */
+  }
+  roots.push(path.resolve(__dirname, '../../../../../zeus-sdk'));
+  return [...new Set(roots)];
 }
 
 async function loadPeerCardSeat() {
@@ -51,7 +58,7 @@ async function loadPeerCardSeat() {
     return await import('@zeus/protocol/peer-card-seat');
   } catch (err) {
     throw new Error(
-      `peer-card-seat unavailable (set ZEUS_SDK_ROOT to zeus tip post-E02): ${err.message}`
+      `peer-card-seat unavailable (resolveZeusSdkRoot / tip post-E02): ${err.message}`
     );
   }
 }
@@ -72,8 +79,7 @@ async function tryLoadEmbajadorKit() {
     }
   }
   try {
-    const req = createRequire(import.meta.url);
-    return await import(pathToFileURL(req.resolve('@zeus/embajador-kit')).href);
+    return await import(pathToFileURL(require.resolve('@zeus/embajador-kit')).href);
   } catch {
     return null;
   }

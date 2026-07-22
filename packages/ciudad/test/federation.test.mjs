@@ -73,12 +73,7 @@ describe('ciudad federación r/s/h (Z04)', () => {
     const result = await new Promise((resolve) => {
       const child = spawn(process.execPath, [SMOKE], {
         cwd: ROOT,
-        env: {
-          ...process.env,
-          ZEUS_SDK_ROOT:
-            process.env.ZEUS_SDK_ROOT ||
-            path.resolve(ROOT, '../../../../zeus-sdk')
-        },
+        env: { ...process.env },
         stdio: ['ignore', 'pipe', 'pipe']
       });
       let out = '';
