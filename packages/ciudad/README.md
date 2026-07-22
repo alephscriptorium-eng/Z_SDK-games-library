@@ -13,6 +13,7 @@ corriente) se distinguen por contrato de mapeo — sin canal nuevo.
 | Contrato | `src/contract.mjs` — `game: 'ciudad'` · `LOOP_DEFAULTS` · snapshot `objetivo` |
 | Presencia | `src/presencia.mjs` — SeñalDePresencia v1 · FuentePresencia · adapter mock |
 | Salud | `src/salud.mjs` — probes `npm-view` / `http-status` / `smoke` → `applySalud` · shape ACL |
+| Edificios | `src/edificios.mjs` — edificio↔paquete (solo ids catálogo fleet) · gentes=capabilities · rechazo fuera |
 | Acta | `src/acta.mjs` — ActaDeBarrio v1 · plaza ledger · wake sin acta → `roto` · `completarReparacion` |
 | Misiones | `src/misiones.mjs` — selección censo (zona + decay) · viaje A→B · idle = random-walk |
 | Mapeo jugadores | `src/jugadores.mjs` — tipo → rol + `features[]` |
@@ -31,6 +32,7 @@ npm run smoke -w @zeus/ciudad
 npm run loop-smoke -w @zeus/ciudad
 npm run presencia-smoke -w @zeus/ciudad
 npm run salud-smoke -w @zeus/ciudad
+npm run edificios-smoke -w @zeus/ciudad
 npm run tablero-jugadores -w @zeus/ciudad
 npm run misiones-smoke -w @zeus/ciudad
 npm run authority -w @zeus/ciudad   # requiere scriptorium + startpack
@@ -72,7 +74,16 @@ Smoke: `npm run salud-smoke -w @zeus/ciudad` (npm view canal
 ownership, fuera de este pack): `maq.launch|stop|restart`, `npm.publish`,
 `git.force-push`, `acl.write`, `process.kill` — ver
 `SALUD_SHAPE_FOR_ACL` / `CAPABILITY_REQUIRED`. Mapping edificio↔paquete de
-catálogo = otro corte; aquí solo bindings de probe.
+catálogo = `@zeus/ciudad/edificios` (consume este shape; no reinventar probes).
+
+## Edificios ↔ paquetes
+
+Destino canónico: `src/edificios.mjs`. Solo ids del catálogo fleet
+(`CATALOG_SEED` / patrón mcp-launcher). Gentes = `capabilities`. Arbol del
+startpack: `catalogId` fuera de catálogo → `rechazados` (no se inventa
+superficie). Cara salud: `saludBindingDesdeVinculo` → `npm-view` del
+`workspace`. Smoke: `npm run edificios-smoke -w @zeus/ciudad`. Snapshot
+expone `edificios.byEdificio` / `edificios.rechazados`.
 
 ## Acta de barrio + `roto` (§A3)
 

@@ -5,6 +5,7 @@
  * Presencia: señales por tick (TICKS_PRESENCIA); clase `flujo` no recarga energía.
  * Acta: plaza/ledger (§A3); wake sin acta → `roto`; reparar cierra drift.
  * Salud: applySalud aplica señal real (I/O fuera); dominio solo estado.
+ * Edificios: mapEdificios ancla ids de catálogo (rechazo fuera); sin I/O.
  * Reloj inyectable (`now` / tick); sin Date.now escondido en el loop.
  * Residente ≡ edificio en vivo (una fuente de verdad).
  */
@@ -25,6 +26,7 @@ import {
   LEDGER_ACTA
 } from './acta.mjs';
 import { nodesReachable, sceneFromGamemap } from './scene.mjs';
+import { mapEdificios } from './edificios.mjs';
 
 /**
  * @param {{
@@ -38,7 +40,8 @@ import { nodesReachable, sceneFromGamemap } from './scene.mjs';
  *   announceGain?: number,
  *   initialEnergy?: number,
  *   maxEnergy?: number,
- *   ticksPresencia?: number
+ *   ticksPresencia?: number,
+ *   edificioOverlays?: { edificioId: string, catalogId: string, barrioId?: string|null }[]
  * }} [opts]
  */
 export function createCiudadDomainState(opts = {}) {
@@ -75,6 +78,11 @@ export function createCiudadDomainState(opts = {}) {
   if (!scene) {
     throw new Error('createCiudadDomainState: gamemap or scene required (from startpack)');
   }
+
+  const edificiosMap = mapEdificios({
+    arbol: opts.gamemap?.arbol || null,
+    overlays: Array.isArray(opts.edificioOverlays) ? opts.edificioOverlays : []
+  });
 
   const bornAt = clock();
 
@@ -813,6 +821,11 @@ export function createCiudadDomainState(opts = {}) {
         salud: Object.fromEntries(
           Object.entries(saludByBarrio).map(([id, s]) => [id, { ...s }])
         ),
+        edificios: {
+          version: edificiosMap.version,
+          byEdificio: { ...edificiosMap.byEdificio },
+          rechazados: edificiosMap.rechazados.map((r) => ({ ...r }))
+        },
         actas: Object.fromEntries(
           Object.entries(actasByBarrio).map(([id, a]) => [id, { ...a }])
         ),
@@ -1092,6 +1105,17 @@ export function createCiudadDomainState(opts = {}) {
     /** Última salud registrada de un barrio (tests). */
     getSalud(barrioId) {
       return saludByBarrio[barrioId] ? { ...saludByBarrio[barrioId] } : null;
+    },
+
+    /** Índice edificio↔catálogo (solo ids declarados; rechazados listados). */
+    getEdificios() {
+      return {
+        version: edificiosMap.version,
+        byEdificio: { ...edificiosMap.byEdificio },
+        vinculos: edificiosMap.vinculos.map((v) => ({ ...v })),
+        rechazados: edificiosMap.rechazados.map((r) => ({ ...r })),
+        shape: edificiosMap.shape
+      };
     }
   };
 }

@@ -5,8 +5,8 @@
  *
  * Shape exportado para ACL (capa ownership / capability — fuera de aquí):
  *   SALUD_SHAPE_FOR_ACL · acciones default vs capabilityRequired.
- * Mapping edificio↔paquete de catálogo (§A4) = fuera; aquí solo bindings
- * de probe (paquete npm / URL status / script smoke).
+ * Mapping edificio↔paquete = `@zeus/ciudad/edificios` (consume este shape).
+ * Aquí solo bindings de probe (paquete npm / URL status / script smoke).
  */
 
 import { spawn } from 'node:child_process';
