@@ -1,12 +1,8 @@
-// Procedencia: plantilla skill site-web · theme entry fanzine
+// Procedencia: plantilla skill site-web · theme entry DEFAULT = familia-vp
 // Fecha: {{FECHA}} · mundo={{MUNDO_ID}}
-// Piel = fanzine.css + Layout.vue. custom.css = tokens opcionales (≠ piel).
+// Alias de theme-index-familia-vp.js.tpl (issue #18).
+// Opt-in fanzine → theme-index-fanzine.js.tpl + Layout.vue + fanzine.css.
 import DefaultTheme from 'vitepress/theme'
-import Layout from './Layout.vue'
-import './fanzine.css'
-import './custom.css'
+import './familia-vp.css'
 
-export default {
-  extends: DefaultTheme,
-  Layout
-}
+export default DefaultTheme

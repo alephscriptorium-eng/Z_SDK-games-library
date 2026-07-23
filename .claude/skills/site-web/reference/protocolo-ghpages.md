@@ -63,16 +63,20 @@ workflow, o un push que toque `docs/**`.
 No hardcodear el dominio de otro mundo en plantillas del skill: usá
 `{{DOMINIO}}`.
 
-## Piel fanzine (variables ≠ piel)
+## Piel declarada (regla 13 · #18)
 
-- **Piel real** = asset `plantillas/fanzine.css` + `Layout.vue.tpl` +
-  `theme-index.js.tpl`. La home publicada lleva clases `stamp` /
-  `washi` / `callout` y **no** el shell DefaultTheme
-  (`Layout` / `VPNav*`). Ver regla 13 en `SKILL.md`.
-- `custom.css.tpl` = **solo tokens opcionales**. Aplicarlo solo sobre
-  `DefaultTheme` **no** cumple la piel (defecto recurrente issue #15).
-- Tipografía local del sistema (p. ej. Courier); monocromo; sin CDN ni
-  `@import` de fuentes web.
+Dos canónicas. Sin declaración = **`familia-vp`**.
+
+| piel | assets | home debe |
+| ---- | ------ | --------- |
+| `familia-vp` (**DEFAULT**) | `familia-vp.css` + `theme-index-familia-vp.js.tpl` (alias `theme-index.js.tpl`) | shell VP (`Layout` / `VPNavBar`) + señal GitHub (`socialLinks`) |
+| `fanzine` (**OPT-IN**) | `fanzine.css` + `Layout.vue.tpl` + `theme-index-fanzine.js.tpl` | `stamp` / `washi` / `callout`; **sin** shell VP en home |
+
+- Config: `socialLinks` GitHub + `footer` en `themeConfig` (familia-vp).
+- Contraste: remapear pares VP (hover tinta↔papel; `brand-soft` ≠ tinta).
+  Triage #18: el defecto no estaba en el CSS fanzine del pub, sino en la
+  **composición** sobre markdown VP + tokens monocromo.
+- Tipografía local; monocromo; sin CDN ni `@import` de fuentes web.
 - Copia-release con cabecera:
 
 ```css
@@ -80,8 +84,9 @@ No hardcodear el dominio de otro mundo en plantillas del skill: usá
    Fecha: {{FECHA}} · mundo={{MUNDO_ID}} */
 ```
 
-- CA estructural tras build:
-  `node …/verificar-piel-fanzine.mjs --dist {{DOCS}}/.vitepress/dist`
+- CA tras build:
+  `node …/verificar-piel.mjs --piel <declarada> --dist {{DOCS}}/.vitepress/dist`
+  `node …/verificar-contraste-piel.mjs --piel <declarada>`
 - No meter rutas absolutas de árboles ajenos en la cara pública del skill;
   la cita vive en el CSS del **mundo** consumidor.
 
@@ -194,7 +199,7 @@ listar los nombres exigidos (sin revelar valores).
 - [ ] `npm ci` + `docs:build` verdes en local
 - [ ] `verificar-sitio.mjs` verde: enlaces internos + anclas resuelven
   (externos = warning); verdad de contenido consistente
-- [ ] `verificar-piel-fanzine.mjs` verde: home con stamp/washi/callout
+- [ ] `verificar-piel.mjs --piel <declarada>` verde + `verificar-contraste-piel.mjs`
   y sin shell DefaultTheme
 - [ ] CNAME presente y equal a dominio vivo
 - [ ] Workflow parsea; deploy solo en `main`

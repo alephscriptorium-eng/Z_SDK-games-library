@@ -2,7 +2,7 @@
 name: site-web
 description: >-
   Método de copy + protocolo de publicación web (VitePress, Pages, piel
-  fanzine). Parametriza «el mundo»; separa método (aquí) de datos (cantera /
+  declarada). Parametriza «el mundo»; separa método (aquí) de datos (cantera /
   entrega del consumidor). Sin nombres de mundo real ni del marco.
 ---
 
@@ -22,7 +22,7 @@ Cuando el agente deba:
    fundacionales.
 2. Empaquetar reemplazos verbatim para un swarm consumidor (§E).
 3. Montar o auditar el pipeline de docs → GitHub Pages (CNAME, base,
-   workflow, piel fanzine).
+   workflow, piel declarada).
 
 ## Parámetros del mundo (calibración)
 
@@ -37,6 +37,7 @@ Leé primero la calibración local (si existe). Mínimo:
 | `mundo.registry` | URL del registry | anuncios de canal real (C8) |
 | `mundo.ceguera` | regex | prueba delta 5 del mundo |
 | `mundo.lexico_no` | regex | filtro C1 |
+| `mundo.piel` | `familia-vp` \| `fanzine` | piel canónica (#18) |
 | `mundo.brand.banner` | path bajo `public/` | `BRAND_BANNER` |
 | `mundo.brand.footer` | texto de colofón | `BRAND_FOOTER` |
 | `mundo.brand.license` | ruta zine `/licencia` | `BRAND_LICENSE` |
@@ -54,41 +55,47 @@ skill (método)          mundo (datos / instancia)
 BASE-1/2/3 plantilla  →  cantera/  (inventarios, snapshots)
 protocolo ghpages     →  entrega/  (paquete §E vigente)
 filtros C1–C9         →  decisiones vivas del marketing local
-piel fanzine (asset)  →  theme/ copia-release del mundo
+piel declarada        →  theme/ copia-release del mundo
 ```
 
 `CANTERA` y `ENTREGA-*` de un mundo concreto **no** entran en este skill.
 Son instancia: el consumidor las mantiene fuera.
 
-## Regla 13 · variables ≠ piel (agente fresco)
+## Regla 13 · piel declarada (agente fresco)
 
-**Defectos recurrentes** (dos instancias de familia): aplicar solo
-`custom.css` con tokens (`--zine-ink`, Courier) sobre `DefaultTheme`
-**no** es la piel fanzine. El sitio conserva el shell
-`Layout` / `VPNav` / `VPNavBar` / `VPSidebar` y fuentes del tema por
-defecto.
+**Dos pieles canónicas.** El mundo **declara** `piel:` en calibración y/o
+frontmatter. Sin declaración = **`familia-vp`** (pro / look familia
+codebase).
+
+| piel | rol | assets |
+| ---- | --- | ------ |
+| `familia-vp` | **DEFAULT** — shell VitePress + `socialLinks` GitHub + footer + tokens zine | `familia-vp.css` + `theme-index-familia-vp.js.tpl` |
+| `fanzine` | **OPT-IN** — standalone stamp/washi/callout (zines pub) | `fanzine.css` + `Layout.vue.tpl` + `theme-index-fanzine.js.tpl` |
 
 | qué | es piel | no es piel |
 | --- | ------- | ---------- |
-| `fanzine.css` + `Layout.vue` (clases `stamp` / `washi` / `callout`) | sí | |
-| solo variables CSS / tipografía sobre DefaultTheme | | **no** |
+| asset + theme entry de la piel declarada | sí | |
+| solo variables CSS sueltas sin declarar piel | | **no** (insuficiente) |
 
-Plantillas canónicas:
+**Defecto histórico (0.6.1):** absolutismo «una sola piel fanzine + shell
+ausente». Corregido en 0.8.0 (#18): CA = «piel **DECLARADA** renderiza».
 
-- `reference/plantillas/fanzine.css` — asset de piel (copia-release)
-- `reference/plantillas/Layout.vue.tpl` — home sin shell DefaultTheme
-- `reference/plantillas/theme-index.js.tpl` — entry que monta Layout + CSS
-- `reference/plantillas/custom.css.tpl` — **solo tokens opcionales**
+**Contraste / composición (#18 triage):** montar fanzine sobre markdown
+VitePress + tokens monocromo colapsa pares VP (`--vp-c-brand` = tinta →
+enlace resaltado ilegible). La piel debe **remapear** pares (hover
+tinta↔papel; `brand-soft` ≠ tinta). CA:
+`scripts/verificar-contraste-piel.mjs`.
 
-CA estructural obligatorio (anti-regresión): tras `docs:build`,
+CA estructural (anti-regresión): tras `docs:build`,
 
 ```bash
-node skills/site-web/scripts/verificar-piel-fanzine.mjs --dist <dist>
+node skills/site-web/scripts/verificar-piel.mjs --piel familia-vp --dist <dist>
+# o, si el mundo optó fanzine:
+node skills/site-web/scripts/verificar-piel.mjs --piel fanzine --dist <dist>
+node skills/site-web/scripts/verificar-contraste-piel.mjs --piel <piel>
 ```
 
-La home del `dist/` debe contener `stamp` / `washi` / `callout` y **no**
-el shell DefaultTheme. Referencia de familia (lectura): portal pub con
-`assets/fanzine.css` + esas clases.
+Alias legacy: `verificar-piel-fanzine.mjs` → `--piel fanzine`.
 
 ## Pasos
 
@@ -119,9 +126,13 @@ Si marketing pide «otra iteración de backtracking»:
 2. Workflow `docs.yml` (npm ci, paths `docs/**`, concurrency, deploy solo
    `main`).
 3. `docs/public/CNAME` = dominio del mundo (frágil #1).
-4. **Piel fanzine**: copia-release de `fanzine.css` + `Layout.vue` +
-   `theme-index.js` (cabecera de procedencia DE-8). Tipografía local;
-   cero CDN / fuentes web. No sustituir por solo `custom.css` (regla 13).
+4. **Piel declarada**:
+   - DEFAULT `familia-vp`: copia-release `familia-vp.css` +
+     `theme-index-familia-vp.js.tpl` (o `theme-index.js.tpl`). Config con
+     `socialLinks` GitHub + footer.
+   - OPT-IN `fanzine`: `fanzine.css` + `Layout.vue` +
+     `theme-index-fanzine.js.tpl` + frontmatter `piel: fanzine`.
+   Tipografía local; cero CDN / fuentes web.
 5. **Pack marca (BRAND-\*)**: cablear banner / footer / license / favicon
    como parámetros (`reference/pack-marca.md`). Derivados `*-web.png`
    **<150KB** — CA:
@@ -129,13 +140,10 @@ Si marketing pide «otra iteración de backtracking»:
    ADVERTENCIA: licencia canónica (puntero) ≠ lore AIPL.
 6. Checklist DNS → Pages + Enforce HTTPS.
 7. Mitigar los 7 frágiles documentados en el protocolo.
-8. **Gate de verificación**: correr `scripts/verificar-sitio.mjs` sobre el
-   `dist/` (enlaces internos + anclas + externos + verdad de contenido)
-   **y** `scripts/verificar-piel-fanzine.mjs` (CA estructural) antes del
-   deploy — preferible vía `npm run docs:verificar` si el `package.json`
-   del mundo lo define. Falla ante roto interno/ancla o home sin piel;
-   cubre los hrefs de componentes `.vue` que `ignoreDeadLinks` no ve.
-   La plantilla `docs.yml.tpl` engancha el paso en CI tras el build.
+8. **Gate de verificación**: `scripts/verificar-sitio.mjs` **y**
+   `scripts/verificar-piel.mjs --piel <declarada>` **y**
+   `scripts/verificar-contraste-piel.mjs --piel <declarada>` antes del
+   deploy. Preferible vía `npm run docs:verificar` si el mundo lo define.
 
 ### D · Credenciales de publish por repo
 
@@ -156,14 +164,15 @@ repo».
 - `reference/protocolo-ghpages.md` — Pages + 7 frágiles + credenciales publish
 - `reference/pack-marca.md` — BRAND_* · DE-8 · pesos · licencia ≠ lore
 - `reference/plantillas/` — ficheros listos para copiar al mundo
-  (incl. `fanzine.css`, `Layout.vue.tpl`, `theme-index.js.tpl`)
-- `examples/mundo-limpio/` — fixture inventada (sin datos de mundo real)
+  (incl. `familia-vp.css`, `fanzine.css`, `Layout.vue.tpl`, theme-index*)
+- `examples/mundo-limpio/` — fixture **fanzine** OPT-IN (declarada)
 - `scripts/ceguera.sh` — grep de ceguera sobre `skills/site-web/`
 - `scripts/generar-sitio.sh` — scaffold parametrizado a un dir destino
 - `scripts/verificar-sitio.mjs` — gate de enlaces (dist) + anclas +
-  externos (warning) + verdad de contenido; falla ante roto interno/ancla
-- `scripts/verificar-piel-fanzine.mjs` — CA estructural C8: home con
-  piel fanzine y sin shell DefaultTheme
+  externos (warning) + verdad de contenido
+- `scripts/verificar-piel.mjs` — CA «piel DECLARADA renderiza»
+- `scripts/verificar-piel-fanzine.mjs` — alias `--piel fanzine`
+- `scripts/verificar-contraste-piel.mjs` — CA contraste / composición VP
 - `scripts/verificar-pesos-web.mjs` — CA medible: assets web < umbral KB
 
 Cantera custodiada (datos en backstage privado, tip pineado): ver

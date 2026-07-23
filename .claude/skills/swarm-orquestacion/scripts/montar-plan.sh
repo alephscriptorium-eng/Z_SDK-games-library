@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # Monta un plan/ mínimo en un mundo nuevo usando solo este skill.
 # Uso: bash montar-plan.sh <MUNDO_RAIZ>
+# Genera también MAPA-RAIZ / MAPA-REPO / MAPA-TALLER (#19) con regla al pie.
 set -euo pipefail
 
 DEST="${1:-}"
@@ -12,6 +13,11 @@ fi
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 SKILL_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 PLAN="$DEST/plan"
+FECHA="$(date +%Y-%m-%d)"
+# Placeholders semilla (el mundo los sustituye)
+MUNDO_RAIZ_LABEL="${MUNDO_RAIZ_LABEL:-$DEST}"
+MUNDO_REPO_LABEL="${MUNDO_REPO_LABEL:-$(basename "$DEST")}"
+MUNDO_TALLER_LABEL="${MUNDO_TALLER_LABEL:-TALLER}"
 
 mkdir -p "$PLAN/roles" "$PLAN/REPORTES"
 
@@ -88,6 +94,27 @@ _(las resuelve el custodio)_
 EOF
 fi
 
+# Mapas canónicos de territorio (#19) — con regla al pie
+render_mapa() {
+  local tpl="$1"
+  local out="$2"
+  if [[ -f "$out" ]]; then
+    return 0
+  fi
+  sed \
+    -e "s|{{FECHA}}|${FECHA}|g" \
+    -e "s|{{MUNDO_RAIZ}}|${MUNDO_RAIZ_LABEL}|g" \
+    -e "s|{{MUNDO_REPO}}|${MUNDO_REPO_LABEL}|g" \
+    -e "s|{{MUNDO_TALLER}}|${MUNDO_TALLER_LABEL}|g" \
+    "$tpl" > "$out"
+}
+
+TPL_DIR="$SKILL_ROOT/reference/plantillas"
+render_mapa "$TPL_DIR/MAPA-RAIZ.md.tpl" "$PLAN/MAPA-RAIZ.md"
+render_mapa "$TPL_DIR/MAPA-REPO.md.tpl" "$PLAN/MAPA-REPO.md"
+render_mapa "$TPL_DIR/MAPA-TALLER.md.tpl" "$PLAN/MAPA-TALLER.md"
+
 echo "plan montado en: $PLAN"
 echo "roles:" && ls "$PLAN/roles"
-echo "siguiente: rellenar VISION/PRACTICAS/BACKLOG; chat orquestador + ORQUESTADOR.md"
+echo "mapas:" && ls "$PLAN"/MAPA-*.md
+echo "siguiente: rellenar VISION/PRACTICAS/BACKLOG + filas de mapas; chat orquestador + ORQUESTADOR.md"

@@ -27,7 +27,7 @@ if [[ ! -f "$DEST/package.json" ]]; then
   "scripts": {
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
-    "docs:verificar": "node node_modules/@alephscript/skills-scriptorium/skills/site-web/scripts/verificar-sitio.mjs --dist docs/.vitepress/dist --base / && node node_modules/@alephscript/skills-scriptorium/skills/site-web/scripts/verificar-piel-fanzine.mjs --dist docs/.vitepress/dist"
+    "docs:verificar": "node node_modules/@alephscript/skills-scriptorium/skills/site-web/scripts/verificar-sitio.mjs --dist docs/.vitepress/dist --base / && node node_modules/@alephscript/skills-scriptorium/skills/site-web/scripts/verificar-piel.mjs --piel fanzine --dist docs/.vitepress/dist && node node_modules/@alephscript/skills-scriptorium/skills/site-web/scripts/verificar-contraste-piel.mjs --piel fanzine"
   },
   "devDependencies": {
     "vitepress": "^1.6.4"

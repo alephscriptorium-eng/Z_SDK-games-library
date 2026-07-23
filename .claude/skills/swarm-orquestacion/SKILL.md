@@ -117,7 +117,8 @@ convivencia.)
 | `reference/plantilla-reporte.md` | plantilla de reporte de WP |
 | `examples/mundo-nuevo-plan/` | esqueleto mínimo de `plan/` |
 | `examples/simulacion-montaje.md` | simulación documentada (CA de montaje) |
-| `scripts/montar-plan.sh` | genera `plan/` en un destino |
+| `scripts/montar-plan.sh` | genera `plan/` + MAPA-RAIZ/REPO/TALLER (#19) |
+| `reference/plantillas/MAPA-*.md.tpl` | mapas de territorio con regla al pie |
 | `scripts/comprobar-ceguera.sh` | grep de ceguera sobre este skill |
 | `scripts/verificar-changelog.mjs` | gate opt-in del CHANGELOG de **gobierno** (WP-id ↔ BACKLOG; `--role gobierno` + rutas); no aplica a CHANGELOG de paquete |
 | `scripts/proyectar-backlog.mjs` | proyección del backlog a issues (export/import; sin sync; gate ceguera) — ver `reference/proyeccion-issues.md` |

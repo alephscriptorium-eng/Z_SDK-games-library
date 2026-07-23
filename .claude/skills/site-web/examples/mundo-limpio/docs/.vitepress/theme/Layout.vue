@@ -10,13 +10,10 @@ import { computed } from 'vue'
 const { Layout: DefaultLayout } = DefaultTheme
 const { frontmatter } = useData()
 
+/** OPT-IN explícito (#18). Sin piel:fanzine → shell familia-vp. */
 const isFanzineHome = computed(() => {
   const fm = frontmatter.value || {}
-  return (
-    fm.piel === 'fanzine' ||
-    fm.layout === 'fanzine' ||
-    (fm.layout === 'home' && fm.piel !== 'default')
-  )
+  return fm.piel === 'fanzine' || fm.layout === 'fanzine'
 })
 
 const bannerSrc = computed(() => {

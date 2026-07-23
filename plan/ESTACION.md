@@ -24,7 +24,7 @@ vive en el paquete `@alephscript/skills-scriptorium` (skills `vigilancia` +
 
 | dato | valor |
 | ---- | ----- |
-| paquete | `@alephscript/skills-scriptorium@0.7.0` |
+| paquete | `@alephscript/skills-scriptorium@0.8.0` |
 | registry | `https://npm.scriptorium.escrivivir.co` |
 | comando | `npm run skills:sync` → `alephscript-skills-sync --runtime claude` |
 | destino | `.claude/skills/` (espejo auditable commiteado) |

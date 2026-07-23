@@ -51,7 +51,7 @@
     "@zeus/story-board-schema": "^0.2.0"
   },
   "devDependencies": {
-    "@alephscript/skills-scriptorium": "0.7.0",
+    "@alephscript/skills-scriptorium": "0.8.0",
     "vitepress": "^1.6.4"
   }
 }

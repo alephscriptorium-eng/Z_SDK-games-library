@@ -10,14 +10,11 @@ import { computed } from 'vue'
 const { Layout: DefaultLayout } = DefaultTheme
 const { frontmatter } = useData()
 
-/** Portada fanzine: layout home | piel:fanzine | layout:fanzine */
+/** Portada fanzine solo con declaración explícita (OPT-IN · #18).
+ *  DEFAULT del método = familia-vp (shell VP; sin este Layout). */
 const isFanzineHome = computed(() => {
   const fm = frontmatter.value || {}
-  return (
-    fm.piel === 'fanzine' ||
-    fm.layout === 'fanzine' ||
-    (fm.layout === 'home' && fm.piel !== 'default')
-  )
+  return fm.piel === 'fanzine' || fm.layout === 'fanzine'
 })
 
 /** BRAND_BANNER · path bajo public/ (calibración del mundo) */

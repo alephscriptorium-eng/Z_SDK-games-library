@@ -28,6 +28,8 @@ Cuando un agente deba:
    funcional no es residuo.
 5. Emitir addendas dos caras (§interna / §WP) con prueba de ceguera.
 6. Re-verificar CAs de facto tras merge (nunca fiarse del ✅ del reporte).
+7. Pulsar **territorio == mapa** cuando existan `plan/MAPA-*.md`
+   (`scripts/verificar-territorio-mapa.sh`; ver `ESTACION.md`).
 
 ## Parámetros («el mundo»)
 
@@ -68,6 +70,7 @@ orquestación): `reference/ESTACION.md`.
 - `../../instancias/ejemplo-M/` — corpus-instancia de-identificado (bitácora /
   revisiones / addendas / handoffs sintéticos; ceguera = 0)
 - `scripts/watcher.sh` — muestreo parametrizado (no usa `git status`)
+- `scripts/verificar-territorio-mapa.sh` — pulso territorio==mapa (#19)
 - `scripts/comprobar-ceguera.sh` — ceguera sobre este skill
 
 Sucesión de vigía (estación viva · sin PASS no 🔶): ver también

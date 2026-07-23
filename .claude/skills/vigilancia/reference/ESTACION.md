@@ -191,5 +191,29 @@ paralelo, obra + gobierno, o partición de prefijos):
 4. CI de la rama principal del mundo de obra (si aplica).
 5. Si el mundo de obra es **repo nuevo a publicar**: `gh secret list -R`
    → nombres de publish presentes (caso fundante GL 2026-07-22).
-6. Si lock ≥2–3 ciclos → freeze pushes gobierno ambos carriles + addenda.
-7. Si eleva: addenda dos caras con `Rn-<carril>` y ceguera = 0 en §WP.
+6. **Territorio == mapa** (cuando existan `plan/MAPA-*.md`): contrastar
+   raíz FS vs filas de `MAPA-RAIZ` / taller vs `MAPA-TALLER`;
+   `git ls-files` ≤2 niveles vs filas+política de `MAPA-REPO`.
+   Entrada/fichero sin fila = **FAIL de ronda**; ampliar mapa = commit
+   de gobierno. Herramienta: `scripts/verificar-territorio-mapa.sh`.
+   Sin mapas → no aplica (mundo pre-#19). Semilla: `montar-plan` del
+   skill `swarm-orquestacion`.
+7. Si lock ≥2–3 ciclos → freeze pushes gobierno ambos carriles + addenda.
+8. Si eleva: addenda dos caras con `Rn-<carril>` y ceguera = 0 en §WP.
+
+## Pulso territorio == mapa (#19)
+
+Invariante de gobierno: el territorio FS / repo **no** crece en silencio.
+
+| mapa | contraste |
+| ---- | --------- |
+| `plan/MAPA-RAIZ.md` | `ls` raíz del territorio vs filas |
+| `plan/MAPA-REPO.md` | `git ls-files` (≤2 niveles) vs filas + columna ¿en git? |
+| `plan/MAPA-TALLER.md` | `ls` raíz del taller (si el mundo lo usa) vs filas |
+
+Regla al pie de cada mapa (canónica): *entrada/fichero sin fila = FAIL
+de ronda; ampliar el mapa = commit de gobierno.*
+
+```bash
+bash skills/vigilancia/scripts/verificar-territorio-mapa.sh --root "$WORLD_ROOT"
+```

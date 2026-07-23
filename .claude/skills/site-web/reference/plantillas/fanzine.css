@@ -404,6 +404,24 @@ details .detail-body .cmd { font-size: 0.64rem; }
   font-size: 0.85em;
 }
 
+/* COMPOSICIÓN VP (#18 triage): Content markdown bajo .zine-main.
+   Remapeo explícito — no confiar en --vp-c-brand (= tinta) de custom.css. */
+.zine-main a {
+  color: #000;
+  background: transparent;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.zine-main a:hover,
+.zine-main a:focus-visible {
+  background: #000;
+  color: #fff;
+}
+.zine-main a:focus-visible {
+  outline: 2px solid #000;
+  outline-offset: 2px;
+}
+
 @media print {
   body { padding: 0; max-width: none; }
   .cutout::before { border-color: #999; }

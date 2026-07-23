@@ -6,7 +6,7 @@ es la dependencia versionada (fijada en `package-lock.json`), no este directorio
 
 | dato | valor |
 | ---- | ----- |
-| procedencia | `@alephscript/skills-scriptorium@0.7.0` |
+| procedencia | `@alephscript/skills-scriptorium@0.8.0` |
 | origen | `node_modules/@alephscript/skills-scriptorium/skills/` |
 | generador | `alephscript-skills-sync --runtime claude` |
 | skills | `estacion-viva`, `holarquia`, `site-web`, `swarm-orquestacion`, `vigilancia` |
